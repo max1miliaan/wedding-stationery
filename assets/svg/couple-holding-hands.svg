@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+
+  <!-- Taller figure (Max) from behind -- head -->
+  <circle cx="50" cy="14" r="8" />
+
+  <!-- Shoulders and torso -->
+  <path d="M 40 22 C 36 28 34 40 36 60" />
+  <path d="M 60 22 C 64 28 66 40 64 60" />
+
+  <!-- Legs walking -->
+  <path d="M 38 60 C 36 72 34 82 36 95" />
+  <path d="M 62 60 C 64 70 66 80 62 95" />
+
+  <!-- Left arm hanging -->
+  <path d="M 38 28 C 32 35 30 45 32 55" />
+
+  <!-- Right arm reaching to hold hands -->
+  <path d="M 62 28 C 66 35 68 42 70 48" />
+
+  <!-- Shorter figure (Kash) from behind -- head -->
+  <circle cx="90" cy="22" r="7" />
+
+  <!-- Shoulders and torso -->
+  <path d="M 82 29 C 78 35 76 45 78 58" />
+  <path d="M 98 29 C 102 35 104 45 102 58" />
+
+  <!-- Dress/skirt flare -->
+  <path d="M 78 58 C 74 70 72 82 74 95" />
+  <path d="M 102 58 C 106 70 108 82 106 95" />
+  <path d="M 74 95 Q 90 100 106 95" />
+
+  <!-- Right arm hanging -->
+  <path d="M 100 34 C 106 40 108 50 106 58" />
+
+  <!-- Left arm reaching to hold hands -->
+  <path d="M 82 34 C 78 40 76 46 74 48" />
+
+  <!-- Hands clasped together -->
+  <path d="M 70 48 C 70 50 72 52 74 48" />
+  <circle cx="72" cy="49" r="3" />
+</svg>

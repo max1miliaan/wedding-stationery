@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+
+  <!-- Bottom tier (largest) -->
+  <path d="M 10 90 L 10 72 Q 10 68 14 68 L 66 68 Q 70 68 70 72 L 70 90" />
+  <path d="M 10 90 Q 40 94 70 90" />
+  <!-- Bottom tier decoration -->
+  <path d="M 14 78 Q 20 75 26 78 Q 32 81 38 78 Q 44 75 50 78 Q 56 81 62 78 Q 66 76 68 78" />
+
+  <!-- Middle tier -->
+  <path d="M 18 68 L 18 52 Q 18 48 22 48 L 58 48 Q 62 48 62 52 L 62 68" />
+  <!-- Middle tier decoration -->
+  <path d="M 22 58 Q 28 55 34 58 Q 40 61 46 58 Q 52 55 58 58" />
+
+  <!-- Top tier (smallest) -->
+  <path d="M 26 48 L 26 34 Q 26 30 30 30 L 50 30 Q 54 30 54 34 L 54 48" />
+  <!-- Top tier decoration -->
+  <path d="M 30 39 Q 36 36 40 39 Q 44 42 50 39" />
+
+  <!-- Cake topper -->
+  <line x1="40" y1="30" x2="40" y2="18" />
+  <!-- Heart topper -->
+  <path d="M 35 18 Q 35 12 40 12 Q 45 12 45 18 Q 45 22 40 26 Q 35 22 35 18" />
+
+  <!-- Base plate -->
+  <path d="M 6 90 Q 40 96 74 90" />
+
+  <!-- Small dots on tiers -->
+  <circle cx="25" cy="72" r="1" />
+  <circle cx="55" cy="72" r="1" />
+  <circle cx="30" cy="52" r="1" />
+  <circle cx="50" cy="52" r="1" />
+</svg>

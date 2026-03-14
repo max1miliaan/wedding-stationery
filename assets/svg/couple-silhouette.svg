@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+
+  <!-- Left figure profile (facing right) -->
+  <path d="M 20 45 C 18 35 20 22 28 15 C 34 10 40 12 43 18 C 45 22 45 28 44 33" />
+  <!-- Forehead to nose to chin -->
+  <path d="M 44 33 C 46 36 48 38 47 40 C 46 42 44 42 44 44 C 44 46 46 50 44 54 C 42 58 38 60 36 60" />
+  <!-- Neck and shoulder -->
+  <path d="M 36 60 C 34 65 30 70 22 75" />
+
+  <!-- Right figure profile (facing left) -->
+  <path d="M 80 50 C 82 40 80 27 72 20 C 66 15 60 17 57 23 C 55 27 55 33 56 38" />
+  <!-- Forehead to nose to chin -->
+  <path d="M 56 38 C 54 41 52 43 53 45 C 54 47 56 47 56 49 C 56 51 54 55 56 59 C 58 63 62 65 64 65" />
+  <!-- Neck and shoulder -->
+  <path d="M 64 65 C 66 70 70 75 78 80" />
+
+  <!-- Foreheads touching point -->
+  <path d="M 44 33 Q 50 31 56 38" />
+
+  <!-- Hair suggestion -- left figure -->
+  <path d="M 20 45 C 16 38 18 20 28 15" />
+  <!-- Hair suggestion -- right figure (longer) -->
+  <path d="M 80 50 C 84 42 82 18 72 20" />
+  <path d="M 72 20 C 68 22 66 30 68 45 C 70 55 74 65 78 80" />
+</svg>

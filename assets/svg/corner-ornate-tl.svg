@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+
+  <!-- Main scroll curves -->
+  <path d="M 5 50 Q 5 25 15 15 Q 25 5 50 5" />
+  <path d="M 8 45 Q 8 22 18 14 Q 28 8 45 8" />
+
+  <!-- Outer scroll curl (left side) -->
+  <path d="M 5 50 Q 3 55 6 58 Q 10 60 12 56 Q 14 52 10 48" />
+
+  <!-- Outer scroll curl (top side) -->
+  <path d="M 50 5 Q 55 3 58 6 Q 60 10 56 12 Q 52 14 48 10" />
+
+  <!-- Corner scrollwork -->
+  <path d="M 15 15 Q 8 8 12 4 Q 18 2 18 8 Q 18 14 12 14" />
+  <path d="M 15 15 Q 10 12 8 8" />
+
+  <!-- Leaf details along curves -->
+  <!-- Left side leaves -->
+  <path d="M 6 35 Q 0 30 3 26 Q 8 30 6 35" />
+  <path d="M 7 25 Q 2 20 5 16 Q 9 21 7 25" />
+
+  <!-- Top side leaves -->
+  <path d="M 35 6 Q 30 0 26 3 Q 30 8 35 6" />
+  <path d="M 25 7 Q 20 2 16 5 Q 21 9 25 7" />
+
+  <!-- Inner decorative curl -->
+  <path d="M 20 20 Q 16 16 20 12 Q 24 16 20 20" />
+
+  <!-- Tiny dot accents -->
+  <circle cx="30" cy="6" r="1.5" />
+  <circle cx="6" cy="30" r="1.5" />
+  <circle cx="12" cy="10" r="1" />
+  <circle cx="10" cy="12" r="1" />
+</svg>

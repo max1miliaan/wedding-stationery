@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+
+  <!-- Confetti rectangles at various angles -->
+  <rect x="15" y="10" width="8" height="4" rx="1" transform="rotate(-25 19 12)" />
+  <rect x="45" y="5" width="7" height="3.5" rx="1" transform="rotate(40 48.5 6.75)" />
+  <rect x="85" y="12" width="8" height="4" rx="1" transform="rotate(-15 89 14)" />
+  <rect x="100" y="40" width="7" height="3.5" rx="1" transform="rotate(55 103.5 41.75)" />
+  <rect x="25" y="55" width="8" height="4" rx="1" transform="rotate(30 29 57)" />
+  <rect x="70" y="60" width="7" height="3.5" rx="1" transform="rotate(-40 73.5 61.75)" />
+
+  <!-- Confetti circles -->
+  <circle cx="35" cy="25" r="3" />
+  <circle cx="78" cy="35" r="2.5" />
+  <circle cx="55" cy="65" r="3" />
+  <circle cx="105" cy="22" r="2" />
+
+  <!-- Squiggles -->
+  <path d="M 58 15 Q 62 10 66 15 Q 70 20 74 15" />
+  <path d="M 8 40 Q 12 35 16 40 Q 20 45 24 40" />
+  <path d="M 88 55 Q 92 50 96 55 Q 100 60 104 55" />
+
+  <!-- Small star sparkle -->
+  <line x1="42" y1="42" x2="42" y2="50" />
+  <line x1="38" y1="46" x2="46" y2="46" />
+
+  <!-- Tiny dots -->
+  <circle cx="18" cy="35" r="1.2" />
+  <circle cx="92" cy="72" r="1.2" />
+  <circle cx="60" cy="38" r="1" />
+  <circle cx="110" cy="65" r="1.2" />
+  <circle cx="10" cy="60" r="1" />
+</svg>

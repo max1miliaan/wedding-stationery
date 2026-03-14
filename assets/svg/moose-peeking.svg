@@ -1,46 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- English bulldog peeking over an edge -- just head top, ears, eyes, nose, and paws -->
 
-  <!-- Edge/ledge line -->
-  <line x1="0" y1="42" x2="35" y2="42" />
-  <line x1="125" y1="42" x2="160" y2="42" />
+  <!-- Edge line (surface Moose peeks over) -->
+  <line x1="0" y1="33" x2="24" y2="33" />
+  <line x1="106" y1="33" x2="130" y2="33" />
 
-  <!-- Head top (above the ledge) -->
-  <path d="M 42 42 C 40 25, 50 12, 65 10 C 72 9, 88 9, 95 10 C 110 12, 120 25, 118 42" />
+  <!-- Head: wide flat forehead visible above edge -->
+  <!-- Flat across top, wide cheeks, comes down to the edge line -->
+  <path d="M 30,33 C 28,22 34,10 48,6 C 56,4 74,4 82,6 C 96,10 102,22 100,33" />
 
-  <!-- Forehead wrinkles -->
-  <path d="M 58 18 C 64 15, 72 15, 78 18" />
-  <path d="M 82 18 C 88 15, 94 16, 98 19" />
-  <path d="M 62 23 C 70 20, 86 20, 94 23" />
+  <!-- Left jowl just visible at edge -->
+  <path d="M 30,33 C 28,30 27,26 30,24" />
 
-  <!-- Rose ears -->
-  <path d="M 46 22 C 40 14, 34 12, 32 18 C 31 22, 35 26, 40 26" />
-  <path d="M 114 22 C 120 14, 126 12, 128 18 C 129 22, 125 26, 120 26" />
+  <!-- Right jowl just visible at edge -->
+  <path d="M 100,33 C 102,30 103,26 100,24" />
 
-  <!-- Eyes (wide, curious, looking upward) -->
-  <circle cx="62" cy="32" r="5" fill="currentColor" />
-  <circle cx="98" cy="32" r="5" fill="currentColor" />
-  <!-- Larger highlights for curious expression -->
-  <circle cx="60" cy="30" r="2" fill="white" stroke="none" />
-  <circle cx="96" cy="30" r="2" fill="white" stroke="none" />
+  <!-- Rose ear left: tiny fold on top of flat head -->
+  <path d="M 40,10 C 36,3 30,2 31,9 C 31,12 35,14 38,12" />
 
-  <!-- Wide flat nose (partially visible above edge) -->
-  <path d="M 72 40 C 72 37, 75 35, 80 35 C 85 35, 88 37, 88 40" />
-  <ellipse cx="76" cy="39" rx="2" ry="1.5" />
-  <ellipse cx="84" cy="39" rx="2" ry="1.5" />
+  <!-- Rose ear right: tiny fold -->
+  <path d="M 90,10 C 94,3 100,2 99,9 C 99,12 95,14 92,12" />
 
-  <!-- Front paws gripping the edge -->
-  <!-- Left paw -->
-  <path d="M 40 42 C 40 48, 38 55, 38 60 C 38 64, 42 66, 46 65 C 50 64, 54 62, 55 58 C 56 54, 55 48, 55 42" />
-  <!-- Right paw -->
-  <path d="M 105 42 C 105 48, 103 55, 103 60 C 103 64, 107 66, 111 65 C 115 64, 119 62, 120 58 C 121 54, 120 48, 120 42" />
+  <!-- Eyes: big, wide-set, curious, low on the visible head -->
+  <circle cx="48" cy="22" r="3.8" fill="currentColor" />
+  <circle cx="82" cy="22" r="3.8" fill="currentColor" />
+  <!-- Eyebrow raise (curious) -->
+  <path d="M 44,16 C 46,14 50,14 52,16" />
+  <path d="M 78,16 C 80,14 84,14 86,16" />
 
-  <!-- Toe lines on paws -->
-  <path d="M 43 62 L 43 56" />
-  <path d="M 47 63 L 47 57" />
-  <path d="M 51 62 L 51 56" />
-  <path d="M 108 62 L 108 56" />
-  <path d="M 112 63 L 112 57" />
-  <path d="M 116 62 L 116 56" />
+  <!-- Wide flat nose sitting right on the edge line -->
+  <path d="M 57,33 C 57,28 61,26 65,26 C 69,26 73,28 73,33" />
+  <!-- Nostrils -->
+  <circle cx="61" cy="30" r="1.4" fill="currentColor" />
+  <circle cx="69" cy="30" r="1.4" fill="currentColor" />
+
+  <!-- Forehead wrinkle -->
+  <path d="M 50,15 C 56,13 63,12 70,13 C 74,14 78,15 80,16" />
+
+  <!-- Left paw hanging over edge, chunky -->
+  <path d="M 26,33 L 26,48 C 26,52 38,52 38,48 L 38,33" />
+  <!-- Paw toe lines -->
+  <line x1="29" y1="51" x2="29" y2="48" />
+  <line x1="32" y1="52" x2="32" y2="48" />
+  <line x1="35" y1="51" x2="35" y2="48" />
+
+  <!-- Right paw hanging over edge, chunky -->
+  <path d="M 92,33 L 92,48 C 92,52 104,52 104,48 L 104,33" />
+  <!-- Paw toe lines -->
+  <line x1="95" y1="51" x2="95" y2="48" />
+  <line x1="98" y1="52" x2="98" y2="48" />
+  <line x1="101" y1="51" x2="101" y2="48" />
 </svg>
