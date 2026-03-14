@@ -1,0 +1,31 @@
+{
+  "name": "wedding-stationery",
+  "version": "1.0.0",
+  "description": "Wedding stationery suite for Kash & Max -- July 3, 2027 at The Drake Hotel, Toronto.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "preview": "browser-sync start --server --files '**/*.html,**/*.css,**/*.svg' --no-notify --startPath preview/index.html",
+    "preview:illustrations": "browser-sync start --server --files '**/*.html,**/*.css,**/*.svg' --no-notify --startPath preview/illustrations.html",
+    "optimize-svg": "svgo -f assets/svg/ --pretty",
+    "optimize-svg:check": "svgo -f assets/svg/ --pretty --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max1miliaan/wedding-stationery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/max1miliaan/wedding-stationery/issues"
+  },
+  "homepage": "https://github.com/max1miliaan/wedding-stationery#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "svgo": "^4.0.1"
+  }
+}

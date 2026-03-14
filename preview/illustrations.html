@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illustration Preview -- Kash &amp; Max</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF8F0;
+      --coral: #E8704A;
+      --navy: #1B2438;
+      --navy-light: #3A4A68;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Satoshi', sans-serif;
+      background: #F5F0EB;
+      color: var(--navy);
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24pt;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 10pt;
+      color: var(--navy-light);
+      margin-bottom: 40px;
+    }
+
+    .illustration-group {
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(27, 36, 56, 0.1);
+      padding-bottom: 40px;
+    }
+
+    .illustration-group:last-child {
+      border-bottom: none;
+    }
+
+    .group-title {
+      font-size: 12pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .group-file {
+      font-size: 8pt;
+      font-family: monospace;
+      color: var(--navy-light);
+      margin-bottom: 20px;
+    }
+
+    .scales {
+      display: flex;
+      gap: 32px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .scale-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scale-frame {
+      background: var(--cream);
+      border: 1px solid rgba(27, 36, 56, 0.08);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scale-frame svg {
+      display: block;
+    }
+
+    .scale-label {
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy-light);
+    }
+
+    /* Dark background variant */
+    .scale-frame.dark {
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .scale-frame.coral-bg {
+      background: var(--coral);
+      color: var(--cream);
+    }
+  </style>
+</head>
+<body>
+  <h1>Illustration Preview</h1>
+  <p class="subtitle">Each illustration shown at print scale (1in, 1.5in, 2in) and on different backgrounds</p>
+
+  <!-- Moose Sitting with Bowtie -->
+  <div class="illustration-group">
+    <div class="group-title">Moose -- Sitting with Bowtie</div>
+    <div class="group-file">assets/svg/moose-sitting-bowtie.svg | Used on: Save the Date</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-sitting-bowtie.svg" type="image/svg+xml" width="96" height="110" style="color: inherit;"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-sitting-bowtie.svg" type="image/svg+xml" width="144" height="165" style="color: inherit;"></object>
+        </div>
+        <div class="scale-label">1.5in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-sitting-bowtie.svg" type="image/svg+xml" width="192" height="220" style="color: inherit;"></object>
+        </div>
+        <div class="scale-label">2in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame dark">
+          <object data="../assets/svg/moose-sitting-bowtie.svg" type="image/svg+xml" width="144" height="165"></object>
+        </div>
+        <div class="scale-label">on navy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moose Walking -->
+  <div class="illustration-group">
+    <div class="group-title">Moose -- Walking</div>
+    <div class="group-file">assets/svg/moose-walking.svg | Used on: Invitation</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-walking.svg" type="image/svg+xml" width="96" height="72"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-walking.svg" type="image/svg+xml" width="144" height="108"></object>
+        </div>
+        <div class="scale-label">1.5in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-walking.svg" type="image/svg+xml" width="192" height="144"></object>
+        </div>
+        <div class="scale-label">2in</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moose Party Hat -->
+  <div class="illustration-group">
+    <div class="group-title">Moose -- Party Hat</div>
+    <div class="group-file">assets/svg/moose-party-hat.svg | Used on: RSVP Card</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-party-hat.svg" type="image/svg+xml" width="96" height="110"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-party-hat.svg" type="image/svg+xml" width="144" height="165"></object>
+        </div>
+        <div class="scale-label">1.5in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-party-hat.svg" type="image/svg+xml" width="192" height="220"></object>
+        </div>
+        <div class="scale-label">2in</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moose Peeking -->
+  <div class="illustration-group">
+    <div class="group-title">Moose -- Peeking</div>
+    <div class="group-file">assets/svg/moose-peeking.svg | Used on: Details Card</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-peeking.svg" type="image/svg+xml" width="144" height="72"></object>
+        </div>
+        <div class="scale-label">1.5in wide</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/moose-peeking.svg" type="image/svg+xml" width="192" height="96"></object>
+        </div>
+        <div class="scale-label">2in wide</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Champagne Glasses -->
+  <div class="illustration-group">
+    <div class="group-title">Champagne Glasses</div>
+    <div class="group-file">assets/svg/champagne-glasses.svg | Used on: Save the Date, Envelope Liner</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/champagne-glasses.svg" type="image/svg+xml" width="96" height="112"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/champagne-glasses.svg" type="image/svg+xml" width="144" height="168"></object>
+        </div>
+        <div class="scale-label">1.5in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame coral-bg">
+          <object data="../assets/svg/champagne-glasses.svg" type="image/svg+xml" width="144" height="168"></object>
+        </div>
+        <div class="scale-label">on coral</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cocktail Glass -->
+  <div class="illustration-group">
+    <div class="group-title">Cocktail Glass</div>
+    <div class="group-file">assets/svg/cocktail-glass.svg | Used on: Invitation doodles</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/cocktail-glass.svg" type="image/svg+xml" width="64" height="80"></object>
+        </div>
+        <div class="scale-label">0.75in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/cocktail-glass.svg" type="image/svg+xml" width="96" height="120"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corner Flourishes -->
+  <div class="illustration-group">
+    <div class="group-title">Corner Flourishes</div>
+    <div class="group-file">assets/svg/corner-flourish-*.svg | Used on: Save the Date, RSVP, Program</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--coral);">
+          <object data="../assets/svg/corner-flourish-tl.svg" type="image/svg+xml" width="64" height="64"></object>
+        </div>
+        <div class="scale-label">TL</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--coral);">
+          <object data="../assets/svg/corner-flourish-tr.svg" type="image/svg+xml" width="64" height="64"></object>
+        </div>
+        <div class="scale-label">TR</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--coral);">
+          <object data="../assets/svg/corner-flourish-bl.svg" type="image/svg+xml" width="64" height="64"></object>
+        </div>
+        <div class="scale-label">BL</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--coral);">
+          <object data="../assets/svg/corner-flourish-br.svg" type="image/svg+xml" width="64" height="64"></object>
+        </div>
+        <div class="scale-label">BR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toronto Skyline -->
+  <div class="illustration-group">
+    <div class="group-title">Toronto Skyline</div>
+    <div class="group-file">assets/svg/toronto-skyline.svg</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/toronto-skyline.svg" type="image/svg+xml" width="288" height="77"></object>
+        </div>
+        <div class="scale-label">3in wide</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CN Tower -->
+  <div class="illustration-group">
+    <div class="group-title">CN Tower</div>
+    <div class="group-file">assets/svg/cn-tower.svg</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/cn-tower.svg" type="image/svg+xml" width="29" height="96"></object>
+        </div>
+        <div class="scale-label">1in</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/cn-tower.svg" type="image/svg+xml" width="43" height="144"></object>
+        </div>
+        <div class="scale-label">1.5in</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Elements -->
+  <div class="illustration-group">
+    <div class="group-title">Decorative Elements</div>
+    <div class="group-file">assets/svg/doodle-*.svg, divider-line.svg</div>
+    <div class="scales">
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/doodle-stars.svg" type="image/svg+xml" width="80" height="64"></object>
+        </div>
+        <div class="scale-label">Stars</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/doodle-hearts.svg" type="image/svg+xml" width="64" height="48"></object>
+        </div>
+        <div class="scale-label">Hearts</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-frame" style="color: var(--navy);">
+          <object data="../assets/svg/divider-line.svg" type="image/svg+xml" width="192" height="29"></object>
+        </div>
+        <div class="scale-label">Divider</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

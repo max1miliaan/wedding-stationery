@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- English bulldog sitting with bowtie -- charming, hand-drawn style -->
+
+  <!-- Head: wide, slightly flat, massive relative to body -->
+  <path d="M 30 45 C 28 28, 40 14, 55 12 C 60 11, 70 11, 75 12 C 90 14, 102 28, 100 45 C 100 55, 94 62, 85 66 C 75 70, 55 70, 45 66 C 36 62, 30 55, 30 45" />
+
+  <!-- Forehead wrinkles -->
+  <path d="M 44 24 C 50 21, 58 21, 62 24" />
+  <path d="M 68 24 C 74 21, 80 21, 86 24" />
+  <path d="M 50 30 C 58 27, 72 27, 80 30" />
+  <!-- Nose rope (deep wrinkle between eyes) -->
+  <path d="M 62 30 C 64 33, 66 33, 68 30" />
+
+  <!-- Rose ears (small, folded back) -->
+  <path d="M 34 26 C 30 18, 24 16, 22 22 C 21 26, 24 30, 30 30" />
+  <path d="M 96 26 C 100 18, 106 16, 108 22 C 109 26, 106 30, 100 30" />
+
+  <!-- Eyes (round, wide-set, low on face) -->
+  <circle cx="48" cy="40" r="4.5" fill="currentColor" />
+  <circle cx="82" cy="40" r="4.5" fill="currentColor" />
+  <!-- Eye highlights -->
+  <circle cx="46" cy="38" r="1.5" fill="white" stroke="none" />
+  <circle cx="80" cy="38" r="1.5" fill="white" stroke="none" />
+
+  <!-- Wide flat nose -->
+  <path d="M 54 50 C 54 46, 58 44, 65 44 C 72 44, 76 46, 76 50 C 76 54, 72 56, 65 56 C 58 56, 54 54, 54 50" />
+  <!-- Nostrils -->
+  <ellipse cx="60" cy="50" rx="3" ry="2.5" />
+  <ellipse cx="70" cy="50" rx="3" ry="2.5" />
+
+  <!-- Underbite jaw -->
+  <path d="M 50 60 C 54 57, 60 56, 65 58 C 70 56, 76 57, 80 60" />
+  <!-- Teeth poking up -->
+  <path d="M 58 60 L 58 57" />
+  <path d="M 65 60 L 65 56.5" />
+  <path d="M 72 60 L 72 57" />
+
+  <!-- Jowls (heavy, hanging) -->
+  <path d="M 40 52 C 36 56, 36 62, 42 65" />
+  <path d="M 90 52 C 94 56, 94 62, 88 65" />
+
+  <!-- Neck rolls -->
+  <path d="M 38 66 C 45 70, 55 72, 65 72" />
+  <path d="M 92 66 C 85 70, 75 72, 65 72" />
+
+  <!-- Bowtie -->
+  <path d="M 48 76 L 58 72 L 58 80 Z" />
+  <path d="M 82 76 L 72 72 L 72 80 Z" />
+  <circle cx="65" cy="76" r="3.5" />
+
+  <!-- Stocky body -->
+  <path d="M 40 78 C 34 85, 30 95, 28 108 C 27 115, 30 122, 34 126" />
+  <path d="M 90 78 C 96 85, 100 95, 102 108 C 103 115, 100 122, 96 126" />
+
+  <!-- Front legs (short, thick, slightly bowed) -->
+  <path d="M 42 100 C 41 108, 40 118, 39 130" />
+  <path d="M 52 102 C 51 110, 50 120, 49 130" />
+  <path d="M 78 102 C 79 110, 80 120, 81 130" />
+  <path d="M 88 100 C 89 108, 90 118, 91 130" />
+
+  <!-- Big splayed paws -->
+  <path d="M 34 130 C 36 135, 40 136, 44 135 C 48 136, 52 135, 54 130" />
+  <path d="M 76 130 C 78 135, 82 136, 86 135 C 90 136, 94 135, 96 130" />
+  <!-- Toe lines -->
+  <path d="M 40 134 L 40 131" />
+  <path d="M 44 135 L 44 132" />
+  <path d="M 48 134 L 48 131" />
+  <path d="M 82 134 L 82 131" />
+  <path d="M 86 135 L 86 132" />
+  <path d="M 90 134 L 90 131" />
+
+  <!-- Round belly -->
+  <path d="M 34 126 C 50 134, 80 134, 96 126" />
+</svg>

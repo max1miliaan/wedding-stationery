@@ -2,6 +2,7 @@
 exports/pdf/
 exports/png/
 node_modules/
+package-lock.json
 .env
 *.log
 Thumbs.db
