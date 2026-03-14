@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
   <!-- Main vine curl (mirrored from TL vertically) -->
   <path d="M 5 40 Q 5 65 20 72 Q 35 78 50 72 Q 42 68 38 62" />
   <path d="M 40 75 Q 15 75 8 60 Q 2 45 8 30 Q 12 38 18 42" />
