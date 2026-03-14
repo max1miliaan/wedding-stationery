@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main rect border (bottom and sides) -->
+  <line x1="31" y1="28" x2="31" y2="671"/>
+  <line x1="31" y1="671" x2="469" y2="670"/>
+  <line x1="469" y1="670" x2="469" y2="29"/>
+  <!-- Pointed arch top -->
+  <polyline points="31,28 31,120 100,60 150,38 200,26 250,22 300,25 350,37 400,59 469,119 469,29"/>
+  <!-- Horizontal line connecting sides below arch -->
+  <line x1="31" y1="120" x2="469" y2="119"/>
+  <!-- Vertical bar lines in the arch section -->
+  <line x1="100" y1="60" x2="100" y2="119"/>
+  <line x1="150" y1="38" x2="150" y2="120"/>
+  <line x1="200" y1="26" x2="200" y2="119"/>
+  <line x1="250" y1="22" x2="250" y2="120"/>
+  <line x1="300" y1="25" x2="300" y2="119"/>
+  <line x1="350" y1="37" x2="350" y2="120"/>
+  <line x1="400" y1="59" x2="400" y2="119"/>
+  <!-- Small decorative circles at bar tops -->
+  <circle cx="100" cy="57" r="3"/>
+  <circle cx="150" cy="36" r="3"/>
+  <circle cx="200" cy="24" r="3"/>
+  <circle cx="250" cy="20" r="3"/>
+  <circle cx="300" cy="23" r="3"/>
+  <circle cx="350" cy="35" r="3"/>
+  <circle cx="400" cy="57" r="3"/>
+</svg>

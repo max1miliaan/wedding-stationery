@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 110" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="35" cy="22" r="8"/>
+  <circle cx="37" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="35" y1="30" x2="34" y2="55"/>
+  <polygon points="26,55 42,55 40,88 28,88"/>
+  <line x1="35" y1="40" x2="25" y2="52"/>
+  <!-- Max head (leaning in for kiss) -->
+  <circle cx="55" cy="18" r="8"/>
+  <circle cx="53" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="55" y1="26" x2="58" y2="55"/>
+  <line x1="58" y1="55" x2="52" y2="92"/>
+  <line x1="58" y1="55" x2="64" y2="92"/>
+  <line x1="55" y1="38" x2="65" y2="50"/>
+  <!-- Max arm around Kash -->
+  <line x1="55" y1="38" x2="40" y2="45"/>
+  <!-- Small kiss mark -->
+  <line x1="43" y1="20" x2="45" y2="18"/>
+  <line x1="43" y1="20" x2="45" y2="22"/>
+</svg>

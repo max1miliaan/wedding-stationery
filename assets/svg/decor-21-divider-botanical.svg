@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left line -->
+  <line x1="10" y1="20" x2="75" y2="20" />
+  <!-- Center leaf cluster -->
+  <polygon points="88,20 80,12 90,14" />
+  <polygon points="95,20 87,28 92,17" />
+  <polygon points="100,20 95,11 105,14" />
+  <polygon points="105,20 113,28 108,17" />
+  <polygon points="112,20 120,12 110,14" />
+  <!-- Center dot -->
+  <circle cx="100" cy="20" r="2" />
+  <!-- Right line -->
+  <line x1="125" y1="20" x2="190" y2="20" />
+</svg>

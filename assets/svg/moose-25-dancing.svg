@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head -->
+  <rect x="15" y="5" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,11 14,0 30,8" />
+  <polyline points="78,11 86,0 70,8" />
+  <!-- Eyes -->
+  <circle cx="35" cy="26" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="26" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="35" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw (happy) -->
+  <polyline points="32,49 40,53 50,55 60,53 68,49" />
+  <!-- Body (standing upright) -->
+  <rect x="24" y="52" width="52" height="38" rx="10" ry="8" />
+  <!-- Front paws out (dancing) -->
+  <rect x="4" y="54" width="18" height="10" rx="4" />
+  <rect x="78" y="58" width="18" height="10" rx="4" />
+  <!-- Hind legs (standing) -->
+  <rect x="30" y="86" width="14" height="28" rx="5" />
+  <rect x="56" y="86" width="14" height="28" rx="5" />
+  <!-- Paw lines on hind feet -->
+  <line x1="35" y1="110" x2="35" y2="106" />
+  <line x1="40" y1="110" x2="40" y2="106" />
+  <line x1="61" y1="110" x2="61" y2="106" />
+  <line x1="66" y1="110" x2="66" y2="106" />
+</svg>

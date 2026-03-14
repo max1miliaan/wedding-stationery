@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 90" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bowl -->
+  <polygon points="5,10 55,10 30,45" />
+  <!-- Stem -->
+  <line x1="30" y1="45" x2="30" y2="72" />
+  <!-- Base -->
+  <ellipse cx="30" cy="74" rx="16" ry="5" />
+  <!-- Olive -->
+  <circle cx="22" cy="22" r="4" />
+  <!-- Olive pick line -->
+  <line x1="14" y1="14" x2="30" y2="30" />
+</svg>

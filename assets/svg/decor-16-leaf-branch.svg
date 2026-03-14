@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main stem -->
+  <line x1="5" y1="25" x2="115" y2="25" />
+  <!-- Leaves alternating sides -->
+  <polygon points="20,25 12,15 25,18" />
+  <polygon points="30,25 38,35 25,32" />
+  <polygon points="45,25 37,15 50,18" />
+  <polygon points="55,25 63,35 50,32" />
+  <polygon points="70,25 62,15 75,18" />
+  <polygon points="80,25 88,35 75,32" />
+  <polygon points="95,25 87,15 100,18" />
+  <polygon points="105,25 113,35 100,32" />
+</svg>

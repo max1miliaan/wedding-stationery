@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Aisle lines (parallel, converging perspective) -->
+  <line x1="10" y1="140" x2="38" y2="10"/>
+  <line x1="90" y1="140" x2="62" y2="10"/>
+  <!-- Kash head -->
+  <circle cx="42" cy="50" r="8"/>
+  <circle cx="44" cy="49" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (dress) -->
+  <line x1="42" y1="58" x2="42" y2="80"/>
+  <polygon points="34,80 50,80 54,120 30,120"/>
+  <line x1="42" y1="68" x2="34" y2="78"/>
+  <!-- Kash arm linked -->
+  <line x1="42" y1="68" x2="52" y2="66"/>
+  <!-- Max head -->
+  <circle cx="58" cy="44" r="8"/>
+  <circle cx="56" cy="43" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body (suit) -->
+  <line x1="58" y1="52" x2="58" y2="78"/>
+  <line x1="58" y1="78" x2="54" y2="118"/>
+  <line x1="58" y1="78" x2="64" y2="118"/>
+  <line x1="58" y1="64" x2="66" y2="76"/>
+  <!-- Max arm linked -->
+  <line x1="58" y1="64" x2="52" y2="66"/>
+  <!-- Suit jacket -->
+  <rect x="54" y="54" width="8" height="14" rx="1"/>
+</svg>

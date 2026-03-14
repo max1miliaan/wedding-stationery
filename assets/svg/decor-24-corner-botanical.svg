@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Corner stem lines -->
+  <line x1="8" y1="72" x2="8" y2="8" />
+  <line x1="8" y1="8" x2="72" y2="8" />
+  <!-- Vertical branch leaves -->
+  <polygon points="8,60 2,52 10,52" />
+  <polygon points="8,45 14,38 6,38" />
+  <polygon points="8,32 2,25 10,25" />
+  <!-- Corner leaf -->
+  <polygon points="8,8 2,2 14,2" />
+  <!-- Horizontal branch leaves -->
+  <polygon points="25,8 32,2 32,14" />
+  <polygon points="40,8 47,14 47,2" />
+  <polygon points="55,8 62,2 62,14" />
+</svg>

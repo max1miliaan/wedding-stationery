@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Sparkle 1 (large, center) -->
+  <line x1="40" y1="30" x2="40" y2="50" />
+  <line x1="30" y1="40" x2="50" y2="40" />
+  <!-- Sparkle 2 (medium, top-right) -->
+  <line x1="62" y1="10" x2="62" y2="24" />
+  <line x1="55" y1="17" x2="69" y2="17" />
+  <!-- Sparkle 3 (small, top-left) -->
+  <line x1="15" y1="12" x2="15" y2="22" />
+  <line x1="10" y1="17" x2="20" y2="17" />
+  <!-- Sparkle 4 (medium, bottom-left) -->
+  <line x1="12" y1="55" x2="12" y2="69" />
+  <line x1="5" y1="62" x2="19" y2="62" />
+  <!-- Sparkle 5 (small, bottom-right) -->
+  <line x1="65" y1="60" x2="65" y2="70" />
+  <line x1="60" y1="65" x2="70" y2="65" />
+</svg>

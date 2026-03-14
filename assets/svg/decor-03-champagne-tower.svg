@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top glass -->
+  <polygon points="40,8 60,8 50,25" />
+  <line x1="50" y1="25" x2="50" y2="33" />
+  <!-- Middle left glass -->
+  <polygon points="25,38 45,38 35,55" />
+  <line x1="35" y1="55" x2="35" y2="63" />
+  <!-- Middle right glass -->
+  <polygon points="55,38 75,38 65,55" />
+  <line x1="65" y1="55" x2="65" y2="63" />
+  <!-- Bottom left glass -->
+  <polygon points="8,68 28,68 18,85" />
+  <line x1="18" y1="85" x2="18" y2="93" />
+  <!-- Bottom center glass -->
+  <polygon points="35,68 55,68 45,85" />
+  <line x1="45" y1="85" x2="45" y2="93" />
+  <!-- Bottom right glass -->
+  <polygon points="62,68 82,68 72,85" />
+  <line x1="72" y1="85" x2="72" y2="93" />
+</svg>

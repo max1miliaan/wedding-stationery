@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top-left corner -->
+  <polyline points="30,78 30,29 80,29"/>
+  <!-- Top-right corner -->
+  <polyline points="421,28 470,28 471,77"/>
+  <!-- Bottom-left corner -->
+  <polyline points="31,623 31,671 81,672"/>
+  <!-- Bottom-right corner -->
+  <polyline points="420,671 469,671 469,622"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer corner -->
+  <polyline points="5,75 5,5 75,5" />
+  <!-- Middle corner -->
+  <polyline points="12,68 12,12 68,12" />
+  <!-- Inner corner -->
+  <polyline points="19,61 19,19 61,19" />
+  <!-- Circles at outer intersections -->
+  <circle cx="5" cy="5" r="3" />
+  <!-- Circles at middle intersections -->
+  <circle cx="12" cy="12" r="2.5" />
+  <!-- Circles at inner intersections -->
+  <circle cx="19" cy="19" r="2" />
+  <!-- Accent circles at line ends -->
+  <circle cx="5" cy="75" r="2" />
+  <circle cx="75" cy="5" r="2" />
+  <circle cx="12" cy="68" r="1.5" />
+  <circle cx="68" cy="12" r="1.5" />
+</svg>

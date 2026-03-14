@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head (on top, riding) -->
+  <circle cx="50" cy="18" r="8"/>
+  <circle cx="52" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (leaning forward) -->
+  <line x1="50" y1="26" x2="48" y2="48"/>
+  <!-- Kash arms around Max neck -->
+  <line x1="50" y1="34" x2="40" y2="42"/>
+  <line x1="50" y1="34" x2="58" y2="42"/>
+  <!-- Max head -->
+  <circle cx="50" cy="42" r="8"/>
+  <circle cx="52" cy="41" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="50" y1="50" x2="50" y2="78"/>
+  <line x1="50" y1="78" x2="40" y2="118"/>
+  <line x1="50" y1="78" x2="60" y2="118"/>
+  <!-- Max arms holding Kash legs -->
+  <line x1="50" y1="62" x2="38" y2="72"/>
+  <line x1="50" y1="62" x2="62" y2="72"/>
+  <!-- Kash legs hanging -->
+  <line x1="38" y1="72" x2="34" y2="88"/>
+  <line x1="62" y1="72" x2="66" y2="88"/>
+</svg>

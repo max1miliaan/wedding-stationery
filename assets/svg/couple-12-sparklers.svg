@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="48" cy="40" r="8"/>
+  <circle cx="50" cy="39" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="48" y1="48" x2="48" y2="75"/>
+  <polygon points="40,75 56,75 54,108 42,108"/>
+  <line x1="48" y1="58" x2="38" y2="70"/>
+  <!-- Kash arm holding sparkler up -->
+  <line x1="48" y1="58" x2="36" y2="38"/>
+  <!-- Sparkler rays from Kash hand -->
+  <line x1="36" y1="38" x2="30" y2="30"/>
+  <line x1="36" y1="38" x2="28" y2="38"/>
+  <line x1="36" y1="38" x2="32" y2="28"/>
+  <!-- Max head -->
+  <circle cx="88" cy="34" r="8"/>
+  <circle cx="86" cy="33" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="88" y1="42" x2="88" y2="72"/>
+  <line x1="88" y1="72" x2="82" y2="112"/>
+  <line x1="88" y1="72" x2="94" y2="112"/>
+  <line x1="88" y1="54" x2="98" y2="68"/>
+  <!-- Max arm holding sparkler up -->
+  <line x1="88" y1="54" x2="100" y2="32"/>
+  <!-- Sparkler rays from Max hand -->
+  <line x1="100" y1="32" x2="108" y2="26"/>
+  <line x1="100" y1="32" x2="108" y2="34"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left endpoint circle -->
+  <circle cx="15" cy="15" r="3" />
+  <!-- Left line -->
+  <line x1="20" y1="15" x2="92" y2="15" />
+  <!-- Center diamond (rotated rect) -->
+  <rect x="95" y="10" width="10" height="10" rx="1" transform="rotate(45 100 15)" />
+  <!-- Right line -->
+  <line x1="108" y1="15" x2="180" y2="15" />
+  <!-- Right endpoint circle -->
+  <circle cx="185" cy="15" r="3" />
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Horizontal line (surface peeking over) -->
+  <line x1="0" y1="42" x2="130" y2="42" />
+  <!-- Head top half peeking over -->
+  <rect x="30" y="5" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="38,12 30,0 46,8" />
+  <polyline points="92,12 100,0 84,8" />
+  <!-- Eyes (wide, curious) -->
+  <circle cx="50" cy="28" r="4" fill="currentColor" />
+  <circle cx="80" cy="28" r="4" fill="currentColor" />
+  <!-- Nose just above line -->
+  <rect x="55" y="36" width="20" height="8" rx="5" ry="3" />
+  <!-- Paws draped over line -->
+  <rect x="34" y="38" width="14" height="16" rx="4" />
+  <rect x="82" y="38" width="14" height="16" rx="4" />
+  <!-- Paw lines -->
+  <line x1="39" y1="50" x2="39" y2="46" />
+  <line x1="44" y1="50" x2="44" y2="46" />
+  <line x1="87" y1="50" x2="87" y2="46" />
+  <line x1="92" y1="50" x2="92" y2="46" />
+</svg>

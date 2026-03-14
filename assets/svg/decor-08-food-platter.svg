@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Platter -->
+  <ellipse cx="60" cy="50" rx="55" ry="22" />
+  <!-- Platter rim -->
+  <ellipse cx="60" cy="50" rx="48" ry="17" />
+  <!-- Food items -->
+  <rect x="30" y="42" width="10" height="8" rx="1" />
+  <rect x="55" y="38" width="8" height="12" rx="1" />
+  <circle cx="45" cy="46" r="4" />
+  <circle cx="72" cy="48" r="5" />
+  <rect x="78" y="44" width="6" height="6" rx="1" />
+  <circle cx="38" cy="52" r="3" />
+</svg>

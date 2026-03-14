@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="38" cy="28" r="8"/>
+  <circle cx="40" cy="27" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="38" y1="36" x2="38" y2="65"/>
+  <polygon points="30,65 46,65 44,98 32,98"/>
+  <line x1="38" y1="46" x2="28" y2="58"/>
+  <!-- Kash arm up for high five -->
+  <line x1="38" y1="46" x2="55" y2="24"/>
+  <!-- Max head -->
+  <circle cx="82" cy="22" r="8"/>
+  <circle cx="80" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="82" y1="30" x2="82" y2="62"/>
+  <line x1="82" y1="62" x2="76" y2="100"/>
+  <line x1="82" y1="62" x2="88" y2="100"/>
+  <line x1="82" y1="42" x2="92" y2="55"/>
+  <!-- Max arm up for high five -->
+  <line x1="82" y1="42" x2="63" y2="22"/>
+  <!-- Impact lines -->
+  <line x1="56" y1="18" x2="62" y2="16"/>
+  <line x1="58" y1="28" x2="62" y2="30"/>
+</svg>

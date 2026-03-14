@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 85" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head in side profile -->
+  <rect x="85" y="5" width="48" height="32" rx="12" ry="10" />
+  <!-- Ear -->
+  <polyline points="96,8 92,0 102,6" />
+  <!-- Eye -->
+  <circle cx="115" cy="18" r="3" fill="currentColor" />
+  <!-- Nose -->
+  <rect x="121" y="24" width="14" height="8" rx="4" ry="3" />
+  <!-- Pillow in mouth -->
+  <rect x="126" y="32" width="14" height="10" rx="3" ry="2" />
+  <!-- Ring on pillow -->
+  <circle cx="133" cy="34" r="3" />
+  <!-- Body -->
+  <rect x="20" y="28" width="72" height="30" rx="10" ry="8" />
+  <!-- Front legs (walking) -->
+  <rect x="72" y="52" width="12" height="24" rx="4" />
+  <rect x="58" y="56" width="12" height="20" rx="4" />
+  <!-- Back legs -->
+  <rect x="26" y="52" width="12" height="24" rx="4" />
+  <rect x="40" y="56" width="12" height="20" rx="4" />
+  <!-- Tail stub (happy, slightly up) -->
+  <polyline points="20,32 12,26 16,34" />
+  <!-- Paw lines -->
+  <line x1="77" y1="72" x2="77" y2="68" />
+  <line x1="31" y1="72" x2="31" y2="68" />
+</svg>

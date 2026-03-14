@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left glass bowl -->
+  <polygon points="20,20 50,20 35,55" />
+  <!-- Left glass stem -->
+  <line x1="35" y1="55" x2="35" y2="100" />
+  <!-- Left glass base -->
+  <ellipse cx="35" cy="102" rx="15" ry="5" />
+  <!-- Right glass bowl -->
+  <polygon points="70,20 100,20 85,55" />
+  <!-- Right glass stem -->
+  <line x1="85" y1="55" x2="85" y2="100" />
+  <!-- Right glass base -->
+  <ellipse cx="85" cy="102" rx="15" ry="5" />
+  <!-- Clink marks -->
+  <line x1="55" y1="12" x2="60" y2="8" />
+  <line x1="60" y1="16" x2="66" y2="12" />
+  <line x1="57" y1="22" x2="63" y2="20" />
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 170" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Antenna -->
+  <line x1="40" y1="5" x2="40" y2="45"/>
+  <!-- Shaft upper -->
+  <rect x="37" y="45" width="6" height="50"/>
+  <!-- Observation deck -->
+  <ellipse cx="40" cy="95" rx="16" ry="8"/>
+  <!-- Observation deck ring -->
+  <ellipse cx="40" cy="100" rx="14" ry="6"/>
+  <!-- Shaft lower -->
+  <rect x="35" y="100" width="10" height="55"/>
+  <!-- Base flare left -->
+  <line x1="35" y1="155" x2="29" y2="165"/>
+  <!-- Base flare right -->
+  <line x1="45" y1="155" x2="51" y2="165"/>
+  <!-- Ground -->
+  <line x1="24" y1="165" x2="56" y2="165"/>
+  <!-- Stars -->
+  <circle cx="10" cy="20" r="1.5"/>
+  <circle cx="70" cy="15" r="1.5"/>
+  <circle cx="15" cy="55" r="1"/>
+  <circle cx="68" cy="70" r="1"/>
+  <circle cx="8" cy="100" r="1.5"/>
+  <circle cx="72" cy="110" r="1"/>
+  <circle cx="60" cy="30" r="1"/>
+</svg>

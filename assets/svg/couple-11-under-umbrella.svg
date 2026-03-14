@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Umbrella -->
+  <polygon points="60,8 20,40 100,40"/>
+  <line x1="60" y1="8" x2="60" y2="45"/>
+  <!-- Kash head -->
+  <circle cx="46" cy="52" r="8"/>
+  <circle cx="48" cy="51" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="46" y1="60" x2="46" y2="85"/>
+  <polygon points="38,85 54,85 52,115 40,115"/>
+  <line x1="46" y1="70" x2="36" y2="82"/>
+  <!-- Max head -->
+  <circle cx="72" cy="46" r="8"/>
+  <circle cx="70" cy="45" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="72" y1="54" x2="72" y2="84"/>
+  <line x1="72" y1="84" x2="66" y2="120"/>
+  <line x1="72" y1="84" x2="78" y2="120"/>
+  <!-- Max arm holding umbrella -->
+  <line x1="72" y1="64" x2="60" y2="45"/>
+  <line x1="72" y1="64" x2="82" y2="78"/>
+</svg>

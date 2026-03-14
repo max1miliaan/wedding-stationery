@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 110" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="36" cy="22" r="8"/>
+  <circle cx="38" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="36" y1="30" x2="34" y2="55"/>
+  <polygon points="26,55 42,55 39,85 29,85"/>
+  <line x1="36" y1="40" x2="26" y2="52"/>
+  <!-- Max head (touching foreheads) -->
+  <circle cx="54" cy="18" r="8"/>
+  <circle cx="52" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="54" y1="26" x2="56" y2="55"/>
+  <line x1="56" y1="55" x2="50" y2="90"/>
+  <line x1="56" y1="55" x2="62" y2="90"/>
+  <line x1="54" y1="38" x2="64" y2="50"/>
+  <!-- Arms toward each other -->
+  <line x1="36" y1="40" x2="44" y2="46"/>
+  <line x1="54" y1="38" x2="46" y2="44"/>
+</svg>

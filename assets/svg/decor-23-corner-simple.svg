@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- L-shaped corner lines -->
+  <polyline points="5,75 5,5 75,5" />
+  <!-- Circle accent at corner -->
+  <circle cx="5" cy="5" r="4" />
+  <!-- Inner accent line -->
+  <line x1="12" y1="15" x2="12" y2="5" />
+  <line x1="15" y1="12" x2="5" y2="12" />
+</svg>

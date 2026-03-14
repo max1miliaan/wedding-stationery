@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bar counter top -->
+  <rect x="10" y="45" width="140" height="5"/>
+  <!-- Bar front panel -->
+  <rect x="12" y="50" width="136" height="25"/>
+  <!-- Bar legs -->
+  <line x1="15" y1="75" x2="15" y2="78"/>
+  <line x1="145" y1="75" x2="145" y2="78"/>
+  <!-- Bottle 1 -->
+  <rect x="25" y="28" width="8" height="17"/>
+  <line x1="29" y1="22" x2="29" y2="28"/>
+  <!-- Bottle 2 -->
+  <rect x="40" y="25" width="8" height="20"/>
+  <line x1="44" y1="18" x2="44" y2="25"/>
+  <!-- Bottle 3 -->
+  <rect x="55" y="30" width="7" height="15"/>
+  <line x1="58.5" y1="24" x2="58.5" y2="30"/>
+  <!-- Glass 1 (cocktail) -->
+  <circle cx="85" cy="38" r="5"/>
+  <line x1="85" y1="43" x2="85" y2="45"/>
+  <!-- Glass 2 -->
+  <circle cx="100" cy="38" r="4"/>
+  <line x1="100" y1="42" x2="100" y2="45"/>
+  <!-- Glass 3 -->
+  <circle cx="115" cy="37" r="5"/>
+  <line x1="115" y1="42" x2="115" y2="45"/>
+  <!-- Shelf behind -->
+  <line x1="20" y1="22" x2="65" y2="22"/>
+  <!-- Back wall -->
+  <line x1="10" y1="10" x2="150" y2="10"/>
+</svg>

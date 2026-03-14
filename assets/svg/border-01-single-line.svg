@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <rect x="31" y="29" width="438" height="641" rx="0" ry="0"/>
+  <line x1="31" y1="29" x2="32" y2="30"/>
+  <line x1="469" y1="29" x2="468" y2="31"/>
+  <line x1="31" y1="670" x2="33" y2="669"/>
+  <line x1="469" y1="670" x2="467" y2="669"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 130" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="40" cy="24" r="8"/>
+  <circle cx="42" cy="23" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="40" y1="32" x2="40" y2="58"/>
+  <polygon points="32,58 48,58 46,92 34,92"/>
+  <line x1="40" y1="44" x2="30" y2="56"/>
+  <line x1="40" y1="44" x2="52" y2="56"/>
+  <!-- Max head -->
+  <circle cx="120" cy="18" r="8"/>
+  <circle cx="118" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="120" y1="26" x2="120" y2="56"/>
+  <line x1="120" y1="56" x2="114" y2="98"/>
+  <line x1="120" y1="56" x2="126" y2="98"/>
+  <line x1="120" y1="40" x2="108" y2="54"/>
+  <!-- Bulldog (rect head, small body) -->
+  <rect x="72" y="82" width="14" height="12" rx="2"/>
+  <circle cx="76" cy="86" r="1.5" fill="currentColor" stroke="none"/>
+  <circle cx="83" cy="86" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Dog body -->
+  <rect x="68" y="94" width="22" height="10" rx="2"/>
+  <!-- Dog legs -->
+  <line x1="72" y1="104" x2="72" y2="114"/>
+  <line x1="86" y1="104" x2="86" y2="114"/>
+</svg>

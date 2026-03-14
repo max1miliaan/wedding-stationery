@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer border -->
+  <rect x="30" y="28" width="440" height="644"/>
+  <!-- Inner border -->
+  <rect x="42" y="40" width="416" height="620"/>
+  <!-- Top-left corner deco: nested rects + fan -->
+  <rect x="30" y="28" width="30" height="30"/>
+  <rect x="34" y="32" width="22" height="22"/>
+  <line x1="42" y1="58" x2="30" y2="72"/>
+  <line x1="42" y1="58" x2="36" y2="74"/>
+  <line x1="42" y1="58" x2="42" y2="76"/>
+  <line x1="60" y1="40" x2="74" y2="28"/>
+  <line x1="60" y1="40" x2="76" y2="34"/>
+  <line x1="60" y1="40" x2="78" y2="40"/>
+  <!-- Top-right corner deco -->
+  <rect x="440" y="28" width="30" height="30"/>
+  <rect x="444" y="32" width="22" height="22"/>
+  <line x1="458" y1="58" x2="470" y2="72"/>
+  <line x1="458" y1="58" x2="464" y2="74"/>
+  <line x1="458" y1="58" x2="458" y2="76"/>
+  <line x1="440" y1="40" x2="426" y2="28"/>
+  <line x1="440" y1="40" x2="424" y2="34"/>
+  <line x1="440" y1="40" x2="422" y2="40"/>
+  <!-- Bottom-left corner deco -->
+  <rect x="30" y="642" width="30" height="30"/>
+  <rect x="34" y="646" width="22" height="22"/>
+  <line x1="42" y1="642" x2="30" y2="628"/>
+  <line x1="42" y1="642" x2="36" y2="626"/>
+  <line x1="42" y1="642" x2="42" y2="624"/>
+  <line x1="60" y1="660" x2="74" y2="672"/>
+  <line x1="60" y1="660" x2="76" y2="666"/>
+  <line x1="60" y1="660" x2="78" y2="660"/>
+  <!-- Bottom-right corner deco -->
+  <rect x="440" y="642" width="30" height="30"/>
+  <rect x="444" y="646" width="22" height="22"/>
+  <line x1="458" y1="642" x2="470" y2="628"/>
+  <line x1="458" y1="642" x2="464" y2="626"/>
+  <line x1="458" y1="642" x2="458" y2="624"/>
+  <line x1="440" y1="660" x2="426" y2="672"/>
+  <line x1="440" y1="660" x2="424" y2="666"/>
+  <line x1="440" y1="660" x2="422" y2="660"/>
+</svg>

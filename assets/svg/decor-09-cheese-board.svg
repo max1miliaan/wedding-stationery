@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 70" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Board -->
+  <rect x="5" y="15" width="100" height="45" rx="4" />
+  <!-- Cheese wedge -->
+  <polygon points="20,30 40,30 30,50" />
+  <!-- Grapes cluster -->
+  <circle cx="55" cy="35" r="4" />
+  <circle cx="60" cy="40" r="4" />
+  <circle cx="50" cy="40" r="4" />
+  <circle cx="55" cy="45" r="4" />
+  <!-- Crackers -->
+  <rect x="72" y="28" width="12" height="8" rx="1" />
+  <rect x="72" y="40" width="12" height="8" rx="1" />
+  <rect x="86" y="33" width="12" height="8" rx="1" />
+</svg>

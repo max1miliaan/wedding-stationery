@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer ribbon line -->
+  <!-- Top edge outer -->
+  <line x1="45" y1="26" x2="455" y2="27"/>
+  <!-- Right edge outer -->
+  <line x1="474" y1="45" x2="473" y2="655"/>
+  <!-- Bottom edge outer -->
+  <line x1="455" y1="674" x2="45" y2="673"/>
+  <!-- Left edge outer -->
+  <line x1="27" y1="655" x2="28" y2="45"/>
+  <!-- Inner ribbon line -->
+  <!-- Top edge inner -->
+  <line x1="45" y1="34" x2="455" y2="35"/>
+  <!-- Right edge inner -->
+  <line x1="466" y1="45" x2="465" y2="655"/>
+  <!-- Bottom edge inner -->
+  <line x1="455" y1="666" x2="45" y2="665"/>
+  <!-- Left edge inner -->
+  <line x1="35" y1="655" x2="36" y2="45"/>
+  <!-- Top-left crossover: outer goes over inner -->
+  <line x1="28" y1="45" x2="45" y2="26"/>
+  <line x1="36" y1="45" x2="45" y2="34"/>
+  <line x1="27" y1="42" x2="36" y2="42"/>
+  <!-- Top-right crossover -->
+  <line x1="455" y1="27" x2="474" y2="45"/>
+  <line x1="455" y1="35" x2="466" y2="45"/>
+  <line x1="472" y1="42" x2="464" y2="42"/>
+  <!-- Bottom-right crossover -->
+  <line x1="473" y1="655" x2="455" y2="674"/>
+  <line x1="465" y1="655" x2="455" y2="666"/>
+  <line x1="472" y1="658" x2="464" y2="658"/>
+  <!-- Bottom-left crossover -->
+  <line x1="45" y1="673" x2="27" y2="655"/>
+  <line x1="45" y1="665" x2="35" y2="655"/>
+  <line x1="28" y1="658" x2="37" y2="658"/>
+</svg>

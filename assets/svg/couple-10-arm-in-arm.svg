@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="48" cy="26" r="8"/>
+  <circle cx="50" cy="25" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="48" y1="34" x2="48" y2="60"/>
+  <polygon points="40,60 56,60 54,95 42,95"/>
+  <line x1="48" y1="44" x2="38" y2="56"/>
+  <!-- Kash inner arm (linked) -->
+  <line x1="48" y1="44" x2="58" y2="48"/>
+  <!-- Max head -->
+  <circle cx="78" cy="20" r="8"/>
+  <circle cx="76" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="78" y1="28" x2="78" y2="58"/>
+  <line x1="78" y1="58" x2="72" y2="100"/>
+  <line x1="78" y1="58" x2="84" y2="100"/>
+  <line x1="78" y1="40" x2="88" y2="54"/>
+  <!-- Max inner arm (linked) -->
+  <line x1="78" y1="40" x2="66" y2="46"/>
+  <!-- Linked arms loop -->
+  <polyline points="58,48 62,52 66,46"/>
+  <!-- Walking legs offset -->
+  <line x1="42" y1="95" x2="39" y2="100"/>
+</svg>

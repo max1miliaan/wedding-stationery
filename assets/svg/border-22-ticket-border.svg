@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main rect -->
+  <rect x="30" y="28" width="440" height="644"/>
+  <!-- Top edge scallop semicircles (positioned half inside, half outside) -->
+  <circle cx="70" cy="28" r="8"/>
+  <circle cx="110" cy="28" r="8"/>
+  <circle cx="150" cy="28" r="8"/>
+  <circle cx="190" cy="28" r="8"/>
+  <circle cx="230" cy="28" r="8"/>
+  <circle cx="270" cy="28" r="8"/>
+  <circle cx="310" cy="28" r="8"/>
+  <circle cx="350" cy="28" r="8"/>
+  <circle cx="390" cy="28" r="8"/>
+  <circle cx="430" cy="28" r="8"/>
+  <!-- Bottom edge scallop semicircles -->
+  <circle cx="71" cy="672" r="8"/>
+  <circle cx="111" cy="672" r="8"/>
+  <circle cx="151" cy="672" r="8"/>
+  <circle cx="191" cy="672" r="8"/>
+  <circle cx="231" cy="672" r="8"/>
+  <circle cx="271" cy="672" r="8"/>
+  <circle cx="311" cy="672" r="8"/>
+  <circle cx="351" cy="672" r="8"/>
+  <circle cx="391" cy="672" r="8"/>
+  <circle cx="431" cy="672" r="8"/>
+  <!-- Left edge scallop semicircles -->
+  <circle cx="30" cy="68" r="8"/>
+  <circle cx="30" cy="108" r="8"/>
+  <circle cx="30" cy="148" r="8"/>
+  <circle cx="30" cy="188" r="8"/>
+  <circle cx="30" cy="228" r="8"/>
+  <circle cx="30" cy="268" r="8"/>
+  <circle cx="30" cy="308" r="8"/>
+  <circle cx="30" cy="348" r="8"/>
+  <circle cx="30" cy="388" r="8"/>
+  <circle cx="30" cy="428" r="8"/>
+  <circle cx="30" cy="468" r="8"/>
+  <circle cx="30" cy="508" r="8"/>
+  <circle cx="30" cy="548" r="8"/>
+  <circle cx="30" cy="588" r="8"/>
+  <circle cx="30" cy="628" r="8"/>
+  <!-- Right edge scallop semicircles -->
+  <circle cx="470" cy="69" r="8"/>
+  <circle cx="470" cy="109" r="8"/>
+  <circle cx="470" cy="149" r="8"/>
+  <circle cx="470" cy="189" r="8"/>
+  <circle cx="470" cy="229" r="8"/>
+  <circle cx="470" cy="269" r="8"/>
+  <circle cx="470" cy="309" r="8"/>
+  <circle cx="470" cy="349" r="8"/>
+  <circle cx="470" cy="389" r="8"/>
+  <circle cx="470" cy="429" r="8"/>
+  <circle cx="470" cy="469" r="8"/>
+  <circle cx="470" cy="509" r="8"/>
+  <circle cx="470" cy="549" r="8"/>
+  <circle cx="470" cy="589" r="8"/>
+  <circle cx="470" cy="629" r="8"/>
+</svg>

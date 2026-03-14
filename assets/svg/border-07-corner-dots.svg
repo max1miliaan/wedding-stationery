@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Corner circles -->
+  <circle cx="31" cy="29" r="5"/>
+  <circle cx="469" cy="30" r="5"/>
+  <circle cx="30" cy="671" r="5"/>
+  <circle cx="470" cy="670" r="5"/>
+  <!-- Top line -->
+  <line x1="38" y1="29" x2="462" y2="30"/>
+  <!-- Bottom line -->
+  <line x1="37" y1="671" x2="463" y2="670"/>
+  <!-- Left line -->
+  <line x1="31" y1="36" x2="30" y2="664"/>
+  <!-- Right line -->
+  <line x1="469" y1="37" x2="470" y2="663"/>
+</svg>

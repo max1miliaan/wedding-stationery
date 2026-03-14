@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Flower center -->
+  <circle cx="25" cy="20" r="5" />
+  <!-- Petals (circles around center) -->
+  <circle cx="25" cy="10" r="5" />
+  <circle cx="34" cy="15" r="5" />
+  <circle cx="34" cy="25" r="5" />
+  <circle cx="25" cy="30" r="5" />
+  <circle cx="16" cy="25" r="5" />
+  <circle cx="16" cy="15" r="5" />
+  <!-- Stem -->
+  <line x1="25" y1="35" x2="25" y2="65" />
+  <!-- Left leaf -->
+  <polygon points="25,48 14,40 16,50" />
+  <!-- Right leaf -->
+  <polygon points="25,55 36,47 34,57" />
+</svg>

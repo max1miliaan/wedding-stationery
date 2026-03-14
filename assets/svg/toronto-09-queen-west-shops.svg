@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 90" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Ground -->
+  <line x1="0" y1="85" x2="200" y2="85"/>
+  <!-- Building 1 -->
+  <rect x="5" y="30" width="35" height="55"/>
+  <rect x="8" y="55" width="29" height="8"/>
+  <rect x="12" y="38" width="10" height="10"/>
+  <rect x="14" y="68" width="12" height="17"/>
+  <!-- Building 2 -->
+  <rect x="44" y="22" width="35" height="63"/>
+  <rect x="47" y="55" width="29" height="8"/>
+  <rect x="51" y="30" width="10" height="10"/>
+  <rect x="53" y="68" width="12" height="17"/>
+  <!-- Building 3 -->
+  <rect x="83" y="35" width="30" height="50"/>
+  <rect x="86" y="55" width="24" height="8"/>
+  <rect x="90" y="42" width="10" height="10"/>
+  <rect x="92" y="68" width="10" height="17"/>
+  <!-- Building 4 -->
+  <rect x="117" y="18" width="35" height="67"/>
+  <rect x="120" y="55" width="29" height="8"/>
+  <rect x="124" y="26" width="10" height="10"/>
+  <rect x="126" y="68" width="12" height="17"/>
+  <!-- Building 5 -->
+  <rect x="156" y="28" width="38" height="57"/>
+  <rect x="159" y="55" width="32" height="8"/>
+  <rect x="163" y="36" width="10" height="10"/>
+  <rect x="167" y="68" width="12" height="17"/>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Thin border line -->
+  <rect x="30" y="28" width="440" height="644"/>
+  <!-- Top edge: leaf + berry clusters -->
+  <polygon points="80,20 90,15 95,22 90,29 80,24"/>
+  <circle cx="100" cy="22" r="3"/>
+  <polygon points="180,21 190,16 195,23 190,30 180,25"/>
+  <circle cx="200" cy="23" r="3"/>
+  <circle cx="207" cy="19" r="2"/>
+  <polygon points="300,20 310,15 315,22 310,29 300,24"/>
+  <circle cx="320" cy="22" r="3"/>
+  <polygon points="400,21 410,16 415,23 410,30 400,25"/>
+  <circle cx="420" cy="23" r="3"/>
+  <circle cx="427" cy="19" r="2"/>
+  <!-- Bottom edge: leaf + berry clusters -->
+  <polygon points="81,680 91,675 96,682 91,689 81,684"/>
+  <circle cx="101" cy="682" r="3"/>
+  <polygon points="181,679 191,674 196,681 191,688 181,683"/>
+  <circle cx="201" cy="681" r="3"/>
+  <circle cx="208" cy="677" r="2"/>
+  <polygon points="301,680 311,675 316,682 311,689 301,684"/>
+  <circle cx="321" cy="682" r="3"/>
+  <polygon points="401,679 411,674 416,681 411,688 401,683"/>
+  <circle cx="421" cy="681" r="3"/>
+  <circle cx="428" cy="677" r="2"/>
+  <!-- Left edge: leaf + berry clusters -->
+  <polygon points="22,120 17,130 24,135 31,130 26,120"/>
+  <circle cx="24" cy="140" r="3"/>
+  <polygon points="21,260 16,270 23,275 30,270 25,260"/>
+  <circle cx="23" cy="280" r="3"/>
+  <circle cx="19" cy="286" r="2"/>
+  <polygon points="22,400 17,410 24,415 31,410 26,400"/>
+  <circle cx="24" cy="420" r="3"/>
+  <polygon points="21,540 16,550 23,555 30,550 25,540"/>
+  <circle cx="23" cy="560" r="3"/>
+  <circle cx="19" cy="566" r="2"/>
+  <!-- Right edge: leaf + berry clusters -->
+  <polygon points="478,121 473,131 480,136 487,131 482,121"/>
+  <circle cx="480" cy="141" r="3"/>
+  <polygon points="477,261 472,271 479,276 486,271 481,261"/>
+  <circle cx="479" cy="281" r="3"/>
+  <circle cx="483" cy="287" r="2"/>
+  <polygon points="478,401 473,411 480,416 487,411 482,401"/>
+  <circle cx="480" cy="421" r="3"/>
+  <polygon points="477,541 472,551 479,556 486,551 481,541"/>
+  <circle cx="479" cy="561" r="3"/>
+  <circle cx="483" cy="567" r="2"/>
+</svg>

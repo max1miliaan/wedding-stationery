@@ -34,14 +34,14 @@
 /* -- Typography ------------------------------------------------------------ */
 
 /* Google Fonts CDN */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Dancing+Script:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;600&display=swap');
 
 :root {
-  /* Font families */
-  --font-display: 'Playfair Display', 'Georgia', serif;
-  --font-script: 'Pinyon Script', 'Dancing Script', cursive;
-  --font-body: 'Cormorant Garamond', 'Garamond', serif;
-  --font-utility: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+  /* Font families -- sketch/freestyle style to match hand-drawn illustrations */
+  --font-display: 'Sacramento', 'Dancing Script', cursive;
+  --font-script: 'Dancing Script', cursive;
+  --font-body: 'Lora', 'Georgia', serif;
+  --font-utility: 'Quicksand', 'Helvetica Neue', sans-serif;
 
   /* Type scale (pt for print accuracy) */
   --text-xs: 8pt;

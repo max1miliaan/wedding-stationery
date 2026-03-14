@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 140" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Max head (standing, supporting) -->
+  <circle cx="75" cy="22" r="8"/>
+  <circle cx="73" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="75" y1="30" x2="72" y2="65"/>
+  <line x1="72" y1="65" x2="66" y2="105"/>
+  <line x1="72" y1="65" x2="80" y2="105"/>
+  <!-- Max arm supporting Kash -->
+  <line x1="75" y1="42" x2="55" y2="55"/>
+  <line x1="75" y1="42" x2="90" y2="38"/>
+  <!-- Kash head (dipped back) -->
+  <circle cx="40" cy="48" r="8"/>
+  <circle cx="42" cy="47" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (arched back in dip) -->
+  <line x1="40" y1="56" x2="55" y2="55"/>
+  <polygon points="48,55 62,55 68,85 50,85"/>
+  <!-- Kash arm reaching back -->
+  <line x1="40" y1="56" x2="28" y2="42"/>
+  <!-- Kash extended leg -->
+  <line x1="50" y1="85" x2="38" y2="105"/>
+</svg>

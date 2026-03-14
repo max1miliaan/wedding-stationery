@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Sun -->
+  <circle cx="150" cy="50" r="30"/>
+  <!-- Building 1 -->
+  <rect x="15" y="55" width="25" height="40"/>
+  <!-- Building 2 -->
+  <rect x="44" y="42" width="20" height="53"/>
+  <!-- Building 3 -->
+  <rect x="68" y="58" width="22" height="37"/>
+  <!-- Building 4 tall -->
+  <rect x="94" y="38" width="18" height="57"/>
+  <!-- CN Tower -->
+  <rect x="120" y="18" width="4" height="77"/>
+  <ellipse cx="122" cy="40" rx="8" ry="4"/>
+  <line x1="122" y1="10" x2="122" y2="18"/>
+  <!-- Building 5 -->
+  <rect x="134" y="50" width="25" height="45"/>
+  <!-- Building 6 -->
+  <rect x="163" y="45" width="20" height="50"/>
+  <!-- Building 7 -->
+  <rect x="187" y="55" width="22" height="40"/>
+  <!-- Building 8 -->
+  <rect x="213" y="48" width="28" height="47"/>
+  <!-- Building 9 -->
+  <rect x="245" y="60" width="22" height="35"/>
+  <!-- Building 10 -->
+  <rect x="271" y="52" width="20" height="43"/>
+  <!-- Ground -->
+  <line x1="0" y1="95" x2="300" y2="95"/>
+  <!-- Horizon glow lines -->
+  <line x1="0" y1="100" x2="300" y2="100"/>
+  <line x1="20" y1="108" x2="280" y2="108"/>
+</svg>

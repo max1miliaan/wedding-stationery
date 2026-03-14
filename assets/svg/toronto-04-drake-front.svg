@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main building -->
+  <rect x="10" y="25" width="140" height="85"/>
+  <!-- Roofline railing -->
+  <line x1="10" y1="25" x2="150" y2="25"/>
+  <line x1="20" y1="18" x2="140" y2="18"/>
+  <!-- Railing posts -->
+  <line x1="20" y1="18" x2="20" y2="25"/>
+  <line x1="50" y1="18" x2="50" y2="25"/>
+  <line x1="80" y1="18" x2="80" y2="25"/>
+  <line x1="110" y1="18" x2="110" y2="25"/>
+  <line x1="140" y1="18" x2="140" y2="25"/>
+  <!-- Windows row 1 -->
+  <rect x="25" y="35" width="20" height="18"/>
+  <rect x="70" y="35" width="20" height="18"/>
+  <rect x="115" y="35" width="20" height="18"/>
+  <!-- Windows row 2 -->
+  <rect x="25" y="63" width="20" height="18"/>
+  <rect x="115" y="63" width="20" height="18"/>
+  <!-- Door -->
+  <rect x="68" y="68" width="24" height="42"/>
+  <!-- Awning -->
+  <rect x="60" y="64" width="40" height="6"/>
+  <!-- Ground -->
+  <line x1="2" y1="110" x2="158" y2="110"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top edge diamonds -->
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(50,30) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(100,29) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(150,30) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(200,29) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(250,30) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(300,29) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(350,30) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(400,29) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(450,30) rotate(45)"/>
+  <!-- Bottom edge diamonds -->
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(51,671) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(101,670) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(151,671) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(201,670) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(251,671) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(301,670) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(351,671) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(401,670) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(451,671) rotate(45)"/>
+  <!-- Left edge diamonds -->
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,80) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,130) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,180) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,230) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,280) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,330) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,380) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,430) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,480) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,530) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(31,580) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(30,630) rotate(45)"/>
+  <!-- Right edge diamonds -->
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,81) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,131) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,181) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,231) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,281) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,331) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,381) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,431) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,481) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,531) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(469,581) rotate(45)"/>
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(470,631) rotate(45)"/>
+  <!-- Connecting lines -->
+  <line x1="37" y1="30" x2="44" y2="30"/>
+  <line x1="457" y1="30" x2="463" y2="30"/>
+  <line x1="38" y1="671" x2="45" y2="671"/>
+  <line x1="458" y1="671" x2="464" y2="671"/>
+</svg>

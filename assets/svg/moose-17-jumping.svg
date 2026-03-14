@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head -->
+  <rect x="15" y="5" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,11 14,0 30,8" />
+  <polyline points="78,11 86,0 70,8" />
+  <!-- Eyes -->
+  <circle cx="35" cy="26" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="26" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="35" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="32,49 40,53 50,55 60,53 68,49" />
+  <!-- Body -->
+  <rect x="22" y="52" width="56" height="36" rx="10" ry="8" />
+  <!-- Front legs (hanging in air) -->
+  <rect x="26" y="80" width="14" height="18" rx="5" />
+  <rect x="60" y="80" width="14" height="18" rx="5" />
+  <!-- Motion lines below (airborne) -->
+  <line x1="30" y1="106" x2="44" y2="106" />
+  <line x1="34" y1="112" x2="42" y2="112" />
+  <line x1="56" y1="106" x2="70" y2="106" />
+  <line x1="58" y1="112" x2="68" y2="112" />
+</svg>

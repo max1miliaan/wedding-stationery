@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Ground -->
+  <line x1="0" y1="95" x2="160" y2="95"/>
+  <!-- Building 1 - narrow tall -->
+  <rect x="5" y="30" width="25" height="65"/>
+  <polyline points="5,30 17,18 30,30"/>
+  <rect x="10" y="42" width="8" height="10"/>
+  <rect x="10" y="60" width="8" height="10"/>
+  <rect x="12" y="78" width="10" height="17"/>
+  <!-- Building 2 - wide short -->
+  <rect x="34" y="45" width="30" height="50"/>
+  <rect x="38" y="52" width="10" height="10"/>
+  <rect x="54" y="52" width="8" height="10"/>
+  <rect x="42" y="72" width="14" height="23"/>
+  <!-- Building 3 - medium -->
+  <rect x="68" y="35" width="28" height="60"/>
+  <polyline points="68,35 82,22 96,35"/>
+  <rect x="74" y="45" width="8" height="10"/>
+  <rect x="74" y="62" width="8" height="10"/>
+  <rect x="76" y="78" width="10" height="17"/>
+  <!-- Building 4 - quirky tall -->
+  <rect x="100" y="25" width="22" height="70"/>
+  <rect x="104" y="35" width="7" height="8"/>
+  <rect x="104" y="50" width="7" height="8"/>
+  <rect x="106" y="72" width="10" height="23"/>
+  <!-- Building 5 - small -->
+  <rect x="126" y="50" width="28" height="45"/>
+  <rect x="132" y="58" width="8" height="10"/>
+  <rect x="134" y="78" width="12" height="17"/>
+</svg>

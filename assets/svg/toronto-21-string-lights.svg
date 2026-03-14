@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left post -->
+  <line x1="10" y1="5" x2="10" y2="45"/>
+  <!-- Right post -->
+  <line x1="190" y1="5" x2="190" y2="45"/>
+  <!-- Wire top -->
+  <polyline points="10,8 40,14 70,18 100,20 130,18 160,14 190,8"/>
+  <!-- Wire bottom -->
+  <polyline points="10,15 40,22 70,26 100,28 130,26 160,22 190,15"/>
+  <!-- Bulbs top wire -->
+  <circle cx="40" cy="17" r="2.5"/>
+  <circle cx="70" cy="21" r="2.5"/>
+  <circle cx="100" cy="23" r="2.5"/>
+  <circle cx="130" cy="21" r="2.5"/>
+  <circle cx="160" cy="17" r="2.5"/>
+  <!-- Bulbs bottom wire -->
+  <circle cx="25" cy="20" r="2"/>
+  <circle cx="55" cy="26" r="2"/>
+  <circle cx="85" cy="29" r="2"/>
+  <circle cx="115" cy="29" r="2"/>
+  <circle cx="145" cy="26" r="2"/>
+  <circle cx="175" cy="20" r="2"/>
+</svg>

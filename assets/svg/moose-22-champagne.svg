@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head -->
+  <rect x="25" y="12" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="32,18 24,6 40,14" />
+  <polyline points="88,18 96,6 80,14" />
+  <!-- Eyes -->
+  <circle cx="45" cy="34" r="3.5" fill="currentColor" />
+  <circle cx="75" cy="34" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="48" y="42" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="42,56 50,60 60,62 70,60 78,56" />
+  <!-- Body -->
+  <rect x="32" y="60" width="56" height="38" rx="10" ry="8" />
+  <!-- Front legs -->
+  <rect x="36" y="88" width="14" height="24" rx="5" />
+  <rect x="70" y="88" width="14" height="24" rx="5" />
+  <!-- Champagne glass (held up to the right) -->
+  <!-- Glass bowl (triangle) -->
+  <polygon points="4,20 16,20 10,38" />
+  <!-- Stem -->
+  <line x1="10" y1="38" x2="10" y2="50" />
+  <!-- Base -->
+  <line x1="4" y1="50" x2="16" y2="50" />
+  <!-- Bubbles -->
+  <circle cx="8" cy="14" r="1.5" />
+  <circle cx="12" cy="8" r="1.5" />
+  <!-- Paw holding glass -->
+  <line x1="32" y1="74" x2="16" y2="44" />
+</svg>

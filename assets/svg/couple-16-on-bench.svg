@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Park bench seat -->
+  <rect x="10" y="58" width="130" height="4" rx="2"/>
+  <!-- Bench back -->
+  <rect x="10" y="40" width="130" height="4" rx="2"/>
+  <!-- Bench legs -->
+  <line x1="20" y1="62" x2="20" y2="82"/>
+  <line x1="130" y1="62" x2="130" y2="82"/>
+  <line x1="20" y1="44" x2="20" y2="58"/>
+  <line x1="130" y1="44" x2="130" y2="58"/>
+  <!-- Kash head -->
+  <circle cx="55" cy="22" r="8"/>
+  <circle cx="57" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (sitting, leaning on Max) -->
+  <line x1="55" y1="30" x2="58" y2="58"/>
+  <line x1="58" y1="58" x2="52" y2="80"/>
+  <!-- Max head -->
+  <circle cx="90" cy="18" r="8"/>
+  <circle cx="88" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body (sitting) -->
+  <line x1="90" y1="26" x2="88" y2="58"/>
+  <line x1="88" y1="58" x2="94" y2="80"/>
+  <!-- Max arm around Kash -->
+  <line x1="90" y1="38" x2="56" y2="36"/>
+</svg>

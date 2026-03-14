@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Table -->
+  <rect x="10" y="50" width="140" height="5"/>
+  <!-- Table front -->
+  <rect x="12" y="55" width="136" height="30"/>
+  <!-- Table cloth drape -->
+  <line x1="12" y1="70" x2="148" y2="70"/>
+  <!-- Table legs -->
+  <line x1="15" y1="85" x2="15" y2="95"/>
+  <line x1="145" y1="85" x2="145" y2="95"/>
+  <!-- Chafing dish 1 -->
+  <rect x="20" y="35" width="30" height="15"/>
+  <rect x="18" y="33" width="34" height="4"/>
+  <!-- Chafing dish stand -->
+  <line x1="25" y1="50" x2="25" y2="50"/>
+  <line x1="45" y1="50" x2="45" y2="50"/>
+  <!-- Chafing dish 2 -->
+  <rect x="65" y="35" width="30" height="15"/>
+  <rect x="63" y="33" width="34" height="4"/>
+  <!-- Serving plate -->
+  <ellipse cx="120" cy="46" rx="18" ry="4"/>
+  <!-- Garnish items on plate -->
+  <circle cx="112" cy="42" r="3"/>
+  <circle cx="122" cy="40" r="3"/>
+  <circle cx="128" cy="43" r="2.5"/>
+  <!-- Stack of plates -->
+  <rect x="20" y="20" width="14" height="3"/>
+  <rect x="20" y="24" width="14" height="3"/>
+  <rect x="20" y="28" width="14" height="3"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 100" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bench -->
+  <rect x="15" y="62" width="100" height="5" rx="2"/>
+  <line x1="22" y1="67" x2="22" y2="85"/>
+  <line x1="108" y1="67" x2="108" y2="85"/>
+  <!-- Kash head -->
+  <circle cx="48" cy="28" r="8"/>
+  <circle cx="50" cy="27" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (sitting) -->
+  <line x1="48" y1="36" x2="48" y2="62"/>
+  <line x1="48" y1="62" x2="42" y2="82"/>
+  <line x1="48" y1="42" x2="58" y2="52"/>
+  <!-- Max head -->
+  <circle cx="78" cy="22" r="8"/>
+  <circle cx="76" cy="21" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body (sitting) -->
+  <line x1="78" y1="30" x2="78" y2="62"/>
+  <line x1="78" y1="62" x2="84" y2="82"/>
+  <line x1="78" y1="42" x2="68" y2="52"/>
+  <!-- Arms meeting in middle -->
+  <line x1="58" y1="52" x2="68" y2="52"/>
+</svg>

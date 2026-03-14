@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top-left leaf -->
+  <polygon points="31,20 50,30 31,48 20,30"/>
+  <line x1="31" y1="20" x2="31" y2="48"/>
+  <line x1="20" y1="30" x2="50" y2="30"/>
+  <!-- Top-right leaf -->
+  <polygon points="469,21 480,31 469,49 451,31"/>
+  <line x1="469" y1="21" x2="469" y2="49"/>
+  <line x1="451" y1="31" x2="480" y2="31"/>
+  <!-- Bottom-left leaf -->
+  <polygon points="32,652 51,662 32,680 21,662"/>
+  <line x1="32" y1="652" x2="32" y2="680"/>
+  <line x1="21" y1="662" x2="51" y2="662"/>
+  <!-- Bottom-right leaf -->
+  <polygon points="468,651 479,661 468,679 450,661"/>
+  <line x1="468" y1="651" x2="468" y2="679"/>
+  <line x1="450" y1="661" x2="479" y2="661"/>
+  <!-- Connecting lines -->
+  <line x1="52" y1="30" x2="450" y2="31"/>
+  <line x1="53" y1="662" x2="449" y2="661"/>
+  <line x1="31" y1="49" x2="32" y2="651"/>
+  <line x1="469" y1="50" x2="468" y2="650"/>
+</svg>

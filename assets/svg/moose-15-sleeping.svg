@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Body (curled up, low) -->
+  <ellipse cx="50" cy="38" rx="40" ry="16" />
+  <!-- Head resting on paws -->
+  <rect x="58" y="10" width="40" height="28" rx="12" ry="10" />
+  <!-- Rose ears (relaxed) -->
+  <polyline points="66,12 62,4 72,10" />
+  <polyline points="90,12 94,4 84,10" />
+  <!-- Sleeping eyes (horizontal lines, not circles) -->
+  <line x1="72" y1="22" x2="80" y2="22" />
+  <line x1="86" y1="22" x2="94" y2="22" />
+  <!-- Nose -->
+  <rect x="76" y="28" width="14" height="6" rx="4" ry="3" />
+  <!-- Front paws tucked under chin -->
+  <rect x="76" y="36" width="16" height="8" rx="3" />
+  <!-- Tail curled around body -->
+  <polyline points="12,32 8,26 14,30" />
+  <!-- Zzz -->
+  <polyline points="100,6 106,6 100,0 106,0" />
+</svg>

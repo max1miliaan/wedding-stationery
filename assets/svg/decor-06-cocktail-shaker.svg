@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Shaker body -->
+  <rect x="10" y="35" width="30" height="55" rx="3" />
+  <!-- Shaker top -->
+  <rect x="14" y="18" width="22" height="17" rx="2" />
+  <!-- Cap -->
+  <circle cx="25" cy="12" r="6" />
+  <!-- Body accent line -->
+  <line x1="10" y1="55" x2="40" y2="55" />
+  <!-- Body accent line -->
+  <line x1="10" y1="75" x2="40" y2="75" />
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left arc of leaves -->
+  <polygon points="18,60 10,55 16,52" />
+  <polygon points="12,48 5,42 12,40" />
+  <polygon points="10,34 5,27 12,27" />
+  <polygon points="14,22 12,14 19,16" />
+  <polygon points="22,13 22,5 28,9" />
+  <polygon points="32,8 35,2 38,8" />
+  <!-- Right arc of leaves -->
+  <polygon points="62,60 70,55 64,52" />
+  <polygon points="68,48 75,42 68,40" />
+  <polygon points="70,34 75,27 68,27" />
+  <polygon points="66,22 68,14 61,16" />
+  <polygon points="58,13 58,5 52,9" />
+  <polygon points="48,8 45,2 42,8" />
+  <!-- Bottom crossing stems -->
+  <line x1="32" y1="68" x2="40" y2="75" />
+  <line x1="48" y1="68" x2="40" y2="75" />
+</svg>

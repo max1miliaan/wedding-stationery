@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kash &amp; Max -- Wedding Design Studio</title>
+
+  <!-- Google Fonts: Core set loaded immediately, rest lazy-loaded -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Alex+Brush&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Caveat:wght@400;700&family=Amatic+SC:wght@400;700&family=Patrick+Hand&family=Kalam:wght@400;700&family=Satisfy&family=Indie+Flower&family=Shadows+Into+Light&family=Pacifico&family=Tangerine:wght@400;700&family=Allura&family=Mr+Dafoe&family=Permanent+Marker&family=Rock+Salt&family=Homemade+Apple&family=Architects+Daughter&family=Euphoria+Script&family=Rouge+Script&family=Italianno&family=Lora:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cardo:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;600&family=Josefin+Sans:wght@300;400;600&family=Montserrat:wght@300;400;600&family=Nunito:wght@300;400;600&family=Work+Sans:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=Raleway:wght@300;400;600&family=Pinyon+Script&family=Nothing+You+Could+Do&family=Reenie+Beanie&family=La+Belle+Aurore&family=Marck+Script&family=Petit+Formal+Script&family=Herr+Von+Muellerhoff&family=Yellowtail&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================ */
+    /* RESET & VARIABLES                                                 */
+    /* ================================================================ */
+    :root {
+      --studio-bg: #1a1a1e;
+      --studio-surface: #242428;
+      --studio-surface-2: #2e2e33;
+      --studio-surface-3: #38383e;
+      --studio-border: rgba(255,255,255,0.06);
+      --studio-text: #e8e6e3;
+      --studio-text-dim: #8a8a8e;
+      --studio-text-muted: #5a5a5e;
+      --studio-accent: #E8704A;
+      --studio-accent-dim: rgba(232,112,74,0.15);
+      --studio-radius: 8px;
+
+      /* Live design state -- updated by JS */
+      --ds-cream: #FFF8F0;
+      --ds-coral: #E8704A;
+      --ds-coral-light: #F2956E;
+      --ds-pink: #E89BAE;
+      --ds-golden: #F2C66D;
+      --ds-navy: #1B2438;
+      --ds-navy-light: #3A4A68;
+      --ds-font-display: 'Sacramento', cursive;
+      --ds-font-script: 'Dancing Script', cursive;
+      --ds-font-body: 'Lora', serif;
+      --ds-font-utility: 'Quicksand', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--studio-bg);
+      color: var(--studio-text);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ================================================================ */
+    /* TOP NAV                                                           */
+    /* ================================================================ */
+    .nav {
+      height: 44px;
+      background: var(--studio-surface);
+      border-bottom: 1px solid var(--studio-border);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 4px;
+      flex-shrink: 0;
+      z-index: 200;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--studio-text);
+      margin-right: 20px;
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand span { color: var(--studio-accent); }
+
+    .nav-tabs { display: flex; gap: 2px; height: 100%; }
+
+    .nav-tab {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--studio-text-dim);
+      padding: 0 14px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-tab:hover { color: var(--studio-text); }
+    .nav-tab.active { color: var(--studio-accent); border-bottom-color: var(--studio-accent); }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-actions { display: flex; gap: 6px; align-items: center; }
+
+    .nav-btn {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--studio-border);
+      background: var(--studio-surface-2);
+      color: var(--studio-text-dim);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .nav-btn:hover { color: var(--studio-text); background: var(--studio-surface-3); }
+    .nav-btn.primary { background: var(--studio-accent); color: white; border-color: var(--studio-accent); }
+    .nav-btn.primary:hover { opacity: 0.9; }
+
+    /* ================================================================ */
+    /* MAIN LAYOUT                                                       */
+    /* ================================================================ */
+    .main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .page { display: none; flex: 1; overflow: hidden; }
+    .page.active { display: flex; }
+
+    /* ================================================================ */
+    /* DESIGN TAB: Canvas + Sidebar                                      */
+    /* ================================================================ */
+    .design-layout {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* -- Sidebar -------------------------------------------------------- */
+    .sidebar {
+      width: 280px;
+      background: var(--studio-surface);
+      border-right: 1px solid var(--studio-border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sidebar-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--studio-border);
+      flex-shrink: 0;
+    }
+
+    .sidebar-tab {
+      flex: 1;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--studio-text-muted);
+      padding: 10px 4px;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .sidebar-tab:hover { color: var(--studio-text-dim); }
+    .sidebar-tab.active { color: var(--studio-accent); border-bottom-color: var(--studio-accent); }
+
+    .sidebar-panel { display: none; flex: 1; overflow-y: auto; padding: 16px; }
+    .sidebar-panel.active { display: block; }
+
+    .sidebar-panel::-webkit-scrollbar { width: 4px; }
+    .sidebar-panel::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-panel::-webkit-scrollbar-thumb { background: var(--studio-surface-3); border-radius: 2px; }
+
+    .ctrl-group {
+      margin-bottom: 20px;
+    }
+
+    .ctrl-label {
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--studio-text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ctrl-label span {
+      font-weight: 400;
+      font-size: 9px;
+      color: var(--studio-text-dim);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Font selector */
+    .font-select {
+      width: 100%;
+      padding: 7px 10px;
+      font-size: 12px;
+      background: var(--studio-surface-2);
+      border: 1px solid var(--studio-border);
+      border-radius: var(--studio-radius);
+      color: var(--studio-text);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a8a8e'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+    .font-select:focus { outline: none; border-color: var(--studio-accent); }
+
+    /* Slider */
+    .ctrl-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--studio-surface-3);
+      outline: none;
+    }
+    .ctrl-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--studio-accent);
+      cursor: pointer;
+      border: 2px solid var(--studio-bg);
+    }
+
+    /* Color swatch buttons */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .palette-btn {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      overflow: hidden;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .palette-btn:hover { transform: scale(1.08); }
+    .palette-btn.active { border-color: var(--studio-accent); }
+
+    .palette-btn div {
+      flex: 1;
+    }
+
+    /* Color picker input */
+    .color-input-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .color-swatch-input {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid var(--studio-border);
+      cursor: pointer;
+      padding: 0;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .color-swatch-input::-webkit-color-swatch-wrapper { padding: 0; }
+    .color-swatch-input::-webkit-color-swatch { border: none; border-radius: 4px; }
+
+    .color-hex-input {
+      flex: 1;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-family: monospace;
+      background: var(--studio-surface-2);
+      border: 1px solid var(--studio-border);
+      border-radius: 4px;
+      color: var(--studio-text);
+    }
+    .color-hex-input:focus { outline: none; border-color: var(--studio-accent); }
+
+    .color-name {
+      font-size: 10px;
+      color: var(--studio-text-dim);
+      min-width: 50px;
+    }
+
+    /* Illustration grid in sidebar */
+    .illus-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .illus-mini {
+      aspect-ratio: 1;
+      background: var(--ds-cream);
+      border-radius: 4px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      transition: border-color 0.15s;
+      overflow: hidden;
+    }
+    .illus-mini:hover { border-color: var(--studio-surface-3); }
+    .illus-mini.active { border-color: var(--studio-accent); }
+    .illus-mini object, .illus-mini img {
+      max-width: 100%;
+      max-height: 100%;
+      pointer-events: none;
+    }
+
+    /* Piece selector */
+    .piece-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    .piece-btn {
+      font-size: 9px;
+      font-weight: 500;
+      padding: 8px 6px;
+      border-radius: var(--studio-radius);
+      border: 1px solid var(--studio-border);
+      background: var(--studio-surface-2);
+      color: var(--studio-text-dim);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .piece-btn:hover { color: var(--studio-text); background: var(--studio-surface-3); }
+    .piece-btn.active { color: var(--studio-accent); border-color: var(--studio-accent); background: var(--studio-accent-dim); }
+
+    /* Preset list */
+    .preset-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: var(--studio-radius);
+      cursor: pointer;
+      transition: background 0.15s;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .preset-item:hover { background: var(--studio-surface-2); }
+
+    .preset-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .preset-name {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--studio-text);
+    }
+
+    .preset-meta {
+      font-size: 9px;
+      color: var(--studio-text-muted);
+    }
+
+    /* -- Canvas --------------------------------------------------------- */
+    .canvas-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(232,112,74,0.03) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.02) 19px, rgba(255,255,255,0.02) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.02) 19px, rgba(255,255,255,0.02) 20px);
+      position: relative;
+    }
+
+    .canvas-wrapper {
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .preview-card {
+      background: var(--ds-cream);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+      color: var(--ds-navy);
+    }
+
+    .preview-card .card-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Preview card subtle gradient wash */
+    .preview-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(232,112,74,0.04) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Trim line indicator */
+    .preview-card::after {
+      content: '';
+      position: absolute;
+      top: 12px; left: 12px; right: 12px; bottom: 12px;
+      border: 1px dashed rgba(255, 0, 0, 0.15);
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .canvas-toolbar {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      background: var(--studio-surface);
+      border-radius: 8px;
+      border: 1px solid var(--studio-border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .canvas-tool {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 5px;
+      border: none;
+      background: transparent;
+      color: var(--studio-text-dim);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .canvas-tool:hover { color: var(--studio-text); background: var(--studio-surface-2); }
+    .canvas-tool.active { color: var(--studio-accent); background: var(--studio-accent-dim); }
+
+    .zoom-display {
+      font-size: 10px;
+      color: var(--studio-text-muted);
+      padding: 6px 8px;
+      min-width: 48px;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    /* ================================================================ */
+    /* A/B COMPARE                                                       */
+    /* ================================================================ */
+    .compare-layout {
+      display: none;
+      flex: 1;
+    }
+    .compare-layout.active {
+      display: flex;
+    }
+    .compare-layout .canvas-area {
+      flex: 1;
+      border-right: 2px solid var(--studio-accent);
+    }
+    .compare-layout .canvas-area:last-child {
+      border-right: none;
+    }
+    .compare-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--studio-accent);
+      background: var(--studio-surface);
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 10;
+    }
+
+    /* ================================================================ */
+    /* FONT LIBRARY PAGE                                                 */
+    /* ================================================================ */
+    .library-page {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px;
+    }
+
+    .library-page::-webkit-scrollbar { width: 6px; }
+    .library-page::-webkit-scrollbar-track { background: transparent; }
+    .library-page::-webkit-scrollbar-thumb { background: var(--studio-surface-3); border-radius: 3px; }
+
+    .library-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .library-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--studio-text);
+    }
+
+    .library-count {
+      font-size: 11px;
+      color: var(--studio-text-muted);
+      background: var(--studio-surface-2);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--studio-border);
+      background: var(--studio-surface-2);
+      color: var(--studio-text-dim);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { color: var(--studio-text); }
+    .filter-btn.active { color: var(--studio-accent); border-color: var(--studio-accent); background: var(--studio-accent-dim); }
+
+    .search-input {
+      padding: 7px 14px;
+      font-size: 12px;
+      background: var(--studio-surface-2);
+      border: 1px solid var(--studio-border);
+      border-radius: 20px;
+      color: var(--studio-text);
+      width: 200px;
+    }
+    .search-input:focus { outline: none; border-color: var(--studio-accent); }
+    .search-input::placeholder { color: var(--studio-text-muted); }
+
+    .font-card {
+      background: var(--studio-surface);
+      border-radius: var(--studio-radius);
+      padding: 24px 28px;
+      margin-bottom: 12px;
+      border: 1px solid var(--studio-border);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .font-card:hover { border-color: rgba(255,255,255,0.1); }
+    .font-card.selected { border-color: var(--studio-accent); background: var(--studio-accent-dim); }
+
+    .font-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .font-card-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--studio-text);
+    }
+
+    .font-card-category {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--studio-text-muted);
+      background: var(--studio-surface-2);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .font-card-use {
+      margin-left: auto;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--studio-accent);
+      background: transparent;
+      color: var(--studio-accent);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .font-card-use:hover { background: var(--studio-accent); color: white; }
+
+    .font-card-preview {
+      color: var(--studio-text);
+      line-height: 1.1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .font-card-preview-sm {
+      font-size: 14px;
+      color: var(--studio-text-dim);
+      line-height: 1.4;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ================================================================ */
+    /* COLOR LAB PAGE                                                    */
+    /* ================================================================ */
+    .palette-card {
+      background: var(--studio-surface);
+      border-radius: var(--studio-radius);
+      padding: 20px;
+      margin-bottom: 12px;
+      border: 1px solid var(--studio-border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .palette-card:hover { border-color: rgba(255,255,255,0.1); }
+    .palette-card.selected { border-color: var(--studio-accent); }
+
+    .palette-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .palette-card-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--studio-text);
+    }
+
+    .palette-card-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--studio-accent);
+      background: var(--studio-accent-dim);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .palette-card-colors {
+      display: flex;
+      height: 40px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .palette-card-colors div {
+      flex: 1;
+      transition: flex 0.2s;
+    }
+    .palette-card-colors:hover div:hover { flex: 2; }
+
+    .palette-card-hexes {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .palette-card-hex {
+      font-size: 9px;
+      font-family: monospace;
+      color: var(--studio-text-muted);
+    }
+
+    /* ================================================================ */
+    /* ASSET LIBRARY PAGE                                                */
+    /* ================================================================ */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .asset-card {
+      background: var(--studio-surface);
+      border-radius: var(--studio-radius);
+      overflow: hidden;
+      border: 1px solid var(--studio-border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .asset-card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .asset-card.selected { border-color: var(--studio-accent); }
+
+    .asset-card-preview {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      transition: background 0.2s;
+    }
+    .asset-card-preview.bg-cream { background: #FFF8F0; color: #1B2438; }
+    .asset-card-preview.bg-navy { background: #1B2438; color: #FFF8F0; }
+    .asset-card-preview.bg-coral { background: #E8704A; color: #FFF8F0; }
+
+    .asset-card-preview object {
+      max-width: 100%;
+      max-height: 100%;
+      pointer-events: none;
+    }
+
+    .asset-card-info {
+      padding: 8px 12px;
+      border-top: 1px solid var(--studio-border);
+    }
+
+    .asset-card-name {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--studio-text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .asset-card-file {
+      font-size: 8px;
+      font-family: monospace;
+      color: var(--studio-text-muted);
+      margin-top: 2px;
+    }
+
+    /* ================================================================ */
+    /* EXPORT PAGE                                                       */
+    /* ================================================================ */
+    .export-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .export-card {
+      background: var(--studio-surface);
+      border-radius: var(--studio-radius);
+      padding: 24px;
+      border: 1px solid var(--studio-border);
+    }
+
+    .export-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--studio-text);
+      margin-bottom: 6px;
+    }
+
+    .export-card-dims {
+      font-size: 10px;
+      color: var(--studio-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .export-btn {
+      width: 100%;
+      padding: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: var(--studio-radius);
+      border: 1px solid var(--studio-accent);
+      background: transparent;
+      color: var(--studio-accent);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .export-btn:hover { background: var(--studio-accent); color: white; }
+
+    /* ================================================================ */
+    /* SECTION DIVIDERS                                                  */
+    /* ================================================================ */
+    .section-gap { height: 32px; }
+    .section-head {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--studio-text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-head .count {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--studio-text-muted);
+      background: var(--studio-surface-2);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* ================================================================ */
+    /* TOAST NOTIFICATIONS                                               */
+    /* ================================================================ */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--studio-surface-2);
+      color: var(--studio-text);
+      padding: 10px 20px;
+      border-radius: var(--studio-radius);
+      font-size: 12px;
+      border: 1px solid var(--studio-border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      z-index: 1000;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================================ -->
+  <!-- NAV                                                               -->
+  <!-- ================================================================ -->
+  <nav class="nav">
+    <div class="nav-brand">Kash <span>&amp;</span> Max Studio</div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-page="design">Design</button>
+      <button class="nav-tab" data-page="fonts">Fonts</button>
+      <button class="nav-tab" data-page="colors">Colors</button>
+      <button class="nav-tab" data-page="assets">Assets</button>
+      <button class="nav-tab" data-page="borders">Borders</button>
+      <button class="nav-tab" data-page="export">Export</button>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-actions">
+      <button class="nav-btn" id="btn-compare" title="A/B Compare">A/B</button>
+      <button class="nav-btn" id="btn-save-preset">Save Preset</button>
+      <button class="nav-btn" id="btn-open-tab" title="Open current piece in new tab">New Tab</button>
+      <button class="nav-btn primary" id="btn-dashboard" title="View full dashboard">Dashboard</button>
+    </div>
+  </nav>
+
+  <!-- ================================================================ -->
+  <!-- DESIGN PAGE: Canvas + Controls                                    -->
+  <!-- ================================================================ -->
+  <div class="main">
+    <div id="page-design" class="page active">
+      <div class="design-layout" id="design-normal">
+        <!-- Sidebar Controls -->
+        <div class="sidebar">
+          <div class="sidebar-tabs">
+            <button class="sidebar-tab active" data-panel="sp-piece">Piece</button>
+            <button class="sidebar-tab" data-panel="sp-fonts">Fonts</button>
+            <button class="sidebar-tab" data-panel="sp-colors">Colors</button>
+            <button class="sidebar-tab" data-panel="sp-assets">Assets</button>
+            <button class="sidebar-tab" data-panel="sp-layout">Layout</button>
+            <button class="sidebar-tab" data-panel="sp-presets">Presets</button>
+          </div>
+
+          <!-- Piece Selector -->
+          <div id="sp-piece" class="sidebar-panel active">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Select Piece</div>
+              <div class="piece-btn-grid" id="piece-selector"></div>
+            </div>
+          </div>
+
+          <!-- Font Controls -->
+          <div id="sp-fonts" class="sidebar-panel">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Display / Names</div>
+              <select class="font-select" id="font-display"></select>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Script / Accent</div>
+              <select class="font-select" id="font-script"></select>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Body Text</div>
+              <select class="font-select" id="font-body"></select>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Utility / Labels</div>
+              <select class="font-select" id="font-utility"></select>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Name Size <span id="name-size-val">54pt</span></div>
+              <input type="range" class="ctrl-slider" id="slider-name-size" min="24" max="96" value="54">
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Letter Spacing <span id="letter-spacing-val">-0.02em</span></div>
+              <input type="range" class="ctrl-slider" id="slider-letter-spacing" min="-8" max="20" value="-2">
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Body Size <span id="body-size-val">12pt</span></div>
+              <input type="range" class="ctrl-slider" id="slider-body-size" min="8" max="24" value="12">
+            </div>
+          </div>
+
+          <!-- Color Controls -->
+          <div id="sp-colors" class="sidebar-panel">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Quick Palettes</div>
+              <div class="palette-grid" id="palette-grid"></div>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Custom Colors</div>
+              <div id="color-editors"></div>
+            </div>
+          </div>
+
+          <!-- Asset Controls -->
+          <div id="sp-assets" class="sidebar-panel">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Moose Variant</div>
+              <div class="illus-mini-grid" id="moose-picker"></div>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Couple</div>
+              <div class="illus-mini-grid" id="couple-picker"></div>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Decorative</div>
+              <div class="illus-mini-grid" id="decor-picker"></div>
+            </div>
+          </div>
+
+          <!-- Layout Controls -->
+          <div id="sp-layout" class="sidebar-panel">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Card Padding <span id="padding-val">0.375in</span></div>
+              <input type="range" class="ctrl-slider" id="slider-padding" min="15" max="60" value="36">
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Element Gap <span id="gap-val">0.2in</span></div>
+              <input type="range" class="ctrl-slider" id="slider-gap" min="5" max="40" value="19">
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Line Height <span id="line-height-val">1.5</span></div>
+              <input type="range" class="ctrl-slider" id="slider-line-height" min="10" max="25" value="15">
+            </div>
+          </div>
+
+          <!-- Presets -->
+          <div id="sp-presets" class="sidebar-panel">
+            <div class="ctrl-group">
+              <div class="ctrl-label">Saved Presets</div>
+              <div id="preset-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas -->
+        <div class="canvas-area" id="canvas-main">
+          <div class="canvas-wrapper" id="canvas-wrapper">
+            <!-- Live preview rendered here by JS -->
+          </div>
+          <div class="canvas-toolbar">
+            <button class="canvas-tool" id="zoom-out" title="Zoom out">-</button>
+            <div class="zoom-display" id="zoom-level">100%</div>
+            <button class="canvas-tool" id="zoom-in" title="Zoom in">+</button>
+            <button class="canvas-tool" id="zoom-fit" title="Fit to screen">Fit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- A/B Compare Layout (hidden by default) -->
+      <div class="compare-layout" id="design-compare">
+        <div class="canvas-area" style="position:relative;">
+          <div class="compare-label">A</div>
+          <div class="canvas-wrapper" id="compare-a"></div>
+        </div>
+        <div class="canvas-area" style="position:relative;">
+          <div class="compare-label">B</div>
+          <div class="canvas-wrapper" id="compare-b"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- FONTS PAGE                                                        -->
+    <!-- ================================================================ -->
+    <div id="page-fonts" class="page">
+      <div class="library-page">
+        <div class="library-header">
+          <div class="library-title">Font Library</div>
+          <div class="library-count" id="font-count">0 fonts</div>
+          <div style="flex:1;"></div>
+          <input type="text" class="search-input" id="font-search" placeholder="Search fonts...">
+        </div>
+        <div class="filter-bar" id="font-filters"></div>
+        <div id="font-list"></div>
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- COLORS PAGE                                                       -->
+    <!-- ================================================================ -->
+    <div id="page-colors" class="page">
+      <div class="library-page">
+        <div class="library-header">
+          <div class="library-title">Color Lab</div>
+          <div class="library-count" id="palette-count">0 palettes</div>
+        </div>
+        <div id="palette-list"></div>
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- ASSETS PAGE                                                       -->
+    <!-- ================================================================ -->
+    <div id="page-assets" class="page">
+      <div class="library-page">
+        <div class="library-header">
+          <div class="library-title">Illustration Library</div>
+          <div class="library-count" id="asset-count">0 assets</div>
+          <div style="flex:1;"></div>
+          <input type="text" class="search-input" id="asset-search" placeholder="Search illustrations...">
+        </div>
+        <div class="filter-bar" id="asset-filters"></div>
+        <div id="asset-list"></div>
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- BORDERS PAGE                                                      -->
+    <!-- ================================================================ -->
+    <div id="page-borders" class="page">
+      <div class="library-page">
+        <div class="library-header">
+          <div class="library-title">Borders & Frames</div>
+          <div class="library-count" id="border-count">25 borders</div>
+        </div>
+        <div class="asset-grid" id="border-list"></div>
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- EXPORT PAGE                                                       -->
+    <!-- ================================================================ -->
+    <div id="page-export" class="page">
+      <div class="library-page">
+        <div class="library-header">
+          <div class="library-title">Export & Print</div>
+        </div>
+        <div class="export-grid" id="export-list"></div>
+        <div class="section-gap"></div>
+        <div class="section-head">Print Settings</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
+          <div class="export-card"><div class="export-card-title">Bleed</div><div class="export-card-dims">0.125" all sides</div></div>
+          <div class="export-card"><div class="export-card-title">Safe Zone</div><div class="export-card-dims">0.25" inset from trim</div></div>
+          <div class="export-card"><div class="export-card-title">Paper</div><div class="export-card-dims">100lb cover, uncoated</div></div>
+          <div class="export-card"><div class="export-card-title">Export Method</div><div class="export-card-dims">Chrome Cmd+P, Save as PDF, No margins, Background ON, 100%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ================================================================ -->
+  <!-- JAVASCRIPT                                                        -->
+  <!-- ================================================================ -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* ================================================================ */
+    /* DATA                                                              */
+    /* ================================================================ */
+
+    var FONTS = [
+      // Flowing Calligraphy
+      { name: 'Sacramento', family: "'Sacramento', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Alex Brush', family: "'Alex Brush', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Great Vibes', family: "'Great Vibes', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Allura', family: "'Allura', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Tangerine', family: "'Tangerine', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Pinyon Script', family: "'Pinyon Script', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Rouge Script', family: "'Rouge Script', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Euphoria Script', family: "'Euphoria Script', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Mr Dafoe', family: "'Mr Dafoe', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Italianno', family: "'Italianno', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Petit Formal Script', family: "'Petit Formal Script', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Herr Von Muellerhoff', family: "'Herr Von Muellerhoff', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'Marck Script', family: "'Marck Script', cursive", cat: 'calligraphy', role: 'display' },
+      { name: 'La Belle Aurore', family: "'La Belle Aurore', cursive", cat: 'calligraphy', role: 'display' },
+      // Casual Handwriting
+      { name: 'Caveat', family: "'Caveat', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Patrick Hand', family: "'Patrick Hand', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Kalam', family: "'Kalam', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Indie Flower', family: "'Indie Flower', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Shadows Into Light', family: "'Shadows Into Light', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Architects Daughter', family: "'Architects Daughter', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Nothing You Could Do', family: "'Nothing You Could Do', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Reenie Beanie', family: "'Reenie Beanie', cursive", cat: 'handwriting', role: 'display' },
+      { name: 'Homemade Apple', family: "'Homemade Apple', cursive", cat: 'handwriting', role: 'display' },
+      // Script
+      { name: 'Dancing Script', family: "'Dancing Script', cursive", cat: 'script', role: 'display' },
+      { name: 'Pacifico', family: "'Pacifico', cursive", cat: 'script', role: 'display' },
+      { name: 'Satisfy', family: "'Satisfy', cursive", cat: 'script', role: 'display' },
+      { name: 'Yellowtail', family: "'Yellowtail', cursive", cat: 'script', role: 'display' },
+      { name: 'Lobster Two', family: "'Lobster Two', cursive", cat: 'script', role: 'display' },
+      // Bold / Marker
+      { name: 'Permanent Marker', family: "'Permanent Marker', cursive", cat: 'marker', role: 'display' },
+      { name: 'Rock Salt', family: "'Rock Salt', cursive", cat: 'marker', role: 'display' },
+      { name: 'Amatic SC', family: "'Amatic SC', cursive", cat: 'marker', role: 'display' },
+      // Elegant Serif
+      { name: 'Playfair Display', family: "'Playfair Display', serif", cat: 'serif', role: 'display' },
+      { name: 'Cormorant Garamond', family: "'Cormorant Garamond', serif", cat: 'serif', role: 'body' },
+      { name: 'Lora', family: "'Lora', serif", cat: 'serif', role: 'body' },
+      { name: 'EB Garamond', family: "'EB Garamond', serif", cat: 'serif', role: 'body' },
+      { name: 'Crimson Pro', family: "'Crimson Pro', serif", cat: 'serif', role: 'body' },
+      { name: 'Libre Baskerville', family: "'Libre Baskerville', serif", cat: 'serif', role: 'body' },
+      { name: 'Cardo', family: "'Cardo', serif", cat: 'serif', role: 'body' },
+      { name: 'Spectral', family: "'Spectral', serif", cat: 'serif', role: 'body' },
+      // Sans-Serif
+      { name: 'Quicksand', family: "'Quicksand', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'Josefin Sans', family: "'Josefin Sans', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'Montserrat', family: "'Montserrat', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'Nunito', family: "'Nunito', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'Work Sans', family: "'Work Sans', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'DM Sans', family: "'DM Sans', sans-serif", cat: 'sans', role: 'utility' },
+      { name: 'Raleway', family: "'Raleway', sans-serif", cat: 'sans', role: 'utility' }
+    ];
+
+    var PALETTES = [
+      { name: 'Sunset Coral', tag: 'current', cream: '#FFF8F0', coral: '#E8704A', pink: '#E89BAE', golden: '#F2C66D', navy: '#1B2438' },
+      { name: 'Terracotta Earth', cream: '#FAF3E8', coral: '#C4704B', pink: '#D4A574', golden: '#BFA67A', navy: '#2C3E2D' },
+      { name: 'Blush & Rose Gold', cream: '#FFF5F5', coral: '#D4907E', pink: '#F0C4C4', golden: '#D4A886', navy: '#2D2424' },
+      { name: 'Peach Sunset', cream: '#FFF6ED', coral: '#FF8C5A', pink: '#FFB899', golden: '#FFD580', navy: '#1A2744' },
+      { name: 'Dusty Rose', cream: '#FDF2F0', coral: '#C97B7B', pink: '#E8B4B4', golden: '#D4BA8A', navy: '#2A2438' },
+      { name: 'Golden Hour', cream: '#FFFBF0', coral: '#E89040', pink: '#F0C090', golden: '#FFD060', navy: '#1B2438' },
+      { name: 'Warm Sage', cream: '#F5F2EC', coral: '#C48060', pink: '#B8C4A0', golden: '#D4C890', navy: '#2A3428' },
+      { name: 'Burnt Sienna', cream: '#FAF0E6', coral: '#A0522D', pink: '#CD853F', golden: '#D2B48C', navy: '#2F1B14' },
+      { name: 'Coral Reef', cream: '#F0FAFA', coral: '#FF6B6B', pink: '#FFA0A0', golden: '#FFD93D', navy: '#1A2C42' },
+      { name: 'Desert Sand', cream: '#FFF5E6', coral: '#D48040', pink: '#E8B890', golden: '#C8A870', navy: '#2D2418' },
+      { name: 'Warm Lavender', cream: '#F8F0FF', coral: '#D080A0', pink: '#E0B0D0', golden: '#C8A0D0', navy: '#2A1838' },
+      { name: 'Honey Amber', cream: '#FFFCF0', coral: '#D09030', pink: '#E8C080', golden: '#FFB830', navy: '#2A2010' },
+      { name: 'Ocean Sunset', cream: '#FFF8F5', coral: '#E06050', pink: '#80B0C0', golden: '#F0C060', navy: '#0A2840' },
+      { name: 'Autumn Warmth', cream: '#FFF4E8', coral: '#C85030', pink: '#D08060', golden: '#E0A040', navy: '#301810' },
+      { name: 'Champagne Toast', cream: '#FFFDF5', coral: '#C8A070', pink: '#E0C8B0', golden: '#F0D890', navy: '#302818' },
+      { name: 'Mauve Garden', cream: '#FDF0F5', coral: '#B07090', pink: '#D0A0B8', golden: '#C8B090', navy: '#2A1828' },
+      { name: 'Sunrise Blush', cream: '#FFF8F2', coral: '#F07050', pink: '#FFB0A0', golden: '#FFE080', navy: '#182040' },
+      { name: 'Clay & Cream', cream: '#F8F0E8', coral: '#B07050', pink: '#C89880', golden: '#B8A078', navy: '#28201A' },
+      { name: 'Tropical Coral', cream: '#F0FFF8', coral: '#FF7060', pink: '#FF9080', golden: '#FFD050', navy: '#103028' },
+      { name: 'Vintage Rose', cream: '#F5EDE8', coral: '#A06060', pink: '#C89898', golden: '#C0A878', navy: '#282028' },
+      { name: 'Tangerine Dream', cream: '#FFF8F0', coral: '#FF6830', pink: '#FFA070', golden: '#FFD040', navy: '#201830' },
+      { name: 'Soft Peony', cream: '#FFF5F8', coral: '#D87090', pink: '#F0B0C0', golden: '#E0C0A0', navy: '#281828' },
+      { name: 'Ivory & Gold', cream: '#FFFFF0', coral: '#C8A050', pink: '#E0D0B0', golden: '#FFD700', navy: '#282818' },
+      { name: 'Mediterranean', cream: '#F5F8FF', coral: '#D07050', pink: '#A0B8D0', golden: '#E0C080', navy: '#0A1830' },
+      { name: 'Berry Blossom', cream: '#FFF0F5', coral: '#C04060', pink: '#E08098', golden: '#D0A060', navy: '#280818' }
+    ];
+
+    var ILLUSTRATIONS = {
+      moose: [
+        { file: 'moose-01-sitting.svg', name: 'Sitting' },
+        { file: 'moose-02-bowtie.svg', name: 'Bowtie' },
+        { file: 'moose-03-party-hat.svg', name: 'Party Hat' },
+        { file: 'moose-04-flower-crown.svg', name: 'Flower Crown' },
+        { file: 'moose-05-sunglasses.svg', name: 'Sunglasses' },
+        { file: 'moose-06-top-hat.svg', name: 'Top Hat' },
+        { file: 'moose-07-collar.svg', name: 'Collar' },
+        { file: 'moose-08-bandana.svg', name: 'Bandana' },
+        { file: 'moose-09-holding-heart.svg', name: 'Holding Heart' },
+        { file: 'moose-10-ring-bearer.svg', name: 'Ring Bearer' },
+        { file: 'moose-11-walking.svg', name: 'Walking' },
+        { file: 'moose-12-lying-down.svg', name: 'Lying Down' },
+        { file: 'moose-13-peeking.svg', name: 'Peeking' },
+        { file: 'moose-14-head-only.svg', name: 'Head Only' },
+        { file: 'moose-15-sleeping.svg', name: 'Sleeping' },
+        { file: 'moose-16-running.svg', name: 'Running' },
+        { file: 'moose-17-jumping.svg', name: 'Jumping' },
+        { file: 'moose-18-back-view.svg', name: 'Back View' },
+        { file: 'moose-19-begging.svg', name: 'Begging' },
+        { file: 'moose-20-tongue-out.svg', name: 'Tongue Out' },
+        { file: 'moose-21-tuxedo.svg', name: 'Tuxedo' },
+        { file: 'moose-22-champagne.svg', name: 'Champagne' },
+        { file: 'moose-23-cake.svg', name: 'Cake' },
+        { file: 'moose-24-ring-pillow-walk.svg', name: 'Ring Pillow' },
+        { file: 'moose-25-dancing.svg', name: 'Dancing' }
+      ],
+      couple: [
+        { file: 'couple-01-dancing.svg', name: 'Dancing' },
+        { file: 'couple-02-holding-hands-front.svg', name: 'Holding Hands (Front)' },
+        { file: 'couple-03-holding-hands-back.svg', name: 'Holding Hands (Back)' },
+        { file: 'couple-04-silhouette-facing.svg', name: 'Silhouette Facing' },
+        { file: 'couple-05-forehead-touch.svg', name: 'Forehead Touch' },
+        { file: 'couple-06-dip-dance.svg', name: 'Dip Dance' },
+        { file: 'couple-07-sitting-together.svg', name: 'Sitting Together' },
+        { file: 'couple-08-cheek-kiss.svg', name: 'Cheek Kiss' },
+        { file: 'couple-09-high-five.svg', name: 'High Five' },
+        { file: 'couple-10-arm-in-arm.svg', name: 'Arm in Arm' },
+        { file: 'couple-11-under-umbrella.svg', name: 'Under Umbrella' },
+        { file: 'couple-12-sparklers.svg', name: 'Sparklers' },
+        { file: 'couple-13-toast.svg', name: 'Toast' },
+        { file: 'couple-14-piggyback.svg', name: 'Piggyback' },
+        { file: 'couple-15-hugging.svg', name: 'Hugging' },
+        { file: 'couple-16-on-bench.svg', name: 'On Bench' },
+        { file: 'couple-17-sunset.svg', name: 'Sunset' },
+        { file: 'couple-18-heart-hands.svg', name: 'Heart Hands' },
+        { file: 'couple-19-running.svg', name: 'Running' },
+        { file: 'couple-20-in-car.svg', name: 'In Car' },
+        { file: 'couple-21-with-dog.svg', name: 'With Dog' },
+        { file: 'couple-22-first-dance.svg', name: 'First Dance' },
+        { file: 'couple-23-confetti.svg', name: 'Confetti' },
+        { file: 'couple-24-rings-exchange.svg', name: 'Rings Exchange' },
+        { file: 'couple-25-walk-aisle.svg', name: 'Walk Aisle' }
+      ],
+      toronto: [
+        { file: 'toronto-01-cn-tower-simple.svg', name: 'CN Tower (Simple)' },
+        { file: 'toronto-02-cn-tower-clouds.svg', name: 'CN Tower (Clouds)' },
+        { file: 'toronto-03-cn-tower-night.svg', name: 'CN Tower (Night)' },
+        { file: 'toronto-04-drake-front.svg', name: 'Drake Hotel (Front)' },
+        { file: 'toronto-05-drake-rooftop.svg', name: 'Drake Rooftop' },
+        { file: 'toronto-06-drake-sign.svg', name: 'Drake Sign' },
+        { file: 'toronto-07-drake-entrance.svg', name: 'Drake Entrance' },
+        { file: 'toronto-08-queen-west-street.svg', name: 'Queen West Street' },
+        { file: 'toronto-09-queen-west-shops.svg', name: 'Queen West Shops' },
+        { file: 'toronto-10-queen-west-cafe.svg', name: 'Queen West Cafe' },
+        { file: 'toronto-11-streetcar-side.svg', name: 'Streetcar (Side)' },
+        { file: 'toronto-12-streetcar-front.svg', name: 'Streetcar (Front)' },
+        { file: 'toronto-13-skyline-simple.svg', name: 'Skyline (Simple)' },
+        { file: 'toronto-14-skyline-waterfront.svg', name: 'Skyline (Waterfront)' },
+        { file: 'toronto-15-skyline-sunset.svg', name: 'Skyline (Sunset)' },
+        { file: 'toronto-16-toronto-sign.svg', name: 'Toronto Sign' },
+        { file: 'toronto-17-kensington.svg', name: 'Kensington Market' },
+        { file: 'toronto-18-distillery.svg', name: 'Distillery District' },
+        { file: 'toronto-19-island-view.svg', name: 'Island View' },
+        { file: 'toronto-20-rooftop-view.svg', name: 'Rooftop View' },
+        { file: 'toronto-21-string-lights.svg', name: 'String Lights' },
+        { file: 'toronto-22-cocktail-bar.svg', name: 'Cocktail Bar' },
+        { file: 'toronto-23-food-station.svg', name: 'Food Station' },
+        { file: 'toronto-24-winter-toronto.svg', name: 'Winter Toronto' },
+        { file: 'toronto-25-summer-patio.svg', name: 'Summer Patio' }
+      ],
+      decor: [
+        { file: 'decor-01-champagne-glasses.svg', name: 'Champagne Glasses' },
+        { file: 'decor-02-cocktail-glass.svg', name: 'Cocktail Glass' },
+        { file: 'decor-03-champagne-tower.svg', name: 'Champagne Tower' },
+        { file: 'decor-04-wine-bottle.svg', name: 'Wine Bottle' },
+        { file: 'decor-05-champagne-bottle.svg', name: 'Champagne Bottle' },
+        { file: 'decor-06-cocktail-shaker.svg', name: 'Cocktail Shaker' },
+        { file: 'decor-07-wedding-cake.svg', name: 'Wedding Cake' },
+        { file: 'decor-08-food-platter.svg', name: 'Food Platter' },
+        { file: 'decor-09-cheese-board.svg', name: 'Cheese Board' },
+        { file: 'decor-10-cupcake.svg', name: 'Cupcake' },
+        { file: 'decor-11-rings.svg', name: 'Wedding Rings' },
+        { file: 'decor-12-heart-large.svg', name: 'Heart (Large)' },
+        { file: 'decor-13-hearts-scatter.svg', name: 'Hearts Scatter' },
+        { file: 'decor-14-confetti.svg', name: 'Confetti' },
+        { file: 'decor-15-sparkles.svg', name: 'Sparkles' },
+        { file: 'decor-16-leaf-branch.svg', name: 'Leaf Branch' },
+        { file: 'decor-17-flower-simple.svg', name: 'Flower' },
+        { file: 'decor-18-laurel-wreath.svg', name: 'Laurel Wreath' },
+        { file: 'decor-19-divider-simple.svg', name: 'Divider (Simple)' },
+        { file: 'decor-20-divider-ornate.svg', name: 'Divider (Ornate)' },
+        { file: 'decor-21-divider-botanical.svg', name: 'Divider (Botanical)' },
+        { file: 'decor-22-divider-dots.svg', name: 'Divider (Dots)' },
+        { file: 'decor-23-corner-simple.svg', name: 'Corner (Simple)' },
+        { file: 'decor-24-corner-botanical.svg', name: 'Corner (Botanical)' },
+        { file: 'decor-25-corner-ornate.svg', name: 'Corner (Ornate)' }
+      ],
+      border: [
+        { file: 'border-01-single-line.svg', name: 'Single Line' },
+        { file: 'border-02-double-line.svg', name: 'Double Line' },
+        { file: 'border-03-thick-thin.svg', name: 'Thick & Thin' },
+        { file: 'border-04-dashed.svg', name: 'Dashed' },
+        { file: 'border-05-dotted.svg', name: 'Dotted' },
+        { file: 'border-06-corner-marks.svg', name: 'Corner Marks' },
+        { file: 'border-07-corner-dots.svg', name: 'Corner Dots' },
+        { file: 'border-08-corner-squares.svg', name: 'Corner Squares' },
+        { file: 'border-09-corner-ornate.svg', name: 'Corner Ornate' },
+        { file: 'border-10-corner-leaves.svg', name: 'Corner Leaves' },
+        { file: 'border-11-circles-chain.svg', name: 'Circles Chain' },
+        { file: 'border-12-diamonds.svg', name: 'Diamonds' },
+        { file: 'border-13-zigzag.svg', name: 'Zigzag' },
+        { file: 'border-14-waves.svg', name: 'Waves' },
+        { file: 'border-15-crosses.svg', name: 'Crosses' },
+        { file: 'border-16-hearts.svg', name: 'Hearts' },
+        { file: 'border-17-stars.svg', name: 'Stars' },
+        { file: 'border-18-botanical.svg', name: 'Botanical' },
+        { file: 'border-19-art-deco.svg', name: 'Art Deco' },
+        { file: 'border-20-ribbon.svg', name: 'Ribbon' },
+        { file: 'border-21-frame-within-frame.svg', name: 'Frame in Frame' },
+        { file: 'border-22-ticket-border.svg', name: 'Ticket Border' },
+        { file: 'border-23-postage-stamp.svg', name: 'Postage Stamp' },
+        { file: 'border-24-rope.svg', name: 'Rope' },
+        { file: 'border-25-garden-gate.svg', name: 'Garden Gate' }
+      ]
+    };
+
+    var PIECES = [
+      { id: 'save-the-date', name: 'Save the Date', w: 480, h: 672, file: 'save-the-date.html' },
+      { id: 'invitation', name: 'Invitation', w: 480, h: 672, file: 'invitation.html' },
+      { id: 'details-card', name: 'Details Card', w: 420, h: 552, file: 'details-card.html' },
+      { id: 'rsvp-card', name: 'RSVP Card', w: 336, h: 480, file: 'rsvp-card.html' },
+      { id: 'program', name: 'Program', w: 408, h: 528, file: 'program.html' },
+      { id: 'table-name-tag', name: 'Name Tag', w: 336, h: 192, file: 'table-name-tag.html' },
+      { id: 'food-menu', name: 'Food Menu', w: 384, h: 888, file: 'food-menu.html' },
+      { id: 'envelope-liner', name: 'Envelope', w: 504, h: 696, file: 'envelope-liner.html' }
+    ];
+
+    /* ================================================================ */
+    /* STATE                                                             */
+    /* ================================================================ */
+
+    var state = {
+      piece: 'save-the-date',
+      fonts: {
+        display: 'Sacramento',
+        script: 'Dancing Script',
+        body: 'Lora',
+        utility: 'Quicksand'
+      },
+      palette: 0,
+      colors: {
+        cream: '#FFF8F0',
+        coral: '#E8704A',
+        pink: '#E89BAE',
+        golden: '#F2C66D',
+        navy: '#1B2438'
+      },
+      illustrations: {
+        moose: 'moose-02-bowtie.svg',
+        couple: 'couple-01-dancing.svg',
+        decor: 'decor-01-champagne-glasses.svg',
+        border: 'border-01-single-line.svg'
+      },
+      layout: {
+        nameSize: 54,
+        letterSpacing: -0.02,
+        bodySize: 12,
+        padding: 0.375,
+        gap: 0.2,
+        lineHeight: 1.5
+      },
+      zoom: 1,
+      compare: false
+    };
+
+    // Load from localStorage
+    try {
+      var saved = localStorage.getItem('weddingStudioState');
+      if (saved) {
+        var parsed = JSON.parse(saved);
+        // Merge saved state (preserve defaults for new fields)
+        Object.keys(parsed).forEach(function(k) {
+          if (typeof state[k] === 'object' && state[k] !== null && !Array.isArray(state[k])) {
+            Object.assign(state[k], parsed[k]);
+          } else {
+            state[k] = parsed[k];
+          }
+        });
+      }
+    } catch(e) {}
+
+    function saveState() {
+      try { localStorage.setItem('weddingStudioState', JSON.stringify(state)); } catch(e) {}
+    }
+
+    /* ================================================================ */
+    /* RENDER ENGINE                                                     */
+    /* ================================================================ */
+
+    function updateCSSVars() {
+      var r = document.documentElement.style;
+      var f = FONTS;
+      var df = f.find(function(x) { return x.name === state.fonts.display; });
+      var sf = f.find(function(x) { return x.name === state.fonts.script; });
+      var bf = f.find(function(x) { return x.name === state.fonts.body; });
+      var uf = f.find(function(x) { return x.name === state.fonts.utility; });
+      r.setProperty('--ds-font-display', df ? df.family : "'Sacramento', cursive");
+      r.setProperty('--ds-font-script', sf ? sf.family : "'Dancing Script', cursive");
+      r.setProperty('--ds-font-body', bf ? bf.family : "'Lora', serif");
+      r.setProperty('--ds-font-utility', uf ? uf.family : "'Quicksand', sans-serif");
+      r.setProperty('--ds-cream', state.colors.cream);
+      r.setProperty('--ds-coral', state.colors.coral);
+      r.setProperty('--ds-pink', state.colors.pink);
+      r.setProperty('--ds-golden', state.colors.golden);
+      r.setProperty('--ds-navy', state.colors.navy);
+    }
+
+    function renderPiecePreview(container) {
+      var p = PIECES.find(function(x) { return x.id === state.piece; });
+      if (!p) return;
+      var s = state;
+      var displayFont = 'font-family:' + (FONTS.find(function(f) { return f.name === s.fonts.display; }) || {}).family;
+      var bodyFont = 'font-family:' + (FONTS.find(function(f) { return f.name === s.fonts.body; }) || {}).family;
+      var utilFont = 'font-family:' + (FONTS.find(function(f) { return f.name === s.fonts.utility; }) || {}).family;
+      var scriptFont = 'font-family:' + (FONTS.find(function(f) { return f.name === s.fonts.script; }) || {}).family;
+
+      var html = '';
+
+      if (state.piece === 'save-the-date') {
+        html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
+          '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
+          '<div style="' + utilFont + ';font-size:11pt;font-weight:500;text-transform:uppercase;letter-spacing:0.25em;color:' + s.colors.navy + ';opacity:0.6;">Save the Date</div>' +
+          '<div style="' + displayFont + ';font-size:' + s.layout.nameSize + 'pt;line-height:0.95;color:' + s.colors.navy + ';letter-spacing:' + s.layout.letterSpacing + 'em;">' +
+          'Kash <span style="color:' + s.colors.coral + ';">&amp;</span> Max</div>' +
+          '<div style="width:100px;height:100px;"><object data="../assets/svg/' + s.illustrations.decor + '" type="image/svg+xml" width="100" height="100" style="pointer-events:none;"></object></div>' +
+          '<div style="' + bodyFont + ';font-size:18pt;font-weight:600;color:' + s.colors.navy + ';letter-spacing:0.05em;">July 3, 2027</div>' +
+          '<div style="' + utilFont + ';font-size:10pt;text-transform:uppercase;letter-spacing:0.2em;color:' + s.colors.navy + ';opacity:0.6;">' +
+          'The Drake Hotel <span style="color:' + s.colors.coral + ';">/</span> Toronto</div>' +
+          '<div style="width:110px;height:130px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="110" height="130" style="pointer-events:none;"></object></div>' +
+          '<div style="' + scriptFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.5;">Invitation to follow</div>' +
+          '</div></div>';
+      } else if (state.piece === 'invitation') {
+        html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
+          '<div style="position:absolute;inset:16px;"><object data="../assets/svg/' + s.illustrations.border + '" type="image/svg+xml" width="100%" height="100%" style="pointer-events:none;width:100%;height:100%;"></object></div>' +
+          '<div class="card-inner" style="padding:' + (s.layout.padding * 96 + 20) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
+          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.2em;color:' + s.colors.navy + ';opacity:0.5;">Together with their families</div>' +
+          '<div style="' + displayFont + ';font-size:' + s.layout.nameSize + 'pt;line-height:0.95;color:' + s.colors.navy + ';letter-spacing:' + s.layout.letterSpacing + 'em;">' +
+          'Kash <span style="color:' + s.colors.coral + ';">&amp;</span> Max</div>' +
+          '<div style="' + scriptFont + ';font-size:14pt;color:' + s.colors.navy + ';opacity:0.6;">invite you to celebrate their marriage</div>' +
+          '<div style="' + bodyFont + ';font-size:14pt;color:' + s.colors.navy + ';line-height:1.6;">' +
+          'Saturday, the Third of July<br>Two Thousand and Twenty-Seven<br><span style="font-style:italic;opacity:0.7;">at Six O\'Clock in the Evening</span></div>' +
+          '<div style="' + utilFont + ';font-size:10pt;text-transform:uppercase;letter-spacing:0.15em;color:' + s.colors.navy + ';opacity:0.6;">' +
+          'The Drake Hotel Sky Yard<br>Toronto, Ontario</div>' +
+          '<div style="width:80px;height:90px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="80" height="90" style="pointer-events:none;"></object></div>' +
+          '</div></div>';
+      } else if (state.piece === 'rsvp-card') {
+        html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
+          '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
+          '<div style="' + displayFont + ';font-size:' + (s.layout.nameSize * 0.7) + 'pt;color:' + s.colors.coral + ';">RSVP</div>' +
+          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.12em;color:' + s.colors.navy + ';opacity:0.5;">Kindly respond by May 15, 2027</div>' +
+          '<div style="width:48px;height:48px;border:2px solid ' + s.colors.navy + ';opacity:0.2;display:flex;align-items:center;justify-content:center;font-size:8px;">QR</div>' +
+          '<div style="' + bodyFont + ';font-size:11pt;color:' + s.colors.navy + ';opacity:0.7;">Scan to RSVP online</div>' +
+          '<div style="width:60px;height:70px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="60" height="70" style="pointer-events:none;"></object></div>' +
+          '</div></div>';
+      } else {
+        // Generic fallback for other pieces
+        html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
+          '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
+          '<div style="' + displayFont + ';font-size:' + (s.layout.nameSize * 0.6) + 'pt;color:' + s.colors.navy + ';">' + (PIECES.find(function(x){return x.id === state.piece;}) || {}).name + '</div>' +
+          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.15em;color:' + s.colors.navy + ';opacity:0.5;">Kash &amp; Max</div>' +
+          '<div style="' + bodyFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.6;">July 3, 2027</div>' +
+          '<div style="width:80px;height:90px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="80" height="90" style="pointer-events:none;"></object></div>' +
+          '</div></div>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    function render() {
+      updateCSSVars();
+      var wrapper = document.getElementById('canvas-wrapper');
+      wrapper.style.transform = 'scale(' + state.zoom + ')';
+      renderPiecePreview(wrapper);
+
+      if (state.compare) {
+        renderPiecePreview(document.getElementById('compare-a'));
+        // Compare-b keeps its own state -- handled separately
+      }
+
+      document.getElementById('zoom-level').textContent = Math.round(state.zoom * 100) + '%';
+      saveState();
+    }
+
+    /* ================================================================ */
+    /* UI BUILDERS                                                       */
+    /* ================================================================ */
+
+    function buildPieceSelector() {
+      var el = document.getElementById('piece-selector');
+      el.innerHTML = PIECES.map(function(p) {
+        return '<button class="piece-btn' + (state.piece === p.id ? ' active' : '') + '" data-piece="' + p.id + '">' + p.name + '</button>';
+      }).join('');
+      el.addEventListener('click', function(e) {
+        var btn = e.target.closest('.piece-btn');
+        if (!btn) return;
+        state.piece = btn.dataset.piece;
+        el.querySelectorAll('.piece-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        render();
+      });
+    }
+
+    function buildFontSelectors() {
+      var roles = { display: 'font-display', script: 'font-script', body: 'font-body', utility: 'font-utility' };
+      Object.keys(roles).forEach(function(role) {
+        var select = document.getElementById(roles[role]);
+        var matching = FONTS.filter(function(f) {
+          if (role === 'display' || role === 'script') return true;
+          if (role === 'body') return f.role === 'body' || f.cat === 'serif';
+          if (role === 'utility') return f.role === 'utility' || f.cat === 'sans';
+          return true;
+        });
+        select.innerHTML = matching.map(function(f) {
+          return '<option value="' + f.name + '"' + (state.fonts[role] === f.name ? ' selected' : '') + ' style="font-family:' + f.family + ';">' + f.name + '</option>';
+        }).join('');
+        select.addEventListener('change', function() {
+          state.fonts[role] = select.value;
+          render();
+        });
+      });
+    }
+
+    function buildPaletteGrid() {
+      var grid = document.getElementById('palette-grid');
+      grid.innerHTML = PALETTES.map(function(p, i) {
+        return '<button class="palette-btn' + (state.palette === i ? ' active' : '') + '" data-idx="' + i + '" title="' + p.name + '">' +
+          '<div style="background:' + p.cream + ';"></div>' +
+          '<div style="background:' + p.coral + ';"></div>' +
+          '<div style="background:' + p.pink + ';"></div>' +
+          '<div style="background:' + p.golden + ';"></div>' +
+          '<div style="background:' + p.navy + ';"></div>' +
+          '</button>';
+      }).join('');
+      grid.addEventListener('click', function(e) {
+        var btn = e.target.closest('.palette-btn');
+        if (!btn) return;
+        var idx = parseInt(btn.dataset.idx);
+        state.palette = idx;
+        var pal = PALETTES[idx];
+        state.colors = { cream: pal.cream, coral: pal.coral, pink: pal.pink, golden: pal.golden, navy: pal.navy };
+        grid.querySelectorAll('.palette-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        buildColorEditors();
+        render();
+        toast('Palette: ' + pal.name);
+      });
+    }
+
+    function buildColorEditors() {
+      var el = document.getElementById('color-editors');
+      var names = ['cream', 'coral', 'pink', 'golden', 'navy'];
+      el.innerHTML = names.map(function(name) {
+        return '<div class="color-input-row">' +
+          '<input type="color" class="color-swatch-input" data-color="' + name + '" value="' + state.colors[name] + '">' +
+          '<input type="text" class="color-hex-input" data-color="' + name + '" value="' + state.colors[name] + '">' +
+          '<div class="color-name">' + name + '</div>' +
+          '</div>';
+      }).join('');
+      el.querySelectorAll('.color-swatch-input').forEach(function(inp) {
+        inp.addEventListener('input', function() {
+          var name = inp.dataset.color;
+          state.colors[name] = inp.value;
+          el.querySelector('.color-hex-input[data-color="' + name + '"]').value = inp.value;
+          render();
+        });
+      });
+      el.querySelectorAll('.color-hex-input').forEach(function(inp) {
+        inp.addEventListener('change', function() {
+          var name = inp.dataset.color;
+          if (/^#[0-9A-Fa-f]{6}$/.test(inp.value)) {
+            state.colors[name] = inp.value;
+            el.querySelector('.color-swatch-input[data-color="' + name + '"]').value = inp.value;
+            render();
+          }
+        });
+      });
+    }
+
+    function buildIllusPicker(containerId, category, stateKey) {
+      var el = document.getElementById(containerId);
+      var items = ILLUSTRATIONS[category];
+      el.innerHTML = items.map(function(item) {
+        return '<div class="illus-mini' + (state.illustrations[stateKey] === item.file ? ' active' : '') + '" data-file="' + item.file + '" title="' + item.name + '">' +
+          '<object data="../assets/svg/' + item.file + '" type="image/svg+xml" width="48" height="48"></object>' +
+          '</div>';
+      }).join('');
+      el.addEventListener('click', function(e) {
+        var mini = e.target.closest('.illus-mini');
+        if (!mini) return;
+        state.illustrations[stateKey] = mini.dataset.file;
+        el.querySelectorAll('.illus-mini').forEach(function(m) { m.classList.remove('active'); });
+        mini.classList.add('active');
+        render();
+      });
+    }
+
+    function buildSliders() {
+      var sliders = [
+        { id: 'slider-name-size', val: 'name-size-val', key: 'nameSize', fmt: function(v) { return v + 'pt'; } },
+        { id: 'slider-letter-spacing', val: 'letter-spacing-val', key: 'letterSpacing', fmt: function(v) { return (v / 100).toFixed(2) + 'em'; }, div: 100 },
+        { id: 'slider-body-size', val: 'body-size-val', key: 'bodySize', fmt: function(v) { return v + 'pt'; } },
+        { id: 'slider-padding', val: 'padding-val', key: 'padding', fmt: function(v) { return (v / 96).toFixed(3) + 'in'; }, div: 96 },
+        { id: 'slider-gap', val: 'gap-val', key: 'gap', fmt: function(v) { return (v / 96).toFixed(3) + 'in'; }, div: 96 },
+        { id: 'slider-line-height', val: 'line-height-val', key: 'lineHeight', fmt: function(v) { return (v / 10).toFixed(1); }, div: 10 }
+      ];
+      sliders.forEach(function(s) {
+        var slider = document.getElementById(s.id);
+        var valEl = document.getElementById(s.val);
+        if (!slider) return;
+        var divisor = s.div || 1;
+        slider.value = state.layout[s.key] * divisor;
+        valEl.textContent = s.fmt(state.layout[s.key] * divisor);
+        slider.addEventListener('input', function() {
+          var v = parseFloat(slider.value);
+          state.layout[s.key] = v / divisor;
+          valEl.textContent = s.fmt(v);
+          render();
+        });
+      });
+    }
+
+    function buildFontLibrary() {
+      var list = document.getElementById('font-list');
+      var categories = ['calligraphy', 'handwriting', 'script', 'marker', 'serif', 'sans'];
+      var labels = { calligraphy: 'Flowing Calligraphy', handwriting: 'Casual Handwriting', script: 'Script', marker: 'Bold / Marker', serif: 'Elegant Serif', sans: 'Clean Sans-Serif' };
+
+      // Filters
+      var filterBar = document.getElementById('font-filters');
+      filterBar.innerHTML = '<button class="filter-btn active" data-cat="all">All</button>' +
+        categories.map(function(c) {
+          return '<button class="filter-btn" data-cat="' + c + '">' + labels[c] + '</button>';
+        }).join('');
+
+      var currentFilter = 'all';
+      filterBar.addEventListener('click', function(e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        currentFilter = btn.dataset.cat;
+        filterBar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderFontList();
+      });
+
+      document.getElementById('font-search').addEventListener('input', function() { renderFontList(); });
+
+      function renderFontList() {
+        var search = document.getElementById('font-search').value.toLowerCase();
+        var filtered = FONTS.filter(function(f) {
+          if (currentFilter !== 'all' && f.cat !== currentFilter) return false;
+          if (search && f.name.toLowerCase().indexOf(search) === -1) return false;
+          return true;
+        });
+        document.getElementById('font-count').textContent = filtered.length + ' fonts';
+        list.innerHTML = filtered.map(function(f) {
+          var isSelected = f.name === state.fonts.display || f.name === state.fonts.body || f.name === state.fonts.utility || f.name === state.fonts.script;
+          return '<div class="font-card' + (isSelected ? ' selected' : '') + '" data-font="' + f.name + '">' +
+            '<div class="font-card-header">' +
+            '<div class="font-card-name">' + f.name + '</div>' +
+            '<div class="font-card-category">' + f.cat + '</div>' +
+            '<div style="flex:1;"></div>' +
+            '<button class="font-card-use" data-role="display" data-font="' + f.name + '">Use as Display</button>' +
+            '<button class="font-card-use" data-role="body" data-font="' + f.name + '" style="margin-left:4px;">Use as Body</button>' +
+            '</div>' +
+            '<div class="font-card-preview" style="font-family:' + f.family + ';font-size:36px;">Kash & Max</div>' +
+            '<div class="font-card-preview-sm" style="font-family:' + f.family + ';">Saturday, the Third of July, Two Thousand and Twenty-Seven</div>' +
+            '</div>';
+        }).join('');
+
+        list.querySelectorAll('.font-card-use').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var role = btn.dataset.role;
+            var font = btn.dataset.font;
+            state.fonts[role] = font;
+            buildFontSelectors();
+            render();
+            renderFontList();
+            toast(font + ' set as ' + role);
+          });
+        });
+      }
+      renderFontList();
+    }
+
+    function buildColorLab() {
+      var list = document.getElementById('palette-list');
+      document.getElementById('palette-count').textContent = PALETTES.length + ' palettes';
+      list.innerHTML = PALETTES.map(function(p, i) {
+        return '<div class="palette-card' + (state.palette === i ? ' selected' : '') + '" data-idx="' + i + '">' +
+          '<div class="palette-card-header">' +
+          '<div class="palette-card-name">' + p.name + '</div>' +
+          (p.tag ? '<div class="palette-card-tag">' + p.tag + '</div>' : '') +
+          '</div>' +
+          '<div class="palette-card-colors">' +
+          '<div style="background:' + p.cream + ';"></div>' +
+          '<div style="background:' + p.coral + ';"></div>' +
+          '<div style="background:' + p.pink + ';"></div>' +
+          '<div style="background:' + p.golden + ';"></div>' +
+          '<div style="background:' + p.navy + ';"></div>' +
+          '</div>' +
+          '<div class="palette-card-hexes">' +
+          '<span class="palette-card-hex">' + p.cream + '</span>' +
+          '<span class="palette-card-hex">' + p.coral + '</span>' +
+          '<span class="palette-card-hex">' + p.pink + '</span>' +
+          '<span class="palette-card-hex">' + p.golden + '</span>' +
+          '<span class="palette-card-hex">' + p.navy + '</span>' +
+          '</div></div>';
+      }).join('');
+
+      list.addEventListener('click', function(e) {
+        var card = e.target.closest('.palette-card');
+        if (!card) return;
+        var idx = parseInt(card.dataset.idx);
+        state.palette = idx;
+        var pal = PALETTES[idx];
+        state.colors = { cream: pal.cream, coral: pal.coral, pink: pal.pink, golden: pal.golden, navy: pal.navy };
+        buildColorEditors();
+        buildPaletteGrid();
+        render();
+        list.querySelectorAll('.palette-card').forEach(function(c) { c.classList.remove('selected'); });
+        card.classList.add('selected');
+        toast('Palette: ' + pal.name);
+      });
+    }
+
+    function buildAssetLibrary() {
+      var list = document.getElementById('asset-list');
+      var categories = Object.keys(ILLUSTRATIONS);
+      var labels = { moose: 'Moose the Bulldog', couple: 'Couple', toronto: 'Toronto / Venue', decor: 'Decorative Elements', border: 'Borders' };
+      var total = 0;
+      categories.forEach(function(c) { total += ILLUSTRATIONS[c].length; });
+      document.getElementById('asset-count').textContent = total + ' assets';
+
+      var filterBar = document.getElementById('asset-filters');
+      filterBar.innerHTML = '<button class="filter-btn active" data-cat="all">All</button>' +
+        categories.map(function(c) {
+          return '<button class="filter-btn" data-cat="' + c + '">' + labels[c] + ' (' + ILLUSTRATIONS[c].length + ')</button>';
+        }).join('');
+
+      var currentFilter = 'all';
+      filterBar.addEventListener('click', function(e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        currentFilter = btn.dataset.cat;
+        filterBar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderAssetList();
+      });
+
+      document.getElementById('asset-search').addEventListener('input', function() { renderAssetList(); });
+
+      function renderAssetList() {
+        var search = document.getElementById('asset-search').value.toLowerCase();
+        var html = '';
+        var cats = currentFilter === 'all' ? categories : [currentFilter];
+        cats.forEach(function(cat) {
+          var items = ILLUSTRATIONS[cat].filter(function(item) {
+            return !search || item.name.toLowerCase().indexOf(search) !== -1 || item.file.toLowerCase().indexOf(search) !== -1;
+          });
+          if (items.length === 0) return;
+          html += '<div class="section-head">' + labels[cat] + ' <span class="count">' + items.length + '</span></div>';
+          html += '<div class="asset-grid">';
+          items.forEach(function(item) {
+            html += '<div class="asset-card" data-file="' + item.file + '" data-cat="' + cat + '">' +
+              '<div class="asset-card-preview bg-cream">' +
+              '<object data="../assets/svg/' + item.file + '" type="image/svg+xml" width="100" height="100"></object>' +
+              '</div>' +
+              '<div class="asset-card-info">' +
+              '<div class="asset-card-name">' + item.name + '</div>' +
+              '<div class="asset-card-file">' + item.file + '</div>' +
+              '</div></div>';
+          });
+          html += '</div><div class="section-gap"></div>';
+        });
+        list.innerHTML = html;
+      }
+      renderAssetList();
+    }
+
+    function buildBorderLibrary() {
+      var list = document.getElementById('border-list');
+      list.innerHTML = ILLUSTRATIONS.border.map(function(b) {
+        return '<div class="asset-card' + (state.illustrations.border === b.file ? ' selected' : '') + '" data-file="' + b.file + '">' +
+          '<div class="asset-card-preview bg-cream" style="height:160px;">' +
+          '<object data="../assets/svg/' + b.file + '" type="image/svg+xml" width="100" height="140" style="pointer-events:none;"></object>' +
+          '</div>' +
+          '<div class="asset-card-info">' +
+          '<div class="asset-card-name">' + b.name + '</div>' +
+          '<div class="asset-card-file">' + b.file + '</div>' +
+          '</div></div>';
+      }).join('');
+
+      list.addEventListener('click', function(e) {
+        var card = e.target.closest('.asset-card');
+        if (!card) return;
+        state.illustrations.border = card.dataset.file;
+        list.querySelectorAll('.asset-card').forEach(function(c) { c.classList.remove('selected'); });
+        card.classList.add('selected');
+        render();
+        toast('Border: ' + card.querySelector('.asset-card-name').textContent);
+      });
+    }
+
+    function buildExportPage() {
+      var list = document.getElementById('export-list');
+      list.innerHTML = PIECES.map(function(p) {
+        return '<div class="export-card">' +
+          '<div class="export-card-title">' + p.name + '</div>' +
+          '<div class="export-card-dims">' + Math.round(p.w / 96 * 100) / 100 + '" x ' + Math.round(p.h / 96 * 100) / 100 + '"</div>' +
+          '<button class="export-btn" data-file="' + p.file + '">Open for Export</button>' +
+          '</div>';
+      }).join('');
+
+      list.addEventListener('click', function(e) {
+        var btn = e.target.closest('.export-btn');
+        if (!btn) return;
+        window.open('../pieces/' + btn.dataset.file, '_blank');
+      });
+    }
+
+    function buildPresets() {
+      var list = document.getElementById('preset-list');
+      var presets = [];
+      try { presets = JSON.parse(localStorage.getItem('weddingPresets') || '[]'); } catch(e) {}
+      if (presets.length === 0) {
+        list.innerHTML = '<div style="font-size:11px;color:var(--studio-text-muted);padding:8px;">No saved presets yet. Click "Save Preset" to save your current design.</div>';
+        return;
+      }
+      list.innerHTML = presets.map(function(p, i) {
+        return '<div class="preset-item" data-idx="' + i + '">' +
+          '<div class="preset-dot" style="background:' + p.colors.coral + ';"></div>' +
+          '<div><div class="preset-name">' + p.name + '</div><div class="preset-meta">' + p.fonts.display + ' / ' + p.fonts.body + '</div></div>' +
+          '</div>';
+      }).join('');
+
+      list.addEventListener('click', function(e) {
+        var item = e.target.closest('.preset-item');
+        if (!item) return;
+        var idx = parseInt(item.dataset.idx);
+        var preset = presets[idx];
+        state.fonts = Object.assign({}, preset.fonts);
+        state.colors = Object.assign({}, preset.colors);
+        state.illustrations = Object.assign({}, preset.illustrations);
+        state.layout = Object.assign({}, preset.layout);
+        buildFontSelectors();
+        buildPaletteGrid();
+        buildColorEditors();
+        buildSliders();
+        render();
+        toast('Loaded preset: ' + preset.name);
+      });
+    }
+
+    /* ================================================================ */
+    /* EVENT HANDLERS                                                    */
+    /* ================================================================ */
+
+    // Top nav tabs
+    document.querySelectorAll('.nav-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.nav-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('active');
+        document.getElementById('page-' + tab.dataset.page).classList.add('active');
+      });
+    });
+
+    // Sidebar tabs
+    document.querySelectorAll('.sidebar-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.sidebar-panel').forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // Zoom controls
+    document.getElementById('zoom-in').addEventListener('click', function() {
+      state.zoom = Math.min(state.zoom + 0.1, 2);
+      render();
+    });
+    document.getElementById('zoom-out').addEventListener('click', function() {
+      state.zoom = Math.max(state.zoom - 0.1, 0.3);
+      render();
+    });
+    document.getElementById('zoom-fit').addEventListener('click', function() {
+      var canvas = document.getElementById('canvas-main');
+      var p = PIECES.find(function(x) { return x.id === state.piece; });
+      if (!p) return;
+      var scale = Math.min((canvas.clientWidth - 80) / p.w, (canvas.clientHeight - 80) / p.h, 1);
+      state.zoom = Math.round(scale * 10) / 10;
+      render();
+    });
+
+    // A/B Compare toggle
+    document.getElementById('btn-compare').addEventListener('click', function() {
+      state.compare = !state.compare;
+      document.getElementById('design-normal').style.display = state.compare ? 'none' : 'flex';
+      document.getElementById('design-compare').classList.toggle('active', state.compare);
+      this.classList.toggle('active', state.compare);
+      if (state.compare) {
+        renderPiecePreview(document.getElementById('compare-a'));
+        renderPiecePreview(document.getElementById('compare-b'));
+      }
+    });
+
+    // Save Preset
+    document.getElementById('btn-save-preset').addEventListener('click', function() {
+      var name = prompt('Preset name:');
+      if (!name) return;
+      var presets = [];
+      try { presets = JSON.parse(localStorage.getItem('weddingPresets') || '[]'); } catch(e) {}
+      presets.push({
+        name: name,
+        fonts: Object.assign({}, state.fonts),
+        colors: Object.assign({}, state.colors),
+        illustrations: Object.assign({}, state.illustrations),
+        layout: Object.assign({}, state.layout)
+      });
+      localStorage.setItem('weddingPresets', JSON.stringify(presets));
+      buildPresets();
+      toast('Preset saved: ' + name);
+    });
+
+    // Open in new tab
+    document.getElementById('btn-open-tab').addEventListener('click', function() {
+      var p = PIECES.find(function(x) { return x.id === state.piece; });
+      if (p) window.open('../pieces/' + p.file, '_blank');
+    });
+
+    // Dashboard link
+    document.getElementById('btn-dashboard').addEventListener('click', function() {
+      window.open('dashboard.html', '_blank');
+    });
+
+    /* ================================================================ */
+    /* TOAST                                                             */
+    /* ================================================================ */
+
+    var toastTimeout;
+    function toast(msg) {
+      var el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(function() { el.classList.remove('show'); }, 2000);
+    }
+
+    /* ================================================================ */
+    /* INIT                                                              */
+    /* ================================================================ */
+
+    buildPieceSelector();
+    buildFontSelectors();
+    buildPaletteGrid();
+    buildColorEditors();
+    buildIllusPicker('moose-picker', 'moose', 'moose');
+    buildIllusPicker('couple-picker', 'couple', 'couple');
+    buildIllusPicker('decor-picker', 'decor', 'decor');
+    buildSliders();
+    buildFontLibrary();
+    buildColorLab();
+    buildAssetLibrary();
+    buildBorderLibrary();
+    buildExportPage();
+    buildPresets();
+    render();
+
+    // Auto-fit on first load
+    setTimeout(function() {
+      document.getElementById('zoom-fit').click();
+    }, 100);
+
+  })();
+  </script>
+</body>
+</html>

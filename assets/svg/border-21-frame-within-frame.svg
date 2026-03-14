@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer rect -->
+  <rect x="30" y="28" width="440" height="644"/>
+  <!-- Inner rect -->
+  <rect x="46" y="44" width="408" height="612"/>
+  <!-- Decorative circles at midpoints between the two rects -->
+  <!-- Top midpoint -->
+  <circle cx="250" cy="36" r="4"/>
+  <!-- Bottom midpoint -->
+  <circle cx="251" cy="664" r="4"/>
+  <!-- Left midpoint -->
+  <circle cx="38" cy="350" r="4"/>
+  <!-- Right midpoint -->
+  <circle cx="462" cy="351" r="4"/>
+  <!-- Additional circles at quarter points -->
+  <!-- Top edge -->
+  <circle cx="140" cy="37" r="3"/>
+  <circle cx="360" cy="36" r="3"/>
+  <!-- Bottom edge -->
+  <circle cx="141" cy="663" r="3"/>
+  <circle cx="361" cy="664" r="3"/>
+  <!-- Left edge -->
+  <circle cx="39" cy="200" r="3"/>
+  <circle cx="38" cy="500" r="3"/>
+  <!-- Right edge -->
+  <circle cx="461" cy="201" r="3"/>
+  <circle cx="462" cy="501" r="3"/>
+</svg>

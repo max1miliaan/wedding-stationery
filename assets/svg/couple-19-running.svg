@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="48" cy="24" r="8"/>
+  <circle cx="50" cy="23" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body (running) -->
+  <line x1="48" y1="32" x2="50" y2="58"/>
+  <polygon points="42,58 58,58 60,78 40,78"/>
+  <!-- Kash legs (running stride) -->
+  <line x1="46" y1="78" x2="36" y2="100"/>
+  <line x1="54" y1="78" x2="64" y2="100"/>
+  <!-- Kash arm back -->
+  <line x1="48" y1="42" x2="36" y2="50"/>
+  <!-- Kash arm forward to Max -->
+  <line x1="48" y1="42" x2="68" y2="38"/>
+  <!-- Max head -->
+  <circle cx="100" cy="18" r="8"/>
+  <circle cx="98" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body (running) -->
+  <line x1="100" y1="26" x2="102" y2="55"/>
+  <line x1="102" y1="55" x2="90" y2="95"/>
+  <line x1="102" y1="55" x2="116" y2="95"/>
+  <!-- Max arm back holding hand -->
+  <line x1="100" y1="38" x2="80" y2="38"/>
+  <line x1="100" y1="38" x2="112" y2="46"/>
+  <!-- Linked hands -->
+  <line x1="68" y1="38" x2="80" y2="38"/>
+</svg>
