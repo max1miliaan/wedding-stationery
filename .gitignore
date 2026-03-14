@@ -1,0 +1,7 @@
+.DS_Store
+exports/pdf/
+exports/png/
+node_modules/
+.env
+*.log
+Thumbs.db
