@@ -12,6 +12,30 @@
 
   <style>
     /* ================================================================ */
+    /* FONTSHARE SELF-HOSTED FONTS (Variable weight)                      */
+    /* ================================================================ */
+    @font-face { font-family: 'Boska'; src: url('../assets/fonts/boska/Boska-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Boska'; src: url('../assets/fonts/boska/Boska-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Cabinet Grotesk'; src: url('../assets/fonts/cabinet-grotesk/CabinetGrotesk-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Chillax'; src: url('../assets/fonts/chillax/Chillax-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Clash Display'; src: url('../assets/fonts/clash-display/ClashDisplay-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Gambetta'; src: url('../assets/fonts/gambetta/Gambetta-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Gambetta'; src: url('../assets/fonts/gambetta/Gambetta-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'General Sans'; src: url('../assets/fonts/general-sans/GeneralSans-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'General Sans'; src: url('../assets/fonts/general-sans/GeneralSans-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Panchang'; src: url('../assets/fonts/panchang/Panchang-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Ranade'; src: url('../assets/fonts/ranade/Ranade-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Ranade'; src: url('../assets/fonts/ranade/Ranade-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('../assets/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('../assets/fonts/satoshi/Satoshi-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Sentient'; src: url('../assets/fonts/sentient/Sentient-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Sentient'; src: url('../assets/fonts/sentient/Sentient-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Switzer'; src: url('../assets/fonts/switzer/Switzer-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Switzer'; src: url('../assets/fonts/switzer/Switzer-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Zodiak'; src: url('../assets/fonts/zodiak/Zodiak-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Zodiak'; src: url('../assets/fonts/zodiak/Zodiak-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+
+    /* ================================================================ */
     /* RESET & VARIABLES                                                 */
     /* ================================================================ */
     :root {
@@ -1211,7 +1235,20 @@
       { name: 'Nunito', family: "'Nunito', sans-serif", cat: 'sans', role: 'utility' },
       { name: 'Work Sans', family: "'Work Sans', sans-serif", cat: 'sans', role: 'utility' },
       { name: 'DM Sans', family: "'DM Sans', sans-serif", cat: 'sans', role: 'utility' },
-      { name: 'Raleway', family: "'Raleway', sans-serif", cat: 'sans', role: 'utility' }
+      { name: 'Raleway', family: "'Raleway', sans-serif", cat: 'sans', role: 'utility' },
+      // Fontshare (self-hosted)
+      { name: 'Boska', family: "'Boska', serif", cat: 'serif', role: 'display', src: 'fontshare' },
+      { name: 'Cabinet Grotesk', family: "'Cabinet Grotesk', sans-serif", cat: 'sans', role: 'utility', src: 'fontshare' },
+      { name: 'Chillax', family: "'Chillax', sans-serif", cat: 'sans', role: 'utility', src: 'fontshare' },
+      { name: 'Clash Display', family: "'Clash Display', sans-serif", cat: 'display', role: 'display', src: 'fontshare' },
+      { name: 'Gambetta', family: "'Gambetta', serif", cat: 'serif', role: 'body', src: 'fontshare' },
+      { name: 'General Sans', family: "'General Sans', sans-serif", cat: 'sans', role: 'utility', src: 'fontshare' },
+      { name: 'Panchang', family: "'Panchang', sans-serif", cat: 'display', role: 'display', src: 'fontshare' },
+      { name: 'Ranade', family: "'Ranade', sans-serif", cat: 'sans', role: 'body', src: 'fontshare' },
+      { name: 'Satoshi', family: "'Satoshi', sans-serif", cat: 'sans', role: 'utility', src: 'fontshare' },
+      { name: 'Sentient', family: "'Sentient', serif", cat: 'serif', role: 'body', src: 'fontshare' },
+      { name: 'Switzer', family: "'Switzer', sans-serif", cat: 'sans', role: 'utility', src: 'fontshare' },
+      { name: 'Zodiak', family: "'Zodiak', serif", cat: 'serif', role: 'display', src: 'fontshare' }
     ];
 
     var PALETTES = [
@@ -1722,8 +1759,8 @@
 
     function buildFontLibrary() {
       var list = document.getElementById('font-list');
-      var categories = ['calligraphy', 'handwriting', 'script', 'marker', 'serif', 'sans'];
-      var labels = { calligraphy: 'Flowing Calligraphy', handwriting: 'Casual Handwriting', script: 'Script', marker: 'Bold / Marker', serif: 'Elegant Serif', sans: 'Clean Sans-Serif' };
+      var categories = ['calligraphy', 'handwriting', 'script', 'marker', 'serif', 'sans', 'display'];
+      var labels = { calligraphy: 'Flowing Calligraphy', handwriting: 'Casual Handwriting', script: 'Script', marker: 'Bold / Marker', serif: 'Elegant Serif', sans: 'Clean Sans-Serif', display: 'Display / Headline' };
 
       // Filters
       var filterBar = document.getElementById('font-filters');
