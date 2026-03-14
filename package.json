@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "studio": "browser-sync start --server --files '**/*.html,**/*.css,**/*.svg' --no-notify --startPath preview/dashboard.html",
     "preview": "browser-sync start --server --files '**/*.html,**/*.css,**/*.svg' --no-notify --startPath preview/index.html",
     "preview:illustrations": "browser-sync start --server --files '**/*.html,**/*.css,**/*.svg' --no-notify --startPath preview/illustrations.html",
     "optimize-svg": "svgo -f assets/svg/ --pretty",

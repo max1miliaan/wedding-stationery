@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kash &amp; Max -- Wedding Stationery Dashboard</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=sentient@400,400i,600&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF8F0;
+      --cream-deep: #F5EDE0;
+      --coral: #E8704A;
+      --coral-light: #F2956E;
+      --pink: #E89BAE;
+      --golden: #F2C66D;
+      --navy: #1B2438;
+      --navy-light: #3A4A68;
+      --sunset-gradient: linear-gradient(135deg, #F2956E 0%, #E8704A 50%, #E89BAE 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Satoshi', sans-serif;
+      background: #F5F0EB;
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* -- Top Bar -------------------------------------------------------------- */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 32px;
+      height: 56px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .topbar-title {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-right: 40px;
+      white-space: nowrap;
+    }
+
+    .topbar-title span { color: var(--coral); }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      height: 100%;
+    }
+
+    .tab {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 10pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 248, 240, 0.5);
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .tab:hover { color: rgba(255, 248, 240, 0.8); }
+
+    .tab.active {
+      color: var(--cream);
+      border-bottom-color: var(--coral);
+    }
+
+    /* -- Content -------------------------------------------------------------- */
+
+    .content {
+      padding: 40px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .section-title {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    .section-title:first-child { margin-top: 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(27, 36, 56, 0.08);
+      margin: 40px 0;
+    }
+
+    /* -- Design System: Colors ------------------------------------------------ */
+
+    .palette {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 80px;
+    }
+
+    .swatch-color {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .swatch-name {
+      font-size: 9pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+    }
+
+    .swatch-hex {
+      font-size: 8pt;
+      color: var(--navy-light);
+      font-family: monospace;
+      margin-top: -4px;
+    }
+
+    .swatch-role {
+      font-size: 7pt;
+      color: #999;
+      text-align: center;
+      max-width: 80px;
+      margin-top: -4px;
+    }
+
+    .gradient-strip {
+      height: 40px;
+      border-radius: 8px;
+      margin-top: 16px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .gradient-label {
+      font-size: 8pt;
+      color: var(--navy-light);
+      font-family: monospace;
+      margin-top: 6px;
+    }
+
+    /* -- Design System: Typography -------------------------------------------- */
+
+    .type-samples {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .type-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .type-font-name {
+      font-size: 9pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+    }
+
+    .type-font-weights {
+      font-size: 8pt;
+      color: var(--navy-light);
+    }
+
+    .type-font-role {
+      font-size: 7pt;
+      color: #999;
+    }
+
+    .type-preview-display {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 42pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .type-preview-display span { color: var(--coral); }
+
+    .type-preview-body {
+      font-family: 'Sentient', serif;
+      font-size: 18pt;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    .type-preview-body-italic {
+      font-family: 'Sentient', serif;
+      font-size: 16pt;
+      color: var(--navy-light);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .type-preview-utility {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 12pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--navy);
+    }
+
+    .type-preview-utility-sm {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 10pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy-light);
+      margin-top: 4px;
+    }
+
+    .type-scale {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      margin-top: 24px;
+    }
+
+    .type-scale-label {
+      font-size: 8pt;
+      font-family: monospace;
+      color: var(--navy-light);
+      text-align: right;
+    }
+
+    /* -- Design System: Spacing ----------------------------------------------- */
+
+    .spacing-samples {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .spacing-label {
+      font-size: 8pt;
+      font-family: monospace;
+      color: var(--navy-light);
+      width: 80px;
+      text-align: right;
+    }
+
+    .spacing-bar {
+      height: 20px;
+      background: var(--coral);
+      opacity: 0.3;
+      border-radius: 4px;
+    }
+
+    .spacing-value {
+      font-size: 8pt;
+      font-family: monospace;
+      color: #999;
+    }
+
+    /* -- Illustrations -------------------------------------------------------- */
+
+    .illus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .illus-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .illus-preview {
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      min-height: 160px;
+      color: var(--navy);
+    }
+
+    .illus-preview.dark {
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .illus-preview.coral-bg {
+      background: var(--coral);
+      color: var(--cream);
+    }
+
+    .illus-preview object {
+      display: block;
+      max-width: 100%;
+    }
+
+    .illus-info {
+      padding: 16px;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .illus-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .illus-file {
+      font-size: 7pt;
+      font-family: monospace;
+      color: var(--navy-light);
+      margin-top: 2px;
+    }
+
+    .illus-usage {
+      font-size: 8pt;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .illus-bg-toggle {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .bg-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .bg-btn:hover { transform: scale(1.15); }
+    .bg-btn.active { border-color: var(--coral); }
+
+    /* -- Stationery Gallery --------------------------------------------------- */
+
+    .stationery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .piece-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .piece-card:hover { transform: translateY(-4px); }
+
+    .piece-frame {
+      background: #888;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .piece-frame iframe {
+      border: none;
+      display: block;
+      background: white;
+      pointer-events: none;
+    }
+
+    .piece-label {
+      font-size: 10pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy);
+    }
+
+    .piece-dims {
+      font-size: 8pt;
+      color: var(--navy-light);
+      margin-top: -8px;
+    }
+
+    .piece-link {
+      font-size: 7pt;
+      font-family: monospace;
+      color: #999;
+      margin-top: -6px;
+    }
+
+    /* -- Full View Modal ------------------------------------------------------ */
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 200;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: -8px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      font-family: 'Satoshi', sans-serif;
+    }
+
+    .modal-close:hover { color: white; }
+
+    .modal-title {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 10pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .modal-frame {
+      background: white;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-frame iframe {
+      border: none;
+      display: block;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .modal-btn {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 9pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .modal-btn:hover {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* -- Print Specs Table ---------------------------------------------------- */
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+    }
+
+    .specs-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy-light);
+      padding: 8px 12px;
+      border-bottom: 2px solid rgba(27, 36, 56, 0.1);
+    }
+
+    .specs-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(27, 36, 56, 0.05);
+      color: var(--navy);
+    }
+
+    .specs-table tr:hover td {
+      background: rgba(27, 36, 56, 0.02);
+    }
+
+    .specs-table .mono {
+      font-family: monospace;
+      font-size: 8pt;
+      color: var(--navy-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar with tabs -->
+  <div class="topbar">
+    <div class="topbar-title">Kash <span>&amp;</span> Max</div>
+    <div class="tabs">
+      <button class="tab active" data-panel="stationery">Stationery</button>
+      <button class="tab" data-panel="illustrations">Illustrations</button>
+      <button class="tab" data-panel="design-system">Design System</button>
+      <button class="tab" data-panel="print-specs">Print Specs</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ================================================================== -->
+    <!-- STATIONERY PANEL                                                    -->
+    <!-- ================================================================== -->
+    <div id="stationery" class="panel active">
+      <div class="section-title">Full Suite</div>
+      <div class="stationery-grid">
+
+        <div class="piece-card" data-src="../pieces/save-the-date.html" data-name="Save the Date" data-w="504" data-h="696">
+          <div class="piece-frame">
+            <iframe src="../pieces/save-the-date.html" width="252" height="348" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 336px; height: 464px;"></iframe>
+          </div>
+          <div class="piece-label">Save the Date</div>
+          <div class="piece-dims">5" x 7"</div>
+          <div class="piece-link">pieces/save-the-date.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/invitation.html" data-name="Invitation" data-w="504" data-h="696">
+          <div class="piece-frame">
+            <iframe src="../pieces/invitation.html" width="252" height="348" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 336px; height: 464px;"></iframe>
+          </div>
+          <div class="piece-label">Invitation</div>
+          <div class="piece-dims">5" x 7"</div>
+          <div class="piece-link">pieces/invitation.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/details-card.html" data-name="Details Card" data-w="444" data-h="576">
+          <div class="piece-frame">
+            <iframe src="../pieces/details-card.html" width="222" height="288" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 296px; height: 384px;"></iframe>
+          </div>
+          <div class="piece-label">Details Card</div>
+          <div class="piece-dims">4.375" x 5.75"</div>
+          <div class="piece-link">pieces/details-card.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/rsvp-card.html" data-name="RSVP Card" data-w="360" data-h="504">
+          <div class="piece-frame">
+            <iframe src="../pieces/rsvp-card.html" width="180" height="252" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 240px; height: 336px;"></iframe>
+          </div>
+          <div class="piece-label">RSVP Card</div>
+          <div class="piece-dims">3.5" x 5"</div>
+          <div class="piece-link">pieces/rsvp-card.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/program.html" data-name="Program" data-w="432" data-h="552">
+          <div class="piece-frame">
+            <iframe src="../pieces/program.html" width="216" height="276" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 288px; height: 368px;"></iframe>
+          </div>
+          <div class="piece-label">Program</div>
+          <div class="piece-dims">4.25" x 5.5"</div>
+          <div class="piece-link">pieces/program.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/table-name-tag.html" data-name="Table Name Tag" data-w="360" data-h="216">
+          <div class="piece-frame">
+            <iframe src="../pieces/table-name-tag.html" width="180" height="108" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 240px; height: 144px;"></iframe>
+          </div>
+          <div class="piece-label">Table Name Tag</div>
+          <div class="piece-dims">3.5" x 2" (tent fold)</div>
+          <div class="piece-link">pieces/table-name-tag.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/food-menu.html" data-name="Food Menu" data-w="408" data-h="912">
+          <div class="piece-frame">
+            <iframe src="../pieces/food-menu.html" width="204" height="456" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 272px; height: 608px;"></iframe>
+          </div>
+          <div class="piece-label">Food Menu</div>
+          <div class="piece-dims">4" x 9.25"</div>
+          <div class="piece-link">pieces/food-menu.html</div>
+        </div>
+
+        <div class="piece-card" data-src="../pieces/envelope-liner.html" data-name="Envelope Liner" data-w="528" data-h="720">
+          <div class="piece-frame">
+            <iframe src="../pieces/envelope-liner.html" width="264" height="360" scrolling="no" style="transform: scale(0.75); transform-origin: top left; width: 352px; height: 480px;"></iframe>
+          </div>
+          <div class="piece-label">Envelope Liner</div>
+          <div class="piece-dims">A7 (5.25" x 7.25")</div>
+          <div class="piece-link">pieces/envelope-liner.html</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================================================================== -->
+    <!-- ILLUSTRATIONS PANEL                                                 -->
+    <!-- ================================================================== -->
+    <div id="illustrations" class="panel">
+      <div class="section-title">Moose the Bulldog</div>
+      <div class="illus-grid">
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/moose-sitting-bowtie.svg" type="image/svg+xml" width="160" height="184"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Sitting with Bowtie</div>
+            <div class="illus-file">moose-sitting-bowtie.svg</div>
+            <div class="illus-usage">Used on: Save the Date</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/moose-walking.svg" type="image/svg+xml" width="200" height="130"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Walking</div>
+            <div class="illus-file">moose-walking.svg</div>
+            <div class="illus-usage">Used on: Invitation</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/moose-party-hat.svg" type="image/svg+xml" width="160" height="190"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Party Hat</div>
+            <div class="illus-file">moose-party-hat.svg</div>
+            <div class="illus-usage">Used on: RSVP Card</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/moose-peeking.svg" type="image/svg+xml" width="200" height="100"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Peeking</div>
+            <div class="illus-file">moose-peeking.svg</div>
+            <div class="illus-usage">Used on: Details Card</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/moose-sitting-simple.svg" type="image/svg+xml" width="140" height="152"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Sitting (Simple)</div>
+            <div class="illus-file">moose-sitting-simple.svg</div>
+            <div class="illus-usage">Used on: Program, Table Name Tag</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="section-title">Decorative Elements</div>
+      <div class="illus-grid">
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/champagne-glasses.svg" type="image/svg+xml" width="120" height="140"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Champagne Glasses</div>
+            <div class="illus-file">champagne-glasses.svg</div>
+            <div class="illus-usage">Used on: Save the Date, Envelope Liner</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+              <div class="bg-btn" style="background: var(--coral);" data-bg="coral-bg" title="Coral"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/cocktail-glass.svg" type="image/svg+xml" width="80" height="100"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Cocktail Glass</div>
+            <div class="illus-file">cocktail-glass.svg</div>
+            <div class="illus-usage">Used on: Invitation doodles</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/doodle-stars.svg" type="image/svg+xml" width="100" height="80"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Stars</div>
+            <div class="illus-file">doodle-stars.svg</div>
+            <div class="illus-usage">Used on: Invitation, Envelope Liner</div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/doodle-hearts.svg" type="image/svg+xml" width="80" height="60"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Hearts</div>
+            <div class="illus-file">doodle-hearts.svg</div>
+            <div class="illus-usage">Used on: Invitation, Envelope Liner</div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/divider-line.svg" type="image/svg+xml" width="240" height="30"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Divider Line</div>
+            <div class="illus-file">divider-line.svg</div>
+            <div class="illus-usage">Used on: Details Card, Food Menu</div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="section-title">Corner Flourishes</div>
+      <div class="illus-grid">
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream" style="gap: 16px; flex-wrap: wrap;">
+            <object data="../assets/svg/corner-flourish-tl.svg" type="image/svg+xml" width="64" height="64"></object>
+            <object data="../assets/svg/corner-flourish-tr.svg" type="image/svg+xml" width="64" height="64"></object>
+            <object data="../assets/svg/corner-flourish-bl.svg" type="image/svg+xml" width="64" height="64"></object>
+            <object data="../assets/svg/corner-flourish-br.svg" type="image/svg+xml" width="64" height="64"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Corner Flourishes (TL / TR / BL / BR)</div>
+            <div class="illus-file">corner-flourish-*.svg</div>
+            <div class="illus-usage">Used on: Save the Date, RSVP, Program</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section-title">Toronto / Venue</div>
+      <div class="illus-grid">
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/toronto-skyline.svg" type="image/svg+xml" width="280" height="75"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Toronto Skyline</div>
+            <div class="illus-file">toronto-skyline.svg</div>
+            <div class="illus-usage">Available for use</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/cn-tower.svg" type="image/svg+xml" width="40" height="130"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">CN Tower</div>
+            <div class="illus-file">cn-tower.svg</div>
+            <div class="illus-usage">Available for use</div>
+            <div class="illus-bg-toggle">
+              <div class="bg-btn active" style="background: var(--cream);" data-bg="cream" title="Cream"></div>
+              <div class="bg-btn" style="background: var(--navy);" data-bg="dark" title="Navy"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illus-card">
+          <div class="illus-preview" data-default-bg="cream">
+            <object data="../assets/svg/hand-drawn-border.svg" type="image/svg+xml" width="160" height="224"></object>
+          </div>
+          <div class="illus-info">
+            <div class="illus-name">Hand-Drawn Border</div>
+            <div class="illus-file">hand-drawn-border.svg</div>
+            <div class="illus-usage">Used on: Invitation</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================================================================== -->
+    <!-- DESIGN SYSTEM PANEL                                                 -->
+    <!-- ================================================================== -->
+    <div id="design-system" class="panel">
+      <div class="section-title">Color Palette</div>
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FFF8F0;"></div>
+          <div class="swatch-name">Cream</div>
+          <div class="swatch-hex">#FFF8F0</div>
+          <div class="swatch-role">Base background</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F5EDE0;"></div>
+          <div class="swatch-name">Cream Deep</div>
+          <div class="swatch-hex">#F5EDE0</div>
+          <div class="swatch-role">Card backs</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #E8704A;"></div>
+          <div class="swatch-name">Coral</div>
+          <div class="swatch-hex">#E8704A</div>
+          <div class="swatch-role">Primary accent</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F2956E;"></div>
+          <div class="swatch-name">Coral Light</div>
+          <div class="swatch-hex">#F2956E</div>
+          <div class="swatch-role">Gradient start</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #E89BAE;"></div>
+          <div class="swatch-name">Pink</div>
+          <div class="swatch-hex">#E89BAE</div>
+          <div class="swatch-role">Secondary accent</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F2C66D;"></div>
+          <div class="swatch-name">Golden</div>
+          <div class="swatch-hex">#F2C66D</div>
+          <div class="swatch-role">Tertiary accent</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1B2438;"></div>
+          <div class="swatch-name">Navy</div>
+          <div class="swatch-hex">#1B2438</div>
+          <div class="swatch-role">Text &amp; line art</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #3A4A68;"></div>
+          <div class="swatch-name">Navy Light</div>
+          <div class="swatch-hex">#3A4A68</div>
+          <div class="swatch-role">Secondary text</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="gradient-strip" style="background: linear-gradient(135deg, #F2956E 0%, #E8704A 50%, #E89BAE 100%);"></div>
+        <div class="gradient-label">Sunset gradient: coral-light -> coral -> pink (135deg)</div>
+      </div>
+
+      <hr>
+
+      <div class="section-title">Typography</div>
+      <div class="type-samples">
+
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-font-name">Clash Display</div>
+            <div class="type-font-weights">600, 700</div>
+            <div class="type-font-role">Display / Headlines</div>
+          </div>
+          <div>
+            <div class="type-preview-display">Kash <span>&amp;</span> Max</div>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-font-name">Sentient</div>
+            <div class="type-font-weights">400, 400i, 600</div>
+            <div class="type-font-role">Body / Descriptions</div>
+          </div>
+          <div>
+            <div class="type-preview-body">invite you to celebrate their marriage</div>
+            <div class="type-preview-body-italic">Saturday, the third of July, two thousand and twenty-seven</div>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-font-name">Satoshi</div>
+            <div class="type-font-weights">400, 500, 700</div>
+            <div class="type-font-role">Utility / Labels</div>
+          </div>
+          <div>
+            <div class="type-preview-utility">The Drake Hotel / Toronto</div>
+            <div class="type-preview-utility-sm">Kindly respond by May 15, 2027</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="section-title" style="font-size: 10pt; margin-bottom: 12px;">Type Scale</div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-hero</div>
+          <div style="font-family: 'Clash Display', sans-serif; font-size: 48pt; font-weight: 700; line-height: 1; color: var(--navy);">72pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-display</div>
+          <div style="font-family: 'Clash Display', sans-serif; font-size: 36pt; font-weight: 700; line-height: 1; color: var(--navy);">48pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-2xl</div>
+          <div style="font-family: 'Clash Display', sans-serif; font-size: 28pt; font-weight: 700; line-height: 1; color: var(--navy);">36pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-xl</div>
+          <div style="font-family: 'Clash Display', sans-serif; font-size: 24pt; font-weight: 600; line-height: 1.1; color: var(--navy);">24pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-lg</div>
+          <div style="font-family: 'Sentient', serif; font-size: 16pt; color: var(--navy);">16pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-base</div>
+          <div style="font-family: 'Sentient', serif; font-size: 12pt; color: var(--navy);">12pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-sm</div>
+          <div style="font-family: 'Satoshi', sans-serif; font-size: 10pt; color: var(--navy-light);">10pt</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-label">--text-xs</div>
+          <div style="font-family: 'Satoshi', sans-serif; font-size: 8pt; color: var(--navy-light);">8pt</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section-title">Spacing Scale</div>
+      <div class="spacing-samples">
+        <div class="spacing-row">
+          <div class="spacing-label">--space-xs</div>
+          <div class="spacing-bar" style="width: 12px;"></div>
+          <div class="spacing-value">0.125in</div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">--space-sm</div>
+          <div class="spacing-bar" style="width: 24px;"></div>
+          <div class="spacing-value">0.25in</div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">--space-md</div>
+          <div class="spacing-bar" style="width: 48px;"></div>
+          <div class="spacing-value">0.5in</div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">--space-lg</div>
+          <div class="spacing-bar" style="width: 72px;"></div>
+          <div class="spacing-value">0.75in</div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">--space-xl</div>
+          <div class="spacing-bar" style="width: 96px;"></div>
+          <div class="spacing-value">1in</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================== -->
+    <!-- PRINT SPECS PANEL                                                   -->
+    <!-- ================================================================== -->
+    <div id="print-specs" class="panel">
+      <div class="section-title">Print Dimensions</div>
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Piece</th>
+            <th>Trim Size</th>
+            <th>With Bleed</th>
+            <th>Safe Zone</th>
+            <th>CSS Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Save the Date</td>
+            <td>5" x 7"</td>
+            <td>5.25" x 7.25"</td>
+            <td>4.5" x 6.5"</td>
+            <td class="mono">.page-save-the-date</td>
+          </tr>
+          <tr>
+            <td>Invitation</td>
+            <td>5" x 7"</td>
+            <td>5.25" x 7.25"</td>
+            <td>4.5" x 6.5"</td>
+            <td class="mono">.page-invitation</td>
+          </tr>
+          <tr>
+            <td>Details Card</td>
+            <td>4.375" x 5.75"</td>
+            <td>4.625" x 6"</td>
+            <td>3.875" x 5.25"</td>
+            <td class="mono">.page-details</td>
+          </tr>
+          <tr>
+            <td>RSVP Card</td>
+            <td>3.5" x 5"</td>
+            <td>3.75" x 5.25"</td>
+            <td>3" x 4.5"</td>
+            <td class="mono">.page-rsvp</td>
+          </tr>
+          <tr>
+            <td>Program</td>
+            <td>4.25" x 5.5"</td>
+            <td>4.5" x 5.75"</td>
+            <td>3.75" x 5"</td>
+            <td class="mono">.page-program</td>
+          </tr>
+          <tr>
+            <td>Table Name Tag</td>
+            <td>3.5" x 2"</td>
+            <td>3.75" x 2.25"</td>
+            <td>3" x 1.5"</td>
+            <td class="mono">.page-name-tag</td>
+          </tr>
+          <tr>
+            <td>Food Menu</td>
+            <td>4" x 9.25"</td>
+            <td>4.25" x 9.5"</td>
+            <td>3.5" x 8.75"</td>
+            <td class="mono">.page-menu</td>
+          </tr>
+          <tr>
+            <td>Envelope Liner</td>
+            <td>A7 (5.25" x 7.25")</td>
+            <td>5.5" x 7.5"</td>
+            <td>--</td>
+            <td class="mono">.page-envelope-liner</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <div class="section-title">Print Settings</div>
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Setting</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Bleed</td><td>0.125" on all sides</td></tr>
+          <tr><td>Safe Zone</td><td>0.25" inset from trim</td></tr>
+          <tr><td>Paper Size</td><td>Custom (use bleed dimensions)</td></tr>
+          <tr><td>Margins</td><td>None</td></tr>
+          <tr><td>Background Graphics</td><td>ON</td></tr>
+          <tr><td>Scale</td><td>100%</td></tr>
+          <tr><td>Export Method</td><td>Chrome Cmd+P -> Save as PDF</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <div class="section-title">Paper Stock</div>
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Piece</th>
+            <th>Stock</th>
+            <th>Quantity Est.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Save the Date</td><td>100lb cover, uncoated</td><td>50-100</td></tr>
+          <tr><td>Invitation</td><td>100lb cover, uncoated</td><td>50-100</td></tr>
+          <tr><td>Details Card</td><td>100lb cover, uncoated</td><td>50-100</td></tr>
+          <tr><td>RSVP Card</td><td>80lb cover, uncoated</td><td>50-100</td></tr>
+          <tr><td>Program</td><td>80lb cover, uncoated</td><td>50-100</td></tr>
+          <tr><td>Table Name Tag</td><td>80lb cover, scored</td><td>50-100</td></tr>
+          <tr><td>Food Menu</td><td>80lb text, uncoated</td><td>10-15 per station</td></tr>
+          <tr><td>Envelope Liner</td><td>60lb text, trimmed to fit A7</td><td>50-100</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Full-size piece modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">Close</button>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-frame" id="modal-frame"></div>
+      <div class="modal-actions">
+        <button class="modal-btn" id="modal-open-tab">Open in New Tab</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // Background toggle for illustrations
+    document.querySelectorAll('.bg-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = btn.closest('.illus-card');
+        var preview = card.querySelector('.illus-preview');
+        card.querySelectorAll('.bg-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        preview.className = 'illus-preview';
+        if (btn.dataset.bg === 'dark') preview.classList.add('dark');
+        else if (btn.dataset.bg === 'coral-bg') preview.classList.add('coral-bg');
+      });
+    });
+
+    // Piece click -> modal
+    var currentSrc = '';
+    document.querySelectorAll('.piece-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var src = card.dataset.src;
+        var name = card.dataset.name;
+        var w = parseInt(card.dataset.w);
+        var h = parseInt(card.dataset.h);
+
+        // Scale to fit viewport
+        var maxW = window.innerWidth * 0.85;
+        var maxH = window.innerHeight * 0.8;
+        var scale = Math.min(maxW / w, maxH / h, 1);
+        var displayW = Math.round(w * scale);
+        var displayH = Math.round(h * scale);
+
+        currentSrc = src;
+        document.getElementById('modal-title').textContent = name;
+        document.getElementById('modal-frame').innerHTML =
+          '<iframe src="' + src + '" width="' + displayW + '" height="' + displayH + '" scrolling="no"></iframe>';
+        document.getElementById('modal').classList.add('active');
+      });
+    });
+
+    document.getElementById('modal-close').addEventListener('click', function() {
+      document.getElementById('modal').classList.remove('active');
+      document.getElementById('modal-frame').innerHTML = '';
+    });
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.getElementById('modal-frame').innerHTML = '';
+      }
+    });
+
+    document.getElementById('modal-open-tab').addEventListener('click', function() {
+      if (currentSrc) window.open(currentSrc, '_blank');
+    });
+
+    // Keyboard: Escape closes modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('modal').classList.remove('active');
+        document.getElementById('modal-frame').innerHTML = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
