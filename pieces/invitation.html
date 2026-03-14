@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation -- Kash &amp; Max</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/print.css">
+  <style>
+    @page {
+      size: 5.25in 7.25in;
+      margin: 0;
+    }
+
+    .card {
+      width: 5.25in;
+      height: 7.25in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: var(--cream);
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15in;
+      padding: 0.375in;
+    }
+
+    /* Hand-drawn border */
+    .border-frame {
+      position: absolute;
+      top: 0.3in;
+      left: 0.3in;
+      right: 0.3in;
+      bottom: 0.3in;
+      z-index: 0;
+      color: var(--navy);
+    }
+
+    .border-frame svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Moose walking */
+    .moose-walking {
+      width: 1in;
+      height: 0.6in;
+      color: var(--navy);
+    }
+
+    .moose-walking svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Together with families */
+    .families-text {
+      font-family: var(--font-utility);
+      font-size: 9pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--navy-light);
+      margin-top: -0.05in;
+    }
+
+    /* Couple names */
+    .couple-names {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 48pt;
+      line-height: 0.95;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .couple-names .ampersand {
+      color: var(--coral);
+      font-size: 40pt;
+    }
+
+    .name-first {
+      display: block;
+      margin-bottom: -0.06in;
+    }
+
+    .name-second {
+      display: block;
+      margin-top: -0.06in;
+    }
+
+    /* Invite line */
+    .invite-text {
+      font-family: var(--font-utility);
+      font-size: 9pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--navy-light);
+    }
+
+    /* Date lines */
+    .date-line {
+      font-family: var(--font-body);
+      font-size: 14pt;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .time-line {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 11pt;
+      color: var(--navy);
+      margin-top: -0.05in;
+    }
+
+    /* Venue */
+    .venue-name {
+      font-family: var(--font-display);
+      font-size: 14pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-top: 0.05in;
+    }
+
+    .venue-location {
+      font-family: var(--font-utility);
+      font-size: 9pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--navy-light);
+      margin-top: -0.08in;
+    }
+
+    /* Scattered doodles */
+    .doodles {
+      display: flex;
+      gap: 0.25in;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.05in;
+      color: var(--navy-light);
+    }
+
+    .doodles svg {
+      width: 0.35in;
+      height: 0.35in;
+    }
+
+    /* Subtle gradient wash */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        ellipse at 50% 100%,
+        rgba(232, 112, 74, 0.03) 0%,
+        transparent 60%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card page-invitation">
+    <!-- Hand-drawn border -->
+    <div class="border-frame">
+      <svg viewBox="0 0 500 700" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Top edge -->
+        <path d="M 30 20 Q 125 17 250 20 Q 375 23 470 20" />
+        <!-- Right edge -->
+        <path d="M 480 30 Q 482 175 480 350 Q 478 525 480 670" />
+        <!-- Bottom edge -->
+        <path d="M 470 680 Q 375 683 250 680 Q 125 677 30 680" />
+        <!-- Left edge -->
+        <path d="M 20 670 Q 18 525 20 350 Q 22 175 20 30" />
+
+        <!-- Top-left corner curl -->
+        <path d="M 30 20 Q 20 20 20 30" />
+        <path d="M 12 16 Q 8 9 14 7 Q 18 11 12 16" />
+        <path d="M 16 12 Q 9 8 7 14 Q 11 18 16 12" />
+
+        <!-- Top-right corner curl -->
+        <path d="M 470 20 Q 480 20 480 30" />
+        <path d="M 488 16 Q 492 9 486 7 Q 482 11 488 16" />
+        <path d="M 484 12 Q 491 8 493 14 Q 489 18 484 12" />
+
+        <!-- Bottom-right corner curl -->
+        <path d="M 480 670 Q 480 680 470 680" />
+        <path d="M 488 684 Q 492 691 486 693 Q 482 689 488 684" />
+        <path d="M 484 688 Q 491 692 493 686 Q 489 682 484 688" />
+
+        <!-- Bottom-left corner curl -->
+        <path d="M 20 670 Q 20 680 30 680" />
+        <path d="M 12 684 Q 8 691 14 693 Q 18 689 12 684" />
+        <path d="M 16 688 Q 9 692 7 686 Q 11 682 16 688" />
+      </svg>
+    </div>
+
+    <div class="card-inner">
+      <!-- Moose walking -->
+      <div class="moose-walking">
+        <svg viewBox="0 0 140 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- English bulldog walking profile -->
+          <!-- Head -->
+          <ellipse cx="110" cy="28" rx="22" ry="18" />
+          <!-- Wrinkle -->
+          <path d="M 100 18 Q 108 16 116 18" />
+          <!-- Rose ear -->
+          <path d="M 125 16 Q 132 10 134 16 Q 132 20 128 20" />
+          <!-- Eye -->
+          <circle cx="118" cy="26" r="2.5" fill="currentColor" />
+          <!-- Nose -->
+          <ellipse cx="130" cy="32" rx="5" ry="3.5" />
+          <!-- Underbite -->
+          <path d="M 125 37 Q 130 36 135 37" />
+          <path d="M 128 37 L 128 39" />
+          <path d="M 132 37 L 132 39" />
+          <!-- Jowl -->
+          <path d="M 122 35 Q 120 40 124 42" />
+          <!-- Body -->
+          <path d="M 90 34 Q 60 30 30 36 Q 15 40 12 50" />
+          <path d="M 90 40 Q 60 44 30 48 Q 15 52 12 58" />
+          <!-- Front legs (walking) -->
+          <path d="M 85 40 L 90 68" />
+          <path d="M 75 42 L 68 68" />
+          <!-- Back legs (walking) -->
+          <path d="M 30 48 L 25 68" />
+          <path d="M 20 50 L 35 68" />
+          <!-- Paws -->
+          <path d="M 86 68 Q 90 72 94 68" />
+          <path d="M 64 68 Q 68 72 72 68" />
+          <path d="M 21 68 Q 25 72 29 68" />
+          <path d="M 31 68 Q 35 72 39 68" />
+          <!-- Tail -->
+          <path d="M 12 48 Q 6 42 8 36" />
+        </svg>
+      </div>
+
+      <!-- Together with families -->
+      <div class="families-text">Together with their families</div>
+
+      <!-- Couple names -->
+      <div class="couple-names">
+        <span class="name-first">Kash</span>
+        <span class="ampersand">&amp;</span>
+        <span class="name-second">Max</span>
+      </div>
+
+      <!-- Invite line -->
+      <div class="invite-text">invite you to celebrate their marriage</div>
+
+      <!-- Date -->
+      <div class="date-line">Saturday, the Third of July</div>
+      <div class="date-line">Two Thousand and Twenty-Seven</div>
+
+      <!-- Time -->
+      <div class="time-line">at Six O'Clock in the Evening</div>
+
+      <!-- Venue -->
+      <div class="venue-name">The Drake Hotel Sky Yard</div>
+      <div class="venue-location">Toronto, Ontario</div>
+
+      <!-- Scattered doodles -->
+      <div class="doodles">
+        <!-- Small cocktail -->
+        <svg viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 10 20 Q 10 10 20 8 Q 30 10 30 20" />
+          <ellipse cx="20" cy="20" rx="10" ry="4" />
+          <line x1="20" y1="24" x2="20" y2="40" />
+          <ellipse cx="20" cy="42" rx="8" ry="2" />
+          <path d="M 28 16 Q 32 14 34 10" />
+        </svg>
+        <!-- Small stars -->
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 20 5 L 22 15 L 30 12 L 24 18 L 32 24 L 22 22 L 20 32 L 18 22 L 8 24 L 16 18 L 10 12 L 18 15 Z" />
+          <path d="M 8 6 L 9 10 L 12 8 L 10 11 L 13 13 L 9 12 L 8 15 L 7 12 L 4 13 L 6 11 L 4 8 L 7 10 Z" />
+        </svg>
+        <!-- Small hearts -->
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 20 35 Q 5 22 5 14 Q 5 6 12 6 Q 17 6 20 12 Q 23 6 28 6 Q 35 6 35 14 Q 35 22 20 35" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

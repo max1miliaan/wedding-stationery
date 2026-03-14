@@ -1,5 +1,25 @@
 # Changelog
 
+## [2026-03-14] (Session 2)
+
+### What changed
+- Built all 8 stationery pieces: invitation, details card, RSVP card, program, table name tag, food menu, envelope liner
+- Added wedding program to the suite (order of events + wedding party + thank you)
+- Created toronto-skyline.svg and hand-drawn-border.svg (completing SVG illustration set)
+- Updated preview gallery -- all pieces now render as live iframes
+- Created private GitHub repo (max1miliaan/wedding-stationery)
+- Updated global MEMORY.md and PROJECTS.md registry
+
+### Why
+- User requested program added to stationery suite
+- Completing all pieces enables full suite review and iteration
+
+### Decisions
+- Program format: 4.25 x 5.5 inches, timeline layout with coral time markers on the left
+- Moose confirmed as English bulldog (not French) -- all illustration briefs and SVGs corrected
+- Placeholder menu items and event times used -- to be finalized closer to date
+- Envelope liner: sunset gradient background with scattered cream doodle pattern (champagne, stars, hearts, CN Tower, Moose silhouette)
+
 ## [2026-03-14]
 
 ### What changed
