@@ -861,6 +861,44 @@
       transition: all 0.3s;
     }
     .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ================================================================ */
+    /* TEXT EDITING                                                       */
+    /* ================================================================ */
+    .text-edit-row {
+      margin-bottom: 8px;
+    }
+    .text-edit-label {
+      font-size: 9px;
+      color: var(--studio-text-muted);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .text-edit-input {
+      width: 100%;
+      padding: 6px 10px;
+      font-size: 12px;
+      background: var(--studio-surface-2);
+      border: 1px solid var(--studio-border);
+      border-radius: var(--studio-radius);
+      color: var(--studio-text);
+    }
+    .text-edit-input:focus { outline: none; border-color: var(--studio-accent); }
+
+    /* ContentEditable elements on preview */
+    .preview-card [contenteditable] {
+      cursor: text;
+      outline: none;
+      border-radius: 3px;
+      transition: box-shadow 0.15s;
+    }
+    .preview-card [contenteditable]:hover {
+      box-shadow: 0 0 0 2px rgba(232,112,74,0.25);
+    }
+    .preview-card [contenteditable]:focus {
+      box-shadow: 0 0 0 2px rgba(232,112,74,0.5);
+    }
   </style>
 </head>
 <body>
@@ -904,11 +942,15 @@
             <button class="sidebar-tab" data-panel="sp-presets">Presets</button>
           </div>
 
-          <!-- Piece Selector -->
+          <!-- Piece Selector + Text Content -->
           <div id="sp-piece" class="sidebar-panel active">
             <div class="ctrl-group">
               <div class="ctrl-label">Select Piece</div>
               <div class="piece-btn-grid" id="piece-selector"></div>
+            </div>
+            <div class="ctrl-group">
+              <div class="ctrl-label">Text Content <span>click preview to edit inline</span></div>
+              <div id="text-editors"></div>
             </div>
           </div>
 
@@ -1384,7 +1426,25 @@
         lineHeight: 1.5
       },
       zoom: 1,
-      compare: false
+      compare: false,
+      text: {
+        name1: 'Kash',
+        name2: 'Max',
+        ampersand: '&',
+        date: 'July 3, 2027',
+        dateFormal: 'Saturday, the Third of July',
+        dateFormal2: 'Two Thousand and Twenty-Seven',
+        time: 'at Six O\'Clock in the Evening',
+        venue: 'The Drake Hotel',
+        venueDetail: 'Sky Yard',
+        city: 'Toronto, Ontario',
+        label: 'Save the Date',
+        inviteText: 'invite you to celebrate their marriage',
+        familyText: 'Together with their families',
+        followText: 'Invitation to follow',
+        rsvpBy: 'Kindly respond by May 15, 2027',
+        rsvpScan: 'Scan to RSVP online'
+      }
     };
 
     // Load from localStorage
@@ -1440,54 +1500,71 @@
 
       var html = '';
 
+      var t = s.text;
+      var ce = ' contenteditable="true" spellcheck="false"';
+
       if (state.piece === 'save-the-date') {
         html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
           '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
-          '<div style="' + utilFont + ';font-size:11pt;font-weight:500;text-transform:uppercase;letter-spacing:0.25em;color:' + s.colors.navy + ';opacity:0.6;">Save the Date</div>' +
+          '<div' + ce + ' data-field="label" style="' + utilFont + ';font-size:11pt;font-weight:500;text-transform:uppercase;letter-spacing:0.25em;color:' + s.colors.navy + ';opacity:0.6;">' + t.label + '</div>' +
           '<div style="' + displayFont + ';font-size:' + s.layout.nameSize + 'pt;line-height:0.95;color:' + s.colors.navy + ';letter-spacing:' + s.layout.letterSpacing + 'em;">' +
-          'Kash <span style="color:' + s.colors.coral + ';">&amp;</span> Max</div>' +
+          '<span' + ce + ' data-field="name1">' + t.name1 + '</span> <span style="color:' + s.colors.coral + ';">' + t.ampersand + '</span> <span' + ce + ' data-field="name2">' + t.name2 + '</span></div>' +
           '<div style="width:100px;height:100px;"><object data="../assets/svg/' + s.illustrations.decor + '" type="image/svg+xml" width="100" height="100" style="pointer-events:none;"></object></div>' +
-          '<div style="' + bodyFont + ';font-size:18pt;font-weight:600;color:' + s.colors.navy + ';letter-spacing:0.05em;">July 3, 2027</div>' +
+          '<div' + ce + ' data-field="date" style="' + bodyFont + ';font-size:18pt;font-weight:600;color:' + s.colors.navy + ';letter-spacing:0.05em;">' + t.date + '</div>' +
           '<div style="' + utilFont + ';font-size:10pt;text-transform:uppercase;letter-spacing:0.2em;color:' + s.colors.navy + ';opacity:0.6;">' +
-          'The Drake Hotel <span style="color:' + s.colors.coral + ';">/</span> Toronto</div>' +
+          '<span' + ce + ' data-field="venue">' + t.venue + '</span> <span style="color:' + s.colors.coral + ';">/</span> <span' + ce + ' data-field="city">' + t.city.split(',')[0] + '</span></div>' +
           '<div style="width:110px;height:130px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="110" height="130" style="pointer-events:none;"></object></div>' +
-          '<div style="' + scriptFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.5;">Invitation to follow</div>' +
+          '<div' + ce + ' data-field="followText" style="' + scriptFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.5;">' + t.followText + '</div>' +
           '</div></div>';
       } else if (state.piece === 'invitation') {
         html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
           '<div style="position:absolute;inset:16px;"><object data="../assets/svg/' + s.illustrations.border + '" type="image/svg+xml" width="100%" height="100%" style="pointer-events:none;width:100%;height:100%;"></object></div>' +
           '<div class="card-inner" style="padding:' + (s.layout.padding * 96 + 20) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
-          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.2em;color:' + s.colors.navy + ';opacity:0.5;">Together with their families</div>' +
+          '<div' + ce + ' data-field="familyText" style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.2em;color:' + s.colors.navy + ';opacity:0.5;">' + t.familyText + '</div>' +
           '<div style="' + displayFont + ';font-size:' + s.layout.nameSize + 'pt;line-height:0.95;color:' + s.colors.navy + ';letter-spacing:' + s.layout.letterSpacing + 'em;">' +
-          'Kash <span style="color:' + s.colors.coral + ';">&amp;</span> Max</div>' +
-          '<div style="' + scriptFont + ';font-size:14pt;color:' + s.colors.navy + ';opacity:0.6;">invite you to celebrate their marriage</div>' +
+          '<span' + ce + ' data-field="name1">' + t.name1 + '</span> <span style="color:' + s.colors.coral + ';">' + t.ampersand + '</span> <span' + ce + ' data-field="name2">' + t.name2 + '</span></div>' +
+          '<div' + ce + ' data-field="inviteText" style="' + scriptFont + ';font-size:14pt;color:' + s.colors.navy + ';opacity:0.6;">' + t.inviteText + '</div>' +
           '<div style="' + bodyFont + ';font-size:14pt;color:' + s.colors.navy + ';line-height:1.6;">' +
-          'Saturday, the Third of July<br>Two Thousand and Twenty-Seven<br><span style="font-style:italic;opacity:0.7;">at Six O\'Clock in the Evening</span></div>' +
+          '<span' + ce + ' data-field="dateFormal">' + t.dateFormal + '</span><br><span' + ce + ' data-field="dateFormal2">' + t.dateFormal2 + '</span><br><span' + ce + ' data-field="time" style="font-style:italic;opacity:0.7;">' + t.time + '</span></div>' +
           '<div style="' + utilFont + ';font-size:10pt;text-transform:uppercase;letter-spacing:0.15em;color:' + s.colors.navy + ';opacity:0.6;">' +
-          'The Drake Hotel Sky Yard<br>Toronto, Ontario</div>' +
+          '<span' + ce + ' data-field="venue">' + t.venue + '</span> <span' + ce + ' data-field="venueDetail">' + t.venueDetail + '</span><br><span' + ce + ' data-field="city">' + t.city + '</span></div>' +
           '<div style="width:80px;height:90px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="80" height="90" style="pointer-events:none;"></object></div>' +
           '</div></div>';
       } else if (state.piece === 'rsvp-card') {
         html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
           '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
           '<div style="' + displayFont + ';font-size:' + (s.layout.nameSize * 0.7) + 'pt;color:' + s.colors.coral + ';">RSVP</div>' +
-          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.12em;color:' + s.colors.navy + ';opacity:0.5;">Kindly respond by May 15, 2027</div>' +
+          '<div' + ce + ' data-field="rsvpBy" style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.12em;color:' + s.colors.navy + ';opacity:0.5;">' + t.rsvpBy + '</div>' +
           '<div style="width:48px;height:48px;border:2px solid ' + s.colors.navy + ';opacity:0.2;display:flex;align-items:center;justify-content:center;font-size:8px;">QR</div>' +
-          '<div style="' + bodyFont + ';font-size:11pt;color:' + s.colors.navy + ';opacity:0.7;">Scan to RSVP online</div>' +
+          '<div' + ce + ' data-field="rsvpScan" style="' + bodyFont + ';font-size:11pt;color:' + s.colors.navy + ';opacity:0.7;">' + t.rsvpScan + '</div>' +
           '<div style="width:60px;height:70px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="60" height="70" style="pointer-events:none;"></object></div>' +
           '</div></div>';
       } else {
-        // Generic fallback for other pieces
         html = '<div class="preview-card" style="width:' + p.w + 'px;height:' + p.h + 'px;background:' + s.colors.cream + ';color:' + s.colors.navy + ';">' +
           '<div class="card-inner" style="padding:' + (s.layout.padding * 96) + 'px;gap:' + (s.layout.gap * 96) + 'px;">' +
-          '<div style="' + displayFont + ';font-size:' + (s.layout.nameSize * 0.6) + 'pt;color:' + s.colors.navy + ';">' + (PIECES.find(function(x){return x.id === state.piece;}) || {}).name + '</div>' +
-          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.15em;color:' + s.colors.navy + ';opacity:0.5;">Kash &amp; Max</div>' +
-          '<div style="' + bodyFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.6;">July 3, 2027</div>' +
+          '<div' + ce + ' style="' + displayFont + ';font-size:' + (s.layout.nameSize * 0.6) + 'pt;color:' + s.colors.navy + ';">' + (PIECES.find(function(x){return x.id === state.piece;}) || {}).name + '</div>' +
+          '<div style="' + utilFont + ';font-size:9pt;text-transform:uppercase;letter-spacing:0.15em;color:' + s.colors.navy + ';opacity:0.5;">' + t.name1 + ' ' + t.ampersand + ' ' + t.name2 + '</div>' +
+          '<div' + ce + ' data-field="date" style="' + bodyFont + ';font-size:12pt;color:' + s.colors.navy + ';opacity:0.6;">' + t.date + '</div>' +
           '<div style="width:80px;height:90px;"><object data="../assets/svg/' + s.illustrations.moose + '" type="image/svg+xml" width="80" height="90" style="pointer-events:none;"></object></div>' +
           '</div></div>';
       }
 
       container.innerHTML = html;
+
+      // Attach contentEditable listeners
+      container.querySelectorAll('[contenteditable]').forEach(function(el) {
+        el.addEventListener('blur', function() {
+          var field = el.dataset.field;
+          if (field && el.textContent.trim()) {
+            state.text[field] = el.textContent.trim();
+            saveState();
+            buildTextEditors(); // sync sidebar
+          }
+        });
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); el.blur(); }
+        });
+      });
     }
 
     function render() {
@@ -1842,6 +1919,39 @@
       });
     }
 
+    function buildTextEditors() {
+      var el = document.getElementById('text-editors');
+      var fields = [
+        { key: 'name1', label: 'Name 1' },
+        { key: 'name2', label: 'Name 2' },
+        { key: 'date', label: 'Date' },
+        { key: 'venue', label: 'Venue' },
+        { key: 'venueDetail', label: 'Venue Detail' },
+        { key: 'city', label: 'City' },
+        { key: 'dateFormal', label: 'Formal Date Line 1' },
+        { key: 'dateFormal2', label: 'Formal Date Line 2' },
+        { key: 'time', label: 'Time' },
+        { key: 'label', label: 'Card Label' },
+        { key: 'inviteText', label: 'Invitation Text' },
+        { key: 'familyText', label: 'Family Line' },
+        { key: 'followText', label: 'Follow-up Text' },
+        { key: 'rsvpBy', label: 'RSVP Deadline' },
+        { key: 'rsvpScan', label: 'RSVP Instructions' }
+      ];
+      el.innerHTML = fields.map(function(f) {
+        return '<div class="text-edit-row">' +
+          '<div class="text-edit-label">' + f.label + '</div>' +
+          '<input type="text" class="text-edit-input" data-field="' + f.key + '" value="' + (state.text[f.key] || '').replace(/"/g, '&quot;') + '">' +
+          '</div>';
+      }).join('');
+      el.querySelectorAll('.text-edit-input').forEach(function(inp) {
+        inp.addEventListener('input', function() {
+          state.text[inp.dataset.field] = inp.value;
+          render();
+        });
+      });
+    }
+
     function buildPresets() {
       var list = document.getElementById('preset-list');
       var presets = [];
@@ -1976,6 +2086,7 @@
     /* ================================================================ */
 
     buildPieceSelector();
+    buildTextEditors();
     buildFontSelectors();
     buildPaletteGrid();
     buildColorEditors();
