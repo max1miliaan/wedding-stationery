@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left glass -->
+  <path d="M 25 90 Q 25 60 35 45 Q 38 40 40 35 L 42 20 Q 43 12 50 10 Q 55 9 58 12" />
+  <path d="M 25 90 L 15 95" />
+  <path d="M 10 95 L 22 95" />
+  <!-- Left glass bowl -->
+  <ellipse cx="42" cy="45" rx="16" ry="8" />
+  <path d="M 26 45 Q 28 32 42 28 Q 56 32 58 45" />
+
+  <!-- Right glass -->
+  <path d="M 95 90 Q 95 60 85 45 Q 82 40 80 35 L 78 20 Q 77 12 70 10 Q 65 9 62 12" />
+  <path d="M 95 90 L 105 95" />
+  <path d="M 98 95 L 110 95" />
+  <!-- Right glass bowl -->
+  <ellipse cx="78" cy="45" rx="16" ry="8" />
+  <path d="M 62 45 Q 64 32 78 28 Q 92 32 94 45" />
+
+  <!-- Clink splash lines -->
+  <line x1="55" y1="25" x2="52" y2="18" />
+  <line x1="60" y1="22" x2="60" y2="14" />
+  <line x1="65" y1="25" x2="68" y2="18" />
+  <line x1="50" y1="30" x2="45" y2="26" />
+  <line x1="70" y1="30" x2="75" y2="26" />
+
+  <!-- Small bubbles -->
+  <circle cx="48" cy="15" r="1.5" />
+  <circle cx="72" cy="13" r="1" />
+  <circle cx="58" cy="8" r="1.5" />
+</svg>

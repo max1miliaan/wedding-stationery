@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date -- Kash &amp; Max</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/print.css">
+  <style>
+    @page {
+      size: 5.25in 7.25in;
+      margin: 0;
+    }
+
+    .card {
+      width: 5.25in;
+      height: 7.25in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: var(--cream);
+    }
+
+    .card-inner {
+      padding: 0.375in;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2in;
+      position: relative;
+    }
+
+    /* Corner flourishes */
+    .flourish {
+      position: absolute;
+      width: 0.7in;
+      height: 0.7in;
+      color: var(--coral);
+    }
+
+    .flourish-tl { top: 0.2in; left: 0.2in; }
+    .flourish-tr { top: 0.2in; right: 0.2in; }
+    .flourish-bl { bottom: 0.2in; left: 0.2in; }
+    .flourish-br { bottom: 0.2in; right: 0.2in; }
+
+    /* Save the Date label */
+    .save-label {
+      font-family: var(--font-utility);
+      font-size: 11pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--navy-light);
+      margin-bottom: 0.05in;
+    }
+
+    /* Couple names */
+    .couple-names {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 62pt;
+      line-height: 0.95;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .couple-names .ampersand {
+      color: var(--coral);
+      font-size: 50pt;
+    }
+
+    .name-first {
+      display: block;
+      margin-bottom: -0.08in;
+    }
+
+    .name-second {
+      display: block;
+      margin-top: -0.08in;
+    }
+
+    /* Illustration */
+    .illustration-champagne {
+      width: 1.2in;
+      height: 1.3in;
+      color: var(--navy);
+      margin: 0.1in 0;
+    }
+
+    /* Date */
+    .date {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 18pt;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+    }
+
+    /* Venue */
+    .venue {
+      font-family: var(--font-utility);
+      font-size: 10pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--navy-light);
+      margin-top: -0.05in;
+    }
+
+    .venue-divider {
+      display: inline-block;
+      margin: 0 0.08in;
+      color: var(--coral);
+    }
+
+    /* Moose placeholder */
+    .moose-placeholder {
+      width: 1.4in;
+      height: 1.2in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1in;
+      color: var(--navy);
+    }
+
+    .moose-placeholder svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Invitation to follow */
+    .follow-text {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 10pt;
+      color: var(--navy-light);
+      margin-top: 0.05in;
+    }
+
+    /* Subtle gradient wash at edges */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        ellipse at 50% 100%,
+        rgba(232, 112, 74, 0.04) 0%,
+        transparent 60%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card page-save-the-date">
+    <!-- Corner flourishes -->
+    <div class="flourish flourish-tl">
+      <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 40 Q 5 15 20 8 Q 35 2 50 8 Q 42 12 38 18" />
+        <path d="M 40 5 Q 15 5 8 20 Q 2 35 8 50 Q 12 42 18 38" />
+        <path d="M 20 8 Q 25 3 30 8 Q 25 10 20 8" />
+        <path d="M 8 20 Q 3 25 8 30 Q 10 25 8 20" />
+        <circle cx="35" cy="5" r="1.5" />
+        <circle cx="5" cy="35" r="1.5" />
+      </svg>
+    </div>
+    <div class="flourish flourish-tr">
+      <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 75 40 Q 75 15 60 8 Q 45 2 30 8 Q 38 12 42 18" />
+        <path d="M 40 5 Q 65 5 72 20 Q 78 35 72 50 Q 68 42 62 38" />
+        <path d="M 60 8 Q 55 3 50 8 Q 55 10 60 8" />
+        <path d="M 72 20 Q 77 25 72 30 Q 70 25 72 20" />
+        <circle cx="45" cy="5" r="1.5" />
+        <circle cx="75" cy="35" r="1.5" />
+      </svg>
+    </div>
+    <div class="flourish flourish-bl">
+      <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 40 Q 5 65 20 72 Q 35 78 50 72 Q 42 68 38 62" />
+        <path d="M 40 75 Q 15 75 8 60 Q 2 45 8 30 Q 12 38 18 42" />
+        <path d="M 20 72 Q 25 77 30 72 Q 25 70 20 72" />
+        <path d="M 8 60 Q 3 55 8 50 Q 10 55 8 60" />
+        <circle cx="35" cy="75" r="1.5" />
+        <circle cx="5" cy="45" r="1.5" />
+      </svg>
+    </div>
+    <div class="flourish flourish-br">
+      <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 75 40 Q 75 65 60 72 Q 45 78 30 72 Q 38 68 42 62" />
+        <path d="M 40 75 Q 65 75 72 60 Q 78 45 72 30 Q 68 38 62 42" />
+        <path d="M 60 72 Q 55 77 50 72 Q 55 70 60 72" />
+        <path d="M 72 60 Q 77 55 72 50 Q 70 55 72 60" />
+        <circle cx="45" cy="75" r="1.5" />
+        <circle cx="75" cy="45" r="1.5" />
+      </svg>
+    </div>
+
+    <div class="card-inner">
+      <!-- Save the Date label -->
+      <div class="save-label">Save the Date</div>
+
+      <!-- Couple names -->
+      <div class="couple-names">
+        <span class="name-first">Kash</span>
+        <span class="ampersand">&amp;</span>
+        <span class="name-second">Max</span>
+      </div>
+
+      <!-- Champagne glasses illustration -->
+      <div class="illustration-champagne">
+        <svg viewBox="0 0 120 140" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 25 90 Q 25 60 35 45 Q 38 40 40 35 L 42 20 Q 43 12 50 10 Q 55 9 58 12" />
+          <path d="M 25 90 L 15 95" /><path d="M 10 95 L 22 95" />
+          <ellipse cx="42" cy="45" rx="16" ry="8" />
+          <path d="M 26 45 Q 28 32 42 28 Q 56 32 58 45" />
+          <path d="M 95 90 Q 95 60 85 45 Q 82 40 80 35 L 78 20 Q 77 12 70 10 Q 65 9 62 12" />
+          <path d="M 95 90 L 105 95" /><path d="M 98 95 L 110 95" />
+          <ellipse cx="78" cy="45" rx="16" ry="8" />
+          <path d="M 62 45 Q 64 32 78 28 Q 92 32 94 45" />
+          <line x1="55" y1="25" x2="52" y2="18" />
+          <line x1="60" y1="22" x2="60" y2="14" />
+          <line x1="65" y1="25" x2="68" y2="18" />
+          <line x1="50" y1="30" x2="45" y2="26" />
+          <line x1="70" y1="30" x2="75" y2="26" />
+          <circle cx="48" cy="15" r="1.5" />
+          <circle cx="72" cy="13" r="1" />
+          <circle cx="58" cy="8" r="1.5" />
+        </svg>
+      </div>
+
+      <!-- Date -->
+      <div class="date">July 3, 2027</div>
+
+      <!-- Venue -->
+      <div class="venue">
+        The Drake Hotel
+        <span class="venue-divider">/</span>
+        Toronto
+      </div>
+
+      <!-- Moose placeholder (English bulldog -- will be replaced with ElevenLabs-generated illustration) -->
+      <div class="moose-placeholder">
+        <svg viewBox="0 0 120 110" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- English bulldog sitting with bowtie -->
+          <!-- Head (wide, flat, wrinkly) -->
+          <ellipse cx="60" cy="30" rx="30" ry="24" />
+          <!-- Wrinkle lines on forehead -->
+          <path d="M 42 18 Q 50 15 58 18" />
+          <path d="M 62 18 Q 70 15 78 18" />
+          <path d="M 45 22 Q 55 20 65 22" />
+          <!-- Floppy rose ears -->
+          <path d="M 32 22 Q 25 15 22 22 Q 23 28 30 28" />
+          <path d="M 88 22 Q 95 15 98 22 Q 97 28 90 28" />
+          <!-- Eyes (wide-set) -->
+          <circle cx="45" cy="30" r="3.5" fill="currentColor" />
+          <circle cx="75" cy="30" r="3.5" fill="currentColor" />
+          <!-- Wide flat nose -->
+          <ellipse cx="60" cy="40" rx="8" ry="5" />
+          <circle cx="56" cy="40" r="2" />
+          <circle cx="64" cy="40" r="2" />
+          <!-- Underbite with visible teeth -->
+          <path d="M 50 46 Q 55 44 60 46 Q 65 44 70 46" />
+          <path d="M 54 46 L 54 49" />
+          <path d="M 60 46 L 60 50" />
+          <path d="M 66 46 L 66 49" />
+          <!-- Jowls -->
+          <path d="M 38 38 Q 35 45 40 50" />
+          <path d="M 82 38 Q 85 45 80 50" />
+          <!-- Bowtie -->
+          <path d="M 46 54 L 54 50 L 54 58 Z" fill="none" />
+          <path d="M 74 54 L 66 50 L 66 58 Z" fill="none" />
+          <circle cx="60" cy="54" r="2.5" />
+          <!-- Stocky body -->
+          <path d="M 38 52 Q 30 60 28 75 Q 26 85 30 90" />
+          <path d="M 82 52 Q 90 60 92 75 Q 94 85 90 90" />
+          <!-- Front legs (short, thick) -->
+          <path d="M 40 70 L 38 95" />
+          <path d="M 48 72 L 46 95" />
+          <path d="M 72 72 L 74 95" />
+          <path d="M 80 70 L 82 95" />
+          <!-- Paws (big, rounded) -->
+          <path d="M 34 95 Q 38 100 42 98 Q 46 100 50 95" />
+          <path d="M 70 95 Q 74 100 78 98 Q 82 100 86 95" />
+          <!-- Round belly -->
+          <path d="M 30 90 Q 60 100 90 90" />
+        </svg>
+      </div>
+
+      <!-- Invitation to follow -->
+      <div class="follow-text">Invitation to follow</div>
+    </div>
+  </div>
+</body>
+</html>

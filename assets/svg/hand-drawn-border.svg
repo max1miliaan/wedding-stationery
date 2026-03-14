@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Top edge (slightly wavy) -->
+  <path d="M 30 20 Q 125 18 250 20 Q 375 22 470 20" />
+
+  <!-- Right edge -->
+  <path d="M 480 30 Q 482 175 480 350 Q 478 525 480 670" />
+
+  <!-- Bottom edge -->
+  <path d="M 470 680 Q 375 682 250 680 Q 125 678 30 680" />
+
+  <!-- Left edge -->
+  <path d="M 20 670 Q 18 525 20 350 Q 22 175 20 30" />
+
+  <!-- Top-left corner curl with leaves -->
+  <path d="M 30 20 Q 20 20 20 30" />
+  <path d="M 12 18 Q 8 10 14 8 Q 18 12 12 18" />
+  <path d="M 18 12 Q 10 8 8 14 Q 12 18 18 12" />
+
+  <!-- Top-right corner curl with leaves -->
+  <path d="M 470 20 Q 480 20 480 30" />
+  <path d="M 488 18 Q 492 10 486 8 Q 482 12 488 18" />
+  <path d="M 482 12 Q 490 8 492 14 Q 488 18 482 12" />
+
+  <!-- Bottom-right corner curl with leaves -->
+  <path d="M 480 670 Q 480 680 470 680" />
+  <path d="M 488 682 Q 492 690 486 692 Q 482 688 488 682" />
+  <path d="M 482 688 Q 490 692 492 686 Q 488 682 482 688" />
+
+  <!-- Bottom-left corner curl with leaves -->
+  <path d="M 20 670 Q 20 680 30 680" />
+  <path d="M 12 682 Q 8 690 14 692 Q 18 688 12 682" />
+  <path d="M 18 688 Q 10 692 8 686 Q 12 682 18 688" />
+</svg>

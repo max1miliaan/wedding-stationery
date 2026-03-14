@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Main shaft (tapers upward) -->
+  <line x1="28" y1="200" x2="26" y2="100" />
+  <line x1="32" y1="200" x2="34" y2="100" />
+
+  <!-- Pod / observation deck -->
+  <path d="M 15 105 Q 15 95 30 92 Q 45 95 45 105" />
+  <path d="M 15 105 Q 15 112 30 115 Q 45 112 45 105" />
+  <line x1="15" y1="108" x2="45" y2="108" />
+
+  <!-- Upper shaft above pod -->
+  <line x1="27" y1="92" x2="28" y2="50" />
+  <line x1="33" y1="92" x2="32" y2="50" />
+
+  <!-- Antenna -->
+  <line x1="30" y1="50" x2="30" y2="5" />
+
+  <!-- Small antenna crossbar -->
+  <line x1="27" y1="30" x2="33" y2="30" />
+  <line x1="28" y1="20" x2="32" y2="20" />
+
+  <!-- Base flare -->
+  <path d="M 28 200 Q 22 195 20 190" />
+  <path d="M 32 200 Q 38 195 40 190" />
+</svg>

@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Print Specifications -- @page rules for each stationery piece
+   All dimensions include 0.125in bleed on all sides.
+   ========================================================================== */
+
+/* -- Save the Date: 5x7 trim, 5.25x7.25 bleed ------------------------------ */
+
+.page-save-the-date {
+  width: 5.25in;
+  height: 7.25in;
+  padding: 0.375in; /* 0.125in bleed + 0.25in safe zone */
+}
+
+/* -- Invitation: 5x7 trim, 5.25x7.25 bleed --------------------------------- */
+
+.page-invitation {
+  width: 5.25in;
+  height: 7.25in;
+  padding: 0.375in;
+}
+
+/* -- Details Card: 4.375x5.75 trim, 4.625x6 bleed -------------------------- */
+
+.page-details {
+  width: 4.625in;
+  height: 6in;
+  padding: 0.375in;
+}
+
+/* -- RSVP Card: 3.5x5 trim, 3.75x5.25 bleed -------------------------------- */
+
+.page-rsvp {
+  width: 3.75in;
+  height: 5.25in;
+  padding: 0.375in;
+}
+
+/* -- Envelope Liner: A7 size ------------------------------------------------ */
+
+.page-envelope-liner {
+  width: 5.5in;
+  height: 7.5in;
+  padding: 0.125in;
+}
+
+/* -- Table Name Tag: 3.5x2 trim (tent = 3.5x4 flat) ------------------------ */
+
+.page-name-tag {
+  width: 3.75in;
+  height: 2.25in;
+  padding: 0.25in;
+}
+
+/* Tent fold: full flat card is double height */
+.page-name-tag-flat {
+  width: 3.75in;
+  height: 4.25in;
+  padding: 0.25in;
+}
+
+/* -- Food Menu: 4x9.25 trim, 4.25x9.5 bleed -------------------------------- */
+
+.page-menu {
+  width: 4.25in;
+  height: 9.5in;
+  padding: 0.375in;
+}
+
+/* -- Program: 4.25x5.5 trim, 4.5x5.75 bleed -------------------------------- */
+
+.page-program {
+  width: 4.5in;
+  height: 5.75in;
+  padding: 0.375in;
+}
+
+/* -- Print Media Queries ---------------------------------------------------- */
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Each piece sets its own @page size via class-specific rules.
+     The HTML file should include a <style> block with:
+     @page { size: [width] [height]; }
+     matching the piece dimensions. */
+}
+
+/* -- Save the Date Print ---------------------------------------------------- */
+
+.print-save-the-date {
+  @page { size: 5.25in 7.25in; }
+}
+
+/* -- Invitation Print ------------------------------------------------------- */
+
+.print-invitation {
+  @page { size: 5.25in 7.25in; }
+}
+
+/* -- Details Print ---------------------------------------------------------- */
+
+.print-details {
+  @page { size: 4.625in 6in; }
+}
+
+/* -- RSVP Print ------------------------------------------------------------- */
+
+.print-rsvp {
+  @page { size: 3.75in 5.25in; }
+}
+
+/* -- Name Tag Print --------------------------------------------------------- */
+
+.print-name-tag {
+  @page { size: 3.75in 2.25in; }
+}
+
+/* -- Menu Print ------------------------------------------------------------- */
+
+.print-menu {
+  @page { size: 4.25in 9.5in; }
+}
+
+/* -- Program Print ---------------------------------------------------------- */
+
+.print-program {
+  @page { size: 4.5in 5.75in; }
+}

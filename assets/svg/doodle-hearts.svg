@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 50" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Heart 1 (medium) -->
+  <path d="M 20 18 Q 20 10 27 10 Q 34 10 34 18 Q 34 26 20 35 Q 6 26 6 18 Q 6 10 13 10 Q 20 10 20 18" />
+
+  <!-- Heart 2 (small) -->
+  <path d="M 55 22 Q 55 17 59 17 Q 63 17 63 22 Q 63 27 55 32 Q 47 27 47 22 Q 47 17 51 17 Q 55 17 55 22" />
+
+  <!-- Heart 3 (tiny) -->
+  <path d="M 72 12 Q 72 9 74 9 Q 76 9 76 12 Q 76 15 72 18 Q 68 15 68 12 Q 68 9 70 9 Q 72 9 72 12" />
+</svg>
