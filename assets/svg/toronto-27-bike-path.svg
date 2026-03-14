@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Path line -->
+  <polyline points="5,65 30,60 60,58 90,56 120,54 138,52"/>
+  <!-- Bike rear wheel -->
+  <circle cx="50" cy="42" r="8"/>
+  <!-- Bike front wheel -->
+  <circle cx="74" cy="42" r="8"/>
+  <!-- Bike frame triangle -->
+  <polygon points="50,42 62,28 74,42"/>
+  <!-- Seat -->
+  <line x1="58" y1="28" x2="66" y2="28"/>
+  <!-- Handlebars -->
+  <polyline points="72,30 76,26 78,28"/>
+  <!-- Seat post -->
+  <line x1="62" y1="28" x2="62" y2="34"/>
+  <!-- Tree left trunk -->
+  <line x1="18" y1="55" x2="18" y2="38"/>
+  <!-- Tree left canopy -->
+  <ellipse cx="18" cy="32" rx="8" ry="8"/>
+  <!-- Tree right trunk -->
+  <line x1="110" y1="50" x2="110" y2="32"/>
+  <!-- Tree right canopy -->
+  <ellipse cx="110" cy="26" rx="9" ry="9"/>
+  <!-- Small bush -->
+  <ellipse cx="95" cy="52" rx="5" ry="4"/>
+  <!-- Ground line -->
+  <line x1="2" y1="68" x2="138" y2="55"/>
+</svg>

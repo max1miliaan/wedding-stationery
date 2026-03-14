@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer circle frame -->
+  <circle cx="60" cy="70" r="50" />
+  <!-- Inner circle frame -->
+  <circle cx="60" cy="70" r="44" />
+  <!-- Decorative dot top -->
+  <circle cx="60" cy="20" r="2" />
+  <!-- Decorative dot bottom -->
+  <circle cx="60" cy="120" r="2" />
+  <!-- Decorative dot left -->
+  <circle cx="10" cy="70" r="2" />
+  <!-- Decorative dot right -->
+  <circle cx="110" cy="70" r="2" />
+  <!-- Letter K - vertical stroke -->
+  <line x1="38" y1="55" x2="38" y2="85" />
+  <!-- Letter K - upper diagonal -->
+  <line x1="38" y1="70" x2="52" y2="55" />
+  <!-- Letter K - lower diagonal -->
+  <line x1="42" y1="68" x2="52" y2="85" />
+  <!-- Ampersand circle -->
+  <circle cx="60" cy="70" r="5" />
+  <!-- Letter M - left vertical -->
+  <line x1="68" y1="55" x2="68" y2="85" />
+  <!-- Letter M - left diagonal -->
+  <line x1="68" y1="55" x2="75" y2="72" />
+  <!-- Letter M - right diagonal -->
+  <line x1="75" y1="72" x2="82" y2="55" />
+  <!-- Letter M - right vertical -->
+  <line x1="82" y1="55" x2="82" y2="85" />
+  <!-- Flourish top left -->
+  <polyline points="30,28 25,22 28,18" />
+  <!-- Flourish top right -->
+  <polyline points="90,28 95,22 92,18" />
+  <!-- Flourish bottom left -->
+  <polyline points="30,112 25,118 28,122" />
+  <!-- Flourish bottom right -->
+  <polyline points="90,112 95,118 92,122" />
+</svg>

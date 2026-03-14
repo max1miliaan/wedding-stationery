@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="45" cy="62" r="7"/>
+  <circle cx="43" cy="61" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="45" y1="69" x2="45" y2="100"/>
+  <polygon points="37,100 45,100 53,130"/>
+  <!-- Kash arm (holding string) -->
+  <line x1="45" y1="78" x2="56" y2="72"/>
+  <!-- Max head -->
+  <circle cx="68" cy="54" r="8"/>
+  <circle cx="66" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="68" y1="62" x2="68" y2="96"/>
+  <line x1="68" y1="96" x2="62" y2="130"/>
+  <line x1="68" y1="96" x2="74" y2="130"/>
+  <!-- Max arm (holding string up) -->
+  <line x1="68" y1="72" x2="80" y2="58"/>
+  <!-- Kite string -->
+  <line x1="80" y1="58" x2="90" y2="18"/>
+  <!-- Kite -->
+  <polygon points="90,8 98,18 90,28 82,18"/>
+  <!-- Kite tail -->
+  <polyline points="90,28 86,36 92,42 88,48"/>
+</svg>

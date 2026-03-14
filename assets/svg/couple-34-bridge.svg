@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bridge arch -->
+  <polyline points="5,120 20,105 40,95 60,90 80,95 100,105 115,120"/>
+  <!-- Bridge railing left -->
+  <line x1="20" y1="105" x2="20" y2="95"/>
+  <!-- Bridge railing right -->
+  <line x1="100" y1="105" x2="100" y2="95"/>
+  <!-- Railing top -->
+  <line x1="20" y1="95" x2="100" y2="95"/>
+  <!-- Kash head -->
+  <circle cx="48" cy="55" r="7"/>
+  <circle cx="46" cy="54" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="48" y1="62" x2="48" y2="88"/>
+  <polygon points="40,82 48,82 56,92"/>
+  <!-- Kash arm -->
+  <line x1="48" y1="70" x2="60" y2="66"/>
+  <!-- Max head -->
+  <circle cx="70" cy="47" r="8"/>
+  <circle cx="68" cy="46" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="70" y1="55" x2="70" y2="86"/>
+  <line x1="70" y1="86" x2="64" y2="92"/>
+  <line x1="70" y1="86" x2="76" y2="92"/>
+  <!-- Max arm -->
+  <line x1="70" y1="66" x2="56" y2="70"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Butterfly -->
+  <polygon points="82,4 92,0 94,10 86,8" />
+  <polygon points="86,8 96,10 94,18 86,12" />
+  <line x1="86" y1="8" x2="82" y2="12" />
+  <!-- Head tilted up looking at butterfly -->
+  <rect x="15" y="14" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,20 14,8 30,16" />
+  <polyline points="78,20 86,8 70,16" />
+  <!-- Eyes looking up -->
+  <circle cx="35" cy="32" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="32" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="42" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="32,58 40,62 50,64 60,62 68,58" />
+  <!-- Jowl lines -->
+  <line x1="18" y1="44" x2="16" y2="56" />
+  <line x1="82" y1="44" x2="84" y2="56" />
+  <!-- Body -->
+  <rect x="22" y="62" width="56" height="36" rx="10" ry="8" />
+  <!-- Front legs -->
+  <rect x="26" y="90" width="14" height="22" rx="5" />
+  <rect x="60" y="90" width="14" height="22" rx="5" />
+  <!-- Paw lines -->
+  <line x1="31" y1="108" x2="31" y2="104" />
+  <line x1="65" y1="108" x2="65" y2="104" />
+</svg>

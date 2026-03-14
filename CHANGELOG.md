@@ -1,5 +1,30 @@
 # Changelog
 
+## [2026-03-14] (Session 6)
+
+### What changed
+- Expanded SVG illustration library from 125 to 250 (25 new per category, numbered 26-50)
+- Added 'display' font filter category to studio for Clash Display and Panchang
+- Updated studio.html ILLUSTRATIONS data with all 125 new entries
+- **Moose 26-50**: howling, ball, bow, sniffing, curious, waving, sign-holder, wreath, banner, love-letter, flowers-mouth, butterfly, treat, belly-up, stretching, digging, shaking, stack-hearts, window, leash, photo, pillow, crown, wings, hero-cape
+- **Couple 26-50**: cooking, star-gazing, bike, selfie, picnic, balloons, snowflakes, tree-carving, bridge, boat, lanterns, bookshop, ice-cream, champagne-pop, doorway, kite, coffee, window-seat, hands-monogram, jumping, slow-dance, guitar, sunset-walk, rose-exchange, frame-pose
+- **Toronto 26-50**: ferry, bike-path, graffiti-alley, st-lawrence-market, high-park, ROM, casa-loma, flatiron, harbourfront, dundas-square, chinatown-gate, cherry-blossoms, nathan-phillips, lake-ontario, rooftop-bar, patio-umbrella, brunch-scene, sunset-skyline, bridge-night, little-italy, music-venue, art-gallery, waterfront-trail, maple-leaf, wedding-venue
+- **Decor 26-50**: gift-box, envelope, wax-seal, bell, dove, candle, lantern, banner-flag, bunting, garland, ribbon-bow, mason-jar, camera, music-notes, feather, ampersand, infinity, compass, hourglass, diamond-gem, arrow, key, lock-heart, horseshoe, monogram-frame
+- **Border 26-50**: arrow-corners, scalloped, laurel, film-strip, piano-keys, confetti-scatter, lace-edge, chain-links, vine, feather, geometric, pennant, music, polaroid, envelope, watercolor-edge, mosaic, celtic, bunting-top, curtain, arch-top, string-lights, marquee, filigree, love-letters
+- All 250 SVGs verified: zero path elements, all use currentColor stroke, all have :root color style
+
+### Why
+- Doubling the illustration library to 50 per category gives much more variety for stationery design
+- Coverage now spans landmarks, neighbourhoods, scenes, ceremony, reception, romance, and personalization themes
+
+### Decisions
+- All 125 new SVGs use basic shapes only (no paths/beziers) -- consistent with existing library
+- Moose SVGs maintain stroke-width="2.5", decor/couple/toronto use stroke-width="2", borders use stroke-width="1.5"
+- Borders use viewBox="0 0 500 700" (5:7 ratio matching stationery cards)
+- Monogram frame (decor-50) includes K & M initials specific to the couple
+- Wedding venue (toronto-50) designed as ceremony arch with string lights -- usable as hero illustration
+- Maple leaf (toronto-49) built as polygon with vein lines for Canadian identity
+
 ## [2026-03-14] (Session 5)
 
 ### What changed

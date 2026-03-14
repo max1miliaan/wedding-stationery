@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Building triangular shape -->
+  <polygon points="50,10 15,110 85,110"/>
+  <!-- Floor line 1 -->
+  <line x1="44" y1="30" x2="56" y2="30"/>
+  <!-- Floor line 2 -->
+  <line x1="38" y1="50" x2="62" y2="50"/>
+  <!-- Floor line 3 -->
+  <line x1="32" y1="70" x2="68" y2="70"/>
+  <!-- Floor line 4 -->
+  <line x1="26" y1="90" x2="74" y2="90"/>
+  <!-- Window row 1 left -->
+  <rect x="43" y="33" width="4" height="6"/>
+  <!-- Window row 1 right -->
+  <rect x="53" y="33" width="4" height="6"/>
+  <!-- Window row 2 left -->
+  <rect x="37" y="53" width="5" height="7"/>
+  <!-- Window row 2 center -->
+  <rect x="48" y="53" width="5" height="7"/>
+  <!-- Window row 2 right -->
+  <rect x="58" y="53" width="5" height="7"/>
+  <!-- Window row 3 left -->
+  <rect x="32" y="73" width="5" height="7"/>
+  <!-- Window row 3 center -->
+  <rect x="48" y="73" width="5" height="7"/>
+  <!-- Window row 3 right -->
+  <rect x="63" y="73" width="5" height="7"/>
+  <!-- Door -->
+  <rect x="46" y="98" width="8" height="12"/>
+  <!-- Roof cap -->
+  <line x1="46" y1="12" x2="54" y2="12"/>
+  <!-- Ground -->
+  <line x1="10" y1="110" x2="90" y2="110"/>
+</svg>

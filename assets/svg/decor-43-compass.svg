@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer compass circle -->
+  <circle cx="60" cy="70" r="45" />
+  <!-- Inner compass circle -->
+  <circle cx="60" cy="70" r="38" />
+  <!-- Center point -->
+  <circle cx="60" cy="70" r="3" />
+  <!-- North point -->
+  <polygon points="60,28 54,58 60,52 66,58" />
+  <!-- South point -->
+  <polygon points="60,112 54,82 60,88 66,82" />
+  <!-- East point -->
+  <polygon points="102,70 72,64 78,70 72,76" />
+  <!-- West point -->
+  <polygon points="18,70 48,64 42,70 48,76" />
+  <!-- N label tick -->
+  <line x1="60" y1="22" x2="60" y2="18" />
+  <!-- S label tick -->
+  <line x1="60" y1="118" x2="60" y2="122" />
+  <!-- E label tick -->
+  <line x1="108" y1="70" x2="112" y2="70" />
+  <!-- W label tick -->
+  <line x1="12" y1="70" x2="8" y2="70" />
+  <!-- NE diagonal tick -->
+  <line x1="90" y1="38" x2="93" y2="35" />
+  <!-- NW diagonal tick -->
+  <line x1="30" y1="38" x2="27" y2="35" />
+  <!-- SE diagonal tick -->
+  <line x1="90" y1="102" x2="93" y2="105" />
+  <!-- SW diagonal tick -->
+  <line x1="30" y1="102" x2="27" y2="105" />
+</svg>

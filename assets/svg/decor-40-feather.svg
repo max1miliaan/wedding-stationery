@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Feather quill shaft -->
+  <polyline points="90,130 75,100 60,70 50,45 45,25 42,10" />
+  <!-- Left barbs upper -->
+  <polyline points="45,25 30,20 48,30" />
+  <polyline points="48,32 28,30 50,38" />
+  <polyline points="50,40 25,42 52,48" />
+  <!-- Left barbs lower -->
+  <polyline points="55,52 32,55 58,58" />
+  <polyline points="60,62 38,68 63,68" />
+  <polyline points="65,72 45,80 68,78" />
+  <!-- Right barbs upper -->
+  <polyline points="45,25 55,18 47,28" />
+  <polyline points="48,32 62,25 50,36" />
+  <polyline points="52,42 68,35 55,46" />
+  <!-- Right barbs lower -->
+  <polyline points="58,55 75,50 62,60" />
+  <polyline points="63,65 80,62 67,70" />
+  <polyline points="68,75 85,75 72,80" />
+  <!-- Quill tip -->
+  <polyline points="90,130 95,135 88,132" />
+</svg>

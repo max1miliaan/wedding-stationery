@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border -->
+  <rect x="45" y="45" width="410" height="610" rx="0" ry="0"/>
+  <!-- Top-left celtic knot: interlocking lines -->
+  <polyline points="20,45 20,20 45,20"/>
+  <polyline points="30,45 30,30 45,30"/>
+  <line x1="20" y1="20" x2="30" y2="30"/>
+  <line x1="45" y1="20" x2="30" y2="30"/>
+  <line x1="20" y1="45" x2="30" y2="30"/>
+  <!-- Top-right celtic knot -->
+  <polyline points="480,45 480,20 455,20"/>
+  <polyline points="470,45 470,30 455,30"/>
+  <line x1="480" y1="20" x2="470" y2="30"/>
+  <line x1="455" y1="20" x2="470" y2="30"/>
+  <line x1="480" y1="45" x2="470" y2="30"/>
+  <!-- Bottom-left celtic knot -->
+  <polyline points="20,655 20,680 45,680"/>
+  <polyline points="30,655 30,670 45,670"/>
+  <line x1="20" y1="680" x2="30" y2="670"/>
+  <line x1="45" y1="680" x2="30" y2="670"/>
+  <line x1="20" y1="655" x2="30" y2="670"/>
+  <!-- Bottom-right celtic knot -->
+  <polyline points="480,655 480,680 455,680"/>
+  <polyline points="470,655 470,670 455,670"/>
+  <line x1="480" y1="680" x2="470" y2="670"/>
+  <line x1="455" y1="680" x2="470" y2="670"/>
+</svg>

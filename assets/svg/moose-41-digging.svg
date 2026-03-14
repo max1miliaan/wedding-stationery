@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head low to ground -->
+  <rect x="62" y="40" width="48" height="32" rx="12" ry="10" />
+  <!-- Rose ears -->
+  <polyline points="70,42 66,32 76,40" />
+  <polyline points="102,42 106,32 96,40" />
+  <!-- Eyes -->
+  <circle cx="76" cy="52" r="2.5" fill="currentColor" />
+  <circle cx="96" cy="52" r="2.5" fill="currentColor" />
+  <!-- Nose in dirt -->
+  <rect x="78" y="62" width="16" height="8" rx="4" ry="3" />
+  <!-- Body (rear up) -->
+  <rect x="10" y="20" width="60" height="32" rx="12" ry="8" />
+  <!-- Front legs (digging motion) -->
+  <rect x="56" y="56" width="12" height="22" rx="4" />
+  <rect x="44" y="60" width="12" height="18" rx="4" />
+  <!-- Back legs (straight, butt up) -->
+  <rect x="14" y="46" width="12" height="30" rx="4" />
+  <rect x="28" y="46" width="12" height="30" rx="4" />
+  <!-- Tail wagging up -->
+  <polyline points="10,24 4,14 12,22" />
+  <!-- Dirt flying -->
+  <circle cx="110" cy="66" r="2" />
+  <circle cx="116" cy="58" r="1.5" />
+  <circle cx="120" cy="68" r="1.5" />
+  <circle cx="114" cy="74" r="2" />
+  <!-- Ground line -->
+  <line x1="0" y1="78" x2="130" y2="78" />
+</svg>

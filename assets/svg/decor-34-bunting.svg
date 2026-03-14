@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main string line -->
+  <polyline points="5,25 20,35 40,30 60,38 80,30 100,35 115,25" />
+  <!-- Flag 1 -->
+  <polygon points="15,35 25,35 20,60" />
+  <!-- Flag 2 -->
+  <polygon points="35,30 45,32 40,58" />
+  <!-- Flag 3 -->
+  <polygon points="55,37 65,37 60,65" />
+  <!-- Flag 4 -->
+  <polygon points="75,30 85,32 80,58" />
+  <!-- Flag 5 -->
+  <polygon points="95,35 105,33 100,60" />
+  <!-- Second row string -->
+  <polyline points="10,70 30,80 50,75 70,82 90,75 110,70" />
+  <!-- Second row flag 1 -->
+  <polygon points="25,80 35,78 30,105" />
+  <!-- Second row flag 2 -->
+  <polygon points="45,76 55,78 50,104" />
+  <!-- Second row flag 3 -->
+  <polygon points="65,82 75,80 70,108" />
+  <!-- Second row flag 4 -->
+  <polygon points="85,76 95,74 90,100" />
+  <!-- Left anchor dot -->
+  <circle cx="5" cy="25" r="2" />
+  <!-- Right anchor dot -->
+  <circle cx="115" cy="25" r="2" />
+</svg>

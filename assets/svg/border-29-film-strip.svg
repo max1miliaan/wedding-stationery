@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left film strip rail -->
+  <line x1="30" y1="25" x2="30" y2="675"/>
+  <line x1="50" y1="25" x2="50" y2="675"/>
+  <!-- Left sprocket holes -->
+  <rect x="34" y="40" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="90" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="140" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="190" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="500" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="550" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="600" width="12" height="8" rx="2" ry="2"/>
+  <rect x="34" y="650" width="12" height="8" rx="2" ry="2"/>
+  <!-- Right film strip rail -->
+  <line x1="450" y1="25" x2="450" y2="675"/>
+  <line x1="470" y1="25" x2="470" y2="675"/>
+  <!-- Right sprocket holes -->
+  <rect x="454" y="40" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="90" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="140" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="190" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="500" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="550" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="600" width="12" height="8" rx="2" ry="2"/>
+  <rect x="454" y="650" width="12" height="8" rx="2" ry="2"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left angel wing -->
+  <polyline points="20,50 4,30 8,46 2,38 12,54 6,48 18,62" />
+  <!-- Right angel wing -->
+  <polyline points="120,50 136,30 132,46 138,38 128,54 134,48 122,62" />
+  <!-- Halo -->
+  <ellipse cx="70" cy="8" rx="16" ry="5" />
+  <!-- Head -->
+  <rect x="35" y="14" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="42,20 34,8 50,16" />
+  <polyline points="98,20 106,8 90,16" />
+  <!-- Eyes (serene) -->
+  <circle cx="55" cy="36" r="3.5" fill="currentColor" />
+  <circle cx="85" cy="36" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="58" y="44" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="52,58 60,62 70,64 80,62 88,58" />
+  <!-- Body -->
+  <rect x="42" y="62" width="56" height="38" rx="10" ry="8" />
+  <!-- Front legs -->
+  <rect x="46" y="92" width="14" height="24" rx="5" />
+  <rect x="80" y="92" width="14" height="24" rx="5" />
+  <!-- Paw lines -->
+  <line x1="51" y1="112" x2="51" y2="108" />
+  <line x1="56" y1="112" x2="56" y2="108" />
+  <line x1="85" y1="112" x2="85" y2="108" />
+  <line x1="90" y1="112" x2="90" y2="108" />
+</svg>

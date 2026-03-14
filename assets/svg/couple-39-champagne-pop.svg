@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="38" cy="40" r="7"/>
+  <circle cx="36" cy="39" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="38" y1="47" x2="38" y2="80"/>
+  <polygon points="30,80 38,80 46,110"/>
+  <!-- Kash arm (celebrating) -->
+  <line x1="38" y1="56" x2="28" y2="44"/>
+  <!-- Max head -->
+  <circle cx="72" cy="32" r="8"/>
+  <circle cx="70" cy="31" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="72" y1="40" x2="72" y2="76"/>
+  <line x1="72" y1="76" x2="66" y2="110"/>
+  <line x1="72" y1="76" x2="78" y2="110"/>
+  <!-- Max arm holding bottle -->
+  <line x1="72" y1="50" x2="84" y2="38"/>
+  <!-- Champagne bottle -->
+  <rect x="82" y="28" width="5" height="14" rx="1"/>
+  <line x1="84" y1="28" x2="84" y2="24"/>
+  <!-- Spray lines -->
+  <line x1="84" y1="24" x2="78" y2="14"/>
+  <line x1="84" y1="24" x2="84" y2="12"/>
+  <line x1="84" y1="24" x2="90" y2="14"/>
+  <line x1="84" y1="24" x2="94" y2="18"/>
+  <line x1="84" y1="24" x2="76" y2="18"/>
+</svg>

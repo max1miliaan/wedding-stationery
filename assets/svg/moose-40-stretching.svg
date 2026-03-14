@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head (low, front down stretch) -->
+  <rect x="8" y="30" width="48" height="32" rx="12" ry="10" />
+  <!-- Rose ears -->
+  <polyline points="16,32 10,22 22,30" />
+  <polyline points="48,32 54,22 42,30" />
+  <!-- Eyes -->
+  <circle cx="22" cy="42" r="2.5" fill="currentColor" />
+  <circle cx="42" cy="42" r="2.5" fill="currentColor" />
+  <!-- Nose -->
+  <rect x="24" y="50" width="16" height="8" rx="4" ry="3" />
+  <!-- Underbite jaw -->
+  <polyline points="14,61 22,64 32,66 42,64 50,61" />
+  <!-- Front legs stretched forward flat -->
+  <rect x="4" y="62" width="28" height="10" rx="4" ry="4" />
+  <rect x="18" y="62" width="28" height="10" rx="4" ry="4" />
+  <!-- Body (rear end up high) -->
+  <rect x="48" y="16" width="60" height="34" rx="12" ry="8" />
+  <!-- Back legs (straight, butt high) -->
+  <rect x="90" y="44" width="12" height="30" rx="4" />
+  <rect x="76" y="44" width="12" height="30" rx="4" />
+  <!-- Tail up -->
+  <polyline points="108,20 116,10 110,22" />
+  <!-- Paw lines on front -->
+  <line x1="10" y1="72" x2="10" y2="68" />
+  <line x1="16" y1="72" x2="16" y2="68" />
+  <!-- Paw lines on back -->
+  <line x1="95" y1="70" x2="95" y2="66" />
+  <line x1="81" y1="70" x2="81" y2="66" />
+</svg>

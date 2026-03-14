@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head -->
+  <rect x="15" y="12" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,18 14,6 30,14" />
+  <polyline points="78,18 86,6 70,14" />
+  <!-- Eyes -->
+  <circle cx="35" cy="34" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="34" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="42" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="32,56 40,60 50,62 60,60 68,56" />
+  <!-- Bow tie at neck -->
+  <polygon points="38,64 50,68 42,74" />
+  <polygon points="62,64 50,68 58,74" />
+  <circle cx="50" cy="68" r="3" />
+  <!-- Body (formal standing) -->
+  <rect x="22" y="68" width="56" height="36" rx="10" ry="8" />
+  <!-- Front legs -->
+  <rect x="26" y="96" width="14" height="24" rx="5" />
+  <rect x="60" y="96" width="14" height="24" rx="5" />
+  <!-- Paw lines -->
+  <line x1="31" y1="116" x2="31" y2="112" />
+  <line x1="36" y1="116" x2="36" y2="112" />
+  <line x1="65" y1="116" x2="65" y2="112" />
+  <line x1="70" y1="116" x2="70" y2="112" />
+</svg>

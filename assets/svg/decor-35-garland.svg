@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main draped line -->
+  <polyline points="5,20 20,15 40,40 60,50 80,40 100,15 115,20" />
+  <!-- Left anchor point -->
+  <circle cx="5" cy="20" r="3" />
+  <!-- Right anchor point -->
+  <circle cx="115" cy="20" r="3" />
+  <!-- Hanging element 1 - diamond -->
+  <polygon points="25,25 22,32 25,39 28,32" />
+  <!-- Hanging element 2 - circle -->
+  <circle cx="40" cy="50" r="5" />
+  <!-- Hanging line 2 -->
+  <line x1="40" y1="42" x2="40" y2="45" />
+  <!-- Hanging element 3 - diamond -->
+  <polygon points="55,55 52,62 55,69 58,62" />
+  <!-- Hanging line 3 -->
+  <line x1="55" y1="50" x2="55" y2="55" />
+  <!-- Hanging element 4 - circle -->
+  <circle cx="65" cy="58" r="4" />
+  <!-- Hanging line 4 -->
+  <line x1="65" y1="50" x2="65" y2="54" />
+  <!-- Hanging element 5 - diamond -->
+  <polygon points="80,45 77,52 80,59 83,52" />
+  <!-- Hanging line 5 -->
+  <line x1="80" y1="40" x2="80" y2="45" />
+  <!-- Hanging element 6 - circle -->
+  <circle cx="95" cy="28" r="4" />
+  <!-- Hanging line 6 -->
+  <line x1="95" y1="18" x2="95" y2="24" />
+</svg>

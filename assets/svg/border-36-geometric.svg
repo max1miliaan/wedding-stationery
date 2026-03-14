@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top hexagonal pattern -->
+  <polygon points="60,25 75,17 90,25 90,40 75,48 60,40"/>
+  <polygon points="90,25 105,17 120,25 120,40 105,48 90,40"/>
+  <polygon points="120,25 135,17 150,25 150,40 135,48 120,40"/>
+  <polygon points="350,25 365,17 380,25 380,40 365,48 350,40"/>
+  <polygon points="380,25 395,17 410,25 410,40 395,48 380,40"/>
+  <polygon points="410,25 425,17 440,25 440,40 425,48 410,40"/>
+  <!-- Bottom hexagonal pattern -->
+  <polygon points="60,660 75,652 90,660 90,675 75,683 60,675"/>
+  <polygon points="90,660 105,652 120,660 120,675 105,683 90,675"/>
+  <polygon points="120,660 135,652 150,660 150,675 135,683 120,675"/>
+  <polygon points="350,660 365,652 380,660 380,675 365,683 350,675"/>
+  <polygon points="380,660 395,652 410,660 410,675 395,683 380,675"/>
+  <polygon points="410,660 425,652 440,660 440,675 425,683 410,675"/>
+  <!-- Side connecting lines -->
+  <line x1="40" y1="48" x2="40" y2="652"/>
+  <line x1="460" y1="48" x2="460" y2="652"/>
+</svg>

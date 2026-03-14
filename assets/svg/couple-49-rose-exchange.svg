@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="42" cy="36" r="7"/>
+  <circle cx="40" cy="35" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="42" y1="43" x2="42" y2="76"/>
+  <polygon points="34,76 42,76 50,108"/>
+  <!-- Kash arm (receiving rose) -->
+  <line x1="42" y1="54" x2="56" y2="52"/>
+  <!-- Max head -->
+  <circle cx="78" cy="28" r="8"/>
+  <circle cx="76" cy="27" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="78" y1="36" x2="78" y2="72"/>
+  <line x1="78" y1="72" x2="72" y2="108"/>
+  <line x1="78" y1="72" x2="84" y2="108"/>
+  <!-- Max arm (giving rose) -->
+  <line x1="78" y1="48" x2="62" y2="48"/>
+  <!-- Rose stem -->
+  <line x1="56" y1="52" x2="62" y2="48"/>
+  <line x1="62" y1="48" x2="62" y2="36"/>
+  <!-- Rose bloom -->
+  <circle cx="62" cy="32" r="5"/>
+  <!-- Rose leaf -->
+  <polyline points="62,40 66,38 62,36"/>
+</svg>

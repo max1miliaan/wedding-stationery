@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Arrow shaft -->
+  <line x1="10" y1="70" x2="95" y2="70" />
+  <!-- Heart-shaped arrowhead top -->
+  <polyline points="95,70 105,60 110,55 108,62 110,70" />
+  <!-- Heart-shaped arrowhead bottom -->
+  <polyline points="95,70 105,80 110,85 108,78 110,70" />
+  <!-- Arrow fletching feather top -->
+  <polyline points="10,70 18,60 25,58 20,65 15,70" />
+  <!-- Arrow fletching feather bottom -->
+  <polyline points="10,70 18,80 25,82 20,75 15,70" />
+  <!-- Arrow nock -->
+  <line x1="8" y1="66" x2="8" y2="74" />
+  <!-- Shaft wrapping detail 1 -->
+  <line x1="35" y1="67" x2="40" y2="73" />
+  <!-- Shaft wrapping detail 2 -->
+  <line x1="38" y1="67" x2="43" y2="73" />
+  <!-- Shaft wrapping detail 3 -->
+  <line x1="65" y1="67" x2="70" y2="73" />
+  <!-- Shaft wrapping detail 4 -->
+  <line x1="68" y1="67" x2="73" y2="73" />
+  <!-- Small heart accent above -->
+  <polygon points="60,50 56,46 53,49 60,57 67,49 64,46" />
+</svg>

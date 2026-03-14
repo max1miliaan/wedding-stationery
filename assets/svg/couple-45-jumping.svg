@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Ground line -->
+  <line x1="10" y1="130" x2="110" y2="130"/>
+  <!-- Kash head (in air) -->
+  <circle cx="42" cy="38" r="7"/>
+  <circle cx="40" cy="37" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="42" y1="45" x2="42" y2="76"/>
+  <polygon points="34,76 42,76 50,100"/>
+  <!-- Kash arms (up in air) -->
+  <line x1="42" y1="54" x2="30" y2="38"/>
+  <line x1="42" y1="54" x2="54" y2="42"/>
+  <!-- Kash legs (bent, off ground) -->
+  <line x1="42" y1="100" x2="36" y2="112"/>
+  <!-- Max head (in air) -->
+  <circle cx="74" cy="30" r="8"/>
+  <circle cx="72" cy="29" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="74" y1="38" x2="74" y2="72"/>
+  <!-- Max arms (up in air) -->
+  <line x1="74" y1="48" x2="62" y2="34"/>
+  <line x1="74" y1="48" x2="88" y2="32"/>
+  <!-- Max legs (bent, off ground) -->
+  <line x1="74" y1="72" x2="68" y2="90"/>
+  <line x1="68" y1="90" x2="64" y2="108"/>
+  <line x1="74" y1="72" x2="80" y2="90"/>
+  <line x1="80" y1="90" x2="84" y2="108"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer envelope rectangle -->
+  <rect x="30" y="30" width="440" height="640" rx="0" ry="0"/>
+  <!-- Top envelope flap fold lines -->
+  <line x1="30" y1="30" x2="250" y2="180"/>
+  <line x1="470" y1="30" x2="250" y2="180"/>
+  <!-- Bottom fold lines (like envelope bottom flap) -->
+  <line x1="30" y1="670" x2="180" y2="550"/>
+  <line x1="470" y1="670" x2="320" y2="550"/>
+  <!-- Small seal circle at top flap point -->
+  <circle cx="250" cy="180" r="12"/>
+</svg>

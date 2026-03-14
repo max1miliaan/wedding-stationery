@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left pillar -->
+  <rect x="15" y="30" width="10" height="62"/>
+  <!-- Right pillar -->
+  <rect x="95" y="30" width="10" height="62"/>
+  <!-- Main arch top curve -->
+  <ellipse cx="60" cy="22" rx="38" ry="14"/>
+  <!-- Roof ridge left -->
+  <polyline points="22,22 15,12 8,22"/>
+  <!-- Roof ridge right -->
+  <polyline points="98,22 105,12 112,22"/>
+  <!-- Roof ridge center -->
+  <polyline points="42,14 60,5 78,14"/>
+  <!-- Cross beam upper -->
+  <line x1="25" y1="30" x2="95" y2="30"/>
+  <!-- Cross beam lower -->
+  <line x1="25" y1="40" x2="95" y2="40"/>
+  <!-- Decorative panel center -->
+  <rect x="45" y="32" width="30" height="6"/>
+  <!-- Left pillar cap -->
+  <rect x="12" y="26" width="16" height="4"/>
+  <!-- Right pillar cap -->
+  <rect x="92" y="26" width="16" height="4"/>
+  <!-- Left lantern -->
+  <ellipse cx="20" cy="50" rx="4" ry="6"/>
+  <!-- Right lantern -->
+  <ellipse cx="100" cy="50" rx="4" ry="6"/>
+  <!-- Ground -->
+  <line x1="5" y1="92" x2="115" y2="92"/>
+  <!-- Center path lines -->
+  <line x1="50" y1="92" x2="45" y2="98"/>
+  <!-- Center path lines right -->
+  <line x1="70" y1="92" x2="75" y2="98"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="38" cy="34" r="7"/>
+  <circle cx="36" cy="33" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="38" y1="41" x2="38" y2="74"/>
+  <polygon points="30,74 38,74 46,104"/>
+  <!-- Kash arm (holding cup) -->
+  <line x1="38" y1="54" x2="50" y2="60"/>
+  <!-- Max head -->
+  <circle cx="82" cy="26" r="8"/>
+  <circle cx="80" cy="25" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="82" y1="34" x2="82" y2="70"/>
+  <line x1="82" y1="70" x2="76" y2="104"/>
+  <line x1="82" y1="70" x2="88" y2="104"/>
+  <!-- Max arm (holding cup) -->
+  <line x1="82" y1="48" x2="70" y2="60"/>
+  <!-- Coffee cup left (Kash) -->
+  <rect x="48" y="58" width="10" height="10" rx="1"/>
+  <line x1="58" y1="62" x2="62" y2="62"/>
+  <!-- Coffee cup right (Max) -->
+  <rect x="62" y="58" width="10" height="10" rx="1"/>
+  <line x1="62" y1="62" x2="58" y2="62"/>
+  <!-- Steam left -->
+  <line x1="52" y1="54" x2="52" y2="48"/>
+  <!-- Steam right -->
+  <line x1="68" y1="54" x2="68" y2="48"/>
+</svg>

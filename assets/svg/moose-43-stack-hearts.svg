@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Stack of hearts above head -->
+  <!-- Heart 1 (top, smallest) -->
+  <polyline points="46,6 46,4 48,2 50,4 52,2 54,4 54,6 50,10 46,6" />
+  <!-- Heart 2 (middle) -->
+  <polyline points="44,16 44,13 47,10 50,13 53,10 56,13 56,16 50,22 44,16" />
+  <!-- Heart 3 (bottom, largest) -->
+  <polyline points="42,28 42,24 46,20 50,24 54,20 58,24 58,28 50,36 42,28" />
+  <!-- Head -->
+  <rect x="15" y="36" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,42 14,30 30,38" />
+  <polyline points="78,42 86,30 70,38" />
+  <!-- Eyes (happy) -->
+  <circle cx="35" cy="58" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="58" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="66" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw -->
+  <polyline points="32,80 40,84 50,86 60,84 68,80" />
+  <!-- Body -->
+  <rect x="22" y="84" width="56" height="34" rx="10" ry="8" />
+  <!-- Front legs -->
+  <rect x="26" y="110" width="14" height="22" rx="5" />
+  <rect x="60" y="110" width="14" height="22" rx="5" />
+  <!-- Paw lines -->
+  <line x1="31" y1="128" x2="31" y2="124" />
+  <line x1="65" y1="128" x2="65" y2="124" />
+</svg>

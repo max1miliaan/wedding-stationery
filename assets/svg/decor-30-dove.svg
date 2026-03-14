@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Dove body -->
+  <ellipse cx="55" cy="60" rx="30" ry="18" />
+  <!-- Dove head -->
+  <circle cx="85" cy="48" r="10" />
+  <!-- Beak -->
+  <polyline points="95,47 105,45 95,50" />
+  <!-- Eye -->
+  <circle cx="88" cy="46" r="1.5" />
+  <!-- Wing upper -->
+  <polyline points="40,52 25,30 55,42" />
+  <!-- Wing lower -->
+  <polyline points="38,55 20,40 50,48" />
+  <!-- Tail feathers -->
+  <polyline points="25,58 10,50 15,65" />
+  <polyline points="25,62 8,60 15,70" />
+  <!-- Olive branch stem -->
+  <polyline points="100,50 108,65 105,80 98,95" />
+  <!-- Olive leaf left -->
+  <ellipse cx="103" cy="72" rx="6" ry="3" />
+  <!-- Olive leaf right -->
+  <ellipse cx="108" cy="80" rx="6" ry="3" />
+  <!-- Olive leaf bottom -->
+  <ellipse cx="100" cy="88" rx="5" ry="3" />
+</svg>

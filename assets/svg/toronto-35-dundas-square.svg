@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Building left -->
+  <rect x="5" y="15" width="30" height="77"/>
+  <!-- Building center -->
+  <rect x="40" y="8" width="35" height="84"/>
+  <!-- Building right -->
+  <rect x="80" y="20" width="35" height="72"/>
+  <!-- Screen/sign left building -->
+  <rect x="10" y="25" width="20" height="15"/>
+  <!-- Screen/sign center building -->
+  <rect x="45" y="18" width="25" height="18"/>
+  <!-- Screen/sign right building -->
+  <rect x="85" y="30" width="25" height="14"/>
+  <!-- Window left col -->
+  <rect x="12" y="50" width="8" height="8"/>
+  <!-- Window left col 2 -->
+  <rect x="12" y="65" width="8" height="8"/>
+  <!-- Window center col 1 -->
+  <rect x="48" y="45" width="8" height="8"/>
+  <!-- Window center col 2 -->
+  <rect x="62" y="45" width="8" height="8"/>
+  <!-- Window center col 3 -->
+  <rect x="48" y="60" width="8" height="8"/>
+  <!-- Window center col 4 -->
+  <rect x="62" y="60" width="8" height="8"/>
+  <!-- Window right col -->
+  <rect x="90" y="52" width="8" height="8"/>
+  <!-- Window right col 2 -->
+  <rect x="90" y="67" width="8" height="8"/>
+  <!-- Ground / sidewalk -->
+  <line x1="2" y1="92" x2="118" y2="92"/>
+  <!-- Ground detail -->
+  <line x1="2" y1="96" x2="118" y2="96"/>
+</svg>

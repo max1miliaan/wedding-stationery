@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Pillow -->
+  <rect x="68" y="30" width="52" height="24" rx="10" ry="10" />
+  <!-- Pillow corner tufts -->
+  <line x1="72" y1="34" x2="76" y2="38" />
+  <line x1="116" y1="34" x2="112" y2="38" />
+  <!-- Body (lying down, horizontal) -->
+  <ellipse cx="52" cy="40" rx="40" ry="16" />
+  <!-- Head resting on pillow -->
+  <rect x="72" y="10" width="42" height="28" rx="12" ry="10" />
+  <!-- Rose ears (relaxed) -->
+  <polyline points="78,12 74,4 84,10" />
+  <polyline points="106,12 110,4 100,10" />
+  <!-- Eyes (closed, sleeping) -->
+  <line x1="82" y1="22" x2="90" y2="22" />
+  <line x1="98" y1="22" x2="106" y2="22" />
+  <!-- Nose -->
+  <rect x="88" y="28" width="14" height="7" rx="4" ry="3" />
+  <!-- Front paw tucked under chin -->
+  <rect x="78" y="34" width="16" height="10" rx="4" />
+  <!-- Back paw visible -->
+  <ellipse cx="18" cy="50" rx="8" ry="5" />
+  <!-- Tail stub -->
+  <polyline points="12,36 6,32 10,38" />
+  <!-- Zzz above head -->
+  <polyline points="114,6 118,2 122,6" />
+  <polyline points="120,0 123,-3 126,0" />
+</svg>

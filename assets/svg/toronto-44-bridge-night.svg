@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bridge deck -->
+  <rect x="5" y="40" width="140" height="5"/>
+  <!-- Bridge arch -->
+  <ellipse cx="75" cy="40" rx="60" ry="25"/>
+  <!-- Left pier -->
+  <rect x="10" y="40" width="8" height="30"/>
+  <!-- Right pier -->
+  <rect x="132" y="40" width="8" height="30"/>
+  <!-- Light 1 -->
+  <circle cx="25" cy="36" r="3"/>
+  <!-- Light 2 -->
+  <circle cx="45" cy="28" r="3"/>
+  <!-- Light 3 -->
+  <circle cx="65" cy="22" r="3"/>
+  <!-- Light 4 -->
+  <circle cx="85" cy="22" r="3"/>
+  <!-- Light 5 -->
+  <circle cx="105" cy="28" r="3"/>
+  <!-- Light 6 -->
+  <circle cx="125" cy="36" r="3"/>
+  <!-- Water wave 1 -->
+  <polyline points="5,60 20,56 35,60 50,56 65,60"/>
+  <!-- Water wave 2 -->
+  <polyline points="75,58 90,54 105,58 120,54 135,58 145,56"/>
+  <!-- Water wave 3 -->
+  <polyline points="10,68 30,64 50,68 70,64 90,68 110,64 130,68"/>
+  <!-- Railing post left -->
+  <line x1="30" y1="40" x2="30" y2="35"/>
+  <!-- Railing post right -->
+  <line x1="120" y1="40" x2="120" y2="35"/>
+</svg>

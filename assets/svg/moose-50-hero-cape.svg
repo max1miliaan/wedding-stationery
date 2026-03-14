@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head -->
+  <rect x="15" y="8" width="70" height="45" rx="18" ry="14" />
+  <!-- Rose ears -->
+  <polyline points="22,14 14,2 30,10" />
+  <polyline points="78,14 86,2 70,10" />
+  <!-- Eyes (determined, heroic) -->
+  <circle cx="35" cy="30" r="3.5" fill="currentColor" />
+  <circle cx="65" cy="30" r="3.5" fill="currentColor" />
+  <!-- Wide flat nose -->
+  <rect x="38" y="38" width="24" height="10" rx="5" ry="4" />
+  <!-- Underbite jaw (proud) -->
+  <polyline points="32,52 40,56 50,58 60,56 68,52" />
+  <!-- Jowl lines -->
+  <line x1="18" y1="38" x2="16" y2="50" />
+  <line x1="82" y1="38" x2="84" y2="50" />
+  <!-- Cape collar at neck -->
+  <polyline points="18,56 30,60 50,62 70,60 82,56" />
+  <!-- Cape flowing behind (right side drape) -->
+  <polyline points="82,56 88,70 92,90 86,110 78,120" />
+  <!-- Cape flowing behind (left side drape) -->
+  <polyline points="18,56 12,70 8,90 14,110 22,120" />
+  <!-- Cape bottom edge -->
+  <polyline points="22,120 36,116 50,118 64,116 78,120" />
+  <!-- Body (standing proud, chest out) -->
+  <rect x="22" y="58" width="56" height="36" rx="10" ry="8" />
+  <!-- Front legs (standing tall) -->
+  <rect x="26" y="86" width="14" height="26" rx="5" />
+  <rect x="60" y="86" width="14" height="26" rx="5" />
+  <!-- Paw lines -->
+  <line x1="31" y1="108" x2="31" y2="104" />
+  <line x1="36" y1="108" x2="36" y2="104" />
+  <line x1="65" y1="108" x2="65" y2="104" />
+  <line x1="70" y1="108" x2="70" y2="104" />
+</svg>

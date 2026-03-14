@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer seal circle -->
+  <circle cx="60" cy="60" r="35" />
+  <!-- Inner seal circle -->
+  <circle cx="60" cy="60" r="25" />
+  <!-- Seal edge bumps top -->
+  <circle cx="60" cy="25" r="3" />
+  <circle cx="40" cy="30" r="3" />
+  <circle cx="80" cy="30" r="3" />
+  <!-- Seal edge bumps sides -->
+  <circle cx="28" cy="50" r="3" />
+  <circle cx="92" cy="50" r="3" />
+  <circle cx="28" cy="70" r="3" />
+  <circle cx="92" cy="70" r="3" />
+  <!-- Seal edge bumps bottom -->
+  <circle cx="40" cy="90" r="3" />
+  <circle cx="80" cy="90" r="3" />
+  <!-- Left ribbon tail -->
+  <polyline points="40,95 35,120 45,115 40,135" />
+  <!-- Right ribbon tail -->
+  <polyline points="80,95 85,120 75,115 80,135" />
+  <!-- Center heart motif -->
+  <polygon points="60,52 55,48 52,52 60,62 68,52 65,48" />
+</svg>

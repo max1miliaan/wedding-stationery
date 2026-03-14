@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top mosaic row -->
+  <rect x="30" y="25" width="14" height="14"/>
+  <rect x="48" y="25" width="10" height="14"/>
+  <rect x="62" y="25" width="14" height="14"/>
+  <rect x="200" y="25" width="12" height="14"/>
+  <rect x="216" y="25" width="14" height="14"/>
+  <rect x="380" y="25" width="14" height="14"/>
+  <rect x="398" y="25" width="10" height="14"/>
+  <rect x="412" y="25" width="14" height="14"/>
+  <rect x="430" y="25" width="12" height="14"/>
+  <rect x="446" y="25" width="14" height="14"/>
+  <!-- Bottom mosaic row -->
+  <rect x="30" y="661" width="14" height="14"/>
+  <rect x="48" y="661" width="10" height="14"/>
+  <rect x="62" y="661" width="14" height="14"/>
+  <rect x="200" y="661" width="12" height="14"/>
+  <rect x="216" y="661" width="14" height="14"/>
+  <rect x="380" y="661" width="14" height="14"/>
+  <rect x="398" y="661" width="10" height="14"/>
+  <rect x="412" y="661" width="14" height="14"/>
+  <rect x="446" y="661" width="14" height="14"/>
+  <!-- Left mosaic column -->
+  <rect x="25" y="200" width="14" height="12"/>
+  <rect x="25" y="350" width="14" height="14"/>
+  <rect x="25" y="500" width="14" height="10"/>
+</svg>

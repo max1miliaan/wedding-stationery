@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Stage platform -->
+  <rect x="15" y="60" width="90" height="8"/>
+  <!-- Stage back wall -->
+  <rect x="15" y="20" width="90" height="40"/>
+  <!-- Microphone stand base -->
+  <line x1="60" y1="60" x2="60" y2="38"/>
+  <!-- Microphone head -->
+  <ellipse cx="60" cy="35" rx="4" ry="5"/>
+  <!-- Microphone stand foot left -->
+  <line x1="60" y1="60" x2="54" y2="62"/>
+  <!-- Microphone stand foot right -->
+  <line x1="60" y1="60" x2="66" y2="62"/>
+  <!-- Speaker left -->
+  <rect x="20" y="35" width="14" height="22"/>
+  <!-- Speaker left cone -->
+  <circle cx="27" cy="46" r="5"/>
+  <!-- Speaker left tweeter -->
+  <circle cx="27" cy="38" r="2"/>
+  <!-- Speaker right -->
+  <rect x="86" y="35" width="14" height="22"/>
+  <!-- Speaker right cone -->
+  <circle cx="93" cy="46" r="5"/>
+  <!-- Speaker right tweeter -->
+  <circle cx="93" cy="38" r="2"/>
+  <!-- Stage light left -->
+  <ellipse cx="30" cy="22" rx="5" ry="3"/>
+  <!-- Stage light right -->
+  <ellipse cx="90" cy="22" rx="5" ry="3"/>
+  <!-- Light bar -->
+  <line x1="15" y1="20" x2="105" y2="20"/>
+  <!-- Floor line -->
+  <line x1="10" y1="92" x2="110" y2="92"/>
+  <!-- Stage front edge -->
+  <line x1="15" y1="68" x2="105" y2="68"/>
+</svg>

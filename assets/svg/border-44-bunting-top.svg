@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border rectangle -->
+  <rect x="35" y="60" width="430" height="610" rx="0" ry="0"/>
+  <!-- Bunting string line draped across top -->
+  <polyline points="35,35 80,28 160,42 250,22 340,42 420,28 465,35"/>
+  <!-- Bunting triangles hanging from string -->
+  <polygon points="72,28 88,28 80,50"/>
+  <polygon points="105,33 121,33 113,55"/>
+  <polygon points="140,39 156,39 148,61"/>
+  <polygon points="178,38 194,38 186,60"/>
+  <polygon points="215,28 231,28 223,50"/>
+  <polygon points="243,22 259,22 251,44"/>
+  <polygon points="275,27 291,27 283,49"/>
+  <polygon points="310,36 326,36 318,58"/>
+  <polygon points="345,41 361,41 353,63"/>
+  <polygon points="378,36 394,36 386,58"/>
+  <polygon points="412,30 428,30 420,52"/>
+  <polygon points="445,29 461,29 453,51"/>
+</svg>

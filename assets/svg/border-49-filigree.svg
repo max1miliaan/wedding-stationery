@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border -->
+  <rect x="50" y="50" width="400" height="600" rx="0" ry="0"/>
+  <!-- Top-left filigree scroll -->
+  <polyline points="50,50 38,50 28,42 22,30 28,20 40,18 50,24"/>
+  <polyline points="50,50 50,38 42,28 30,22 20,28 18,40 24,50"/>
+  <circle cx="28" cy="30" r="3"/>
+  <!-- Top-right filigree scroll -->
+  <polyline points="450,50 462,50 472,42 478,30 472,20 460,18 450,24"/>
+  <polyline points="450,50 450,38 458,28 470,22 480,28 482,40 476,50"/>
+  <circle cx="472" cy="30" r="3"/>
+  <!-- Bottom-left filigree scroll -->
+  <polyline points="50,650 38,650 28,658 22,670 28,680 40,682 50,676"/>
+  <polyline points="50,650 50,662 42,672 30,678 20,672 18,660 24,650"/>
+  <circle cx="28" cy="670" r="3"/>
+  <!-- Bottom-right filigree scroll -->
+  <polyline points="450,650 462,650 472,658 478,670 472,680 460,682 450,676"/>
+  <polyline points="450,650 450,662 458,672 470,678 480,672 482,660 476,650"/>
+  <circle cx="472" cy="670" r="3"/>
+</svg>

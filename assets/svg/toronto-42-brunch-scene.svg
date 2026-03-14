@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Table surface -->
+  <line x1="5" y1="55" x2="115" y2="55"/>
+  <!-- Plate -->
+  <ellipse cx="35" cy="48" rx="18" ry="6"/>
+  <!-- Plate inner ring -->
+  <ellipse cx="35" cy="48" rx="12" ry="4"/>
+  <!-- Coffee cup body -->
+  <rect x="68" y="38" width="14" height="15"/>
+  <!-- Coffee cup handle -->
+  <ellipse cx="82" cy="44" rx="4" ry="4"/>
+  <!-- Coffee saucer -->
+  <ellipse cx="75" cy="54" rx="12" ry="3"/>
+  <!-- Plant pot -->
+  <rect x="100" y="40" width="10" height="14"/>
+  <!-- Plant stem -->
+  <line x1="105" y1="40" x2="105" y2="28"/>
+  <!-- Plant leaf left -->
+  <ellipse cx="100" cy="28" rx="5" ry="3"/>
+  <!-- Plant leaf right -->
+  <ellipse cx="110" cy="30" rx="5" ry="3"/>
+  <!-- Plant leaf top -->
+  <ellipse cx="105" cy="24" rx="3" ry="4"/>
+  <!-- Fork -->
+  <line x1="12" y1="40" x2="12" y2="54"/>
+  <!-- Fork tines -->
+  <polyline points="10,40 12,36 14,40"/>
+  <!-- Knife -->
+  <line x1="58" y1="40" x2="58" y2="54"/>
+  <!-- Steam line 1 -->
+  <line x1="73" y1="35" x2="73" y2="30"/>
+  <!-- Steam line 2 -->
+  <line x1="77" y1="34" x2="77" y2="28"/>
+</svg>

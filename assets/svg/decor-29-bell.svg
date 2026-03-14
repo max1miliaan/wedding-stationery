@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bell top ring -->
+  <circle cx="60" cy="18" r="5" />
+  <!-- Bell body outline -->
+  <polygon points="35,40 25,95 95,95 85,40" />
+  <!-- Bell dome top -->
+  <polyline points="35,40 45,25 75,25 85,40" />
+  <!-- Bell rim -->
+  <ellipse cx="60" cy="97" rx="38" ry="6" />
+  <!-- Clapper -->
+  <line x1="60" y1="85" x2="60" y2="105" />
+  <circle cx="60" cy="108" r="5" />
+  <!-- Left ribbon -->
+  <polyline points="45,22 30,15 25,25" />
+  <!-- Right ribbon -->
+  <polyline points="75,22 90,15 95,25" />
+  <!-- Sound lines left -->
+  <line x1="18" y1="60" x2="10" y2="55" />
+  <line x1="16" y1="70" x2="8" y2="70" />
+  <!-- Sound lines right -->
+  <line x1="102" y1="60" x2="110" y2="55" />
+  <line x1="104" y1="70" x2="112" y2="70" />
+</svg>

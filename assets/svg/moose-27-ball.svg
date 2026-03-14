@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Head in 3/4 view, looking down at ball -->
+  <rect x="70" y="10" width="52" height="34" rx="14" ry="11" />
+  <!-- Rose ears -->
+  <polyline points="78,13 74,3 84,10" />
+  <polyline points="114,13 118,3 108,10" />
+  <!-- Eyes -->
+  <circle cx="86" cy="24" r="3" fill="currentColor" />
+  <circle cx="108" cy="24" r="3" fill="currentColor" />
+  <!-- Nose -->
+  <rect x="90" y="32" width="16" height="8" rx="4" ry="3" />
+  <!-- Underbite jaw -->
+  <polyline points="82,43 90,46 98,48 106,46 112,43" />
+  <!-- Jowl line -->
+  <line x1="72" y1="34" x2="71" y2="43" />
+  <!-- Body -->
+  <rect x="18" y="34" width="60" height="32" rx="10" ry="8" />
+  <!-- Front legs (one reaching toward ball) -->
+  <rect x="60" y="60" width="12" height="22" rx="4" />
+  <rect x="48" y="62" width="12" height="20" rx="4" />
+  <!-- Back legs -->
+  <rect x="22" y="60" width="12" height="22" rx="4" />
+  <rect x="36" y="62" width="12" height="20" rx="4" />
+  <!-- Tail stub -->
+  <polyline points="18,40 12,36 15,42" />
+  <!-- Ball -->
+  <circle cx="8" cy="78" r="10" />
+  <!-- Ball pattern line -->
+  <line x1="2" y1="74" x2="14" y2="82" />
+</svg>

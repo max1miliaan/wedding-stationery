@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left side border -->
+  <line x1="35" y1="200" x2="35" y2="670"/>
+  <!-- Right side border -->
+  <line x1="465" y1="200" x2="465" y2="670"/>
+  <!-- Bottom border -->
+  <line x1="35" y1="670" x2="465" y2="670"/>
+  <!-- Arched top using a large ellipse clipped by the border area -->
+  <ellipse cx="250" cy="200" rx="215" ry="170"/>
+  <!-- Keystone accent at top of arch -->
+  <rect x="243" y="28" width="14" height="10" rx="2" ry="2"/>
+  <!-- Inner arch echo (slightly smaller) -->
+  <ellipse cx="250" cy="202" rx="195" ry="152"/>
+  <!-- Small accent circles at arch spring points -->
+  <circle cx="45" cy="200" r="4"/>
+  <circle cx="455" cy="200" r="4"/>
+  <!-- Bottom corner accents -->
+  <line x1="35" y1="670" x2="38" y2="667"/>
+  <line x1="465" y1="670" x2="462" y2="667"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border -->
+  <rect x="45" y="45" width="410" height="610" rx="0" ry="0"/>
+  <!-- Top-left envelope -->
+  <rect x="15" y="18" width="24" height="16" rx="1" ry="1"/>
+  <polyline points="15,18 27,28 39,18"/>
+  <!-- Top-left heart -->
+  <polygon points="22,42 18,38 18,35 20,33 22,35 24,33 26,35 26,38"/>
+  <!-- Top-right envelope -->
+  <rect x="461" y="18" width="24" height="16" rx="1" ry="1"/>
+  <polyline points="461,18 473,28 485,18"/>
+  <!-- Top-right heart -->
+  <polygon points="478,42 474,38 474,35 476,33 478,35 480,33 482,35 482,38"/>
+  <!-- Bottom-left envelope -->
+  <rect x="15" y="666" width="24" height="16" rx="1" ry="1"/>
+  <polyline points="15,666 27,676 39,666"/>
+  <!-- Bottom-left heart -->
+  <polygon points="22,660 18,656 18,653 20,651 22,653 24,651 26,653 26,656"/>
+  <!-- Bottom-right envelope -->
+  <rect x="461" y="666" width="24" height="16" rx="1" ry="1"/>
+  <polyline points="461,666 473,676 485,666"/>
+  <!-- Bottom-right heart -->
+  <polygon points="478,660 474,656 474,653 476,651 478,653 480,651 482,653 482,656"/>
+</svg>

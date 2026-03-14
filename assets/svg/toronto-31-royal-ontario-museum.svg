@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main building body -->
+  <rect x="10" y="35" width="80" height="57"/>
+  <!-- Crystal extension left face -->
+  <polygon points="90,35 125,20 125,70 90,60"/>
+  <!-- Crystal extension right face -->
+  <polygon points="125,20 115,50 125,70"/>
+  <!-- Crystal top angle -->
+  <line x1="90" y1="35" x2="125" y2="20"/>
+  <!-- Crystal mid seam -->
+  <line x1="100" y1="32" x2="115" y2="50"/>
+  <!-- Building roofline -->
+  <line x1="10" y1="35" x2="90" y2="35"/>
+  <!-- Window row 1 left -->
+  <rect x="20" y="45" width="10" height="12"/>
+  <!-- Window row 1 center -->
+  <rect x="40" y="45" width="10" height="12"/>
+  <!-- Window row 1 right -->
+  <rect x="60" y="45" width="10" height="12"/>
+  <!-- Window row 2 left -->
+  <rect x="20" y="65" width="10" height="12"/>
+  <!-- Window row 2 center -->
+  <rect x="40" y="65" width="10" height="12"/>
+  <!-- Window row 2 right -->
+  <rect x="60" y="65" width="10" height="12"/>
+  <!-- Entrance -->
+  <rect x="42" y="80" width="16" height="12"/>
+  <!-- Steps -->
+  <line x1="38" y1="92" x2="62" y2="92"/>
+  <!-- Ground -->
+  <line x1="5" y1="92" x2="128" y2="92"/>
+</svg>

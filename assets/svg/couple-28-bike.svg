@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Front wheel -->
+  <circle cx="88" cy="115" r="14"/>
+  <!-- Rear wheel -->
+  <circle cx="32" cy="115" r="14"/>
+  <!-- Bike frame -->
+  <line x1="32" y1="115" x2="48" y2="90"/>
+  <line x1="48" y1="90" x2="72" y2="90"/>
+  <line x1="72" y1="90" x2="88" y2="115"/>
+  <line x1="60" y1="90" x2="60" y2="82"/>
+  <!-- Handlebars -->
+  <line x1="72" y1="90" x2="78" y2="82"/>
+  <!-- Kash (back seat) head -->
+  <circle cx="44" cy="62" r="7"/>
+  <circle cx="42" cy="61" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="44" y1="69" x2="48" y2="90"/>
+  <!-- Kash arms (holding Max waist) -->
+  <line x1="44" y1="76" x2="56" y2="74"/>
+  <!-- Max (front seat) head -->
+  <circle cx="64" cy="54" r="8"/>
+  <circle cx="62" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="64" y1="62" x2="60" y2="82"/>
+  <!-- Max arms (on handlebars) -->
+  <line x1="64" y1="70" x2="78" y2="82"/>
+</svg>

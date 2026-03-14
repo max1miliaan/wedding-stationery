@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left bow loop outer -->
+  <polyline points="60,60 40,40 20,45 25,65 60,60" />
+  <!-- Left bow loop inner -->
+  <polyline points="55,58 42,48 32,50 35,62 55,58" />
+  <!-- Right bow loop outer -->
+  <polyline points="60,60 80,40 100,45 95,65 60,60" />
+  <!-- Right bow loop inner -->
+  <polyline points="65,58 78,48 88,50 85,62 65,58" />
+  <!-- Center knot -->
+  <rect x="54" y="54" width="12" height="12" />
+  <!-- Left tail -->
+  <polyline points="54,66 40,90 35,85 25,115" />
+  <!-- Right tail -->
+  <polyline points="66,66 80,90 85,85 95,115" />
+  <!-- Left tail end notch -->
+  <polyline points="22,115 28,108 34,115" />
+  <!-- Right tail end notch -->
+  <polyline points="92,115 98,108 98,115" />
+</svg>

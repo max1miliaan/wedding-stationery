@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Inner border rectangle -->
+  <rect x="40" y="40" width="420" height="620" rx="0" ry="0"/>
+  <!-- Top lace semicircles -->
+  <circle cx="70" cy="40" r="10"/>
+  <circle cx="100" cy="40" r="10"/>
+  <circle cx="130" cy="40" r="10"/>
+  <circle cx="160" cy="40" r="10"/>
+  <circle cx="190" cy="40" r="10"/>
+  <circle cx="220" cy="40" r="10"/>
+  <circle cx="250" cy="40" r="10"/>
+  <circle cx="280" cy="40" r="10"/>
+  <circle cx="310" cy="40" r="10"/>
+  <circle cx="340" cy="40" r="10"/>
+  <circle cx="370" cy="40" r="10"/>
+  <circle cx="400" cy="40" r="10"/>
+  <circle cx="430" cy="40" r="10"/>
+  <!-- Bottom lace semicircles -->
+  <circle cx="130" cy="660" r="10"/>
+  <circle cx="250" cy="660" r="10"/>
+  <circle cx="370" cy="660" r="10"/>
+  <!-- Small accent dots between top scallops -->
+  <circle cx="85" cy="28" r="2"/>
+  <circle cx="145" cy="28" r="2"/>
+  <circle cx="205" cy="28" r="2"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Candle body -->
+  <rect x="40" y="45" width="40" height="70" />
+  <!-- Candle top rim -->
+  <ellipse cx="60" cy="45" rx="20" ry="5" />
+  <!-- Wick -->
+  <line x1="60" y1="40" x2="60" y2="28" />
+  <!-- Flame outer -->
+  <polygon points="60,10 52,25 60,30 68,25" />
+  <!-- Flame inner -->
+  <polygon points="60,16 56,24 60,27 64,24" />
+  <!-- Wax drip left -->
+  <polyline points="40,55 38,62 40,65" />
+  <!-- Wax drip right -->
+  <polyline points="80,60 82,68 80,72" />
+  <!-- Candleholder base -->
+  <rect x="35" y="115" width="50" height="8" />
+  <!-- Candleholder neck -->
+  <polygon points="45,115 40,120 80,120 75,115" />
+  <!-- Glow lines left -->
+  <line x1="42" y1="18" x2="36" y2="15" />
+  <line x1="40" y1="25" x2="34" y2="25" />
+  <!-- Glow lines right -->
+  <line x1="78" y1="18" x2="84" y2="15" />
+  <line x1="80" y1="25" x2="86" y2="25" />
+</svg>

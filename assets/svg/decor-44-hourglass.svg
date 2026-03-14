@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top frame bar -->
+  <rect x="25" y="12" width="70" height="6" />
+  <!-- Bottom frame bar -->
+  <rect x="25" y="122" width="70" height="6" />
+  <!-- Left glass side upper -->
+  <line x1="30" y1="18" x2="55" y2="70" />
+  <!-- Right glass side upper -->
+  <line x1="90" y1="18" x2="65" y2="70" />
+  <!-- Left glass side lower -->
+  <line x1="55" y1="70" x2="30" y2="122" />
+  <!-- Right glass side lower -->
+  <line x1="65" y1="70" x2="90" y2="122" />
+  <!-- Center neck -->
+  <ellipse cx="60" cy="70" rx="5" ry="3" />
+  <!-- Sand top level -->
+  <line x1="42" y1="42" x2="78" y2="42" />
+  <!-- Sand stream -->
+  <line x1="60" y1="60" x2="60" y2="80" />
+  <!-- Sand pile bottom -->
+  <polyline points="42,115 52,105 60,100 68,105 78,115" />
+  <!-- Sand dots falling -->
+  <circle cx="60" cy="85" r="1" />
+  <circle cx="59" cy="90" r="1" />
+  <circle cx="61" cy="95" r="1" />
+  <!-- Decorative feet left -->
+  <line x1="25" y1="128" x2="20" y2="133" />
+  <!-- Decorative feet right -->
+  <line x1="95" y1="128" x2="100" y2="133" />
+</svg>

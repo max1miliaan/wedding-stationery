@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Diamond crown (top facet) -->
+  <polygon points="60,15 25,45 95,45" />
+  <!-- Diamond pavilion (lower body) -->
+  <polygon points="25,45 60,125 95,45" />
+  <!-- Crown facet left -->
+  <line x1="25" y1="45" x2="42" y2="15" />
+  <!-- Crown facet right -->
+  <line x1="95" y1="45" x2="78" y2="15" />
+  <!-- Crown top edge -->
+  <line x1="42" y1="15" x2="78" y2="15" />
+  <!-- Girdle line (widest point) -->
+  <line x1="25" y1="45" x2="95" y2="45" />
+  <!-- Internal facet line left -->
+  <line x1="40" y1="45" x2="60" y2="125" />
+  <!-- Internal facet line right -->
+  <line x1="80" y1="45" x2="60" y2="125" />
+  <!-- Internal facet line center -->
+  <line x1="60" y1="15" x2="60" y2="45" />
+  <!-- Crown internal facet left -->
+  <line x1="42" y1="15" x2="40" y2="45" />
+  <!-- Crown internal facet right -->
+  <line x1="78" y1="15" x2="80" y2="45" />
+  <!-- Sparkle top left -->
+  <line x1="18" y1="25" x2="12" y2="20" />
+  <line x1="15" y1="28" x2="15" y2="18" />
+  <!-- Sparkle top right -->
+  <line x1="102" y1="25" x2="108" y2="20" />
+  <line x1="105" y1="28" x2="105" y2="18" />
+</svg>

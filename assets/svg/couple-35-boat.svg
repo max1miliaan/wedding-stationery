@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Boat hull -->
+  <polygon points="15,110 105,110 95,125 25,125"/>
+  <!-- Water line -->
+  <line x1="5" y1="125" x2="115" y2="125"/>
+  <!-- Kash head (seated in boat) -->
+  <circle cx="42" cy="72" r="7"/>
+  <circle cx="40" cy="71" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="42" y1="79" x2="42" y2="105"/>
+  <!-- Kash arm -->
+  <line x1="42" y1="88" x2="54" y2="84"/>
+  <!-- Max head (rowing) -->
+  <circle cx="70" cy="64" r="8"/>
+  <circle cx="68" cy="63" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="70" y1="72" x2="70" y2="105"/>
+  <!-- Max arms on oars -->
+  <line x1="70" y1="82" x2="55" y2="90"/>
+  <line x1="70" y1="82" x2="85" y2="90"/>
+  <!-- Oars -->
+  <line x1="55" y1="90" x2="20" y2="120"/>
+  <line x1="85" y1="90" x2="105" y2="120"/>
+</svg>

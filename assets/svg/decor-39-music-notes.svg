@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Note 1 - single eighth note head -->
+  <ellipse cx="30" cy="85" rx="8" ry="6" />
+  <!-- Note 1 stem -->
+  <line x1="38" y1="85" x2="38" y2="45" />
+  <!-- Note 1 flag -->
+  <polyline points="38,45 50,55 48,60" />
+  <!-- Note 2 - quarter note head -->
+  <ellipse cx="65" cy="60" rx="7" ry="5" />
+  <!-- Note 2 stem -->
+  <line x1="72" y1="60" x2="72" y2="25" />
+  <!-- Note 3 - beamed pair head left -->
+  <ellipse cx="82" cy="95" rx="7" ry="5" />
+  <!-- Note 3 stem left -->
+  <line x1="89" y1="95" x2="89" y2="55" />
+  <!-- Note 3 - beamed pair head right -->
+  <ellipse cx="100" cy="90" rx="7" ry="5" />
+  <!-- Note 3 stem right -->
+  <line x1="107" y1="90" x2="107" y2="50" />
+  <!-- Beam connecting pair -->
+  <line x1="89" y1="55" x2="107" y2="50" />
+  <!-- Second beam -->
+  <line x1="89" y1="60" x2="107" y2="55" />
+  <!-- Decorative sparkle 1 -->
+  <line x1="18" y1="40" x2="22" y2="36" />
+  <line x1="20" y1="42" x2="20" y2="34" />
+  <!-- Decorative sparkle 2 -->
+  <line x1="55" y1="18" x2="59" y2="14" />
+  <line x1="57" y1="20" x2="57" y2="12" />
+</svg>

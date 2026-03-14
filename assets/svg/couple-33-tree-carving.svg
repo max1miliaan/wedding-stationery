@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Tree trunk -->
+  <line x1="60" y1="20" x2="60" y2="130"/>
+  <line x1="54" y1="20" x2="54" y2="130"/>
+  <!-- Tree canopy -->
+  <ellipse cx="57" cy="18" rx="22" ry="16"/>
+  <!-- Heart carving on trunk -->
+  <polyline points="55,70 57,74 59,70"/>
+  <polyline points="55,70 54,68 55,66 57,68"/>
+  <polyline points="59,70 60,68 59,66 57,68"/>
+  <!-- Kash head -->
+  <circle cx="35" cy="62" r="7"/>
+  <circle cx="33" cy="61" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="35" y1="69" x2="35" y2="98"/>
+  <polygon points="27,98 35,98 43,126"/>
+  <!-- Kash arm (touching tree) -->
+  <line x1="35" y1="78" x2="50" y2="72"/>
+  <!-- Max head -->
+  <circle cx="82" cy="54" r="8"/>
+  <circle cx="80" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="82" y1="62" x2="82" y2="94"/>
+  <line x1="82" y1="94" x2="76" y2="126"/>
+  <line x1="82" y1="94" x2="88" y2="126"/>
+  <!-- Max arm (carving) -->
+  <line x1="82" y1="72" x2="64" y2="70"/>
+</svg>

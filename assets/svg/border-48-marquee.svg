@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer frame rectangle -->
+  <rect x="28" y="22" width="444" height="656" rx="4" ry="4"/>
+  <!-- Top marquee dots -->
+  <circle cx="55" cy="22" r="4"/>
+  <circle cx="100" cy="22" r="4"/>
+  <circle cx="145" cy="22" r="4"/>
+  <circle cx="190" cy="22" r="4"/>
+  <circle cx="250" cy="22" r="4"/>
+  <circle cx="310" cy="22" r="4"/>
+  <circle cx="355" cy="22" r="4"/>
+  <circle cx="400" cy="22" r="4"/>
+  <circle cx="445" cy="22" r="4"/>
+  <!-- Bottom marquee dots -->
+  <circle cx="55" cy="678" r="4"/>
+  <circle cx="145" cy="678" r="4"/>
+  <circle cx="250" cy="678" r="4"/>
+  <circle cx="355" cy="678" r="4"/>
+  <circle cx="445" cy="678" r="4"/>
+  <!-- Left marquee dots -->
+  <circle cx="28" cy="100" r="4"/>
+  <circle cx="28" cy="250" r="4"/>
+  <circle cx="28" cy="400" r="4"/>
+  <circle cx="28" cy="550" r="4"/>
+  <!-- Right marquee dots -->
+  <circle cx="472" cy="100" r="4"/>
+  <circle cx="472" cy="250" r="4"/>
+  <circle cx="472" cy="400" r="4"/>
+  <circle cx="472" cy="550" r="4"/>
+</svg>

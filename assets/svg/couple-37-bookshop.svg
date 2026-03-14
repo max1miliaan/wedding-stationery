@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head -->
+  <circle cx="48" cy="38" r="7"/>
+  <circle cx="46" cy="37" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="48" y1="45" x2="48" y2="78"/>
+  <polygon points="40,78 48,78 56,108"/>
+  <!-- Kash arm (holding book side) -->
+  <line x1="48" y1="56" x2="58" y2="62"/>
+  <!-- Max head (leaning in) -->
+  <circle cx="72" cy="30" r="8"/>
+  <circle cx="70" cy="29" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="72" y1="38" x2="70" y2="74"/>
+  <line x1="70" y1="74" x2="64" y2="108"/>
+  <line x1="70" y1="74" x2="76" y2="108"/>
+  <!-- Max arm (holding book side) -->
+  <line x1="72" y1="50" x2="66" y2="62"/>
+  <!-- Shared book (open) -->
+  <rect x="56" y="58" width="12" height="16" rx="1"/>
+  <line x1="62" y1="58" x2="62" y2="74"/>
+  <!-- Book pages -->
+  <line x1="58" y1="62" x2="61" y2="62"/>
+  <line x1="58" y1="66" x2="61" y2="66"/>
+  <line x1="63" y1="62" x2="66" y2="62"/>
+  <line x1="63" y1="66" x2="66" y2="66"/>
+</svg>

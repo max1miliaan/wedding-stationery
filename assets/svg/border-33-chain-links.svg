@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top chain links -->
+  <ellipse cx="60" cy="30" rx="18" ry="9"/>
+  <ellipse cx="90" cy="30" rx="18" ry="9"/>
+  <ellipse cx="120" cy="30" rx="18" ry="9"/>
+  <ellipse cx="150" cy="30" rx="18" ry="9"/>
+  <ellipse cx="250" cy="30" rx="18" ry="9"/>
+  <ellipse cx="350" cy="30" rx="18" ry="9"/>
+  <ellipse cx="380" cy="30" rx="18" ry="9"/>
+  <ellipse cx="410" cy="30" rx="18" ry="9"/>
+  <ellipse cx="440" cy="30" rx="18" ry="9"/>
+  <!-- Bottom chain links -->
+  <ellipse cx="60" cy="670" rx="18" ry="9"/>
+  <ellipse cx="90" cy="670" rx="18" ry="9"/>
+  <ellipse cx="120" cy="670" rx="18" ry="9"/>
+  <ellipse cx="150" cy="670" rx="18" ry="9"/>
+  <ellipse cx="250" cy="670" rx="18" ry="9"/>
+  <ellipse cx="350" cy="670" rx="18" ry="9"/>
+  <ellipse cx="380" cy="670" rx="18" ry="9"/>
+  <ellipse cx="410" cy="670" rx="18" ry="9"/>
+  <ellipse cx="440" cy="670" rx="18" ry="9"/>
+</svg>

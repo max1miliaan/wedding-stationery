@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Arch left post -->
+  <line x1="30" y1="85" x2="30" y2="25"/>
+  <!-- Arch right post -->
+  <line x1="110" y1="85" x2="110" y2="25"/>
+  <!-- Arch top curve -->
+  <ellipse cx="70" cy="25" rx="40" ry="18"/>
+  <!-- String light wire left -->
+  <polyline points="32,30 50,42 70,46 90,42 108,30"/>
+  <!-- String light 1 -->
+  <circle cx="42" cy="36" r="2"/>
+  <!-- String light 2 -->
+  <circle cx="52" cy="41" r="2"/>
+  <!-- String light 3 -->
+  <circle cx="62" cy="44" r="2"/>
+  <!-- String light 5 -->
+  <circle cx="78" cy="44" r="2"/>
+  <!-- String light 6 -->
+  <circle cx="88" cy="41" r="2"/>
+  <!-- String light 7 -->
+  <circle cx="98" cy="36" r="2"/>
+  <!-- Table top -->
+  <rect x="48" y="72" width="44" height="4"/>
+  <!-- Table leg left -->
+  <line x1="55" y1="76" x2="52" y2="90"/>
+  <!-- Table leg right -->
+  <line x1="85" y1="76" x2="88" y2="90"/>
+  <!-- Centerpiece vase -->
+  <rect x="66" y="64" width="8" height="8"/>
+  <!-- Centerpiece flowers -->
+  <circle cx="66" cy="60" r="3"/>
+  <!-- Centerpiece flowers right -->
+  <circle cx="74" cy="60" r="3"/>
+  <!-- Centerpiece flowers top -->
+  <circle cx="70" cy="56" r="3"/>
+  <!-- Ground -->
+  <line x1="10" y1="92" x2="130" y2="92"/>
+</svg>

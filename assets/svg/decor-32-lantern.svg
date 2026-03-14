@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Hanging hook -->
+  <polyline points="50,8 60,5 70,8" />
+  <!-- Hanging chain -->
+  <line x1="60" y1="5" x2="60" y2="20" />
+  <!-- Lantern top cap -->
+  <polygon points="40,20 60,12 80,20" />
+  <!-- Lantern top rim -->
+  <rect x="35" y="20" width="50" height="6" />
+  <!-- Lantern body left -->
+  <line x1="35" y1="26" x2="30" y2="100" />
+  <!-- Lantern body right -->
+  <line x1="85" y1="26" x2="90" y2="100" />
+  <!-- Lantern glass panel left -->
+  <line x1="42" y1="26" x2="38" y2="100" />
+  <!-- Lantern glass panel right -->
+  <line x1="78" y1="26" x2="82" y2="100" />
+  <!-- Lantern bottom rim -->
+  <rect x="28" y="100" width="64" height="6" />
+  <!-- Lantern base -->
+  <polygon points="35,106 40,118 80,118 85,106" />
+  <!-- Candle inside -->
+  <rect x="52" y="75" width="16" height="25" />
+  <!-- Flame -->
+  <polygon points="60,60 55,72 60,75 65,72" />
+  <!-- Cross bar -->
+  <line x1="35" y1="60" x2="85" y2="60" />
+</svg>

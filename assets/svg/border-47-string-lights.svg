@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border rectangle -->
+  <rect x="35" y="55" width="430" height="615" rx="0" ry="0"/>
+  <!-- String line draped across top -->
+  <polyline points="35,30 100,38 180,25 260,42 340,25 420,38 465,30"/>
+  <!-- Light bulb circles hanging from string -->
+  <circle cx="60" cy="40" r="5"/>
+  <line x1="60" y1="33" x2="60" y2="35"/>
+  <circle cx="120" cy="42" r="5"/>
+  <line x1="120" y1="35" x2="120" y2="37"/>
+  <circle cx="180" cy="33" r="5"/>
+  <line x1="180" y1="25" x2="180" y2="28"/>
+  <circle cx="240" cy="44" r="5"/>
+  <line x1="240" y1="37" x2="240" y2="39"/>
+  <circle cx="300" cy="36" r="5"/>
+  <line x1="300" y1="28" x2="300" y2="31"/>
+  <circle cx="360" cy="33" r="5"/>
+  <line x1="360" y1="25" x2="360" y2="28"/>
+  <circle cx="420" cy="44" r="5"/>
+  <line x1="420" y1="37" x2="420" y2="39"/>
+</svg>

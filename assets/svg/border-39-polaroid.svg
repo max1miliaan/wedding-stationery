@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Outer polaroid frame -->
+  <rect x="30" y="25" width="440" height="650" rx="3" ry="3"/>
+  <!-- Inner photo area (top portion, leaving thick bottom margin) -->
+  <rect x="50" y="42" width="400" height="548" rx="0" ry="0"/>
+  <!-- Thick bottom area for caption -- the polaroid signature look -->
+  <!-- Small centered line in bottom area suggesting writing space -->
+  <line x1="180" y1="630" x2="320" y2="630"/>
+  <!-- Slight shadow hint on inner frame -->
+  <line x1="52" y1="590" x2="450" y2="590"/>
+</svg>

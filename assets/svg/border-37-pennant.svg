@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Main border rectangle -->
+  <rect x="35" y="55" width="430" height="615" rx="0" ry="0"/>
+  <!-- Top pennant string line -->
+  <line x1="35" y1="30" x2="465" y2="30"/>
+  <!-- Pennant triangles hanging from string -->
+  <polygon points="55,30 70,30 62,52"/>
+  <polygon points="85,30 100,30 92,52"/>
+  <polygon points="115,30 130,30 122,52"/>
+  <polygon points="145,30 160,30 152,52"/>
+  <polygon points="175,30 190,30 182,52"/>
+  <polygon points="205,30 220,30 212,52"/>
+  <polygon points="235,30 250,30 242,52"/>
+  <polygon points="265,30 280,30 272,52"/>
+  <polygon points="295,30 310,30 302,52"/>
+  <polygon points="325,30 340,30 332,52"/>
+  <polygon points="355,30 370,30 362,52"/>
+  <polygon points="385,30 400,30 392,52"/>
+  <polygon points="415,30 430,30 422,52"/>
+  <polygon points="445,30 460,30 452,52"/>
+</svg>

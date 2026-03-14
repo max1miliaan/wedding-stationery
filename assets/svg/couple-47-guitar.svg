@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Kash head (listening, seated) -->
+  <circle cx="82" cy="46" r="7"/>
+  <circle cx="80" cy="45" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Kash body -->
+  <line x1="82" y1="53" x2="82" y2="84"/>
+  <polygon points="74,84 82,84 90,112"/>
+  <!-- Kash arm (resting on knee) -->
+  <line x1="82" y1="64" x2="92" y2="74"/>
+  <!-- Max head (playing guitar) -->
+  <circle cx="38" cy="38" r="8"/>
+  <circle cx="36" cy="37" r="1.5" fill="currentColor" stroke="none"/>
+  <!-- Max body -->
+  <line x1="38" y1="46" x2="38" y2="82"/>
+  <line x1="38" y1="82" x2="32" y2="114"/>
+  <line x1="38" y1="82" x2="44" y2="114"/>
+  <!-- Max arm (on fretboard) -->
+  <line x1="38" y1="56" x2="26" y2="60"/>
+  <!-- Max arm (strumming) -->
+  <line x1="38" y1="60" x2="48" y2="72"/>
+  <!-- Guitar body -->
+  <ellipse cx="46" cy="76" rx="10" ry="12"/>
+  <!-- Guitar neck -->
+  <line x1="38" y1="68" x2="22" y2="54"/>
+  <!-- Guitar sound hole -->
+  <circle cx="46" cy="74" r="3"/>
+</svg>

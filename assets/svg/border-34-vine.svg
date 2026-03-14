@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left vine line -->
+  <line x1="35" y1="60" x2="35" y2="640"/>
+  <!-- Left vine berries -->
+  <circle cx="28" cy="100" r="4"/>
+  <circle cx="28" cy="200" r="4"/>
+  <circle cx="28" cy="350" r="3"/>
+  <circle cx="28" cy="500" r="4"/>
+  <circle cx="28" cy="600" r="4"/>
+  <!-- Left vine small leaves (ellipses) -->
+  <ellipse cx="25" cy="150" rx="7" ry="3" transform="rotate(-30 25 150)"/>
+  <ellipse cx="25" cy="420" rx="7" ry="3" transform="rotate(-30 25 420)"/>
+  <!-- Right vine line -->
+  <line x1="465" y1="60" x2="465" y2="640"/>
+  <!-- Right vine berries -->
+  <circle cx="472" cy="100" r="4"/>
+  <circle cx="472" cy="200" r="4"/>
+  <circle cx="472" cy="350" r="3"/>
+  <circle cx="472" cy="500" r="4"/>
+  <circle cx="472" cy="600" r="4"/>
+  <!-- Right vine small leaves (ellipses) -->
+  <ellipse cx="475" cy="150" rx="7" ry="3" transform="rotate(30 475 150)"/>
+  <ellipse cx="475" cy="420" rx="7" ry="3" transform="rotate(30 475 420)"/>
+  <!-- Top connecting line -->
+  <line x1="35" y1="60" x2="465" y2="60"/>
+  <!-- Bottom connecting line -->
+  <line x1="35" y1="640" x2="465" y2="640"/>
+</svg>

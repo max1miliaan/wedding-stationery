@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Jar rim -->
+  <rect x="35" y="35" width="50" height="8" />
+  <!-- Jar neck left -->
+  <line x1="35" y1="43" x2="30" y2="55" />
+  <!-- Jar neck right -->
+  <line x1="85" y1="43" x2="90" y2="55" />
+  <!-- Jar body left -->
+  <line x1="30" y1="55" x2="30" y2="120" />
+  <!-- Jar body right -->
+  <line x1="90" y1="55" x2="90" y2="120" />
+  <!-- Jar bottom -->
+  <line x1="30" y1="120" x2="90" y2="120" />
+  <!-- Flower 1 stem -->
+  <line x1="50" y1="40" x2="45" y2="15" />
+  <!-- Flower 1 bloom -->
+  <circle cx="45" cy="12" r="6" />
+  <!-- Flower 1 center -->
+  <circle cx="45" cy="12" r="2" />
+  <!-- Flower 2 stem -->
+  <line x1="60" y1="38" x2="60" y2="8" />
+  <!-- Flower 2 bloom -->
+  <circle cx="60" cy="6" r="5" />
+  <!-- Flower 3 stem -->
+  <line x1="70" y1="40" x2="78" y2="18" />
+  <!-- Flower 3 bloom -->
+  <circle cx="78" cy="15" r="5" />
+  <!-- Flower 3 center -->
+  <circle cx="78" cy="15" r="2" />
+  <!-- Leaf left -->
+  <ellipse cx="42" cy="28" rx="6" ry="3" />
+  <!-- Leaf right -->
+  <ellipse cx="75" cy="30" rx="6" ry="3" />
+</svg>
