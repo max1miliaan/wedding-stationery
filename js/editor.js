@@ -552,6 +552,10 @@
   // BG removal module (lazy loaded)
   let bgRemovalModule = null;
 
+  // Recent fonts (persisted in localStorage)
+  let recentFonts = [];
+  try { recentFonts = JSON.parse(localStorage.getItem('weddingEditor_recentFonts') || '[]'); } catch (e) { recentFonts = []; }
+
   // Cloud save (Supabase)
   let supabaseClient = null;
   let currentDesignId = null;
@@ -2725,6 +2729,13 @@ function initTextPresets() {
     }
   }
 
+  function trackRecentFont(fontName) {
+    recentFonts = recentFonts.filter(n => n !== fontName);
+    recentFonts.unshift(fontName);
+    if (recentFonts.length > 10) recentFonts = recentFonts.slice(0, 10);
+    try { localStorage.setItem('weddingEditor_recentFonts', JSON.stringify(recentFonts)); } catch (e) {}
+  }
+
   function renderFontList(obj, search) {
     const listEl = document.getElementById('prop-font-list');
     if (!listEl) return;
@@ -2734,15 +2745,32 @@ function initTextPresets() {
       ? FONTS.filter(f => f.name.toLowerCase().includes(query))
       : FONTS;
 
-    listEl.innerHTML = filtered.map(f =>
+    let html = '';
+
+    // Show recent fonts at top (only when not searching)
+    if (!query && recentFonts.length > 0) {
+      const recentEntries = recentFonts.filter(name => FONTS.some(f => f.name === name));
+      if (recentEntries.length > 0) {
+        html += '<div class="font-list-label">Recent</div>';
+        html += recentEntries.map(name =>
+          `<div class="font-item ${obj.fontFamily === name ? 'active' : ''}" data-font="${name}" style="font-family: '${name}';">${name}</div>`
+        ).join('');
+        html += '<div class="font-list-label">All Fonts</div>';
+      }
+    }
+
+    html += filtered.map(f =>
       `<div class="font-item ${obj.fontFamily === f.name ? 'active' : ''}" data-font="${f.name}" style="font-family: '${f.name}';">${f.name}</div>`
     ).join('');
+
+    listEl.innerHTML = html;
 
     listEl.querySelectorAll('.font-item').forEach(item => {
       item.addEventListener('click', () => {
         obj.set('fontFamily', item.dataset.font);
         canvas.renderAll();
         saveHistory();
+        trackRecentFont(item.dataset.font);
 
         // Update active state
         listEl.querySelectorAll('.font-item').forEach(i => i.classList.remove('active'));
