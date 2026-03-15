@@ -174,7 +174,7 @@
     { name: 'MedievalSharp', cat: 'display' },
     { name: 'Fondamento', cat: 'display' },
     { name: 'Bungee Shade', cat: 'display' },
-    { name: 'Rubik Mono One', cat: 'display' }
+    { name: 'Rubik Mono One', cat: 'display' },
     // Google Fonts (downloaded, batch 2)
     { name: 'Corinthia', cat: 'calligraphy' },
     { name: 'Clicker Script', cat: 'calligraphy' },
