@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Three stacked flowing wave lines with slight offset, like ocean water -->
+  <!-- Wave 1 - top -->
+  <path stroke-width="2.5" d="
+    M 8,35
+    C 30,18 60,12 90,28
+    C 120,44 135,52 165,42
+    C 195,32 210,16 240,18
+    C 270,20 290,38 320,36
+    C 350,34 370,22 392,20"/>
+  <!-- Wave 2 - middle -->
+  <path stroke-width="2" d="
+    M 8,72
+    C 32,54 65,48 95,62
+    C 125,76 142,86 172,76
+    C 202,66 218,50 248,52
+    C 278,54 298,72 328,70
+    C 358,68 378,56 392,54"/>
+  <!-- Wave 3 - bottom -->
+  <path stroke-width="1.5" opacity="0.7" d="
+    M 8,112
+    C 34,96 68,90 98,104
+    C 128,118 146,126 176,116
+    C 206,106 224,90 254,92
+    C 284,94 304,110 334,108
+    C 364,106 382,94 392,90"/>
+  <!-- Subtle connecting foam between waves -->
+  <path stroke-width="0.8" opacity="0.3" d="M 90,32 C 92,40 94,48 95,56"/>
+  <path stroke-width="0.8" opacity="0.3" d="M 240,22 C 242,30 244,38 248,46"/>
+  <path stroke-width="0.8" opacity="0.3" d="M 95,68 C 96,78 97,88 98,98"/>
+  <path stroke-width="0.8" opacity="0.3" d="M 248,58 C 250,66 252,74 254,86"/>
+  <!-- Small wave cap details -->
+  <path stroke-width="0.8" opacity="0.35" d="M 82,20 C 86,14 92,16 88,24"/>
+  <path stroke-width="0.8" opacity="0.35" d="M 232,14 C 236,8 242,10 238,18"/>
+  <path stroke-width="0.8" opacity="0.35" d="M 86,56 C 90,50 96,52 92,60"/>
+</svg>

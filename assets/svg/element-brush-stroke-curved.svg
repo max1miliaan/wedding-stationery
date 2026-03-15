@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Thick curved arc brush stroke, like a bold artistic underline -->
+  <path fill="currentColor" stroke="none" d="
+    M 15,140
+    C 20,136 30,130 50,115
+    C 75,96 105,72 140,58
+    C 175,44 210,42 240,52
+    C 260,58 275,70 285,80
+    C 290,86 292,92 288,94
+    C 284,96 278,92 270,84
+    C 258,74 242,64 220,58
+    C 195,52 168,54 140,66
+    C 112,78 85,100 60,120
+    C 42,134 30,142 22,146
+    C 16,148 12,146 15,140
+    Z"/>
+  <!-- Paint texture on the outer edge of the curve -->
+  <path fill="currentColor" stroke="none" d="M 80,88 C 86,82 94,80 98,86 C 94,80 86,78 80,88 Z"/>
+  <path fill="currentColor" stroke="none" d="M 160,50 C 168,44 176,44 180,50 C 176,44 166,42 160,50 Z"/>
+  <path fill="currentColor" stroke="none" d="M 240,54 C 248,50 256,54 254,60 C 254,54 246,50 240,54 Z"/>
+  <!-- Rough inner edge -->
+  <path fill="currentColor" stroke="none" d="M 50,130 C 56,134 62,136 60,128 C 62,134 56,136 50,130 Z"/>
+  <path fill="currentColor" stroke="none" d="M 140,74 C 148,78 154,76 150,70 C 154,76 148,80 140,74 Z"/>
+  <!-- Dry brush streaks following the curve -->
+  <path stroke="currentColor" fill="none" stroke-width="0.5" opacity="0.3" d="M 22,138 C 60,110 120,70 280,86"/>
+  <path stroke="currentColor" fill="none" stroke-width="0.5" opacity="0.3" d="M 18,144 C 56,116 116,76 284,90"/>
+  <!-- Splatter at the tail end -->
+  <circle fill="currentColor" stroke="none" cx="290" cy="82" r="1.2"/>
+  <circle fill="currentColor" stroke="none" cx="294" cy="88" r="0.8"/>
+  <circle fill="currentColor" stroke="none" cx="296" cy="78" r="0.6"/>
+</svg>

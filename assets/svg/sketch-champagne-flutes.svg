@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left flute bowl -->
+  <path d="M52 45 C50 43, 54 40, 58 42 C60 55, 64 70, 72 82 C76 88, 78 92, 78 95"/>
+  <path d="M82 45 C84 43, 88 40, 86 42 C84 55, 80 70, 78 82"/>
+  <!-- Left liquid fill -->
+  <path d="M58 60 C62 58, 66 62, 72 60 C78 58, 82 62, 84 60 L80 80 C78 86, 78 88, 78 90 L72 82 C66 72, 62 65, 58 60Z" fill="currentColor" opacity="0.08"/>
+  <!-- Left liquid surface -->
+  <path d="M58 60 C64 57, 72 63, 78 60 C82 58, 84 61, 86 60"/>
+  <!-- Left stem -->
+  <path d="M78 95 C77 108, 79 122, 78 138"/>
+  <!-- Left base -->
+  <path d="M62 138 C68 136, 74 140, 78 138 C82 136, 88 140, 94 138"/>
+  <!-- Right flute bowl -->
+  <path d="M118 45 C116 43, 112 40, 114 42 C116 55, 120 70, 122 82 C124 88, 122 92, 122 95"/>
+  <path d="M148 45 C150 43, 146 40, 148 42 C146 55, 140 70, 132 82 C128 88, 124 92, 122 95"/>
+  <!-- Right liquid fill -->
+  <path d="M116 58 C120 56, 126 60, 132 58 C138 56, 144 60, 146 58 L138 78 C132 86, 126 90, 122 92 L122 82 C120 72, 118 64, 116 58Z" fill="currentColor" opacity="0.08"/>
+  <!-- Right liquid surface -->
+  <path d="M116 58 C122 55, 130 61, 136 58 C142 56, 146 59, 148 58"/>
+  <!-- Right stem -->
+  <path d="M122 95 C123 108, 121 122, 122 138"/>
+  <!-- Right base -->
+  <path d="M106 138 C112 136, 118 140, 122 138 C126 136, 132 140, 138 138"/>
+  <!-- Clink point sparkle lines -->
+  <path d="M88 38 C90 34, 92 30, 94 26"/>
+  <path d="M96 36 C100 32, 104 30, 108 28"/>
+  <path d="M102 42 C106 38, 110 36, 114 36"/>
+  <!-- Small sparkle star -->
+  <path d="M98 18 L98 24 M95 21 L101 21"/>
+  <!-- Tiny bubbles in left glass -->
+  <circle cx="68" cy="70" r="1.5"/>
+  <circle cx="72" cy="62" r="1"/>
+  <circle cx="65" cy="66" r="1"/>
+  <!-- Tiny bubbles in right glass -->
+  <circle cx="132" cy="68" r="1.5"/>
+  <circle cx="128" cy="62" r="1"/>
+  <circle cx="135" cy="72" r="1"/>
+</svg>

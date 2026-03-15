@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Thick diagonal brush stroke from top-left to bottom-right -->
+  <path fill="currentColor" stroke="none" d="
+    M 18,22
+    C 28,16 40,14 55,24
+    C 75,38 95,52 120,72
+    C 145,92 170,108 195,124
+    C 220,140 245,156 265,168
+    C 278,176 288,182 286,188
+    C 284,194 276,192 264,184
+    C 244,172 220,156 195,140
+    C 170,124 145,106 120,88
+    C 95,70 72,54 50,40
+    C 34,30 22,28 18,22
+    Z"/>
+  <!-- Rough paint edges -->
+  <path fill="currentColor" stroke="none" d="M 40,18 C 46,12 54,14 56,20 C 52,14 44,12 40,18 Z"/>
+  <path fill="currentColor" stroke="none" d="M 100,56 C 106,50 114,52 116,58 C 112,52 104,50 100,56 Z"/>
+  <path fill="currentColor" stroke="none" d="M 200,128 C 206,122 214,124 216,130 C 212,124 204,122 200,128 Z"/>
+  <path fill="currentColor" stroke="none" d="M 270,174 C 276,170 282,174 280,180 C 280,174 274,170 270,174 Z"/>
+  <!-- Texture streaks along the stroke direction -->
+  <path stroke="currentColor" fill="none" stroke-width="0.4" opacity="0.25" d="M 30,26 C 80,58 160,118 278,186"/>
+  <path stroke="currentColor" fill="none" stroke-width="0.4" opacity="0.25" d="M 24,30 C 74,62 154,122 272,190"/>
+  <!-- Splatter near brush start -->
+  <circle fill="currentColor" stroke="none" cx="12" cy="30" r="1.5"/>
+  <circle fill="currentColor" stroke="none" cx="8" cy="24" r="1"/>
+  <circle fill="currentColor" stroke="none" cx="16" cy="16" r="0.8"/>
+</svg>

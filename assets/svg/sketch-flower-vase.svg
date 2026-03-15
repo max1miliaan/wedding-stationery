@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Pitcher/jug body left -->
+  <path d="M50 230 C48 225, 46 200, 50 175 C54 150, 58 135, 60 120 C62 110, 60 105, 58 100"/>
+  <!-- Pitcher body right -->
+  <path d="M150 230 C152 225, 154 200, 150 175 C146 150, 142 135, 140 120 C138 110, 140 105, 142 100"/>
+  <!-- Bottom -->
+  <path d="M50 230 C65 234, 85 232, 100 233 C115 232, 135 234, 150 230"/>
+  <!-- Rim -->
+  <path d="M56 100 C70 96, 85 102, 100 99 C115 96, 130 102, 144 100"/>
+  <!-- Stripe lines on pitcher -->
+  <path d="M54 140 C70 136, 90 142, 100 140 C110 138, 130 144, 146 140"/>
+  <path d="M52 165 C68 161, 88 167, 100 165 C112 163, 132 169, 148 165"/>
+  <path d="M50 190 C66 186, 86 192, 100 190 C114 188, 134 194, 150 190"/>
+  <!-- Handle on right -->
+  <path d="M142 100 C152 98, 160 105, 162 115 C164 130, 158 145, 150 155"/>
+  <!-- Flower 1 - large bloom center -->
+  <path d="M90 60 C82 52, 78 40, 84 32 C90 24, 100 24, 104 32 C108 24, 118 24, 122 32 C128 40, 124 52, 116 60 C110 66, 96 66, 90 60Z"/>
+  <circle cx="103" cy="48" r="4" fill="currentColor" opacity="0.1"/>
+  <!-- Flower 2 - left daisy -->
+  <path d="M58 55 C52 48, 50 38, 56 30 C62 22, 72 28, 70 36 C76 28, 86 30, 82 40 C88 36, 88 46, 80 52 C74 58, 64 60, 58 55Z"/>
+  <circle cx="70" cy="44" r="3" fill="currentColor" opacity="0.1"/>
+  <!-- Flower 3 - right small bloom -->
+  <path d="M138 48 C134 40, 136 30, 142 26 C148 22, 156 28, 152 36 C158 32, 162 40, 156 46 C150 52, 142 54, 138 48Z"/>
+  <circle cx="147" cy="38" r="2.5" fill="currentColor" opacity="0.1"/>
+  <!-- Stems -->
+  <path d="M103 60 C102 70, 101 80, 100 100"/>
+  <path d="M68 55 C72 65, 76 78, 80 100"/>
+  <path d="M146 48 C144 60, 136 80, 130 100"/>
+  <!-- Leaves -->
+  <path d="M100 78 C92 72, 84 74, 82 80 C80 86, 88 88, 96 82"/>
+  <path d="M76 82 C82 78, 88 80, 86 86"/>
+  <path d="M134 72 C128 68, 122 72, 124 78"/>
+  <!-- Extra small bud top -->
+  <path d="M120 42 C118 36, 122 30, 126 34 C130 30, 134 36, 132 42"/>
+  <path d="M126 42 C126 50, 124 65, 120 100"/>
+</svg>

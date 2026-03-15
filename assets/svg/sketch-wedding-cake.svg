@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Top tier -->
+  <path d="M 72 80 C 70 76, 70 60, 72 56 C 76 52, 124 52, 128 56 C 130 60, 130 76, 128 80" />
+  <!-- Top tier bottom edge -->
+  <path d="M 72 80 C 74 84, 126 84, 128 80" />
+  <!-- Top tier decoration line -->
+  <path d="M 76 68 C 82 72, 90 74, 100 74 C 110 74, 118 72, 124 68" />
+  <!-- Middle tier -->
+  <path d="M 52 130 C 50 126, 50 92, 52 88 C 56 84, 144 84, 148 88 C 150 92, 150 126, 148 130" />
+  <!-- Middle tier bottom edge -->
+  <path d="M 52 130 C 54 134, 146 134, 148 130" />
+  <!-- Middle tier decoration swag left -->
+  <path d="M 56 106 C 64 116, 80 118, 100 114" />
+  <!-- Middle tier decoration swag right -->
+  <path d="M 100 114 C 120 118, 136 116, 144 106" />
+  <!-- Bottom tier -->
+  <path d="M 28 196 C 26 192, 26 142, 28 138 C 32 134, 168 134, 172 138 C 174 142, 174 192, 172 196" />
+  <!-- Bottom tier bottom edge -->
+  <path d="M 28 196 C 30 200, 170 200, 172 196" />
+  <!-- Bottom tier decoration swag -->
+  <path d="M 34 164 C 50 176, 76 180, 100 176 C 124 180, 150 176, 166 164" />
+  <!-- Cake stand plate -->
+  <path d="M 20 202 C 18 198, 22 196, 28 196 C 100 196, 172 196, 172 196 C 178 196, 182 198, 180 202 C 178 206, 22 206, 20 202" />
+  <!-- Cake stand pedestal -->
+  <path d="M 80 206 C 82 214, 84 220, 82 226 C 80 230, 120 230, 118 226 C 116 220, 118 214, 120 206" />
+  <!-- Cake stand base -->
+  <path d="M 68 228 C 72 224, 128 224, 132 228 C 134 232, 66 232, 68 228" />
+  <!-- Cherry / flower topper left -->
+  <path d="M 88 52 C 84 44, 86 36, 92 34 C 96 32, 96 38, 92 40 C 88 42, 86 46, 88 52" />
+  <!-- Cherry / flower topper right -->
+  <path d="M 112 52 C 116 44, 114 36, 108 34 C 104 32, 104 38, 108 40 C 112 42, 114 46, 112 52" />
+  <!-- Flower center top -->
+  <circle cx="100" cy="38" r="3" fill="currentColor" />
+  <!-- Leaf left -->
+  <path d="M 88 44 C 82 40, 78 36, 82 32" />
+  <!-- Leaf right -->
+  <path d="M 112 44 C 118 40, 122 36, 118 32" />
+  <!-- Small decorative dots on middle tier -->
+  <circle cx="70" cy="96" r="1.5" fill="currentColor" />
+  <circle cx="100" cy="94" r="1.5" fill="currentColor" />
+  <circle cx="130" cy="96" r="1.5" fill="currentColor" />
+  <!-- Small decorative dots on bottom tier -->
+  <circle cx="50" cy="148" r="1.5" fill="currentColor" />
+  <circle cx="100" cy="146" r="1.5" fill="currentColor" />
+  <circle cx="150" cy="148" r="1.5" fill="currentColor" />
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Loose squiggly hand-drawn underline/separator -->
+  <!-- Main squiggle line with organic imperfection -->
+  <path stroke-width="2.2" d="
+    M 12,32
+    C 22,22 34,20 46,28
+    C 58,36 64,42 78,38
+    C 92,34 98,24 112,22
+    C 126,20 134,30 148,34
+    C 162,38 170,44 184,40
+    C 198,36 206,26 220,24
+    C 234,22 244,32 258,36
+    C 272,40 280,44 294,38
+    C 308,32 316,22 330,22
+    C 344,22 354,32 368,34
+    C 376,36 384,32 390,30"/>
+  <!-- Secondary lighter squiggle for hand-drawn feel -->
+  <path stroke-width="1" opacity="0.3" d="
+    M 18,36
+    C 28,26 38,24 50,32
+    C 62,40 68,44 82,40
+    C 96,36 102,28 116,26
+    C 130,24 138,34 152,38
+    C 166,42 174,46 188,42
+    C 202,38 210,30 224,28
+    C 238,26 248,36 262,40
+    C 276,44 284,46 298,40
+    C 312,34 320,26 334,26
+    C 348,26 358,36 372,38
+    C 380,40 388,36 394,34"/>
+  <!-- Slight pen pressure dots at direction changes -->
+  <circle fill="currentColor" stroke="none" cx="46" cy="28" r="1.2" opacity="0.3"/>
+  <circle fill="currentColor" stroke="none" cx="112" cy="22" r="1" opacity="0.25"/>
+  <circle fill="currentColor" stroke="none" cx="184" cy="40" r="1.1" opacity="0.25"/>
+  <circle fill="currentColor" stroke="none" cx="258" cy="36" r="1" opacity="0.25"/>
+  <circle fill="currentColor" stroke="none" cx="330" cy="22" r="1.2" opacity="0.3"/>
+</svg>

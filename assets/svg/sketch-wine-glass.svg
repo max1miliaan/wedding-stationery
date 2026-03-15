@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Wine glass bowl - left side -->
+  <path d="M68 42 C64 50, 62 62, 66 78 C70 90, 80 100, 92 106 C96 108, 98 109, 100 110"/>
+  <!-- Wine glass bowl - right side -->
+  <path d="M132 42 C136 50, 138 62, 134 78 C130 90, 120 100, 108 106 C104 108, 102 109, 100 110"/>
+  <!-- Rim with hand-drawn wobble -->
+  <path d="M66 42 C76 39, 88 44, 100 41 C112 38, 124 43, 134 42"/>
+  <!-- Wine fill area -->
+  <path d="M70 72 C78 69, 88 74, 100 71 C112 68, 122 73, 130 72 C132 68, 134 64, 134 60 L132 58 C128 68, 118 80, 108 88 C104 90, 102 92, 100 94 C98 92, 96 90, 92 88 C82 80, 72 68, 68 58 L66 60 C66 64, 68 68, 70 72Z" fill="currentColor" opacity="0.12"/>
+  <!-- Wine surface line -->
+  <path d="M70 72 C80 69, 90 75, 100 72 C110 69, 120 74, 130 72"/>
+  <!-- Stem -->
+  <path d="M100 110 C99 118, 101 130, 100 148"/>
+  <!-- Base -->
+  <path d="M70 148 C78 146, 88 150, 100 148 C112 146, 122 150, 130 148"/>
+  <!-- Base bottom line -->
+  <path d="M74 152 C84 154, 94 150, 100 152 C106 150, 116 154, 126 152"/>
+  <!-- Decorative ribbon from stem - left loop -->
+  <path d="M96 125 C88 120, 78 122, 76 130 C74 138, 82 142, 88 136 C92 132, 94 128, 96 125"/>
+  <!-- Ribbon trailing end left -->
+  <path d="M76 130 C70 136, 64 144, 60 152 C58 156, 60 158, 64 156"/>
+  <!-- Ribbon trailing end right -->
+  <path d="M104 125 C110 130, 116 138, 120 148 C122 152, 120 154, 116 152"/>
+  <!-- Small ribbon right loop -->
+  <path d="M104 125 C112 120, 120 124, 118 130 C116 134, 110 132, 104 125"/>
+  <!-- Light reflection on glass -->
+  <path d="M78 52 C76 56, 76 62, 78 66" stroke-width="1.5" opacity="0.4"/>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Decorative calligraphic swirl/flourish spiral -->
+  <!-- Main spiral starting thick, tapering to thin -->
+  <path stroke-width="4" d="
+    M 20,140
+    C 10,120 12,90 30,70
+    C 48,50 75,42 100,46"/>
+  <path stroke-width="3.5" d="
+    M 100,46
+    C 125,50 148,62 158,82
+    C 168,102 162,128 145,142"/>
+  <path stroke-width="3" d="
+    M 145,142
+    C 128,156 105,158 88,148
+    C 71,138 64,120 70,104"/>
+  <path stroke-width="2.5" d="
+    M 70,104
+    C 76,88 90,80 106,82
+    C 122,84 132,96 130,110"/>
+  <path stroke-width="2" d="
+    M 130,110
+    C 128,124 118,130 108,128
+    C 98,126 92,118 96,108"/>
+  <path stroke-width="1.5" d="
+    M 96,108
+    C 100,98 108,96 114,102"/>
+  <path stroke-width="1" d="
+    M 114,102
+    C 118,106 116,112 112,114"/>
+  <!-- Decorative tail flourish extending from the start -->
+  <path stroke-width="3.5" d="
+    M 20,140
+    C 24,150 32,158 44,162
+    C 56,166 70,164 82,158"/>
+  <path stroke-width="2.5" d="
+    M 82,158
+    C 94,152 108,150 120,154
+    C 132,158 142,166 148,176"/>
+  <!-- Tail tapers to a fine point -->
+  <path stroke-width="1.5" d="
+    M 148,176
+    C 152,182 158,186 164,184
+    C 170,182 172,176 170,172"/>
+  <path stroke-width="0.8" d="
+    M 170,172
+    C 168,168 172,164 176,166"/>
+</svg>

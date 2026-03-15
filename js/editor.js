@@ -55,6 +55,9 @@
     { name: 'Birthstone', cat: 'calligraphy' },
     { name: 'Lavishly Yours', cat: 'calligraphy' },
     { name: 'Fleur De Leah', cat: 'calligraphy' },
+    { name: 'Engagement', cat: 'calligraphy' },
+    { name: 'Berkshire Swash', cat: 'calligraphy' },
+    { name: 'Lovers Quarrel', cat: 'calligraphy' },
     // Script/Handwriting
     { name: 'Dancing Script', cat: 'script' },
     { name: 'Caveat', cat: 'script' },
@@ -89,6 +92,10 @@
     { name: 'Source Serif 4', cat: 'serif' },
     { name: 'Sorts Mill Goudy', cat: 'serif' },
     { name: 'Noto Serif Display', cat: 'serif' },
+    { name: 'Literata', cat: 'serif' },
+    { name: 'Baskervville', cat: 'serif' },
+    { name: 'Young Serif', cat: 'serif' },
+    { name: 'Instrument Serif', cat: 'serif' },
     // Serif -- Display
     { name: 'Cinzel', cat: 'serif' },
     { name: 'Cinzel Decorative', cat: 'serif' },
@@ -119,6 +126,21 @@
     { name: 'Nunito', cat: 'sans' },
     { name: 'Work Sans', cat: 'sans' },
     { name: 'DM Sans', cat: 'sans' },
+    // Sans -- Modern (new)
+    { name: 'Sora', cat: 'sans' },
+    { name: 'Urbanist', cat: 'sans' },
+    { name: 'Onest', cat: 'sans' },
+    { name: 'Albert Sans', cat: 'sans' },
+    { name: 'Red Hat Display', cat: 'sans' },
+    { name: 'Hanken Grotesk', cat: 'sans' },
+    { name: 'Nunito Sans', cat: 'sans' },
+    { name: 'Lexend', cat: 'sans' },
+    { name: 'Fira Sans', cat: 'sans' },
+    { name: 'Source Sans 3', cat: 'sans' },
+    { name: 'Barlow', cat: 'sans' },
+    // Sans -- Geometric/Bold (Google)
+    { name: 'League Spartan', cat: 'sans' },
+    { name: 'League Gothic', cat: 'display' },
     // Fontshare (display)
     { name: 'Clash Display', cat: 'display' },
     { name: 'Panchang', cat: 'display' },
@@ -132,10 +154,277 @@
     { name: 'Boska', cat: 'serif' },
     { name: 'Gambetta', cat: 'serif' },
     { name: 'Ranade', cat: 'sans' },
-    { name: 'Zodiak', cat: 'serif' }
+    { name: 'Zodiak', cat: 'serif' },
+    // Fontshare (new batch)
+    { name: 'Archivo', cat: 'sans' },
+    { name: 'Erode', cat: 'serif' },
+    { name: 'Synonym', cat: 'sans' },
+    { name: 'Telma', cat: 'serif' },
+    { name: 'JetBrains Mono', cat: 'mono' },
+    { name: 'Plein', cat: 'display' },
+    { name: 'Bespoke Serif', cat: 'serif' },
+    { name: 'Nippo', cat: 'display' },
+    { name: 'Tanker', cat: 'display' },
+    { name: 'Kola', cat: 'display' },
+    // Display/Decorative (Google)
+    { name: 'Uncial Antiqua', cat: 'display' },
+    { name: 'Almendra Display', cat: 'display' },
+    { name: 'Rye', cat: 'display' },
+    { name: 'Pirata One', cat: 'display' },
+    { name: 'MedievalSharp', cat: 'display' },
+    { name: 'Fondamento', cat: 'display' },
+    { name: 'Bungee Shade', cat: 'display' },
+    { name: 'Rubik Mono One', cat: 'display' }
+    // Google Fonts (downloaded, batch 2)
+    { name: 'Corinthia', cat: 'calligraphy' },
+    { name: 'Clicker Script', cat: 'calligraphy' },
+    { name: 'Kaushan Script', cat: 'script' },
+    { name: 'Cookie', cat: 'script' },
+    { name: 'Courgette', cat: 'script' },
+    { name: 'Playball', cat: 'script' },
+    { name: 'Rochester', cat: 'calligraphy' },
+    { name: 'Charm', cat: 'calligraphy' },
+    { name: 'Ms Madi', cat: 'calligraphy' },
+    { name: 'Style Script', cat: 'calligraphy' },
+    { name: 'Gilda Display', cat: 'serif' },
+    { name: 'Oranienbaum', cat: 'serif' },
+    { name: 'Unna', cat: 'serif' },
+    { name: 'Noto Serif', cat: 'serif' },
+    { name: 'Domine', cat: 'serif' },
+    { name: 'Vollkorn', cat: 'serif' },
+    { name: 'Gelasio', cat: 'serif' },
+    { name: 'Bitter', cat: 'serif' },
+    { name: 'Vesper Libre', cat: 'serif' },
+    { name: 'Vidaloka', cat: 'serif' },
+    { name: 'Space Grotesk', cat: 'sans' },
+    { name: 'Epilogue', cat: 'sans' },
+    { name: 'Karla', cat: 'sans' },
+    { name: 'Rubik', cat: 'sans' },
+    { name: 'Be Vietnam Pro', cat: 'sans' },
+    { name: 'Overpass', cat: 'sans' },
+    { name: 'Chivo', cat: 'sans' },
+    { name: 'Archivo Narrow', cat: 'sans' },
+    { name: 'Sarabun', cat: 'sans' },
+    { name: 'Prompt', cat: 'sans' },
+    { name: 'Bebas Neue', cat: 'display' },
+    { name: 'Oswald', cat: 'display' },
+    { name: 'Anton', cat: 'display' },
+    { name: 'Righteous', cat: 'display' },
+    { name: 'Staatliches', cat: 'display' },
+    { name: 'Passion One', cat: 'display' },
+    { name: 'Teko', cat: 'display' },
+    { name: 'Russo One', cat: 'display' },
+    { name: 'Bungee', cat: 'display' },
+    { name: 'Yatra One', cat: 'display' },
+    { name: 'Covered By Your Grace', cat: 'script' },
+    { name: 'Just Another Hand', cat: 'script' },
+    { name: 'Coming Soon', cat: 'script' },
+    { name: 'Sue Ellen Francisco', cat: 'script' },
+    { name: 'Pangolin', cat: 'script' },
+    { name: 'Philosopher', cat: 'serif' },
+    { name: 'Quando', cat: 'serif' },
+    { name: 'Mrs Saint Delafield', cat: 'calligraphy' },
+    { name: 'Megrim', cat: 'display' },
+    { name: 'Ceviche One', cat: 'display' },
+    // Uploaded fonts
+    { name: 'Abiyu Chan', cat: 'uploaded' },
+    { name: 'Aloevera', cat: 'uploaded' },
+    { name: 'Alphabet', cat: 'uploaded' },
+    { name: 'Ambar Pearl', cat: 'uploaded' },
+    { name: 'Angel Rhapsody', cat: 'uploaded' },
+    { name: 'Anggeliana', cat: 'uploaded' },
+    { name: 'Autumn In November', cat: 'uploaded' },
+    { name: 'Bacalisties', cat: 'uploaded' },
+    { name: 'Barcode Font', cat: 'uploaded' },
+    { name: 'Batavia Sans Clean', cat: 'uploaded' },
+    { name: 'Beachclub Grunge', cat: 'uploaded' },
+    { name: 'Bernadette', cat: 'uploaded' },
+    { name: 'Bethany Signature', cat: 'uploaded' },
+    { name: 'Bettins', cat: 'uploaded' },
+    { name: 'Biancha', cat: 'uploaded' },
+    { name: 'Big Scratch Brush', cat: 'uploaded' },
+    { name: 'Big Shine', cat: 'uploaded' },
+    { name: 'Billy Hatter', cat: 'uploaded' },
+    { name: 'Black Choco', cat: 'uploaded' },
+    { name: 'Blakestone', cat: 'uploaded' },
+    { name: 'Blantika', cat: 'uploaded' },
+    { name: 'Blonding Panda', cat: 'uploaded' },
+    { name: 'Blue Cirrus', cat: 'uploaded' },
+    { name: 'Bobby Anderson', cat: 'uploaded' },
+    { name: 'Boiling', cat: 'uploaded' },
+    { name: 'Bouldster 2', cat: 'uploaded' },
+    { name: 'Brandy Coffee', cat: 'uploaded' },
+    { name: 'Bread', cat: 'uploaded' },
+    { name: 'Bristone', cat: 'uploaded' },
+    { name: 'British Castilla Script', cat: 'uploaded' },
+    { name: 'Browny Joy', cat: 'uploaded' },
+    { name: 'Brussels City', cat: 'uploaded' },
+    { name: 'Bunaken', cat: 'uploaded' },
+    { name: 'Bungee Jumpings', cat: 'uploaded' },
+    { name: 'Bunny Christmas', cat: 'uploaded' },
+    { name: 'Calligraphy', cat: 'uploaded' },
+    { name: 'Candle Light', cat: 'uploaded' },
+    { name: 'Candy Frost', cat: 'uploaded' },
+    { name: 'Catthy Wellingten', cat: 'uploaded' },
+    { name: 'Cherry Cocktail', cat: 'uploaded' },
+    { name: 'Cheva Display', cat: 'uploaded' },
+    { name: 'Christmas Reign', cat: 'uploaded' },
+    { name: 'Christmas Wonderland', cat: 'uploaded' },
+    { name: 'Christopher S Handwriting', cat: 'uploaded' },
+    { name: 'Cloudy Aurora Script', cat: 'uploaded' },
+    { name: 'Coconutz', cat: 'uploaded' },
+    { name: 'Code3x', cat: 'uploaded' },
+    { name: 'Coming Sans', cat: 'uploaded' },
+    { name: 'Crazy Traveler Monoline', cat: 'uploaded' },
+    { name: 'Creatine Youth', cat: 'uploaded' },
+    { name: 'Cute Aurora', cat: 'uploaded' },
+    { name: 'Cute Easter', cat: 'uploaded' },
+    { name: 'Cute N Cuddly', cat: 'uploaded' },
+    { name: 'Cynthian', cat: 'uploaded' },
+    { name: 'Damals Quelle', cat: 'uploaded' },
+    { name: 'Dance Today', cat: 'uploaded' },
+    { name: 'Delius Swash Caps', cat: 'uploaded' },
+    { name: 'Demonstration', cat: 'uploaded' },
+    { name: 'Dodavid Gothic', cat: 'uploaded' },
+    { name: 'Donathe', cat: 'uploaded' },
+    { name: 'Double Trouble Sara', cat: 'uploaded' },
+    { name: 'Dragon Wings', cat: 'uploaded' },
+    { name: 'Drawing With Markers', cat: 'uploaded' },
+    { name: 'Dreaming', cat: 'uploaded' },
+    { name: 'Easter Wishes', cat: 'uploaded' },
+    { name: 'Ecoplanet', cat: 'uploaded' },
+    { name: 'Eigha', cat: 'uploaded' },
+    { name: 'Eilya', cat: 'uploaded' },
+    { name: 'Ernesto', cat: 'uploaded' },
+    { name: 'Everbright Sans', cat: 'uploaded' },
+    { name: 'Fast Hand', cat: 'uploaded' },
+    { name: 'Gingies Bubble', cat: 'uploaded' },
+    { name: 'Girlas', cat: 'uploaded' },
+    { name: 'Girly Personal', cat: 'uploaded' },
+    { name: 'Goligan', cat: 'uploaded' },
+    { name: 'Good And Cozy', cat: 'uploaded' },
+    { name: 'Great Day', cat: 'uploaded' },
+    { name: 'Grilled Salmon', cat: 'uploaded' },
+    { name: 'Halimun', cat: 'uploaded' },
+    { name: 'Happy Lucky', cat: 'uploaded' },
+    { name: 'Happy Summer', cat: 'uploaded' },
+    { name: 'Hate Your Writing', cat: 'uploaded' },
+    { name: 'Haverink Script', cat: 'uploaded' },
+    { name: 'Hello Honey', cat: 'uploaded' },
+    { name: 'Hellosty Blast', cat: 'uploaded' },
+    { name: 'Hermony', cat: 'uploaded' },
+    { name: 'High Pride', cat: 'uploaded' },
+    { name: 'Hijrnotes', cat: 'uploaded' },
+    { name: 'Home Winter', cat: 'uploaded' },
+    { name: 'Homelike', cat: 'uploaded' },
+    { name: 'Hopkinson', cat: 'uploaded' },
+    { name: 'Housttely Signature', cat: 'uploaded' },
+    { name: 'Idautomationhc39m', cat: 'uploaded' },
+    { name: 'Imoon', cat: 'uploaded' },
+    { name: 'Juliette Garden', cat: 'uploaded' },
+    { name: 'June Gloom', cat: 'uploaded' },
+    { name: 'Junior Prince', cat: 'uploaded' },
+    { name: 'Kage', cat: 'uploaded' },
+    { name: 'Kailey Latief', cat: 'uploaded' },
+    { name: 'Karamell', cat: 'uploaded' },
+    { name: 'Katika', cat: 'uploaded' },
+    { name: 'Kg Fall For You', cat: 'uploaded' },
+    { name: 'Kg I Need A Font', cat: 'uploaded' },
+    { name: 'Kg Lego House', cat: 'uploaded' },
+    { name: 'Kg Miss Kindergarten', cat: 'uploaded' },
+    { name: 'Kg Royals', cat: 'uploaded' },
+    { name: 'Kg Teacher Jordan', cat: 'uploaded' },
+    { name: 'Kg When Oceans Rise', cat: 'uploaded' },
+    { name: 'Kind Handwriting', cat: 'uploaded' },
+    { name: 'Kristine Pearl', cat: 'uploaded' },
+    { name: 'Lasthrue', cat: 'uploaded' },
+    { name: 'Lemon Milk', cat: 'uploaded' },
+    { name: 'Letter Sketch', cat: 'uploaded' },
+    { name: 'Letticia', cat: 'uploaded' },
+    { name: 'Liniga Serif', cat: 'uploaded' },
+    { name: 'Little Birds', cat: 'uploaded' },
+    { name: 'Love Rabbit', cat: 'uploaded' },
+    { name: 'Loving Kitten', cat: 'uploaded' },
+    { name: 'Macaque Quick', cat: 'uploaded' },
+    { name: 'Machow', cat: 'uploaded' },
+    { name: 'Madelican', cat: 'uploaded' },
+    { name: 'Magical', cat: 'uploaded' },
+    { name: 'Make Cake', cat: 'uploaded' },
+    { name: 'Margin', cat: 'uploaded' },
+    { name: 'Marida Cole', cat: 'uploaded' },
+    { name: 'Melinda Rosalie', cat: 'uploaded' },
+    { name: 'Melisa', cat: 'uploaded' },
+    { name: 'Merveile', cat: 'uploaded' },
+    { name: 'Mf Really Awesome', cat: 'uploaded' },
+    { name: 'Misrelly', cat: 'uploaded' },
+    { name: 'My Happy Ending', cat: 'uploaded' },
+    { name: 'My Valentine', cat: 'uploaded' },
+    { name: 'Myopium', cat: 'uploaded' },
+    { name: 'Nara', cat: 'uploaded' },
+    { name: 'Nashira', cat: 'uploaded' },
+    { name: 'Never Say Never', cat: 'uploaded' },
+    { name: 'No Virus', cat: 'uploaded' },
+    { name: 'Notera', cat: 'uploaded' },
+    { name: 'Oh Chewy', cat: 'uploaded' },
+    { name: 'Orange Slices', cat: 'uploaded' },
+    { name: 'Paper Plane', cat: 'uploaded' },
+    { name: 'Partner', cat: 'uploaded' },
+    { name: 'Passifille', cat: 'uploaded' },
+    { name: 'Passiontea', cat: 'uploaded' },
+    { name: 'Peach Flamingo Sans', cat: 'uploaded' },
+    { name: 'Petter Story', cat: 'uploaded' },
+    { name: 'Pijamas', cat: 'uploaded' },
+    { name: 'Plavea', cat: 'uploaded' },
+    { name: 'Plutoin Baff', cat: 'uploaded' },
+    { name: 'Pumpkin Pie Lattes', cat: 'uploaded' },
+    { name: 'Qaskin', cat: 'uploaded' },
+    { name: 'Quilt Patches', cat: 'uploaded' },
+    { name: 'Rafelya Carrotin', cat: 'uploaded' },
+    { name: 'Rainbow Colors', cat: 'uploaded' },
+    { name: 'Reactive Anchor', cat: 'uploaded' },
+    { name: 'Rebeca', cat: 'uploaded' },
+    { name: 'Resta Display Font', cat: 'uploaded' },
+    { name: 'Riveria', cat: 'uploaded' },
+    { name: 'Romance Logic', cat: 'uploaded' },
+    { name: 'Romate Hood', cat: 'uploaded' },
+    { name: 'Romeo Juliet', cat: 'uploaded' },
+    { name: 'Roomeria', cat: 'uploaded' },
+    { name: 'Roxale Story', cat: 'uploaded' },
+    { name: 'Safira Beauty Font', cat: 'uploaded' },
+    { name: 'Saturdate', cat: 'uploaded' },
+    { name: 'Saylora', cat: 'uploaded' },
+    { name: 'Second Lesson', cat: 'uploaded' },
+    { name: 'Senja Mentari', cat: 'uploaded' },
+    { name: 'Shepherd', cat: 'uploaded' },
+    { name: 'Shine Brighter Sans', cat: 'uploaded' },
+    { name: 'Sigenone', cat: 'uploaded' },
+    { name: 'Somerset', cat: 'uploaded' },
+    { name: 'Sophia Morgant', cat: 'uploaded' },
+    { name: 'Sore', cat: 'uploaded' },
+    { name: 'Southern Jannie', cat: 'uploaded' },
+    { name: 'Sprinklescolors', cat: 'uploaded' },
+    { name: 'Starmoon', cat: 'uploaded' },
+    { name: 'Street Explorer', cat: 'uploaded' },
+    { name: 'Stylus', cat: 'uploaded' },
+    { name: 'Sunday Best', cat: 'uploaded' },
+    { name: 'Sunday Monday', cat: 'uploaded' },
+    { name: 'Sunny', cat: 'uploaded' },
+    { name: 'Takadung', cat: 'uploaded' },
+    { name: 'Tetteg Heart', cat: 'uploaded' },
+    { name: 'The Ballpoint', cat: 'uploaded' },
+    { name: 'The Great Escape', cat: 'uploaded' },
+    { name: 'The Morgan', cat: 'uploaded' },
+    { name: 'The Strength', cat: 'uploaded' },
+    { name: 'Thunder Ragnarok', cat: 'uploaded' },
+    { name: 'Umbrella', cat: 'uploaded' },
+    { name: 'Weather Sunday', cat: 'uploaded' },
+    { name: 'Whoa Sauce', cat: 'uploaded' },
+    { name: 'Winola', cat: 'uploaded' },
+    { name: 'Written In The Stars', cat: 'uploaded' },
+    { name: 'Zrtw Veganmatey', cat: 'uploaded' },
   ];
 
-  const ILLUST_CATEGORIES = ['moose', 'couple', 'toronto', 'decor', 'border'];
+  const ILLUST_CATEGORIES = ['moose', 'couple', 'toronto', 'decor', 'border', 'divider', 'corner', 'sketch', 'element'];
 
   const SVG_PATH = '../assets/svg/';
 
@@ -199,6 +488,25 @@
       'border-36-geometric','border-37-pennant','border-38-music','border-39-polaroid','border-40-envelope',
       'border-41-watercolor-edge','border-42-mosaic','border-43-celtic','border-44-bunting-top','border-45-curtain',
       'border-46-arch-top','border-47-string-lights','border-48-marquee','border-49-filigree','border-50-love-letters'
+    ],
+    divider: [
+      'divider-01-botanical','divider-02-flourish','divider-03-wave','divider-04-dots','divider-05-arrows',
+      'divider-06-geometric','divider-07-art-deco','divider-08-minimal','divider-09-ornate','divider-10-playful',
+      'divider-v-01-vine','divider-v-02-geometric','divider-v-03-beaded','divider-v-04-ribbon','divider-v-05-wave'
+    ],
+    corner: [
+      'corner-01-flourish','corner-02-botanical','corner-03-geometric','corner-04-art-deco','corner-05-minimal'
+    ],
+    sketch: [
+      'sketch-cocktail-glass','sketch-champagne-flutes','sketch-wine-glass','sketch-champagne-bottle',
+      'sketch-flower-vase','sketch-flower-bouquet','sketch-ribbon-bow','sketch-balloon',
+      'sketch-bunting','sketch-disco-ball','sketch-wedding-cake','sketch-wedding-rings',
+      'sketch-party-hat','sketch-confetti','sketch-hands-toast'
+    ],
+    element: [
+      'element-brush-stroke-horizontal','element-brush-stroke-diagonal','element-brush-stroke-curved',
+      'element-splash-1','element-splash-2','element-wave-1','element-wave-2',
+      'element-pour-stream','element-swirl','element-squiggle-line'
     ]
   };
 
@@ -235,6 +543,7 @@
 
   // UI toggles
   let showRulers = false;
+  let nudgeTimeout = null;
 
   // History panel
   let historyThumbnails = [];
@@ -242,6 +551,24 @@
 
   // BG removal module (lazy loaded)
   let bgRemovalModule = null;
+
+  // Cloud save (Supabase)
+  let supabaseClient = null;
+  let currentDesignId = null;
+  let cloudSaveTimer = null;
+  let isCloudSaving = false;
+  let myDesignIds = [];
+
+  // Drawing mode
+  let isDrawingMode = false;
+  let drawBrushColor = '#1B2438';
+  let drawBrushSize = 3;
+  let drawBrushOpacity = 1;
+  let drawBrushType = 'pencil';
+
+  // Supabase config -- fill in your project URL and anon key
+  const SUPABASE_URL = 'https://iqocdnfewarddzuobctp.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_OBuYQnZXennKBXRVIbS3Ag_T50_rSgH';
 
   // ----------------------------------------------------------------
   // INITIALIZATION
@@ -255,9 +582,11 @@
     initDragDrop();
     initContextMenu();
     initPages();
+    initSupabase();
     fitCanvasToView();
     saveHistory();
     renderCanvasBgPicker();
+    updateToolbarBgSwatch();
   }
 
   function initCanvas() {
@@ -305,6 +634,324 @@
       borderScaleFactor: 1.5,
       padding: 4
     });
+  }
+
+  // ----------------------------------------------------------------
+  // SUPABASE CLOUD SAVE
+  // ----------------------------------------------------------------
+  function initSupabase() {
+    // Load saved design IDs from localStorage
+    try {
+      myDesignIds = JSON.parse(localStorage.getItem('weddingEditor_myDesignIds') || '[]');
+    } catch (e) { myDesignIds = []; }
+
+    // Initialize client if config exists
+    if (SUPABASE_URL && SUPABASE_ANON_KEY && typeof supabase !== 'undefined') {
+      supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+
+    // Check URL for shared design ID
+    const params = new URLSearchParams(window.location.search);
+    const sharedId = params.get('id');
+    if (sharedId && supabaseClient) {
+      loadFromCloud(sharedId);
+    }
+
+    // Bind cloud buttons
+    const saveBtn = document.getElementById('btn-cloud-save');
+    if (saveBtn) saveBtn.addEventListener('click', () => saveToCloud());
+
+    const shareBtn = document.getElementById('btn-share');
+    if (shareBtn) shareBtn.addEventListener('click', shareDesign);
+
+    const myDesignsBtn = document.getElementById('btn-my-designs');
+    if (myDesignsBtn) myDesignsBtn.addEventListener('click', showMyDesigns);
+
+    // Design name input
+    const nameInput = document.getElementById('design-name');
+    if (nameInput) {
+      nameInput.addEventListener('change', () => {
+        if (currentDesignId && supabaseClient) {
+          debouncedCloudSave();
+        }
+      });
+    }
+
+    // Share modal bindings
+    const shareClose = document.getElementById('share-modal-close');
+    const shareDone = document.getElementById('share-modal-done');
+    const shareBackdrop = document.getElementById('share-modal-backdrop');
+    if (shareClose) shareClose.onclick = hideShareModal;
+    if (shareDone) shareDone.onclick = hideShareModal;
+    if (shareBackdrop) shareBackdrop.onclick = hideShareModal;
+
+    const copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const urlInput = document.getElementById('share-url');
+        if (urlInput && urlInput.value) {
+          navigator.clipboard.writeText(urlInput.value).then(() => {
+            copyBtn.textContent = 'Copied';
+            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+          });
+        }
+      });
+    }
+
+    // My Designs modal bindings
+    const designsClose = document.getElementById('designs-modal-close');
+    const designsDone = document.getElementById('designs-modal-done');
+    const designsBackdrop = document.getElementById('designs-modal-backdrop');
+    if (designsClose) designsClose.onclick = hideDesignsModal;
+    if (designsDone) designsDone.onclick = hideDesignsModal;
+    if (designsBackdrop) designsBackdrop.onclick = hideDesignsModal;
+
+    updateCloudStatus('local');
+  }
+
+  function updateCloudStatus(status, text) {
+    const dot = document.getElementById('cloud-status-dot');
+    const label = document.getElementById('cloud-status-text');
+    if (!dot || !label) return;
+
+    dot.className = 'cloud-status-dot';
+    switch (status) {
+      case 'saved':
+        dot.classList.add('saved');
+        label.textContent = text || 'Saved';
+        break;
+      case 'saving':
+        dot.classList.add('saving');
+        label.textContent = text || 'Saving...';
+        break;
+      case 'error':
+        dot.classList.add('error');
+        label.textContent = text || 'Error';
+        break;
+      default:
+        label.textContent = text || 'Local';
+    }
+  }
+
+  async function saveToCloud() {
+    if (!supabaseClient) {
+      updateCloudStatus('error', 'No cloud config');
+      return;
+    }
+
+    if (isCloudSaving) return;
+    isCloudSaving = true;
+    updateCloudStatus('saving');
+
+    try {
+      saveCurrentPage();
+      const json = canvas.toJSON();
+      json._editorMeta = {
+        canvasSize: currentSize,
+        version: 2,
+        exportedAt: new Date().toISOString(),
+        pages: pages.map(p => ({ id: p.id, name: p.name, size: p.size, json: p.json })),
+        currentPageIndex: currentPageIndex
+      };
+
+      const designName = document.getElementById('design-name').value || 'Untitled';
+
+      if (currentDesignId) {
+        // Update existing
+        const { error } = await supabaseClient
+          .from('designs')
+          .update({ name: designName, data: json, updated_at: new Date().toISOString() })
+          .eq('id', currentDesignId);
+        if (error) throw error;
+      } else {
+        // Insert new
+        const { data, error } = await supabaseClient
+          .from('designs')
+          .insert({ name: designName, data: json })
+          .select('id')
+          .single();
+        if (error) throw error;
+        currentDesignId = data.id;
+
+        // Track this design as ours
+        if (!myDesignIds.includes(currentDesignId)) {
+          myDesignIds.push(currentDesignId);
+          localStorage.setItem('weddingEditor_myDesignIds', JSON.stringify(myDesignIds));
+        }
+
+        // Update URL without reload
+        const url = new URL(window.location.href);
+        url.searchParams.set('id', currentDesignId);
+        window.history.replaceState({}, '', url.toString());
+      }
+
+      updateCloudStatus('saved');
+    } catch (err) {
+      console.error('Cloud save failed:', err);
+      updateCloudStatus('error', 'Save failed');
+    } finally {
+      isCloudSaving = false;
+    }
+  }
+
+  async function loadFromCloud(id) {
+    if (!supabaseClient) return;
+    updateCloudStatus('saving', 'Loading...');
+
+    try {
+      const { data, error } = await supabaseClient
+        .from('designs')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (error || !data) {
+        updateCloudStatus('error', 'Not found');
+        return;
+      }
+
+      currentDesignId = data.id;
+      const nameInput = document.getElementById('design-name');
+      if (nameInput) nameInput.value = data.name || 'Untitled';
+
+      // Track if it's ours
+      if (!myDesignIds.includes(id)) {
+        myDesignIds.push(id);
+        localStorage.setItem('weddingEditor_myDesignIds', JSON.stringify(myDesignIds));
+      }
+
+      loadFromJSON(data.data);
+      updateCloudStatus('saved');
+    } catch (err) {
+      console.error('Cloud load failed:', err);
+      updateCloudStatus('error', 'Load failed');
+    }
+  }
+
+  async function forkDesign() {
+    const oldId = currentDesignId;
+    currentDesignId = null;
+
+    const nameInput = document.getElementById('design-name');
+    if (nameInput) nameInput.value = (nameInput.value || 'Untitled') + ' (copy)';
+
+    // Remove ?id from URL
+    const url = new URL(window.location.href);
+    url.searchParams.delete('id');
+    window.history.replaceState({}, '', url.toString());
+
+    await saveToCloud();
+  }
+
+  async function shareDesign() {
+    if (!supabaseClient) {
+      updateCloudStatus('error', 'No cloud config');
+      return;
+    }
+
+    // Save first if not already saved
+    if (!currentDesignId) {
+      await saveToCloud();
+    }
+
+    if (!currentDesignId) return;
+
+    const shareUrl = window.location.origin + window.location.pathname + '?id=' + currentDesignId;
+    document.getElementById('share-url').value = shareUrl;
+
+    document.getElementById('share-modal-backdrop').classList.add('visible');
+    document.getElementById('share-modal').classList.add('visible');
+  }
+
+  function hideShareModal() {
+    document.getElementById('share-modal-backdrop').classList.remove('visible');
+    document.getElementById('share-modal').classList.remove('visible');
+  }
+
+  async function showMyDesigns() {
+    document.getElementById('designs-modal-backdrop').classList.add('visible');
+    document.getElementById('designs-modal').classList.add('visible');
+
+    const list = document.getElementById('designs-list');
+    list.innerHTML = '<p style="text-align: center; color: var(--ed-text-muted); font-size: 12px; padding: 20px;">Loading...</p>';
+
+    if (!supabaseClient || myDesignIds.length === 0) {
+      list.innerHTML = '<p style="text-align: center; color: var(--ed-text-muted); font-size: 12px; padding: 20px;">No saved designs yet. Save a design to see it here.</p>';
+      return;
+    }
+
+    try {
+      const { data, error } = await supabaseClient
+        .from('designs')
+        .select('id, name, created_at, updated_at')
+        .in('id', myDesignIds)
+        .order('updated_at', { ascending: false });
+
+      if (error) throw error;
+
+      if (!data || data.length === 0) {
+        list.innerHTML = '<p style="text-align: center; color: var(--ed-text-muted); font-size: 12px; padding: 20px;">No saved designs yet.</p>';
+        return;
+      }
+
+      list.innerHTML = '';
+      data.forEach(design => {
+        const item = document.createElement('div');
+        item.className = 'design-item';
+        const updated = new Date(design.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const isCurrent = design.id === currentDesignId;
+
+        item.innerHTML = `
+          <div class="design-item-info">
+            <div class="design-item-name">${design.name || 'Untitled'}${isCurrent ? ' (current)' : ''}</div>
+            <div class="design-item-date">${updated}</div>
+          </div>
+          <div class="design-item-actions">
+            ${!isCurrent ? '<button class="design-item-btn primary" data-action="open">Open</button>' : ''}
+            <button class="design-item-btn" data-action="fork">Fork</button>
+          </div>
+        `;
+
+        const openBtn = item.querySelector('[data-action="open"]');
+        if (openBtn) {
+          openBtn.addEventListener('click', () => {
+            hideDesignsModal();
+            const url = new URL(window.location.href);
+            url.searchParams.set('id', design.id);
+            window.history.replaceState({}, '', url.toString());
+            loadFromCloud(design.id);
+          });
+        }
+
+        const forkBtn = item.querySelector('[data-action="fork"]');
+        if (forkBtn) {
+          forkBtn.addEventListener('click', async () => {
+            hideDesignsModal();
+            // Load this design, then fork it
+            if (design.id !== currentDesignId) {
+              await loadFromCloud(design.id);
+            }
+            await forkDesign();
+          });
+        }
+
+        list.appendChild(item);
+      });
+    } catch (err) {
+      console.error('Failed to load designs:', err);
+      list.innerHTML = '<p style="text-align: center; color: var(--ed-text-muted); font-size: 12px; padding: 20px;">Failed to load designs.</p>';
+    }
+  }
+
+  function hideDesignsModal() {
+    document.getElementById('designs-modal-backdrop').classList.remove('visible');
+    document.getElementById('designs-modal').classList.remove('visible');
+  }
+
+  function debouncedCloudSave() {
+    if (!supabaseClient || !currentDesignId) return;
+    clearTimeout(cloudSaveTimer);
+    cloudSaveTimer = setTimeout(() => saveToCloud(), 3000);
   }
 
   // ----------------------------------------------------------------
@@ -642,13 +1289,27 @@
         document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+
+        // Exit drawing mode when switching away from Draw tab
+        if (tab.dataset.tab !== 'draw' && isDrawingMode) {
+          isDrawingMode = false;
+          canvas.isDrawingMode = false;
+          const toggleBtn = document.getElementById('btn-draw-toggle');
+          if (toggleBtn) {
+            toggleBtn.textContent = 'Start Drawing';
+            toggleBtn.style.background = '';
+            toggleBtn.style.color = '';
+          }
+        }
       });
     });
 
     initIllustrationBrowser();
     initTextPresets();
     initShapeButtons();
+    initDrawing();
     initPresets();
+    initBorderPlacement();
   }
 
   function initIllustrationBrowser() {
@@ -664,7 +1325,9 @@
       btn.addEventListener('click', () => {
         catsEl.querySelectorAll('.illust-cat').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
+        selectedIllustCategory = cat;
         renderIllustGrid(cat);
+        updateBorderPlacementVisibility(cat);
       });
       catsEl.appendChild(btn);
     });
@@ -750,6 +1413,94 @@
       canvas.renderAll();
       saveHistory();
     });
+  }
+
+  // ----------------------------------------------------------------
+  // BORDER QUICK-APPLY PLACEMENT
+  // ----------------------------------------------------------------
+  let selectedIllustCategory = 'moose';
+
+  function initBorderPlacement() {
+    document.querySelectorAll('[data-placement]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const placement = btn.dataset.placement;
+        quickApplyBorder(placement);
+      });
+    });
+  }
+
+  function quickApplyBorder(placement) {
+    // Get the currently displayed category's first visible illustration
+    const gridEl = document.getElementById('illust-grid');
+    const activeThumb = gridEl.querySelector('.illust-thumb');
+    if (!activeThumb) return;
+
+    // Use the active category's illustrations
+    const cat = selectedIllustCategory;
+    const items = ILLUSTRATIONS[cat];
+    if (!items || items.length === 0) return;
+
+    // Use the first illustration in the category
+    const filename = items[0];
+    const url = SVG_PATH + filename + '.svg';
+    const cW = canvas.getWidth();
+    const cH = canvas.getHeight();
+    const margin = DPI * 0.3; // 0.3 inch margin from edge
+
+    const isVertical = cat === 'corner' || filename.includes('-v-');
+    const isCorner = cat === 'corner';
+
+    if (isCorner && placement === 'corners') {
+      // Place 4 copies at each corner
+      const positions = [
+        { left: margin, top: margin, flipX: false, flipY: false },
+        { left: cW - margin, top: margin, flipX: true, flipY: false },
+        { left: cW - margin, top: cH - margin, flipX: true, flipY: true },
+        { left: margin, top: cH - margin, flipX: false, flipY: true }
+      ];
+      positions.forEach(pos => {
+        loadAndPlaceSvg(url, pos.left, pos.top, 80, pos.flipX, pos.flipY);
+      });
+    } else if (placement === 'top') {
+      loadAndPlaceSvg(url, cW / 2, margin, cW * 0.7, false, false);
+    } else if (placement === 'bottom') {
+      loadAndPlaceSvg(url, cW / 2, cH - margin, cW * 0.7, false, false);
+    } else if (placement === 'top-bottom') {
+      loadAndPlaceSvg(url, cW / 2, margin, cW * 0.7, false, false);
+      loadAndPlaceSvg(url, cW / 2, cH - margin, cW * 0.7, false, true);
+    }
+  }
+
+  function loadAndPlaceSvg(url, x, y, targetWidth, flipX, flipY) {
+    fabric.loadSVGFromURL(url, function (objects, options) {
+      if (!objects || objects.length === 0) return;
+      const group = fabric.util.groupSVGElements(objects, options);
+      const scale = targetWidth / group.width;
+      group.scaleX = scale;
+      group.scaleY = scale;
+      group.set({
+        left: x, top: y,
+        originX: 'center', originY: 'center',
+        flipX: flipX, flipY: flipY,
+        stroke: PALETTE.navy
+      });
+      if (group._objects) {
+        group._objects.forEach(obj => {
+          if (obj.stroke && obj.stroke !== 'none') obj.set('stroke', PALETTE.navy);
+          if (obj.fill && obj.fill !== 'none' && obj.fill !== 'transparent') obj.set('fill', PALETTE.navy);
+        });
+      }
+      canvas.add(group);
+      canvas.renderAll();
+      saveHistory();
+    });
+  }
+
+  function updateBorderPlacementVisibility(cat) {
+    const section = document.getElementById('border-placement-section');
+    if (!section) return;
+    const show = (cat === 'divider' || cat === 'corner' || cat === 'border');
+    section.style.display = show ? 'block' : 'none';
   }
 
 function initTextPresets() {
@@ -967,6 +1718,145 @@ function initTextPresets() {
     }
   }
 
+  // ----------------------------------------------------------------
+  // DRAWING MODE
+  // ----------------------------------------------------------------
+  function initDrawing() {
+    const toggleBtn = document.getElementById('btn-draw-toggle');
+    const sizeSlider = document.getElementById('draw-brush-size');
+    const sizeVal = document.getElementById('draw-brush-size-val');
+    const opacitySlider = document.getElementById('draw-brush-opacity');
+    const opacityVal = document.getElementById('draw-brush-opacity-val');
+    const colorCustom = document.getElementById('draw-color-custom');
+    const colorSwatches = document.querySelectorAll('#draw-color-swatches .prop-swatch');
+    const typeBtns = document.querySelectorAll('.draw-type-btn');
+
+    if (!toggleBtn) return;
+
+    // Toggle drawing mode
+    toggleBtn.addEventListener('click', () => {
+      isDrawingMode = !isDrawingMode;
+      canvas.isDrawingMode = isDrawingMode;
+
+      if (isDrawingMode) {
+        toggleBtn.textContent = 'Stop Drawing';
+        toggleBtn.style.background = '#E8704A';
+        toggleBtn.style.color = '#fff';
+        applyBrush();
+      } else {
+        toggleBtn.textContent = 'Start Drawing';
+        toggleBtn.style.background = '';
+        toggleBtn.style.color = '';
+      }
+    });
+
+    // Brush size
+    sizeSlider.addEventListener('input', () => {
+      drawBrushSize = parseInt(sizeSlider.value, 10);
+      sizeVal.textContent = drawBrushSize;
+      if (canvas.freeDrawingBrush) canvas.freeDrawingBrush.width = drawBrushSize;
+    });
+
+    // Brush opacity
+    opacitySlider.addEventListener('input', () => {
+      drawBrushOpacity = parseInt(opacitySlider.value, 10) / 100;
+      opacityVal.textContent = parseInt(opacitySlider.value, 10) + '%';
+      applyBrush();
+    });
+
+    // Color swatches
+    colorSwatches.forEach(sw => {
+      sw.addEventListener('click', () => {
+        colorSwatches.forEach(s => s.classList.remove('active'));
+        sw.classList.add('active');
+        drawBrushColor = sw.dataset.color;
+        colorCustom.value = drawBrushColor;
+        applyBrush();
+      });
+    });
+
+    // Custom color
+    colorCustom.addEventListener('input', (e) => {
+      drawBrushColor = e.target.value;
+      colorSwatches.forEach(s => s.classList.remove('active'));
+      applyBrush();
+    });
+
+    // Brush type buttons
+    typeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        typeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        drawBrushType = btn.dataset.brush;
+        applyBrush();
+      });
+    });
+
+    // When a path is drawn, save history and ensure it's selectable
+    canvas.on('path:created', (e) => {
+      if (e.path) {
+        e.path.set({
+          selectable: true,
+          evented: true,
+          hasControls: true,
+          hasBorders: true
+        });
+      }
+      saveHistory();
+    });
+  }
+
+  function applyBrush() {
+    if (!canvas) return;
+
+    // Compute color with opacity
+    const hex = drawBrushColor;
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    const colorWithOpacity = 'rgba(' + r + ',' + g + ',' + b + ',' + drawBrushOpacity + ')';
+
+    switch (drawBrushType) {
+      case 'spray':
+        canvas.freeDrawingBrush = new fabric.SprayBrush(canvas);
+        canvas.freeDrawingBrush.width = drawBrushSize * 5;
+        canvas.freeDrawingBrush.density = 15;
+        canvas.freeDrawingBrush.dotWidthVariance = 3;
+        canvas.freeDrawingBrush.color = colorWithOpacity;
+        break;
+      case 'circle':
+        canvas.freeDrawingBrush = new fabric.CircleBrush(canvas);
+        canvas.freeDrawingBrush.width = drawBrushSize;
+        canvas.freeDrawingBrush.color = colorWithOpacity;
+        break;
+      case 'ink': {
+        // Ink brush uses variable-width pencil brush with shadow for organic feel
+        const brush = new fabric.PencilBrush(canvas);
+        brush.width = drawBrushSize;
+        brush.color = colorWithOpacity;
+        brush.strokeLineCap = 'round';
+        brush.strokeLineJoin = 'round';
+        brush.shadow = new fabric.Shadow({
+          blur: drawBrushSize * 0.5,
+          offsetX: 0,
+          offsetY: 0,
+          color: colorWithOpacity
+        });
+        canvas.freeDrawingBrush = brush;
+        break;
+      }
+      default: { // pencil
+        const brush = new fabric.PencilBrush(canvas);
+        brush.width = drawBrushSize;
+        brush.color = colorWithOpacity;
+        brush.strokeLineCap = 'round';
+        brush.strokeLineJoin = 'round';
+        canvas.freeDrawingBrush = brush;
+        break;
+      }
+    }
+  }
+
   function initPresets() {
     document.querySelectorAll('.preset-card').forEach(card => {
       card.addEventListener('click', () => loadPreset(card.dataset.preset));
@@ -1173,6 +2063,16 @@ function initTextPresets() {
     const svgExpBtn = document.getElementById('btn-export-svg');
     if (svgExpBtn) svgExpBtn.addEventListener('click', exportSVG);
 
+    // Toolbar BG color
+    const toolbarBgColor = document.getElementById('toolbar-bg-color');
+    if (toolbarBgColor) {
+      toolbarBgColor.addEventListener('input', (e) => {
+        canvas.setBackgroundColor(e.target.value, () => canvas.renderAll());
+        updateToolbarBgSwatch();
+      });
+      toolbarBgColor.addEventListener('change', () => saveHistory());
+    }
+
     // Initialize guides toggle as active
     document.getElementById('btn-guides').classList.add('active');
     updateOverlays();
@@ -1242,6 +2142,7 @@ function initTextPresets() {
         canvas.setBackgroundColor(sw.dataset.bgColor, () => canvas.renderAll());
         saveHistory();
         renderCanvasBgPicker();
+        updateToolbarBgSwatch();
       });
     });
 
@@ -1250,6 +2151,7 @@ function initTextPresets() {
     if (customInput) {
       customInput.addEventListener('input', (e) => {
         canvas.setBackgroundColor(e.target.value, () => canvas.renderAll());
+        updateToolbarBgSwatch();
       });
       customInput.addEventListener('change', () => saveHistory());
     }
@@ -1268,8 +2170,18 @@ function initTextPresets() {
         canvas.setBackgroundColor(solidMap[sw.dataset.bgGradient], () => canvas.renderAll());
         saveHistory();
         renderCanvasBgPicker();
+        updateToolbarBgSwatch();
       });
     });
+  }
+
+  function updateToolbarBgSwatch() {
+    const swatch = document.getElementById('toolbar-bg-swatch');
+    const input = document.getElementById('toolbar-bg-color');
+    if (!swatch || !input) return;
+    const bg = canvas.backgroundColor || PALETTE.cream;
+    swatch.style.background = bg;
+    input.value = bg;
   }
 
   function renderTextProperties(obj) {
@@ -1305,7 +2217,13 @@ function initTextPresets() {
           ${Object.entries(PALETTE).map(([name, hex]) =>
             `<div class="prop-color-swatch ${obj.fill === hex ? 'active' : ''}" style="background: ${hex}; ${hex === '#FFFFFF' ? 'border: 1px solid #444;' : ''}" data-color="${hex}" title="${name}"></div>`
           ).join('')}
-          <input type="color" class="prop-color-input" id="prop-text-color-custom" value="${obj.fill || '#1B2438'}">
+          <input type="color" class="prop-color-input" id="prop-text-color-custom" value="${(obj.fill && obj.fill !== 'transparent') ? obj.fill : '#1B2438'}">
+        </div>
+        <div class="prop-row" style="margin-top: 6px;">
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ed-text-dim); cursor: pointer;">
+            <input type="checkbox" id="prop-text-outline-only" ${obj.fill === 'transparent' ? 'checked' : ''}>
+            Outline only (no fill)
+          </label>
         </div>
       </div>
 
@@ -1388,6 +2306,15 @@ function initTextPresets() {
         </div>
       </div>
 
+      <div class="prop-group">
+        <div class="prop-label">Stroke (Outline)</div>
+        <div class="prop-row">
+          <input type="color" class="prop-color-input" id="prop-text-stroke-color" value="${obj.stroke || '#1B2438'}">
+          <input type="range" class="prop-slider" id="prop-text-stroke-width" min="0" max="5" step="0.5" value="${obj.strokeWidth || 0}" style="flex: 1;">
+          <span style="font-size: 11px; color: var(--ed-text-dim); min-width: 24px; text-align: right;">${obj.strokeWidth || 0}</span>
+        </div>
+      </div>
+
       ${renderLayerHTML()}
 
       <div class="prop-actions">
@@ -1422,9 +2349,18 @@ function initTextPresets() {
     });
 
     // Bind color swatches
+    const outlineOnlyCheckbox = document.getElementById('prop-text-outline-only');
     document.querySelectorAll('#prop-text-colors .prop-color-swatch').forEach(sw => {
       sw.addEventListener('click', () => {
-        obj.set('fill', sw.dataset.color);
+        if (outlineOnlyCheckbox && outlineOnlyCheckbox.checked) {
+          obj._savedFill = sw.dataset.color;
+          obj.set('fill', 'transparent');
+          if (!obj.stroke || obj.strokeWidth === 0) {
+            obj.set({ stroke: sw.dataset.color, strokeWidth: obj.strokeWidth || 1 });
+          }
+        } else {
+          obj.set('fill', sw.dataset.color);
+        }
         canvas.renderAll();
         saveHistory();
         onSelectionChange();
@@ -1432,10 +2368,36 @@ function initTextPresets() {
     });
 
     document.getElementById('prop-text-color-custom').addEventListener('input', (e) => {
-      obj.set('fill', e.target.value);
+      if (outlineOnlyCheckbox && outlineOnlyCheckbox.checked) {
+        obj._savedFill = e.target.value;
+        obj.set('fill', 'transparent');
+        if (!obj.stroke || obj.strokeWidth === 0) {
+          obj.set({ stroke: e.target.value, strokeWidth: obj.strokeWidth || 1 });
+        }
+      } else {
+        obj.set('fill', e.target.value);
+      }
       canvas.renderAll();
     });
     document.getElementById('prop-text-color-custom').addEventListener('change', () => saveHistory());
+
+    // Bind outline-only toggle
+    if (outlineOnlyCheckbox) {
+      outlineOnlyCheckbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          obj._savedFill = obj.fill;
+          obj.set('fill', 'transparent');
+          if (!obj.stroke || obj.strokeWidth === 0) {
+            obj.set({ stroke: obj._savedFill || '#1B2438', strokeWidth: 1 });
+          }
+        } else {
+          obj.set('fill', obj._savedFill || '#1B2438');
+        }
+        canvas.renderAll();
+        saveHistory();
+        onSelectionChange();
+      });
+    }
 
     // Bind text alignment
     document.querySelectorAll('.prop-align-btn').forEach(btn => {
@@ -1488,6 +2450,26 @@ function initTextPresets() {
       canvas.renderAll();
     });
     opSlider.addEventListener('change', () => saveHistory());
+
+    // Text stroke bindings
+    const textStrokeColor = document.getElementById('prop-text-stroke-color');
+    const textStrokeWidth = document.getElementById('prop-text-stroke-width');
+    if (textStrokeColor) {
+      textStrokeColor.addEventListener('input', (e) => {
+        obj.set('stroke', e.target.value);
+        canvas.renderAll();
+      });
+      textStrokeColor.addEventListener('change', () => saveHistory());
+    }
+    if (textStrokeWidth) {
+      textStrokeWidth.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        obj.set('strokeWidth', val);
+        textStrokeWidth.nextElementSibling.textContent = val;
+        canvas.renderAll();
+      });
+      textStrokeWidth.addEventListener('change', () => saveHistory());
+    }
 
     // Alignment and layer actions
     bindAlignActions(obj);
@@ -1544,17 +2526,21 @@ function initTextPresets() {
         </div>
       </div>
 
-      ${hasStroke ? `
       <div class="prop-group">
-        <div class="prop-label">Stroke Color</div>
+        <div class="prop-label">Stroke</div>
         <div class="prop-color-row" id="prop-stroke-colors">
+          <div class="prop-color-swatch ${!obj.stroke || obj.stroke === 'transparent' ? 'active' : ''}" style="background: repeating-conic-gradient(#555 0% 25%, #333 0% 50%) 50%/10px 10px;" data-color="transparent" title="None"></div>
           ${Object.entries(PALETTE).map(([name, hex]) =>
             `<div class="prop-color-swatch ${obj.stroke === hex ? 'active' : ''}" style="background: ${hex}; ${hex === '#FFFFFF' ? 'border: 1px solid #444;' : ''}" data-color="${hex}" title="${name}"></div>`
           ).join('')}
-          <input type="color" class="prop-color-input" id="prop-stroke-custom" value="${obj.stroke || '#1B2438'}">
+          <input type="color" class="prop-color-input" id="prop-stroke-custom" value="${obj.stroke && obj.stroke !== 'transparent' ? obj.stroke : '#1B2438'}">
+        </div>
+        <div class="prop-row" style="margin-top: 6px;">
+          <span style="font-size: 10px; color: var(--ed-text-muted); width: 40px;">Width</span>
+          <input type="range" class="prop-slider" id="prop-stroke-width" min="0.5" max="10" step="0.5" value="${obj.strokeWidth || 1}">
+          <span style="font-size: 11px; color: var(--ed-text-dim); min-width: 30px; text-align: right;">${obj.strokeWidth || 1}</span>
         </div>
       </div>
-      ` : ''}
 
       ${!isGroup && !isMulti ? `
       <div class="prop-group">
@@ -1620,12 +2606,13 @@ function initTextPresets() {
       });
     }
 
-    // Bind stroke colors
+    // Bind stroke colors + width
     const strokeColors = document.getElementById('prop-stroke-colors');
     if (strokeColors) {
       strokeColors.querySelectorAll('.prop-color-swatch').forEach(sw => {
         sw.addEventListener('click', () => {
-          setObjectColor(obj, 'stroke', sw.dataset.color);
+          const val = sw.dataset.color === 'transparent' ? '' : sw.dataset.color;
+          setObjectColor(obj, 'stroke', val);
           canvas.renderAll();
           saveHistory();
           onSelectionChange();
@@ -1639,6 +2626,16 @@ function initTextPresets() {
         });
         strokeCustom.addEventListener('change', () => saveHistory());
       }
+    }
+    const strokeWidthSlider = document.getElementById('prop-stroke-width');
+    if (strokeWidthSlider) {
+      strokeWidthSlider.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        setObjectStrokeWidth(obj, val);
+        strokeWidthSlider.nextElementSibling.textContent = val;
+        canvas.renderAll();
+      });
+      strokeWidthSlider.addEventListener('change', () => saveHistory());
     }
 
     // Bind fill colors
@@ -1713,6 +2710,18 @@ function initTextPresets() {
       });
     } else {
       obj.set(prop, color);
+    }
+  }
+
+  function setObjectStrokeWidth(obj, width) {
+    if (obj.type === 'group' && obj._objects) {
+      obj._objects.forEach(child => {
+        if (child.stroke && child.stroke !== 'none' && child.stroke !== 'transparent') {
+          child.set('strokeWidth', width);
+        }
+      });
+    } else {
+      obj.set('strokeWidth', width);
     }
   }
 
@@ -2053,6 +3062,11 @@ function initTextPresets() {
       captureHistoryThumbnail();
     }
     renderLayersList();
+
+    // Auto-save to cloud if connected
+    if (currentDesignId && supabaseClient) {
+      debouncedCloudSave();
+    }
   }
 
   function undo() {

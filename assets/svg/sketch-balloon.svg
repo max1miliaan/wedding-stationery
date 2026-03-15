@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 250" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Heart balloon shape - left lobe -->
+  <path d="M75 100 C65 82, 50 68, 38 52 C26 36, 22 22, 32 14 C42 6, 56 10, 64 22 C68 28, 72 38, 75 48"/>
+  <!-- Heart balloon shape - right lobe -->
+  <path d="M75 100 C85 82, 100 68, 112 52 C124 36, 128 22, 118 14 C108 6, 94 10, 86 22 C82 28, 78 38, 75 48"/>
+  <!-- Balloon tie/knot at bottom -->
+  <path d="M72 100 C70 104, 72 108, 75 108 C78 108, 80 104, 78 100"/>
+  <!-- Highlight/shine on left lobe -->
+  <path d="M46 30 C44 36, 46 44, 50 48" stroke-width="1.5" opacity="0.35"/>
+  <!-- Small highlight on right lobe -->
+  <path d="M104 32 C106 36, 106 40, 104 42" stroke-width="1.5" opacity="0.3"/>
+  <!-- Curvy string -->
+  <path d="M75 108 C78 118, 72 128, 78 138 C84 148, 70 158, 76 168 C82 178, 68 188, 74 198 C80 208, 66 218, 72 228 C76 234, 70 240, 74 245"/>
+  <!-- Small ribbon at tie point -->
+  <path d="M72 106 C66 110, 62 108, 60 112"/>
+  <path d="M78 106 C84 110, 88 108, 90 112"/>
+  <!-- Tiny ribbon curl -->
+  <path d="M60 112 C58 116, 60 118, 64 116"/>
+  <path d="M90 112 C92 116, 90 118, 86 116"/>
+</svg>

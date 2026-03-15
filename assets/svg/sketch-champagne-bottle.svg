@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Bottle body left side -->
+  <path d="M72 230 C70 228, 70 200, 72 170 C73 150, 74 140, 78 120 C82 105, 86 95, 88 85 C89 78, 90 72, 90 65"/>
+  <!-- Bottle body right side -->
+  <path d="M128 230 C130 228, 130 200, 128 170 C127 150, 126 140, 122 120 C118 105, 114 95, 112 85 C111 78, 110 72, 110 65"/>
+  <!-- Bottom -->
+  <path d="M72 230 C80 233, 90 231, 100 232 C110 231, 120 233, 128 230"/>
+  <!-- Neck top -->
+  <path d="M90 65 C90 58, 92 50, 92 42"/>
+  <path d="M110 65 C110 58, 108 50, 108 42"/>
+  <!-- Foil/cap area -->
+  <path d="M90 42 C92 38, 96 36, 100 35 C104 36, 108 38, 110 42"/>
+  <path d="M88 48 C92 46, 96 48, 100 47 C104 46, 108 48, 112 48"/>
+  <!-- Label area -->
+  <path d="M76 140 C85 137, 95 140, 100 138 C105 136, 115 139, 124 140"/>
+  <path d="M74 170 C84 173, 94 170, 100 172 C106 170, 116 173, 126 170"/>
+  <!-- Label decoration line -->
+  <path d="M80 152 C90 150, 95 153, 100 152 C105 151, 110 154, 120 152"/>
+  <path d="M82 158 C90 160, 96 157, 100 158 C104 157, 110 160, 118 158"/>
+  <!-- Cork popping out -->
+  <path d="M94 28 C93 22, 94 16, 96 10 C98 8, 102 8, 104 10 C106 16, 107 22, 106 28"/>
+  <path d="M94 28 C96 30, 98 30, 100 30 C102 30, 104 30, 106 28"/>
+  <!-- Cork wire cage lines -->
+  <path d="M96 22 C98 20, 102 20, 104 22"/>
+  <!-- Spray lines from cork -->
+  <path d="M92 18 C86 12, 80 8, 74 6"/>
+  <path d="M108 18 C114 12, 120 8, 126 6"/>
+  <path d="M100 8 C100 2, 100 -2, 102 -6"/>
+  <path d="M88 14 C82 10, 78 12, 74 14"/>
+  <path d="M112 14 C118 10, 122 12, 126 14"/>
+  <!-- Bubbles -->
+  <circle cx="80" cy="3" r="2.5"/>
+  <circle cx="120" cy="2" r="2"/>
+  <circle cx="70" cy="12" r="1.5"/>
+  <circle cx="130" cy="10" r="1.5"/>
+  <circle cx="108" cy="0" r="1.5"/>
+  <!-- Small sparkle -->
+  <path d="M134 4 L134 10 M131 7 L137 7"/>
+</svg>

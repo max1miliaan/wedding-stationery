@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Hanging line -->
+  <path d="M 100 4 C 100 8, 99 14, 100 22" />
+  <!-- Attachment cap -->
+  <path d="M 92 22 C 92 18, 108 18, 108 22 C 108 26, 92 26, 92 22" />
+  <!-- Disco ball main sphere -->
+  <circle cx="100" cy="80" r="48" />
+  <!-- Horizontal grid lines -->
+  <path d="M 54 64 C 70 58, 130 58, 146 64" />
+  <path d="M 52 80 C 68 74, 132 74, 148 80" />
+  <path d="M 54 96 C 70 90, 130 90, 146 96" />
+  <path d="M 62 110 C 78 106, 122 106, 138 110" />
+  <!-- Vertical grid lines -->
+  <path d="M 80 33 C 76 56, 76 104, 80 127" />
+  <path d="M 100 32 C 98 56, 98 104, 100 128" />
+  <path d="M 120 33 C 124 56, 124 104, 120 127" />
+  <!-- Connection to cap -->
+  <path d="M 97 26 C 98 28, 98 30, 100 32" />
+  <!-- Sparkle rays -->
+  <path d="M 152 52 L 164 44" />
+  <path d="M 156 76 L 170 74" />
+  <path d="M 148 106 L 162 114" />
+  <path d="M 48 52 L 36 44" />
+  <path d="M 44 76 L 30 74" />
+  <path d="M 52 106 L 38 114" />
+  <!-- Small sparkle crosses -->
+  <path d="M 168 56 L 168 48 M 164 52 L 172 52" />
+  <path d="M 32 56 L 32 48 M 28 52 L 36 52" />
+  <path d="M 170 100 L 170 92 M 166 96 L 174 96" />
+  <!-- Confetti dots -->
+  <circle cx="40" cy="150" r="2.5" fill="currentColor" />
+  <circle cx="62" cy="162" r="2" fill="currentColor" />
+  <circle cx="100" cy="158" r="2.5" fill="currentColor" />
+  <circle cx="138" cy="162" r="2" fill="currentColor" />
+  <circle cx="160" cy="150" r="2.5" fill="currentColor" />
+  <circle cx="80" cy="172" r="1.8" fill="currentColor" />
+  <circle cx="120" cy="170" r="1.8" fill="currentColor" />
+  <circle cx="150" cy="178" r="1.5" fill="currentColor" />
+  <circle cx="50" cy="178" r="1.5" fill="currentColor" />
+</svg>

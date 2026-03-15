@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Left bow loop outer -->
+  <path d="M100 68 C90 58, 68 42, 48 40 C28 38, 18 50, 22 62 C26 74, 42 82, 58 80 C74 78, 88 72, 100 68"/>
+  <!-- Left bow loop inner fold -->
+  <path d="M100 68 C92 64, 78 56, 62 54 C50 52, 38 58, 40 64 C42 70, 56 74, 70 72 C82 70, 92 68, 100 68" fill="currentColor" opacity="0.05"/>
+  <!-- Right bow loop outer -->
+  <path d="M100 68 C110 58, 132 42, 152 40 C172 38, 182 50, 178 62 C174 74, 158 82, 142 80 C126 78, 112 72, 100 68"/>
+  <!-- Right bow loop inner fold -->
+  <path d="M100 68 C108 64, 122 56, 138 54 C150 52, 162 58, 160 64 C158 70, 144 74, 130 72 C118 70, 108 68, 100 68" fill="currentColor" opacity="0.05"/>
+  <!-- Center knot -->
+  <path d="M92 62 C90 66, 92 72, 96 76 C98 78, 102 78, 104 76 C108 72, 110 66, 108 62 C106 58, 102 56, 100 58 C98 56, 94 58, 92 62Z" fill="currentColor" opacity="0.08"/>
+  <!-- Knot wrinkle lines -->
+  <path d="M96 64 C98 66, 100 68, 102 66"/>
+  <path d="M95 70 C98 72, 102 72, 105 70"/>
+  <!-- Left tail -->
+  <path d="M94 76 C86 86, 72 100, 60 112 C54 120, 48 128, 44 136"/>
+  <!-- Left tail edge -->
+  <path d="M92 78 C84 88, 70 102, 56 116 C50 124, 42 130, 36 134"/>
+  <!-- Left tail end notch -->
+  <path d="M44 136 C46 132, 42 128, 36 134"/>
+  <!-- Left tail fold line -->
+  <path d="M88 84 C80 94, 66 108, 52 122"/>
+  <!-- Right tail -->
+  <path d="M106 76 C114 86, 128 100, 140 112 C146 120, 152 128, 156 136"/>
+  <!-- Right tail edge -->
+  <path d="M108 78 C116 88, 130 102, 144 116 C150 124, 158 130, 164 134"/>
+  <!-- Right tail end notch -->
+  <path d="M156 136 C154 132, 158 128, 164 134"/>
+  <!-- Right tail fold line -->
+  <path d="M112 84 C120 94, 134 108, 148 122"/>
+  <!-- Small wrinkle on left loop -->
+  <path d="M56 58 C58 62, 62 64, 64 60" stroke-width="1.5" opacity="0.5"/>
+  <!-- Small wrinkle on right loop -->
+  <path d="M144 58 C142 62, 138 64, 136 60" stroke-width="1.5" opacity="0.5"/>
+</svg>

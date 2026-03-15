@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 500" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Hand holding and tilting a bottle at top -->
+  <!-- Bottle outline -->
+  <path d="M 88,30 C 88,20 90,10 95,6 C 98,4 102,4 105,6 C 110,10 112,20 112,30"/>
+  <path d="M 86,30 C 84,34 84,50 86,60 L 86,70 C 86,74 88,76 92,76 L 108,76 C 112,76 114,74 114,70 L 114,60 C 116,50 116,34 114,30"/>
+  <!-- Bottle label detail -->
+  <path stroke-width="1" opacity="0.4" d="M 90,42 L 110,42 M 90,48 L 110,48 M 90,54 L 106,54"/>
+  <!-- Hand gripping the bottle -->
+  <path stroke-width="2" d="
+    M 76,38
+    C 78,36 82,34 86,34
+    M 76,38
+    C 74,42 74,48 76,52
+    C 78,50 82,48 86,48
+    M 76,52
+    C 74,56 74,62 76,66
+    C 78,64 82,62 86,62
+    M 76,66
+    C 74,70 76,76 80,78
+    C 82,74 84,72 86,70"/>
+  <!-- Thumb on back -->
+  <path stroke-width="2" d="M 114,38 C 118,36 120,40 120,48 C 120,54 118,56 114,54"/>
+  <!-- Pouring stream - narrow at spout, S-curves down -->
+  <path fill="currentColor" stroke="none" d="
+    M 96,76
+    C 94,82 92,90 88,100
+    C 82,116 74,132 72,150
+    C 70,168 78,184 90,196
+    C 100,206 106,220 108,240
+    C 110,260 104,278 96,296
+    C 88,314 84,332 86,350
+    C 88,368 94,384 96,400
+    C 97,410 96,418 94,426
+    C 92,434 90,440 92,446
+    C 94,450 98,452 102,452
+    C 106,452 110,450 112,446
+    C 114,440 112,434 110,426
+    C 108,418 108,410 110,400
+    C 112,384 118,368 120,350
+    C 122,332 118,314 110,296
+    C 102,278 96,260 98,240
+    C 100,220 108,206 118,196
+    C 130,184 136,168 134,150
+    C 132,132 124,116 118,100
+    C 114,90 112,82 110,76
+    C 106,74 100,74 96,76
+    Z"/>
+  <!-- Splash/puddle at bottom -->
+  <path fill="currentColor" stroke="none" d="
+    M 60,450
+    C 52,446 44,438 42,430
+    C 40,426 44,424 48,428
+    C 54,434 62,440 74,444
+    C 86,448 100,450 114,448
+    C 128,446 140,440 150,434
+    C 156,430 160,426 162,430
+    C 160,438 152,446 142,450
+    C 130,456 114,460 100,460
+    C 84,460 70,456 60,450
+    Z"/>
+  <!-- Splash droplets around the puddle -->
+  <circle fill="currentColor" stroke="none" cx="36" cy="424" r="2"/>
+  <circle fill="currentColor" stroke="none" cx="166" cy="426" r="1.8"/>
+  <circle fill="currentColor" stroke="none" cx="44" cy="416" r="1.2"/>
+  <circle fill="currentColor" stroke="none" cx="160" cy="418" r="1"/>
+  <circle fill="currentColor" stroke="none" cx="52" cy="462" r="1.5"/>
+  <circle fill="currentColor" stroke="none" cx="148" cy="464" r="1.3"/>
+  <!-- Stream highlights (negative space streaks) -->
+  <path stroke="currentColor" fill="none" stroke-width="0.6" opacity="0.2" d="M 100,100 C 96,140 92,180 102,220 C 108,250 100,290 96,330 C 94,360 98,390 100,420"/>
+  <path stroke="currentColor" fill="none" stroke-width="0.6" opacity="0.2" d="M 108,100 C 112,140 118,180 110,220 C 104,250 110,290 114,330 C 116,360 112,390 108,420"/>
+</svg>

@@ -1,5 +1,87 @@
 # Changelog
 
+## [2026-03-15] (Session 10)
+
+### What changed
+- **Supabase config:** Set Supabase URL and anon key constants in editor.js
+- **Text outline mode:** Added "Outline only (no fill)" checkbox to text properties panel -- sets fill to transparent while keeping stroke visible, with _savedFill pattern to restore original color
+- **Font expansion (~150 to ~375 fonts):**
+  - Downloaded 50 Google Fonts as woff2 to assets/fonts/ + CDN link tag
+  - Extracted and copied 195 uploaded font families from 7 zip archives in font_uploads/
+  - Generated @font-face CSS declarations for all uploaded fonts
+  - Added all to FONTS array with correct categories
+- **Freehand brush drawing tool:**
+  - Added "Draw" tab to sidebar with brush controls (size, color, opacity, type)
+  - 4 brush types: Pencil, Spray, Circle, Ink (with shadow effect)
+  - Toggle drawing mode on/off, auto-exits when switching tabs
+  - Drawn paths become selectable/editable canvas objects
+- **25 new SVG illustrations:**
+  - 15 sketch-inspired elements: cocktail glass, champagne flutes, wine glass, champagne bottle, flower vase, flower bouquet, ribbon bow, heart balloon, bunting, disco ball, wedding cake, wedding rings, party hat, confetti, hands toast
+  - 10 design elements: 3 brush strokes (horizontal, diagonal, curved), 2 splashes, 2 waves, pour stream (flowing liquid like inspo image), swirl flourish, squiggle line
+  - All follow project SVG conventions (currentColor, stroke-linecap round, under 30 shapes)
+- **New illustration categories:** Added "sketch" and "element" categories to ILLUST_CATEGORIES and ILLUSTRATIONS object
+
+### Why
+- User requested brush stroke ability, design elements (lines, splashes, waves, pour), and extraction of individual elements from sketch reference images
+- User provided Supabase credentials and additional fonts
+
+### Decisions
+- Sketch reference images (EPS/JPG from Freepik) used as visual inspiration for hand-drawn SVG recreations rather than direct file conversion
+- Brush drawing uses Fabric.js built-in PencilBrush/SprayBrush/CircleBrush for freehand mode
+- "Ink" brush type adds shadow effect to PencilBrush for organic/flowing feel
+- Pour stream SVG (element-pour-stream.svg) designed as full composition (hand + bottle + flowing stream + puddle) like the blue inspo image
+
+## [2026-03-15] (Session 9)
+
+### What changed
+- Implemented 7-part editor upgrade plan (`js/editor.js` expanded from ~2987 to ~3500+ lines)
+- **Part 2 -- Pasteboard overflow fix:**
+  - Changed `.canvas-viewport` from `overflow: hidden` to `overflow: auto`
+  - Added 100px margin around `.canvas-wrapper` so drag handles remain visible beyond artboard
+- **Part 3 -- Toolbar background color:**
+  - Added BG color swatch in toolbar for quicker access to canvas background picker
+  - Synced with existing properties panel BG picker
+- **Part 5 -- Stroke width controls:**
+  - Added stroke color + width slider (0.5-10, step 0.5) to object properties panel
+  - Added text stroke (outline) controls with color picker + width slider (0-5)
+  - Works on shapes, SVG groups, and text objects
+- **Part 1 -- Supabase cloud save + sharing:**
+  - Added Supabase client integration (CDN script)
+  - Cloud save/load with auto-save (3s debounce) when connected
+  - Share modal with copyable URL (?id=xxx), fork design, My Designs browser
+  - Design name input and cloud status indicator in toolbar
+  - Constants left empty for user to fill after Supabase project setup
+- **Part 6 -- Font expansion (~90 to ~150 fonts):**
+  - Added ~30 Google Fonts (wedding calligraphy, elegant serif, modern sans, display)
+  - Downloaded 10 Fontshare fonts (archivo, erode, synonym, telma, jet-brains-mono, plein, bespoke-serif, nippo, tanker, kola) with @font-face declarations
+  - Added ~10 open-source fonts (Fira Sans, Source Sans 3, League Spartan, League Gothic, Barlow)
+  - All added to FONTS array with correct categories
+- **Part 4 -- Border configuration:**
+  - Created 20 new SVG files: 10 horizontal dividers, 5 vertical dividers, 5 corners
+  - Added divider/corner categories to illustration browser
+  - Quick-apply border placement: Top, Bottom, Top+Bottom, 4 Corners buttons
+  - Auto-positions and scales illustrations to fit artboard edges
+- **Part 7 -- Free illustration integration:**
+  - Added "Browse Online" section in Art panel with links to Storyset, unDraw, Open Peeps, Flaticon
+  - Enhanced drag-drop zone with larger overlay and file type sub-label
+- Fixed undeclared `nudgeTimeout` variable bug
+
+### Why
+- Pasteboard fix lets users drag objects partially off the artboard without losing control handles
+- Cloud save enables Kash and Max to share and collaborate on designs via shareable links
+- Font expansion provides more typographic variety matching the hand-drawn inspo aesthetic
+- Dividers/corners provide granular border control (top-only, bottom-only) vs full-frame-only borders
+- Stroke controls allow adjusting line weight on all elements for design flexibility
+
+### Decisions
+- Supabase chosen for cloud save (free tier, PostgreSQL, anon access with RLS policies)
+- Auto-save only triggers when a design already has a cloud ID (no surprise uploads)
+- My Designs tracked via localStorage array of IDs (no auth required)
+- Fontshare fonts self-hosted as .woff2 in `assets/fonts/` for offline reliability
+- Divider SVGs use viewBox 400x60 (horizontal), 60x400 (vertical); corners use 120x120
+- Quick-apply border placement scales SVGs to artboard width/height and positions at edges
+- Browse Online links open in new tabs -- editorial curation rather than API integration
+
 ## [2026-03-15] (Session 8)
 
 ### What changed

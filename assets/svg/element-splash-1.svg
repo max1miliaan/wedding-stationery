@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Central ink splash blob -->
+  <path fill="currentColor" stroke="none" d="
+    M 90,80
+    C 80,72 76,60 84,52
+    C 92,44 104,46 112,54
+    C 120,46 134,42 140,52
+    C 146,62 140,74 132,80
+    C 142,86 148,96 142,106
+    C 136,116 124,118 114,112
+    C 110,122 100,128 90,124
+    C 80,120 76,110 80,100
+    C 70,96 64,86 70,78
+    C 74,72 82,72 90,80
+    Z"/>
+  <!-- Splash extensions radiating outward -->
+  <path fill="currentColor" stroke="none" d="M 84,52 C 78,42 72,30 68,24 C 66,20 70,18 74,22 C 78,30 80,42 84,52 Z"/>
+  <path fill="currentColor" stroke="none" d="M 140,52 C 148,40 156,28 162,22 C 164,18 168,20 166,24 C 160,34 150,44 140,52 Z"/>
+  <path fill="currentColor" stroke="none" d="M 142,106 C 152,114 162,124 168,132 C 170,136 166,138 164,134 C 158,126 150,116 142,106 Z"/>
+  <path fill="currentColor" stroke="none" d="M 80,100 C 68,108 56,118 48,126 C 44,130 40,128 44,124 C 52,116 64,106 80,100 Z"/>
+  <path fill="currentColor" stroke="none" d="M 70,78 C 56,74 42,72 32,74 C 28,76 26,72 30,70 C 40,66 56,70 70,78 Z"/>
+  <path fill="currentColor" stroke="none" d="M 132,80 C 146,76 160,72 172,68 C 176,66 178,70 174,72 C 164,76 148,80 132,80 Z"/>
+  <!-- Small scattered droplets -->
+  <circle fill="currentColor" stroke="none" cx="56" cy="20" r="2.5"/>
+  <circle fill="currentColor" stroke="none" cx="172" cy="16" r="2"/>
+  <circle fill="currentColor" stroke="none" cx="38" cy="62" r="1.8"/>
+  <circle fill="currentColor" stroke="none" cx="180" cy="58" r="1.5"/>
+  <circle fill="currentColor" stroke="none" cx="176" cy="140" r="2.2"/>
+  <circle fill="currentColor" stroke="none" cx="36" cy="134" r="1.6"/>
+  <circle fill="currentColor" stroke="none" cx="24" cy="80" r="1"/>
+  <circle fill="currentColor" stroke="none" cx="188" cy="82" r="1.2"/>
+  <circle fill="currentColor" stroke="none" cx="100" cy="16" r="1.4"/>
+  <circle fill="currentColor" stroke="none" cx="110" cy="140" r="1.8"/>
+  <circle fill="currentColor" stroke="none" cx="60" cy="150" r="1"/>
+  <circle fill="currentColor" stroke="none" cx="148" cy="148" r="0.8"/>
+</svg>

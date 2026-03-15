@@ -62,10 +62,10 @@ HTML/CSS/SVG wedding stationery suite designed for print export.
 - Moose (English bulldog): wide curved head (width > height), forehead wrinkles, rose ears, underbite jaw, drooping jowls, stocky body, splayed paws with toe lines
 
 ## Visual Editor (preview/editor.html)
-- Built with Fabric.js 5.3.1 (CDN), jsPDF 2.5.2 (CDN)
-- Three-panel layout: left sidebar (7 tabs), center canvas, right properties
-- Supports all 250 SVG illustrations organized by category
-- Per-element text control: font family (91 fonts), size, weight, color, alignment, spacing
+- Built with Fabric.js 5.3.1 (CDN), jsPDF 2.5.2 (CDN), Supabase JS v2 (CDN)
+- Three-panel layout: left sidebar (8 tabs), center canvas with pasteboard, right properties
+- Supports 295 SVG illustrations organized by category (moose, couple, toronto, decor, border, divider, corner, sketch, element)
+- Per-element text control: font family (~375 fonts), size, weight, color, alignment, spacing, outline-only mode
 - 7 preset templates: invitation, save-the-date, rsvp, details, menu, program, name-tag
 - Smart guides (magenta snap lines), grid overlay, safe zone guides, ruler bars
 - Lock, group/ungroup, flip H/V, copy/paste style
@@ -76,6 +76,14 @@ HTML/CSS/SVG wedding stationery suite designed for print export.
 - Right-click context menu, layers panel, design history panel
 - Zoom to selection (double-click), arrow key nudge (1px / 10px with Shift)
 - Undo/redo via state snapshots (max 40 states)
+- Stroke width + color controls for shapes, SVGs, and text (outline effect)
+- Toolbar BG color swatch synced with properties panel background picker
+- Supabase cloud save: auto-save, share via URL, fork designs, My Designs browser
+- Quick-apply border placement: Top, Bottom, Top+Bottom, 4 Corners presets
+- Browse Online panel with links to free illustration sources (Storyset, unDraw, Open Peeps, Flaticon)
+- Pasteboard: scrollable overflow area so drag handles stay visible beyond artboard edges
+- Freehand brush drawing: 4 brush types (Pencil, Spray, Circle, Ink), size/color/opacity controls, drawn paths become editable objects
+- Text outline-only mode: transparent fill with visible stroke, _savedFill pattern for toggling
 - No stationery piece HTML depends on editor.js -- editor is a standalone design tool
 
 ## Constraints

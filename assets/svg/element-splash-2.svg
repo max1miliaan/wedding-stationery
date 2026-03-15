@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>:root { color: #1B2438; }</style>
+  <!-- Elongated paint splash, like paint thrown across paper -->
+  <!-- Main elongated blob stretching diagonally -->
+  <path fill="currentColor" stroke="none" d="
+    M 28,110
+    C 22,104 20,94 28,86
+    C 36,78 50,76 66,74
+    C 82,72 100,68 118,62
+    C 136,56 154,50 168,48
+    C 178,46 186,50 184,58
+    C 182,66 172,68 156,72
+    C 140,76 122,80 104,86
+    C 86,92 68,98 54,104
+    C 42,110 34,116 28,110
+    Z"/>
+  <!-- Splash arms extending from the main body -->
+  <path fill="currentColor" stroke="none" d="M 28,86 C 20,76 14,62 10,50 C 8,44 12,42 14,48 C 18,60 22,74 28,86 Z"/>
+  <path fill="currentColor" stroke="none" d="M 184,58 C 190,48 194,36 192,26 C 192,22 196,22 196,28 C 196,40 192,52 184,58 Z"/>
+  <path fill="currentColor" stroke="none" d="M 66,74 C 58,62 52,48 54,36 C 56,30 60,32 58,38 C 56,50 60,64 66,74 Z"/>
+  <path fill="currentColor" stroke="none" d="M 118,62 C 126,50 138,38 148,30 C 152,26 156,28 152,32 C 144,40 132,52 118,62 Z"/>
+  <path fill="currentColor" stroke="none" d="M 54,104 C 46,116 38,132 36,144 C 34,150 30,148 32,142 C 36,130 44,114 54,104 Z"/>
+  <path fill="currentColor" stroke="none" d="M 156,72 C 168,82 178,96 182,108 C 184,114 180,114 180,108 C 176,96 168,84 156,72 Z"/>
+  <!-- Trailing droplets along the splash trajectory -->
+  <circle fill="currentColor" stroke="none" cx="6" cy="42" r="2"/>
+  <circle fill="currentColor" stroke="none" cx="194" cy="18" r="1.8"/>
+  <circle fill="currentColor" stroke="none" cx="50" cy="28" r="1.5"/>
+  <circle fill="currentColor" stroke="none" cx="156" cy="24" r="1.2"/>
+  <circle fill="currentColor" stroke="none" cx="30" cy="150" r="1.6"/>
+  <circle fill="currentColor" stroke="none" cx="186" cy="116" r="1.4"/>
+  <circle fill="currentColor" stroke="none" cx="14" cy="96" r="1"/>
+  <circle fill="currentColor" stroke="none" cx="190" cy="42" r="0.8"/>
+  <!-- Fine trailing spray -->
+  <circle fill="currentColor" stroke="none" cx="4" cy="56" r="0.6"/>
+  <circle fill="currentColor" stroke="none" cx="198" cy="34" r="0.7"/>
+  <circle fill="currentColor" stroke="none" cx="42" cy="154" r="0.5"/>
+</svg>
