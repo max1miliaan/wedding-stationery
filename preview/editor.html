@@ -708,6 +708,177 @@
     }
 
     .resource-link:hover .resource-name { color: var(--ed-accent); }
+
+    /* Alignment toolbar */
+    .align-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 3px;
+    }
+
+    .align-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--ed-text-dim);
+      transition: all 0.15s;
+    }
+
+    .align-btn:hover {
+      color: var(--ed-text);
+      border-color: var(--ed-accent);
+      background: var(--ed-accent-dim);
+    }
+
+    .align-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .distribute-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-top: 4px;
+    }
+
+    .distribute-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 5px 6px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--ed-text-dim);
+      font-size: 10px;
+      transition: all 0.15s;
+    }
+
+    .distribute-btn:hover {
+      color: var(--ed-text);
+      border-color: var(--ed-accent);
+      background: var(--ed-accent-dim);
+    }
+
+    .distribute-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Layer buttons */
+    .layer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+    }
+
+    .layer-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 4px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--ed-text-dim);
+      font-size: 8px;
+      transition: all 0.15s;
+    }
+
+    .layer-btn:hover {
+      color: var(--ed-text);
+      border-color: var(--ed-accent);
+      background: var(--ed-accent-dim);
+    }
+
+    .layer-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Position grid */
+    .pos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+
+    .pos-field {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+
+    .pos-field:focus-within { border-color: var(--ed-accent); }
+
+    .pos-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--ed-text-muted);
+      flex-shrink: 0;
+      width: 12px;
+    }
+
+    .pos-input {
+      background: none;
+      border: none;
+      color: var(--ed-text);
+      font-size: 12px;
+      font-family: inherit;
+      width: 100%;
+      outline: none;
+      padding: 3px 0;
+    }
+
+    .pos-input::-webkit-inner-spin-button { opacity: 0; }
+    .pos-input:focus::-webkit-inner-spin-button { opacity: 1; }
+
+    /* Lock aspect ratio toggle */
+    .lock-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--ed-text-muted);
+      transition: color 0.15s;
+    }
+
+    .lock-btn:hover { color: var(--ed-text); }
+    .lock-btn.active { color: var(--ed-accent); }
+
+    .lock-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
   </style>
 
   <!-- Fabric.js -->

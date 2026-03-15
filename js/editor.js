@@ -246,8 +246,13 @@
       controlsAboveOverlay: true
     });
 
-    // Snapping
-    canvas.on('object:moving', handleSnap);
+    // Snapping and live position tracking
+    canvas.on('object:moving', (e) => {
+      handleSnap(e);
+      updatePositionFields(e.target);
+    });
+    canvas.on('object:scaling', (e) => updatePositionFields(e.target));
+    canvas.on('object:rotating', (e) => updatePositionFields(e.target));
     canvas.on('object:modified', () => saveHistory());
     canvas.on('selection:created', onSelectionChange);
     canvas.on('selection:updated', onSelectionChange);
@@ -945,7 +950,7 @@ function initTextPresets() {
       </div>
 
       <div class="prop-group">
-        <div class="prop-label">Alignment</div>
+        <div class="prop-label">Text Alignment</div>
         <div class="prop-align-group">
           <button class="prop-align-btn ${obj.textAlign === 'left' ? 'active' : ''}" data-align="left" title="Left">
             <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="17" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="14" y2="18"/></svg>
@@ -975,13 +980,27 @@ function initTextPresets() {
         </div>
       </div>
 
+      ${renderAlignToCanvasHTML()}
+
       <div class="prop-group">
         <div class="prop-label">Position</div>
-        <div class="prop-row">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">X</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-left" value="${Math.round(obj.left)}">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">Y</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-top" value="${Math.round(obj.top)}">
+        <div class="pos-grid">
+          <div class="pos-field">
+            <span class="pos-label">X</span>
+            <input type="number" class="pos-input" id="prop-left" value="${Math.round(obj.left)}">
+          </div>
+          <div class="pos-field">
+            <span class="pos-label">Y</span>
+            <input type="number" class="pos-input" id="prop-top" value="${Math.round(obj.top)}">
+          </div>
+          <div class="pos-field">
+            <span class="pos-label">W</span>
+            <input type="number" class="pos-input" id="prop-width" value="${Math.round(obj.getScaledWidth())}" readonly style="opacity: 0.5;">
+          </div>
+          <div class="pos-field">
+            <span class="pos-label">H</span>
+            <input type="number" class="pos-input" id="prop-height" value="${Math.round(obj.getScaledHeight())}" readonly style="opacity: 0.5;">
+          </div>
         </div>
       </div>
 
@@ -1001,9 +1020,9 @@ function initTextPresets() {
         </div>
       </div>
 
+      ${renderLayerHTML()}
+
       <div class="prop-actions">
-        <button class="prop-action-btn" id="prop-bring-front">Bring to Front</button>
-        <button class="prop-action-btn" id="prop-send-back">Send to Back</button>
         <button class="prop-action-btn" id="prop-duplicate">Duplicate</button>
         <button class="prop-action-btn danger" id="prop-delete">Delete</button>
       </div>
@@ -1047,7 +1066,7 @@ function initTextPresets() {
     });
     document.getElementById('prop-text-color-custom').addEventListener('change', () => saveHistory());
 
-    // Bind alignment
+    // Bind text alignment
     document.querySelectorAll('.prop-align-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         obj.set('textAlign', btn.dataset.align);
@@ -1076,16 +1095,7 @@ function initTextPresets() {
     lhSlider.addEventListener('change', () => saveHistory());
 
     // Bind position
-    document.getElementById('prop-left').addEventListener('change', (e) => {
-      obj.set('left', parseInt(e.target.value));
-      canvas.renderAll();
-      saveHistory();
-    });
-    document.getElementById('prop-top').addEventListener('change', (e) => {
-      obj.set('top', parseInt(e.target.value));
-      canvas.renderAll();
-      saveHistory();
-    });
+    bindPositionInputs(obj);
 
     // Bind rotation
     const angSlider = document.getElementById('prop-angle');
@@ -1105,35 +1115,52 @@ function initTextPresets() {
     });
     opSlider.addEventListener('change', () => saveHistory());
 
-    // Actions
+    // Alignment and layer actions
+    bindAlignActions(obj);
+    bindLayerActions(obj);
     bindCommonActions(obj);
   }
 
   function renderObjectProperties(obj) {
     const dyn = document.getElementById('props-dynamic');
     const isGroup = obj.type === 'group';
+    const isMulti = obj.type === 'activeSelection';
     const hasStroke = obj.stroke && obj.stroke !== 'transparent';
     const hasFill = obj.fill && obj.fill !== 'transparent' && obj.fill !== 'none';
 
     dyn.innerHTML = `
       <div class="prop-group">
         <div class="prop-label">Type</div>
-        <div style="font-size: 12px; color: var(--ed-text); text-transform: capitalize;">${isGroup ? 'Illustration' : obj.type}</div>
+        <div style="font-size: 12px; color: var(--ed-text); text-transform: capitalize;">${isMulti ? obj._objects.length + ' objects' : (isGroup ? 'Illustration' : obj.type)}</div>
+      </div>
+
+      ${renderAlignToCanvasHTML()}
+
+      <div class="prop-group">
+        <div class="prop-label">Position</div>
+        <div class="pos-grid">
+          <div class="pos-field">
+            <span class="pos-label">X</span>
+            <input type="number" class="pos-input" id="prop-left" value="${Math.round(obj.left)}">
+          </div>
+          <div class="pos-field">
+            <span class="pos-label">Y</span>
+            <input type="number" class="pos-input" id="prop-top" value="${Math.round(obj.top)}">
+          </div>
+        </div>
       </div>
 
       <div class="prop-group">
-        <div class="prop-label">Position & Size</div>
-        <div class="prop-row">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">X</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-left" value="${Math.round(obj.left)}">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">Y</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-top" value="${Math.round(obj.top)}">
-        </div>
-        <div class="prop-row">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">W</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-width" value="${Math.round(obj.getScaledWidth())}">
-          <label style="font-size: 10px; color: var(--ed-text-muted);">H</label>
-          <input type="number" class="prop-input prop-input-sm" id="prop-height" value="${Math.round(obj.getScaledHeight())}">
+        <div class="prop-label">Size</div>
+        <div class="pos-grid">
+          <div class="pos-field">
+            <span class="pos-label">W</span>
+            <input type="number" class="pos-input" id="prop-width" value="${Math.round(obj.getScaledWidth())}">
+          </div>
+          <div class="pos-field">
+            <span class="pos-label">H</span>
+            <input type="number" class="pos-input" id="prop-height" value="${Math.round(obj.getScaledHeight())}">
+          </div>
         </div>
       </div>
 
@@ -1149,7 +1176,7 @@ function initTextPresets() {
       </div>
       ` : ''}
 
-      ${!isGroup ? `
+      ${!isGroup && !isMulti ? `
       <div class="prop-group">
         <div class="prop-label">Fill Color</div>
         <div class="prop-color-row" id="prop-fill-colors">
@@ -1178,45 +1205,17 @@ function initTextPresets() {
         </div>
       </div>
 
+      ${renderLayerHTML()}
+
       <div class="prop-actions">
-        <button class="prop-action-btn" id="prop-bring-front">Bring to Front</button>
-        <button class="prop-action-btn" id="prop-send-back">Send to Back</button>
         <button class="prop-action-btn" id="prop-duplicate">Duplicate</button>
         <button class="prop-action-btn danger" id="prop-delete">Delete</button>
       </div>
     `;
 
-    // Bind position
-    document.getElementById('prop-left').addEventListener('change', (e) => {
-      obj.set('left', parseInt(e.target.value));
-      canvas.renderAll();
-      saveHistory();
-    });
-    document.getElementById('prop-top').addEventListener('change', (e) => {
-      obj.set('top', parseInt(e.target.value));
-      canvas.renderAll();
-      saveHistory();
-    });
-
-    // Bind size
-    const wInput = document.getElementById('prop-width');
-    const hInput = document.getElementById('prop-height');
-    if (wInput) {
-      wInput.addEventListener('change', (e) => {
-        const newW = parseInt(e.target.value);
-        obj.scaleX = newW / obj.width;
-        canvas.renderAll();
-        saveHistory();
-      });
-    }
-    if (hInput) {
-      hInput.addEventListener('change', (e) => {
-        const newH = parseInt(e.target.value);
-        obj.scaleY = newH / obj.height;
-        canvas.renderAll();
-        saveHistory();
-      });
-    }
+    // Bind position & size
+    bindPositionInputs(obj);
+    bindSizeInputs(obj);
 
     // Bind stroke colors
     const strokeColors = document.getElementById('prop-stroke-colors');
@@ -1283,6 +1282,8 @@ function initTextPresets() {
       opSlider.addEventListener('change', () => saveHistory());
     }
 
+    bindAlignActions(obj);
+    bindLayerActions(obj);
     bindCommonActions(obj);
   }
 
@@ -1328,20 +1329,261 @@ function initTextPresets() {
     });
   }
 
+  // ----------------------------------------------------------------
+  // SHARED HTML BUILDERS
+  // ----------------------------------------------------------------
+  function renderAlignToCanvasHTML() {
+    return `
+      <div class="prop-group">
+        <div class="prop-label">Align to Canvas</div>
+        <div class="align-grid">
+          <button class="align-btn" data-align-canvas="left" title="Align left">
+            <svg viewBox="0 0 24 24"><line x1="4" y1="3" x2="4" y2="21"/><rect x="8" y="6" width="10" height="4" rx="1"/><rect x="8" y="14" width="6" height="4" rx="1"/></svg>
+          </button>
+          <button class="align-btn" data-align-canvas="center-h" title="Align center horizontally">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21" stroke-dasharray="2 2"/><rect x="5" y="6" width="14" height="4" rx="1"/><rect x="7" y="14" width="10" height="4" rx="1"/></svg>
+          </button>
+          <button class="align-btn" data-align-canvas="right" title="Align right">
+            <svg viewBox="0 0 24 24"><line x1="20" y1="3" x2="20" y2="21"/><rect x="6" y="6" width="10" height="4" rx="1"/><rect x="10" y="14" width="6" height="4" rx="1"/></svg>
+          </button>
+          <button class="align-btn" data-align-canvas="top" title="Align top">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="4" x2="21" y2="4"/><rect x="6" y="8" width="4" height="10" rx="1"/><rect x="14" y="8" width="4" height="6" rx="1"/></svg>
+          </button>
+          <button class="align-btn" data-align-canvas="center-v" title="Align center vertically">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="2 2"/><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="10" rx="1"/></svg>
+          </button>
+          <button class="align-btn" data-align-canvas="bottom" title="Align bottom">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="20" x2="21" y2="20"/><rect x="6" y="6" width="4" height="10" rx="1"/><rect x="14" y="10" width="4" height="6" rx="1"/></svg>
+          </button>
+        </div>
+        <div class="distribute-row">
+          <button class="distribute-btn" data-distribute="h" title="Distribute horizontally">
+            <svg viewBox="0 0 24 24"><rect x="3" y="8" width="4" height="8" rx="1"/><rect x="10" y="8" width="4" height="8" rx="1"/><rect x="17" y="8" width="4" height="8" rx="1"/></svg>
+            Space H
+          </button>
+          <button class="distribute-btn" data-distribute="v" title="Distribute vertically">
+            <svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="4" rx="1"/><rect x="8" y="10" width="8" height="4" rx="1"/><rect x="8" y="17" width="8" height="4" rx="1"/></svg>
+            Space V
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderLayerHTML() {
+    return `
+      <div class="prop-group">
+        <div class="prop-label">Layer</div>
+        <div class="layer-grid">
+          <button class="layer-btn" data-layer="front" title="Bring to front">
+            <svg viewBox="0 0 24 24"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+            Front
+          </button>
+          <button class="layer-btn" data-layer="forward" title="Bring forward">
+            <svg viewBox="0 0 24 24"><polyline points="17 14 12 9 7 14"/></svg>
+            Fwd
+          </button>
+          <button class="layer-btn" data-layer="backward" title="Send backward">
+            <svg viewBox="0 0 24 24"><polyline points="7 10 12 15 17 10"/></svg>
+            Back
+          </button>
+          <button class="layer-btn" data-layer="back" title="Send to back">
+            <svg viewBox="0 0 24 24"><polyline points="7 7 12 12 17 7"/><polyline points="7 14 12 19 17 14"/></svg>
+            Floor
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  // ----------------------------------------------------------------
+  // POSITION / SIZE BINDING
+  // ----------------------------------------------------------------
+  function bindPositionInputs(obj) {
+    const leftInput = document.getElementById('prop-left');
+    const topInput = document.getElementById('prop-top');
+    if (leftInput) {
+      leftInput.addEventListener('change', (e) => {
+        obj.set('left', parseInt(e.target.value));
+        obj.setCoords();
+        canvas.renderAll();
+        saveHistory();
+      });
+    }
+    if (topInput) {
+      topInput.addEventListener('change', (e) => {
+        obj.set('top', parseInt(e.target.value));
+        obj.setCoords();
+        canvas.renderAll();
+        saveHistory();
+      });
+    }
+  }
+
+  function bindSizeInputs(obj) {
+    const wInput = document.getElementById('prop-width');
+    const hInput = document.getElementById('prop-height');
+    if (wInput && !wInput.readOnly) {
+      wInput.addEventListener('change', (e) => {
+        const newW = parseInt(e.target.value);
+        if (newW > 0) {
+          const ratio = obj.scaleY / obj.scaleX;
+          obj.scaleX = newW / obj.width;
+          // Maintain aspect ratio
+          obj.scaleY = obj.scaleX * ratio;
+          if (hInput) hInput.value = Math.round(obj.getScaledHeight());
+          obj.setCoords();
+          canvas.renderAll();
+          saveHistory();
+        }
+      });
+    }
+    if (hInput && !hInput.readOnly) {
+      hInput.addEventListener('change', (e) => {
+        const newH = parseInt(e.target.value);
+        if (newH > 0) {
+          const ratio = obj.scaleX / obj.scaleY;
+          obj.scaleY = newH / obj.height;
+          // Maintain aspect ratio
+          obj.scaleX = obj.scaleY * ratio;
+          if (wInput) wInput.value = Math.round(obj.getScaledWidth());
+          obj.setCoords();
+          canvas.renderAll();
+          saveHistory();
+        }
+      });
+    }
+  }
+
+  function updatePositionFields(obj) {
+    const leftInput = document.getElementById('prop-left');
+    const topInput = document.getElementById('prop-top');
+    const wInput = document.getElementById('prop-width');
+    const hInput = document.getElementById('prop-height');
+    const angSlider = document.getElementById('prop-angle');
+
+    if (leftInput && document.activeElement !== leftInput) leftInput.value = Math.round(obj.left);
+    if (topInput && document.activeElement !== topInput) topInput.value = Math.round(obj.top);
+    if (wInput && document.activeElement !== wInput) wInput.value = Math.round(obj.getScaledWidth());
+    if (hInput && document.activeElement !== hInput) hInput.value = Math.round(obj.getScaledHeight());
+    if (angSlider && document.activeElement !== angSlider) {
+      angSlider.value = Math.round(obj.angle || 0);
+      if (angSlider.nextElementSibling) angSlider.nextElementSibling.innerHTML = Math.round(obj.angle || 0) + '&deg;';
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // CANVAS ALIGNMENT
+  // ----------------------------------------------------------------
+  function alignToCanvas(obj, direction) {
+    const cW = canvas.getWidth();
+    const cH = canvas.getHeight();
+    const bound = obj.getBoundingRect(true);
+
+    switch (direction) {
+      case 'left':
+        obj.set('left', obj.left - bound.left);
+        break;
+      case 'center-h':
+        obj.set('left', obj.left + (cW / 2) - (bound.left + bound.width / 2));
+        break;
+      case 'right':
+        obj.set('left', obj.left + (cW - bound.left - bound.width));
+        break;
+      case 'top':
+        obj.set('top', obj.top - bound.top);
+        break;
+      case 'center-v':
+        obj.set('top', obj.top + (cH / 2) - (bound.top + bound.height / 2));
+        break;
+      case 'bottom':
+        obj.set('top', obj.top + (cH - bound.top - bound.height));
+        break;
+    }
+
+    obj.setCoords();
+    canvas.renderAll();
+    updatePositionFields(obj);
+    saveHistory();
+  }
+
+  function distributeObjects(direction) {
+    const activeObj = canvas.getActiveObject();
+    if (!activeObj || activeObj.type !== 'activeSelection') return;
+
+    const objs = activeObj._objects.slice();
+    if (objs.length < 3) return;
+
+    if (direction === 'h') {
+      objs.sort((a, b) => a.left - b.left);
+      const first = objs[0].left;
+      const last = objs[objs.length - 1].left;
+      const step = (last - first) / (objs.length - 1);
+      objs.forEach((o, i) => {
+        o.set('left', first + step * i);
+        o.setCoords();
+      });
+    } else {
+      objs.sort((a, b) => a.top - b.top);
+      const first = objs[0].top;
+      const last = objs[objs.length - 1].top;
+      const step = (last - first) / (objs.length - 1);
+      objs.forEach((o, i) => {
+        o.set('top', first + step * i);
+        o.setCoords();
+      });
+    }
+
+    canvas.renderAll();
+    saveHistory();
+  }
+
+  function bindAlignActions(obj) {
+    document.querySelectorAll('[data-align-canvas]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alignToCanvas(obj, btn.dataset.alignCanvas);
+      });
+    });
+
+    document.querySelectorAll('[data-distribute]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        distributeObjects(btn.dataset.distribute);
+      });
+    });
+  }
+
+  // ----------------------------------------------------------------
+  // LAYER ACTIONS
+  // ----------------------------------------------------------------
+  function bindLayerActions(obj) {
+    document.querySelectorAll('[data-layer]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        switch (btn.dataset.layer) {
+          case 'front':
+            canvas.bringToFront(obj);
+            updateOverlays();
+            break;
+          case 'forward':
+            canvas.bringForward(obj);
+            updateOverlays();
+            break;
+          case 'backward':
+            canvas.sendBackwards(obj);
+            break;
+          case 'back':
+            canvas.sendToBack(obj);
+            break;
+        }
+        canvas.renderAll();
+        saveHistory();
+      });
+    });
+  }
+
+  // ----------------------------------------------------------------
+  // COMMON ACTIONS (duplicate, delete)
+  // ----------------------------------------------------------------
   function bindCommonActions(obj) {
-    document.getElementById('prop-bring-front').addEventListener('click', () => {
-      canvas.bringToFront(obj);
-      updateOverlays(); // Keep overlays on top
-      canvas.renderAll();
-      saveHistory();
-    });
-
-    document.getElementById('prop-send-back').addEventListener('click', () => {
-      canvas.sendToBack(obj);
-      canvas.renderAll();
-      saveHistory();
-    });
-
     document.getElementById('prop-duplicate').addEventListener('click', () => {
       obj.clone(function (cloned) {
         cloned.set({
