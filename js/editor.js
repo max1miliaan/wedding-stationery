@@ -219,6 +219,30 @@
   let skipHistory = false;
   const MAX_HISTORY = 40;
 
+  // Smart guides
+  let smartGuidesEnabled = true;
+  let activeSmartGuides = [];
+
+  // Lock / style / clipboard
+  let copiedStyle = null;
+  let clipboardObj = null;
+  let aspectRatioLocked = true;
+
+  // Pages
+  let pages = [];
+  let currentPageIndex = 0;
+  let pageIdCounter = 0;
+
+  // UI toggles
+  let showRulers = false;
+
+  // History panel
+  let historyThumbnails = [];
+  let historySnapshotCounter = 0;
+
+  // BG removal module (lazy loaded)
+  let bgRemovalModule = null;
+
   // ----------------------------------------------------------------
   // INITIALIZATION
   // ----------------------------------------------------------------
@@ -228,8 +252,12 @@
     initToolbar();
     initProperties();
     initKeyboard();
+    initDragDrop();
+    initContextMenu();
+    initPages();
     fitCanvasToView();
     saveHistory();
+    renderCanvasBgPicker();
   }
 
   function initCanvas() {
@@ -253,11 +281,18 @@
     });
     canvas.on('object:scaling', (e) => updatePositionFields(e.target));
     canvas.on('object:rotating', (e) => updatePositionFields(e.target));
-    canvas.on('object:modified', () => saveHistory());
+    canvas.on('object:modified', () => { hideSmartGuides(); saveHistory(); });
     canvas.on('selection:created', onSelectionChange);
     canvas.on('selection:updated', onSelectionChange);
     canvas.on('selection:cleared', onSelectionClear);
     canvas.on('text:changed', () => saveHistory());
+    canvas.on('mouse:dblclick', (e) => {
+      if (e.target && !e.target.isEditing) {
+        zoomToObject(e.target);
+      } else if (!e.target) {
+        fitCanvasToView();
+      }
+    });
 
     // Custom selection styling
     fabric.Object.prototype.set({
@@ -426,6 +461,7 @@
   // ----------------------------------------------------------------
   function handleSnap(e) {
     const obj = e.target;
+    if (obj.locked) return;
     const cW = canvas.getWidth();
     const cH = canvas.getHeight();
     const snapThreshold = 6;
@@ -435,8 +471,6 @@
 
     // Snap to center
     if (Math.abs(objCenter.x - canvasCenter.x) < snapThreshold) {
-      obj.set({ left: canvasCenter.x - (obj.getScaledWidth() / 2) + (obj.width * obj.scaleX / 2) - obj.width * obj.scaleX / 2 + canvasCenter.x - objCenter.x + obj.left });
-      // Simpler: set center
       obj.setPositionByOrigin(
         new fabric.Point(canvasCenter.x, objCenter.y),
         'center', 'center'
@@ -448,6 +482,153 @@
         'center', 'center'
       );
     }
+
+    // Smart guides
+    calculateSmartGuides(obj);
+  }
+
+  // ----------------------------------------------------------------
+  // SMART GUIDES
+  // ----------------------------------------------------------------
+  function calculateSmartGuides(movingObj) {
+    hideSmartGuides();
+    if (!smartGuidesEnabled) return;
+
+    const threshold = 5;
+    const guides = [];
+    const mb = movingObj.getBoundingRect(true);
+    const mcx = mb.left + mb.width / 2;
+    const mcy = mb.top + mb.height / 2;
+    const mPts = { l: mb.left, cx: mcx, r: mb.left + mb.width, t: mb.top, cy: mcy, b: mb.top + mb.height };
+
+    canvas.getObjects().forEach(other => {
+      if (other === movingObj || other.excludeFromExport || !other.visible) return;
+      if (other._isSmartGuide) return;
+      const ob = other.getBoundingRect(true);
+      const ocx = ob.left + ob.width / 2;
+      const ocy = ob.top + ob.height / 2;
+      const oPts = { l: ob.left, cx: ocx, r: ob.left + ob.width, t: ob.top, cy: ocy, b: ob.top + ob.height };
+
+      // Vertical lines (x-axis alignment)
+      ['l', 'cx', 'r'].forEach(mk => {
+        ['l', 'cx', 'r'].forEach(ok => {
+          if (Math.abs(mPts[mk] - oPts[ok]) < threshold) {
+            guides.push({ type: 'v', pos: oPts[ok] });
+          }
+        });
+      });
+      // Horizontal lines (y-axis alignment)
+      ['t', 'cy', 'b'].forEach(mk => {
+        ['t', 'cy', 'b'].forEach(ok => {
+          if (Math.abs(mPts[mk] - oPts[ok]) < threshold) {
+            guides.push({ type: 'h', pos: oPts[ok] });
+          }
+        });
+      });
+    });
+
+    showSmartGuideLines(guides);
+  }
+
+  function showSmartGuideLines(guides) {
+    const seen = new Set();
+    const cW = canvas.getWidth();
+    const cH = canvas.getHeight();
+
+    guides.forEach(g => {
+      const key = g.type + Math.round(g.pos);
+      if (seen.has(key)) return;
+      seen.add(key);
+
+      const coords = g.type === 'v' ? [g.pos, 0, g.pos, cH] : [0, g.pos, cW, g.pos];
+      const line = new fabric.Line(coords, {
+        stroke: '#FF00FF', strokeWidth: 1, strokeDashArray: [4, 2],
+        selectable: false, evented: false, excludeFromExport: true, _isSmartGuide: true
+      });
+      canvas.add(line);
+      activeSmartGuides.push(line);
+    });
+    canvas.renderAll();
+  }
+
+  function hideSmartGuides() {
+    activeSmartGuides.forEach(l => canvas.remove(l));
+    activeSmartGuides = [];
+  }
+
+  // ----------------------------------------------------------------
+  // LOCK / GROUP / UNGROUP
+  // ----------------------------------------------------------------
+  function toggleLock(obj) {
+    if (!obj) return;
+    if (obj.locked) {
+      obj.locked = false;
+      obj.selectable = true;
+      obj.evented = true;
+      obj.opacity = obj._preLockOpacity || 1;
+    } else {
+      obj._preLockOpacity = obj.opacity;
+      obj.locked = true;
+      obj.selectable = false;
+      obj.evented = false;
+      obj.opacity = Math.max(obj.opacity * 0.6, 0.3);
+    }
+    canvas.discardActiveObject();
+    canvas.renderAll();
+    onSelectionClear();
+    saveHistory();
+    renderLayersList();
+  }
+
+  function groupSelection() {
+    const sel = canvas.getActiveObject();
+    if (!sel || sel.type !== 'activeSelection') return;
+    sel.toGroup();
+    canvas.renderAll();
+    saveHistory();
+    renderLayersList();
+  }
+
+  function ungroupSelection() {
+    const obj = canvas.getActiveObject();
+    if (!obj || obj.type !== 'group') return;
+    obj.toActiveSelection();
+    canvas.renderAll();
+    saveHistory();
+    renderLayersList();
+  }
+
+  // ----------------------------------------------------------------
+  // COPY / PASTE STYLE
+  // ----------------------------------------------------------------
+  function copyStyle() {
+    const obj = canvas.getActiveObject();
+    if (!obj) return;
+    copiedStyle = {};
+    ['fill', 'stroke', 'strokeWidth', 'opacity'].forEach(p => {
+      if (obj[p] !== undefined) copiedStyle[p] = obj[p];
+    });
+    if (obj.type === 'i-text' || obj.type === 'text' || obj.type === 'textbox') {
+      ['fontSize', 'fontFamily', 'fontWeight', 'textAlign', 'charSpacing', 'lineHeight'].forEach(p => {
+        if (obj[p] !== undefined) copiedStyle[p] = obj[p];
+      });
+    }
+  }
+
+  function pasteStyle() {
+    const obj = canvas.getActiveObject();
+    if (!obj || !copiedStyle) return;
+    const isText = obj.type === 'i-text' || obj.type === 'text' || obj.type === 'textbox';
+    Object.entries(copiedStyle).forEach(([k, v]) => {
+      if (k === 'fontSize' || k === 'fontFamily' || k === 'fontWeight' || k === 'textAlign' || k === 'charSpacing' || k === 'lineHeight') {
+        if (isText) obj.set(k, v);
+      } else {
+        obj.set(k, v);
+      }
+    });
+    canvas.renderAll();
+    saveHistory();
+    onSelectionChange();
   }
 
   // ----------------------------------------------------------------
@@ -626,29 +807,112 @@ function initTextPresets() {
       if (!file) return;
       const reader = new FileReader();
       reader.onload = function (ev) {
-        fabric.Image.fromURL(ev.target.result, function (img) {
-          // Scale to fit canvas
-          const maxDim = Math.max(img.width, img.height);
-          const canvasMax = Math.min(canvas.getWidth(), canvas.getHeight()) * 0.5;
-          if (maxDim > canvasMax) {
-            const scale = canvasMax / maxDim;
-            img.scaleX = scale;
-            img.scaleY = scale;
-          }
-          img.set({
-            left: canvas.getWidth() / 2,
-            top: canvas.getHeight() / 2,
-            originX: 'center',
-            originY: 'center'
-          });
-          canvas.add(img);
-          canvas.setActiveObject(img);
-          canvas.renderAll();
-          saveHistory();
-        });
+        addImageFromDataURL(ev.target.result);
       };
       reader.readAsDataURL(file);
       e.target.value = '';
+    });
+
+    // URL import
+    const urlBtn = document.getElementById('btn-import-url');
+    const urlForm = document.getElementById('url-import-form');
+    if (urlBtn && urlForm) {
+      urlBtn.addEventListener('click', () => urlForm.classList.toggle('visible'));
+      document.getElementById('url-import-load').addEventListener('click', () => {
+        const url = document.getElementById('url-import-input').value.trim();
+        if (!url) return;
+        loadFromURL(url);
+        urlForm.classList.remove('visible');
+        document.getElementById('url-import-input').value = '';
+      });
+    }
+
+    // SVG paste modal
+    const svgBtn = document.getElementById('btn-paste-svg');
+    if (svgBtn) {
+      svgBtn.addEventListener('click', showSVGModal);
+    }
+  }
+
+  function addImageFromDataURL(dataURL) {
+    fabric.Image.fromURL(dataURL, function (img) {
+      const maxDim = Math.max(img.width, img.height);
+      const canvasMax = Math.min(canvas.getWidth(), canvas.getHeight()) * 0.5;
+      if (maxDim > canvasMax) {
+        const scale = canvasMax / maxDim;
+        img.scaleX = scale;
+        img.scaleY = scale;
+      }
+      img.set({
+        left: canvas.getWidth() / 2, top: canvas.getHeight() / 2,
+        originX: 'center', originY: 'center'
+      });
+      canvas.add(img);
+      canvas.setActiveObject(img);
+      canvas.renderAll();
+      saveHistory();
+      renderLayersList();
+    });
+  }
+
+  function loadFromURL(url) {
+    if (url.toLowerCase().endsWith('.svg')) {
+      fabric.loadSVGFromURL(url, function (objects, options) {
+        if (!objects || !objects.length) return;
+        const group = fabric.util.groupSVGElements(objects, options);
+        const maxDim = Math.max(group.width, group.height);
+        if (maxDim > 200) { const s = 200 / maxDim; group.scaleX = s; group.scaleY = s; }
+        group.set({ left: canvas.getWidth() / 2, top: canvas.getHeight() / 2, originX: 'center', originY: 'center' });
+        canvas.add(group);
+        canvas.setActiveObject(group);
+        canvas.renderAll();
+        saveHistory();
+        renderLayersList();
+      });
+    } else {
+      fabric.Image.fromURL(url, function (img) {
+        if (!img) return;
+        addImageFromDataURL(img.toDataURL());
+      }, { crossOrigin: 'anonymous' });
+    }
+  }
+
+  function showSVGModal() {
+    document.getElementById('svg-modal-backdrop').classList.add('visible');
+    document.getElementById('svg-modal').classList.add('visible');
+    document.getElementById('svg-paste-textarea').value = '';
+    document.getElementById('svg-paste-textarea').focus();
+
+    document.getElementById('svg-modal-close').onclick = hideSVGModal;
+    document.getElementById('svg-modal-cancel').onclick = hideSVGModal;
+    document.getElementById('svg-modal-backdrop').onclick = hideSVGModal;
+    document.getElementById('svg-modal-import').onclick = () => {
+      const code = document.getElementById('svg-paste-textarea').value.trim();
+      if (!code) return;
+      loadFromSVGCode(code);
+      hideSVGModal();
+    };
+  }
+
+  function hideSVGModal() {
+    document.getElementById('svg-modal-backdrop').classList.remove('visible');
+    document.getElementById('svg-modal').classList.remove('visible');
+  }
+
+  function loadFromSVGCode(svgString) {
+    // Strip script tags for security
+    svgString = svgString.replace(/<script[\s\S]*?<\/script>/gi, '');
+    fabric.loadSVGFromString(svgString, function (objects, options) {
+      if (!objects || !objects.length) return;
+      const group = fabric.util.groupSVGElements(objects, options);
+      const maxDim = Math.max(group.width, group.height);
+      if (maxDim > 200) { const s = 200 / maxDim; group.scaleX = s; group.scaleY = s; }
+      group.set({ left: canvas.getWidth() / 2, top: canvas.getHeight() / 2, originX: 'center', originY: 'center' });
+      canvas.add(group);
+      canvas.setActiveObject(group);
+      canvas.renderAll();
+      saveHistory();
+      renderLayersList();
     });
   }
 
@@ -880,6 +1144,35 @@ function initTextPresets() {
       e.target.value = '';
     });
 
+    // Smart guides toggle
+    const sgBtn = document.getElementById('btn-smart-guides');
+    if (sgBtn) {
+      sgBtn.classList.add('active');
+      sgBtn.addEventListener('click', () => {
+        smartGuidesEnabled = !smartGuidesEnabled;
+        sgBtn.classList.toggle('active', smartGuidesEnabled);
+        if (!smartGuidesEnabled) hideSmartGuides();
+      });
+    }
+
+    // Rulers toggle
+    const rulerBtn = document.getElementById('btn-rulers');
+    if (rulerBtn) {
+      rulerBtn.addEventListener('click', () => {
+        showRulers = !showRulers;
+        rulerBtn.classList.toggle('active', showRulers);
+        toggleRulers();
+      });
+    }
+
+    // PDF export
+    const pdfBtn = document.getElementById('btn-export-pdf');
+    if (pdfBtn) pdfBtn.addEventListener('click', exportPDF);
+
+    // SVG export
+    const svgExpBtn = document.getElementById('btn-export-svg');
+    if (svgExpBtn) svgExpBtn.addEventListener('click', exportSVG);
+
     // Initialize guides toggle as active
     document.getElementById('btn-guides').classList.add('active');
     updateOverlays();
@@ -905,11 +1198,78 @@ function initTextPresets() {
     } else {
       renderObjectProperties(obj);
     }
+    renderLayersList();
   }
 
   function onSelectionClear() {
     document.getElementById('props-empty').style.display = 'block';
     document.getElementById('props-dynamic').style.display = 'none';
+    renderCanvasBgPicker();
+    renderLayersList();
+  }
+
+  function renderCanvasBgPicker() {
+    const el = document.getElementById('props-empty');
+    if (!el) return;
+    const bgColor = canvas.backgroundColor || PALETTE.cream;
+    el.innerHTML = `
+      <div class="prop-group">
+        <div class="prop-label">Canvas Background</div>
+        <div class="canvas-bg-grid">
+          ${Object.entries(PALETTE).map(([name, hex]) =>
+            `<div class="prop-color-swatch ${bgColor === hex ? 'active' : ''}" style="background: ${hex}; ${hex === '#FFFFFF' ? 'border: 1px solid #444;' : ''}" data-bg-color="${hex}" title="${name}"></div>`
+          ).join('')}
+          <input type="color" class="prop-color-input" id="canvas-bg-custom" value="${bgColor}">
+        </div>
+      </div>
+      <div class="prop-group">
+        <div class="prop-label">Gradient Presets</div>
+        <div class="canvas-bg-grid">
+          <div class="gradient-swatch" style="background: linear-gradient(135deg, #FFF8F0, #FFFFFF);" data-bg-gradient="cream-white" title="Cream to White"></div>
+          <div class="gradient-swatch" style="background: linear-gradient(135deg, #F2956E 0%, #E8704A 50%, #E89BAE 100%);" data-bg-gradient="sunset" title="Sunset"></div>
+          <div class="gradient-swatch" style="background: linear-gradient(135deg, #E8704A, #F2956E);" data-bg-gradient="coral" title="Coral"></div>
+          <div class="gradient-swatch" style="background: linear-gradient(180deg, #FFF8F0, #F5EDE0);" data-bg-gradient="cream-deep" title="Cream Deep"></div>
+        </div>
+      </div>
+      <div style="text-align: center; color: var(--ed-text-muted); font-size: 11px; margin-top: 20px; line-height: 1.6;">
+        Select an element on the canvas<br>to edit its properties
+      </div>
+    `;
+
+    // Bind solid color swatches
+    el.querySelectorAll('[data-bg-color]').forEach(sw => {
+      sw.addEventListener('click', () => {
+        canvas.setBackgroundColor(sw.dataset.bgColor, () => canvas.renderAll());
+        saveHistory();
+        renderCanvasBgPicker();
+      });
+    });
+
+    // Bind custom color
+    const customInput = document.getElementById('canvas-bg-custom');
+    if (customInput) {
+      customInput.addEventListener('input', (e) => {
+        canvas.setBackgroundColor(e.target.value, () => canvas.renderAll());
+      });
+      customInput.addEventListener('change', () => saveHistory());
+    }
+
+    // Bind gradient presets
+    el.querySelectorAll('[data-bg-gradient]').forEach(sw => {
+      sw.addEventListener('click', () => {
+        const gradients = {
+          'cream-white': 'linear-gradient(135deg, #FFF8F0, #FFFFFF)',
+          'sunset': 'linear-gradient(135deg, #F2956E 0%, #E8704A 50%, #E89BAE 100%)',
+          'coral': 'linear-gradient(135deg, #E8704A, #F2956E)',
+          'cream-deep': 'linear-gradient(180deg, #FFF8F0, #F5EDE0)'
+        };
+        // Fabric.js doesn't support CSS gradients directly, use solid first/last color
+        const solidMap = { 'cream-white': '#FFF8F0', 'sunset': '#E8704A', 'coral': '#E8704A', 'cream-deep': '#F5EDE0' };
+        canvas.setBackgroundColor(solidMap[sw.dataset.bgGradient], () => canvas.renderAll());
+        saveHistory();
+        renderCanvasBgPicker();
+      });
+    });
   }
 
   function renderTextProperties(obj) {
@@ -1013,6 +1373,14 @@ function initTextPresets() {
       </div>
 
       <div class="prop-group">
+        <div class="prop-label">Transform</div>
+        <div class="flip-grid">
+          <button class="flip-btn" id="prop-flip-h"><svg viewBox="0 0 24 24"><path d="M12 3v18M16 7l4 5-4 5M8 7L4 12l4 5"/></svg>Flip H</button>
+          <button class="flip-btn" id="prop-flip-v"><svg viewBox="0 0 24 24"><path d="M3 12h18M7 8L12 4l5 4M7 16l5 4 5-4"/></svg>Flip V</button>
+        </div>
+      </div>
+
+      <div class="prop-group">
         <div class="prop-label">Opacity</div>
         <div class="prop-row">
           <input type="range" class="prop-slider" id="prop-opacity" min="0" max="1" step="0.05" value="${obj.opacity}">
@@ -1023,6 +1391,9 @@ function initTextPresets() {
       ${renderLayerHTML()}
 
       <div class="prop-actions">
+        <button class="prop-action-btn" id="prop-lock">${obj.locked ? 'Unlock' : 'Lock'}</button>
+        <button class="prop-action-btn" id="prop-copy-style">Copy Style</button>
+        ${copiedStyle ? '<button class="prop-action-btn" id="prop-paste-style">Paste Style</button>' : ''}
         <button class="prop-action-btn" id="prop-duplicate">Duplicate</button>
         <button class="prop-action-btn danger" id="prop-delete">Delete</button>
       </div>
@@ -1106,6 +1477,9 @@ function initTextPresets() {
     });
     angSlider.addEventListener('change', () => saveHistory());
 
+    // Bind flip
+    bindFlipButtons(obj);
+
     // Bind opacity
     const opSlider = document.getElementById('prop-opacity');
     opSlider.addEventListener('input', (e) => {
@@ -1152,11 +1526,17 @@ function initTextPresets() {
 
       <div class="prop-group">
         <div class="prop-label">Size</div>
-        <div class="pos-grid">
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 4px; align-items: center;">
           <div class="pos-field">
             <span class="pos-label">W</span>
             <input type="number" class="pos-input" id="prop-width" value="${Math.round(obj.getScaledWidth())}">
           </div>
+          <button class="lock-btn ${aspectRatioLocked ? 'active' : ''}" id="prop-aspect-lock" title="Lock aspect ratio">
+            <svg viewBox="0 0 24 24">${aspectRatioLocked
+              ? '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'
+              : '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.83-1"/>'
+            }</svg>
+          </button>
           <div class="pos-field">
             <span class="pos-label">H</span>
             <input type="number" class="pos-input" id="prop-height" value="${Math.round(obj.getScaledHeight())}">
@@ -1198,6 +1578,14 @@ function initTextPresets() {
       </div>
 
       <div class="prop-group">
+        <div class="prop-label">Transform</div>
+        <div class="flip-grid">
+          <button class="flip-btn" id="prop-flip-h"><svg viewBox="0 0 24 24"><path d="M12 3v18M16 7l4 5-4 5M8 7L4 12l4 5"/></svg>Flip H</button>
+          <button class="flip-btn" id="prop-flip-v"><svg viewBox="0 0 24 24"><path d="M3 12h18M7 8L12 4l5 4M7 16l5 4 5-4"/></svg>Flip V</button>
+        </div>
+      </div>
+
+      <div class="prop-group">
         <div class="prop-label">Opacity</div>
         <div class="prop-row">
           <input type="range" class="prop-slider" id="prop-opacity" min="0" max="1" step="0.05" value="${obj.opacity}">
@@ -1208,6 +1596,12 @@ function initTextPresets() {
       ${renderLayerHTML()}
 
       <div class="prop-actions">
+        <button class="prop-action-btn" id="prop-lock">${obj.locked ? 'Unlock' : 'Lock'}</button>
+        ${isMulti ? '<button class="prop-action-btn" id="prop-group">Group Selection</button>' : ''}
+        ${isGroup ? '<button class="prop-action-btn" id="prop-ungroup">Ungroup</button>' : ''}
+        <button class="prop-action-btn" id="prop-copy-style">Copy Style</button>
+        ${copiedStyle ? '<button class="prop-action-btn" id="prop-paste-style">Paste Style</button>' : ''}
+        ${obj.type === 'image' ? '<button class="prop-action-btn" id="prop-remove-bg">Remove Background</button>' : ''}
         <button class="prop-action-btn" id="prop-duplicate">Duplicate</button>
         <button class="prop-action-btn danger" id="prop-delete">Delete</button>
       </div>
@@ -1216,6 +1610,15 @@ function initTextPresets() {
     // Bind position & size
     bindPositionInputs(obj);
     bindSizeInputs(obj);
+
+    // Bind aspect ratio lock
+    const lockBtn = document.getElementById('prop-aspect-lock');
+    if (lockBtn) {
+      lockBtn.addEventListener('click', () => {
+        aspectRatioLocked = !aspectRatioLocked;
+        onSelectionChange();
+      });
+    }
 
     // Bind stroke colors
     const strokeColors = document.getElementById('prop-stroke-colors');
@@ -1282,9 +1685,19 @@ function initTextPresets() {
       opSlider.addEventListener('change', () => saveHistory());
     }
 
+    // Bind flip
+    bindFlipButtons(obj);
+
     bindAlignActions(obj);
     bindLayerActions(obj);
     bindCommonActions(obj);
+  }
+
+  function bindFlipButtons(obj) {
+    const fh = document.getElementById('prop-flip-h');
+    const fv = document.getElementById('prop-flip-v');
+    if (fh) fh.addEventListener('click', () => { obj.set('flipX', !obj.flipX); canvas.renderAll(); saveHistory(); });
+    if (fv) fv.addEventListener('click', () => { obj.set('flipY', !obj.flipY); canvas.renderAll(); saveHistory(); });
   }
 
   function setObjectColor(obj, prop, color) {
@@ -1429,8 +1842,7 @@ function initTextPresets() {
         if (newW > 0) {
           const ratio = obj.scaleY / obj.scaleX;
           obj.scaleX = newW / obj.width;
-          // Maintain aspect ratio
-          obj.scaleY = obj.scaleX * ratio;
+          if (aspectRatioLocked) obj.scaleY = obj.scaleX * ratio;
           if (hInput) hInput.value = Math.round(obj.getScaledHeight());
           obj.setCoords();
           canvas.renderAll();
@@ -1444,8 +1856,7 @@ function initTextPresets() {
         if (newH > 0) {
           const ratio = obj.scaleX / obj.scaleY;
           obj.scaleY = newH / obj.height;
-          // Maintain aspect ratio
-          obj.scaleX = obj.scaleY * ratio;
+          if (aspectRatioLocked) obj.scaleX = obj.scaleY * ratio;
           if (wInput) wInput.value = Math.round(obj.getScaledWidth());
           obj.setCoords();
           canvas.renderAll();
@@ -1586,14 +1997,12 @@ function initTextPresets() {
   function bindCommonActions(obj) {
     document.getElementById('prop-duplicate').addEventListener('click', () => {
       obj.clone(function (cloned) {
-        cloned.set({
-          left: obj.left + 20,
-          top: obj.top + 20
-        });
+        cloned.set({ left: obj.left + 20, top: obj.top + 20 });
         canvas.add(cloned);
         canvas.setActiveObject(cloned);
         canvas.renderAll();
         saveHistory();
+        renderLayersList();
       });
     });
 
@@ -1603,7 +2012,28 @@ function initTextPresets() {
       canvas.renderAll();
       onSelectionClear();
       saveHistory();
+      renderLayersList();
     });
+
+    // Lock
+    const lockBtn = document.getElementById('prop-lock');
+    if (lockBtn) lockBtn.addEventListener('click', () => toggleLock(obj));
+
+    // Group / Ungroup
+    const groupBtn = document.getElementById('prop-group');
+    if (groupBtn) groupBtn.addEventListener('click', groupSelection);
+    const ungroupBtn = document.getElementById('prop-ungroup');
+    if (ungroupBtn) ungroupBtn.addEventListener('click', ungroupSelection);
+
+    // Copy / Paste style
+    const csBtn = document.getElementById('prop-copy-style');
+    if (csBtn) csBtn.addEventListener('click', () => { copyStyle(); onSelectionChange(); });
+    const psBtn = document.getElementById('prop-paste-style');
+    if (psBtn) psBtn.addEventListener('click', pasteStyle);
+
+    // Remove background (image only)
+    const bgBtn = document.getElementById('prop-remove-bg');
+    if (bgBtn) bgBtn.addEventListener('click', () => removeBackgroundFromImage(obj));
   }
 
   // ----------------------------------------------------------------
@@ -1616,6 +2046,13 @@ function initTextPresets() {
     undoStack.push(json);
     if (undoStack.length > MAX_HISTORY) undoStack.shift();
     redoStack.length = 0;
+
+    // Capture history thumbnail every 5th save
+    historySnapshotCounter++;
+    if (historySnapshotCounter % 5 === 0) {
+      captureHistoryThumbnail();
+    }
+    renderLayersList();
   }
 
   function undo() {
@@ -1637,6 +2074,7 @@ function initTextPresets() {
       canvas.renderAll();
       updateOverlays();
       skipHistory = false;
+      renderLayersList();
     });
   }
 
@@ -1673,11 +2111,14 @@ function initTextPresets() {
   }
 
   function exportJSON() {
+    saveCurrentPage();
     const json = canvas.toJSON();
     json._editorMeta = {
       canvasSize: currentSize,
-      version: 1,
-      exportedAt: new Date().toISOString()
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      pages: pages.map(p => ({ id: p.id, name: p.name, size: p.size, json: p.json })),
+      currentPageIndex: currentPageIndex
     };
 
     const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
@@ -1701,12 +2142,21 @@ function initTextPresets() {
       setCanvasSize(sizeKey);
     }
 
+    // Load pages if present
+    if (json._editorMeta && json._editorMeta.pages) {
+      pages = json._editorMeta.pages;
+      currentPageIndex = json._editorMeta.currentPageIndex || 0;
+      pageIdCounter = Math.max(...pages.map(p => p.id), 0);
+      renderPageTabs();
+    }
+
     skipHistory = true;
     canvas.loadFromJSON(json, function () {
       canvas.renderAll();
       updateOverlays();
       skipHistory = false;
       saveHistory();
+      renderLayersList();
     });
   }
 
@@ -1763,7 +2213,7 @@ function initTextPresets() {
       // Select all: Cmd+A
       if (isMeta && e.key === 'a') {
         e.preventDefault();
-        const objs = canvas.getObjects().filter(o => o.selectable && !o.excludeFromExport);
+        const objs = canvas.getObjects().filter(o => o.selectable && !o.excludeFromExport && !o.locked);
         if (objs.length) {
           canvas.discardActiveObject();
           const sel = new fabric.ActiveSelection(objs, { canvas: canvas });
@@ -1771,7 +2221,762 @@ function initTextPresets() {
           canvas.renderAll();
         }
       }
+
+      // Group: Cmd+G
+      if (isMeta && !e.shiftKey && e.key === 'g') {
+        e.preventDefault();
+        groupSelection();
+      }
+
+      // Ungroup: Cmd+Shift+G
+      if (isMeta && e.shiftKey && e.key === 'g') {
+        e.preventDefault();
+        ungroupSelection();
+      }
+
+      // Lock: Cmd+L
+      if (isMeta && e.key === 'l') {
+        e.preventDefault();
+        const obj = canvas.getActiveObject();
+        if (obj) toggleLock(obj);
+      }
+
+      // Copy style: Cmd+Alt+C
+      if (isMeta && e.altKey && e.key === 'c') {
+        e.preventDefault();
+        copyStyle();
+      }
+
+      // Paste style: Cmd+Alt+V
+      if (isMeta && e.altKey && e.key === 'v') {
+        e.preventDefault();
+        pasteStyle();
+      }
+
+      // Bring forward: Cmd+]
+      if (isMeta && e.key === ']') {
+        e.preventDefault();
+        const obj = canvas.getActiveObject();
+        if (obj) { canvas.bringForward(obj); updateOverlays(); canvas.renderAll(); saveHistory(); }
+      }
+
+      // Send backward: Cmd+[
+      if (isMeta && e.key === '[') {
+        e.preventDefault();
+        const obj = canvas.getActiveObject();
+        if (obj) { canvas.sendBackwards(obj); canvas.renderAll(); saveHistory(); }
+      }
+
+      // Arrow key nudge
+      const obj = canvas.getActiveObject();
+      if (obj && !obj.isEditing && !obj.locked && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+        const step = e.shiftKey ? 10 : 1;
+        switch (e.key) {
+          case 'ArrowUp':    obj.set('top', obj.top - step); break;
+          case 'ArrowDown':  obj.set('top', obj.top + step); break;
+          case 'ArrowLeft':  obj.set('left', obj.left - step); break;
+          case 'ArrowRight': obj.set('left', obj.left + step); break;
+        }
+        obj.setCoords();
+        canvas.renderAll();
+        updatePositionFields(obj);
+        // Debounced save
+        clearTimeout(nudgeTimeout);
+        nudgeTimeout = setTimeout(() => saveHistory(), 300);
+      }
+
+      // Escape: close context menu
+      if (e.key === 'Escape') {
+        hideContextMenu();
+      }
     });
+  }
+
+  // ----------------------------------------------------------------
+  // DRAG AND DROP
+  // ----------------------------------------------------------------
+  function initDragDrop() {
+    const area = document.getElementById('canvas-area');
+    const overlay = document.getElementById('drop-zone-overlay');
+    let dragCounter = 0;
+
+    area.addEventListener('dragenter', (e) => {
+      e.preventDefault();
+      dragCounter++;
+      if (overlay) overlay.classList.add('visible');
+    });
+
+    area.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      dragCounter--;
+      if (dragCounter <= 0) {
+        dragCounter = 0;
+        if (overlay) overlay.classList.remove('visible');
+      }
+    });
+
+    area.addEventListener('dragover', (e) => e.preventDefault());
+
+    area.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dragCounter = 0;
+      if (overlay) overlay.classList.remove('visible');
+      const files = e.dataTransfer.files;
+      if (!files.length) return;
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        if (file.type === 'image/svg+xml' || file.name.endsWith('.svg')) {
+          reader.onload = (ev) => loadFromSVGCode(ev.target.result);
+          reader.readAsText(file);
+        } else if (file.type.startsWith('image/')) {
+          reader.onload = (ev) => addImageFromDataURL(ev.target.result);
+          reader.readAsDataURL(file);
+        }
+      });
+    });
+  }
+
+  // ----------------------------------------------------------------
+  // BACKGROUND REMOVAL
+  // ----------------------------------------------------------------
+  async function removeBackgroundFromImage(fabricImg) {
+    if (!fabricImg || fabricImg.type !== 'image') return;
+
+    const overlay = document.getElementById('bg-removal-overlay');
+    const textEl = document.getElementById('bg-removal-text');
+
+    if (overlay) overlay.classList.add('visible');
+    if (textEl) textEl.textContent = bgRemovalModule ? 'Processing...' : 'Downloading model (first use)...';
+
+    try {
+      if (!bgRemovalModule) {
+        bgRemovalModule = await import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm');
+      }
+      if (textEl) textEl.textContent = 'Removing background...';
+
+      // Get image as blob
+      const imgEl = fabricImg._element;
+      const tmpCanvas = document.createElement('canvas');
+      tmpCanvas.width = imgEl.naturalWidth || imgEl.width;
+      tmpCanvas.height = imgEl.naturalHeight || imgEl.height;
+      const ctx = tmpCanvas.getContext('2d');
+      ctx.drawImage(imgEl, 0, 0);
+      const blob = await new Promise(r => tmpCanvas.toBlob(r, 'image/png'));
+
+      const result = await bgRemovalModule.removeBackground(blob);
+      const url = URL.createObjectURL(result);
+
+      fabricImg.setSrc(url, () => {
+        canvas.renderAll();
+        saveHistory();
+      });
+    } catch (err) {
+      console.error('Background removal failed:', err);
+      alert('Background removal failed. Check console for details.');
+    } finally {
+      if (overlay) overlay.classList.remove('visible');
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // PAGES
+  // ----------------------------------------------------------------
+  function initPages() {
+    // Create initial page
+    pages = [{
+      id: ++pageIdCounter,
+      name: 'Page 1',
+      size: currentSize,
+      json: null
+    }];
+    currentPageIndex = 0;
+    renderPageTabs();
+  }
+
+  function saveCurrentPage() {
+    if (pages[currentPageIndex]) {
+      pages[currentPageIndex].json = JSON.stringify(canvas.toJSON());
+      pages[currentPageIndex].size = currentSize;
+    }
+  }
+
+  function createPage() {
+    saveCurrentPage();
+    const newPage = {
+      id: ++pageIdCounter,
+      name: 'Page ' + pageIdCounter,
+      size: currentSize,
+      json: null
+    };
+    pages.push(newPage);
+    currentPageIndex = pages.length - 1;
+
+    // Clear canvas for new page
+    canvas.clear();
+    canvas.backgroundColor = PALETTE.cream;
+    updateOverlays();
+    canvas.renderAll();
+    undoStack.length = 0;
+    redoStack.length = 0;
+    saveHistory();
+    renderPageTabs();
+    renderLayersList();
+  }
+
+  function switchPage(index) {
+    if (index === currentPageIndex || index < 0 || index >= pages.length) return;
+    saveCurrentPage();
+    currentPageIndex = index;
+    const page = pages[index];
+
+    if (page.size !== currentSize) {
+      currentSize = page.size;
+      document.getElementById('canvas-size').value = currentSize;
+      setCanvasSize(currentSize);
+    }
+
+    undoStack.length = 0;
+    redoStack.length = 0;
+
+    if (page.json) {
+      skipHistory = true;
+      canvas.loadFromJSON(JSON.parse(page.json), () => {
+        canvas.renderAll();
+        updateOverlays();
+        skipHistory = false;
+        saveHistory();
+        renderLayersList();
+      });
+    } else {
+      canvas.clear();
+      canvas.backgroundColor = PALETTE.cream;
+      updateOverlays();
+      canvas.renderAll();
+      saveHistory();
+      renderLayersList();
+    }
+    renderPageTabs();
+  }
+
+  function deletePage(index) {
+    if (pages.length <= 1) return;
+    pages.splice(index, 1);
+    if (currentPageIndex >= pages.length) currentPageIndex = pages.length - 1;
+    switchPage(currentPageIndex);
+  }
+
+  function duplicatePage(index) {
+    saveCurrentPage();
+    const src = pages[index];
+    const dup = {
+      id: ++pageIdCounter,
+      name: src.name + ' copy',
+      size: src.size,
+      json: src.json
+    };
+    pages.splice(index + 1, 0, dup);
+    switchPage(index + 1);
+  }
+
+  function renderPageTabs() {
+    const bar = document.getElementById('page-tabs-bar');
+    if (!bar) return;
+    bar.innerHTML = '';
+
+    pages.forEach((page, i) => {
+      const tab = document.createElement('div');
+      tab.className = 'page-tab' + (i === currentPageIndex ? ' active' : '');
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = page.name;
+      nameSpan.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        const newName = prompt('Page name:', page.name);
+        if (newName) { page.name = newName; renderPageTabs(); }
+      });
+      tab.appendChild(nameSpan);
+
+      if (pages.length > 1) {
+        const close = document.createElement('span');
+        close.className = 'page-tab-close';
+        close.innerHTML = '&times;';
+        close.addEventListener('click', (e) => { e.stopPropagation(); deletePage(i); });
+        tab.appendChild(close);
+      }
+
+      tab.addEventListener('click', () => switchPage(i));
+      bar.appendChild(tab);
+    });
+
+    const addBtn = document.createElement('div');
+    addBtn.className = 'page-tab-add';
+    addBtn.textContent = '+';
+    addBtn.addEventListener('click', createPage);
+    bar.appendChild(addBtn);
+  }
+
+  // ----------------------------------------------------------------
+  // CONTEXT MENU
+  // ----------------------------------------------------------------
+  function initContextMenu() {
+    const canvasArea = document.getElementById('canvas-area');
+    canvasArea.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      const target = canvas.findTarget(e);
+      if (target && !target.excludeFromExport) {
+        canvas.setActiveObject(target);
+        canvas.renderAll();
+      }
+      showContextMenu(e);
+    });
+
+    document.addEventListener('click', hideContextMenu);
+    document.addEventListener('scroll', hideContextMenu, true);
+  }
+
+  function showContextMenu(e) {
+    const menu = document.getElementById('context-menu');
+    if (!menu) return;
+    const obj = canvas.getActiveObject();
+    let items = '';
+
+    if (obj) {
+      items += `<div class="ctx-item" data-ctx="duplicate">Duplicate<span class="ctx-shortcut">Cmd+D</span></div>`;
+      items += `<div class="ctx-item" data-ctx="delete">Delete<span class="ctx-shortcut">Del</span></div>`;
+      items += `<div class="ctx-separator"></div>`;
+      items += `<div class="ctx-item" data-ctx="lock">${obj.locked ? 'Unlock' : 'Lock'}<span class="ctx-shortcut">Cmd+L</span></div>`;
+      items += `<div class="ctx-separator"></div>`;
+      items += `<div class="ctx-item" data-ctx="front">Bring to Front</div>`;
+      items += `<div class="ctx-item" data-ctx="forward">Bring Forward<span class="ctx-shortcut">Cmd+]</span></div>`;
+      items += `<div class="ctx-item" data-ctx="backward">Send Backward<span class="ctx-shortcut">Cmd+[</span></div>`;
+      items += `<div class="ctx-item" data-ctx="back">Send to Back</div>`;
+      items += `<div class="ctx-separator"></div>`;
+      items += `<div class="ctx-item" data-ctx="copy-style">Copy Style<span class="ctx-shortcut">Cmd+Alt+C</span></div>`;
+      if (copiedStyle) {
+        items += `<div class="ctx-item" data-ctx="paste-style">Paste Style<span class="ctx-shortcut">Cmd+Alt+V</span></div>`;
+      }
+      if (obj.type === 'activeSelection') {
+        items += `<div class="ctx-separator"></div>`;
+        items += `<div class="ctx-item" data-ctx="group">Group<span class="ctx-shortcut">Cmd+G</span></div>`;
+      }
+      if (obj.type === 'group') {
+        items += `<div class="ctx-separator"></div>`;
+        items += `<div class="ctx-item" data-ctx="ungroup">Ungroup<span class="ctx-shortcut">Cmd+Shift+G</span></div>`;
+      }
+    } else {
+      items += `<div class="ctx-item" data-ctx="select-all">Select All<span class="ctx-shortcut">Cmd+A</span></div>`;
+    }
+
+    menu.innerHTML = items;
+    menu.classList.add('visible');
+
+    // Position
+    const x = Math.min(e.clientX, window.innerWidth - 200);
+    const y = Math.min(e.clientY, window.innerHeight - menu.offsetHeight);
+    menu.style.left = x + 'px';
+    menu.style.top = y + 'px';
+
+    // Bind actions
+    menu.querySelectorAll('.ctx-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const action = item.dataset.ctx;
+        const obj = canvas.getActiveObject();
+        switch (action) {
+          case 'duplicate':
+            if (obj) obj.clone(c => { c.set({ left: obj.left + 20, top: obj.top + 20 }); canvas.add(c); canvas.setActiveObject(c); canvas.renderAll(); saveHistory(); });
+            break;
+          case 'delete':
+            if (obj) { canvas.remove(obj); canvas.discardActiveObject(); canvas.renderAll(); onSelectionClear(); saveHistory(); }
+            break;
+          case 'lock': if (obj) toggleLock(obj); break;
+          case 'front': if (obj) { canvas.bringToFront(obj); updateOverlays(); canvas.renderAll(); saveHistory(); } break;
+          case 'forward': if (obj) { canvas.bringForward(obj); updateOverlays(); canvas.renderAll(); saveHistory(); } break;
+          case 'backward': if (obj) { canvas.sendBackwards(obj); canvas.renderAll(); saveHistory(); } break;
+          case 'back': if (obj) { canvas.sendToBack(obj); canvas.renderAll(); saveHistory(); } break;
+          case 'copy-style': copyStyle(); break;
+          case 'paste-style': pasteStyle(); break;
+          case 'group': groupSelection(); break;
+          case 'ungroup': ungroupSelection(); break;
+          case 'select-all':
+            const objs = canvas.getObjects().filter(o => o.selectable && !o.excludeFromExport && !o.locked);
+            if (objs.length) { canvas.discardActiveObject(); canvas.setActiveObject(new fabric.ActiveSelection(objs, { canvas })); canvas.renderAll(); }
+            break;
+        }
+        hideContextMenu();
+      });
+    });
+  }
+
+  function hideContextMenu() {
+    const menu = document.getElementById('context-menu');
+    if (menu) menu.classList.remove('visible');
+  }
+
+  // ----------------------------------------------------------------
+  // LAYERS PANEL
+  // ----------------------------------------------------------------
+  function renderLayersList() {
+    const list = document.getElementById('layers-list');
+    if (!list) return;
+
+    const objects = canvas.getObjects().filter(o => !o.excludeFromExport && !o._isSmartGuide);
+    const activeObj = canvas.getActiveObject();
+
+    list.innerHTML = '';
+
+    // Render in reverse order (top layer first)
+    for (let i = objects.length - 1; i >= 0; i--) {
+      const obj = objects[i];
+      const isActive = activeObj === obj;
+      const item = document.createElement('div');
+      item.className = 'layer-item' + (isActive ? ' active' : '');
+
+      const icon = getLayerIcon(obj);
+      const name = getLayerLabel(obj);
+
+      item.innerHTML = `
+        <svg class="layer-item-icon" viewBox="0 0 24 24">${icon}</svg>
+        <span class="layer-item-name">${name}</span>
+        <button class="layer-item-action ${!obj.visible ? 'hidden' : ''}" data-layer-action="visibility" title="Toggle visibility">
+          <svg viewBox="0 0 24 24">${obj.visible !== false ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' : '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'}</svg>
+        </button>
+        <button class="layer-item-action ${obj.locked ? 'locked' : ''}" data-layer-action="lock" title="Toggle lock">
+          <svg viewBox="0 0 24 24">${obj.locked ? '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>' : '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.83-1"/>'}</svg>
+        </button>
+      `;
+
+      // Click to select
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('[data-layer-action]')) return;
+        if (obj.locked) return;
+        canvas.setActiveObject(obj);
+        canvas.renderAll();
+      });
+
+      // Visibility toggle
+      item.querySelector('[data-layer-action="visibility"]').addEventListener('click', () => {
+        obj.visible = obj.visible === false ? true : false;
+        canvas.renderAll();
+        renderLayersList();
+      });
+
+      // Lock toggle
+      item.querySelector('[data-layer-action="lock"]').addEventListener('click', () => {
+        toggleLock(obj);
+      });
+
+      list.appendChild(item);
+    }
+  }
+
+  function getLayerIcon(obj) {
+    switch (obj.type) {
+      case 'i-text': case 'text': case 'textbox':
+        return '<path d="M4 7V4h16v3M9 20h6M12 4v16"/>';
+      case 'rect':
+        return '<rect x="3" y="3" width="18" height="18" rx="2"/>';
+      case 'circle':
+        return '<circle cx="12" cy="12" r="9"/>';
+      case 'line':
+        return '<line x1="4" y1="20" x2="20" y2="4"/>';
+      case 'image':
+        return '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>';
+      case 'group':
+        return '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>';
+      default:
+        return '<rect x="3" y="3" width="18" height="18" rx="2"/>';
+    }
+  }
+
+  function getLayerLabel(obj) {
+    if (obj.type === 'i-text' || obj.type === 'text' || obj.type === 'textbox') {
+      return (obj.text || '').substring(0, 20) || 'Text';
+    }
+    if (obj.type === 'group') return 'Group (' + (obj._objects ? obj._objects.length : 0) + ')';
+    if (obj.type === 'image') return 'Image';
+    return obj.type.charAt(0).toUpperCase() + obj.type.slice(1);
+  }
+
+  // ----------------------------------------------------------------
+  // HISTORY PANEL
+  // ----------------------------------------------------------------
+  function captureHistoryThumbnail() {
+    try {
+      const hadGrid = showGrid;
+      const hadGuides = showGuides;
+      const savedSmartGuides = activeSmartGuides.slice();
+      removeOverlays();
+      showGrid = false;
+      showGuides = false;
+      hideSmartGuides();
+
+      const dataURL = canvas.toDataURL({ format: 'png', multiplier: 0.15, quality: 0.6 });
+
+      showGrid = hadGrid;
+      showGuides = hadGuides;
+      updateOverlays();
+
+      historyThumbnails.push({
+        dataURL,
+        time: new Date().toLocaleTimeString(),
+        stateIndex: undoStack.length - 1
+      });
+
+      if (historyThumbnails.length > 20) historyThumbnails.shift();
+      renderHistoryPanel();
+    } catch (e) {
+      // Ignore capture errors
+    }
+  }
+
+  function renderHistoryPanel() {
+    const list = document.getElementById('history-list');
+    if (!list) return;
+
+    list.innerHTML = '';
+    historyThumbnails.slice().reverse().forEach((entry, idx) => {
+      const item = document.createElement('div');
+      item.className = 'history-item' + (idx === 0 ? ' active' : '');
+      item.innerHTML = `
+        <div class="history-thumb"><img src="${entry.dataURL}" alt="Snapshot"></div>
+        <div class="history-time">${entry.time}</div>
+      `;
+      item.addEventListener('click', () => {
+        if (entry.stateIndex >= 0 && entry.stateIndex < undoStack.length) {
+          restoreState(undoStack[entry.stateIndex]);
+        }
+      });
+      list.appendChild(item);
+    });
+  }
+
+  // ----------------------------------------------------------------
+  // RULERS
+  // ----------------------------------------------------------------
+  function toggleRulers() {
+    const top = document.getElementById('ruler-top');
+    const left = document.getElementById('ruler-left');
+    const corner = document.getElementById('ruler-corner');
+
+    if (top) top.classList.toggle('visible', showRulers);
+    if (left) left.classList.toggle('visible', showRulers);
+    if (corner) corner.classList.toggle('visible', showRulers);
+
+    if (showRulers) {
+      renderRulers();
+      // Track mouse for cursor lines
+      const viewport = document.getElementById('canvas-viewport');
+      if (viewport) {
+        viewport.addEventListener('mousemove', updateRulerCursor);
+      }
+    }
+  }
+
+  function renderRulers() {
+    const topRuler = document.getElementById('ruler-top');
+    const leftRuler = document.getElementById('ruler-left');
+    if (!topRuler || !leftRuler) return;
+
+    topRuler.innerHTML = '';
+    leftRuler.innerHTML = '';
+
+    const step = DPI * 0.25 * zoomLevel;
+    const labelStep = DPI * zoomLevel;
+    const cW = canvas.getWidth() * zoomLevel;
+    const cH = canvas.getHeight() * zoomLevel;
+
+    // Get canvas position relative to viewport
+    const wrapper = document.getElementById('canvas-wrapper');
+    const viewport = document.getElementById('canvas-viewport');
+    if (!wrapper || !viewport) return;
+
+    const wrapRect = wrapper.getBoundingClientRect();
+    const viewRect = viewport.getBoundingClientRect();
+    const offsetX = wrapRect.left - viewRect.left;
+    const offsetY = wrapRect.top - viewRect.top;
+
+    // Top ruler ticks
+    for (let px = 0; px < cW; px += step) {
+      const x = offsetX + px;
+      const inch = px / (DPI * zoomLevel);
+      const isLabel = Math.abs(inch - Math.round(inch)) < 0.01;
+
+      const tick = document.createElement('div');
+      tick.className = 'ruler-tick';
+      tick.style.cssText = `left:${x}px;top:${isLabel ? 8 : 14}px;width:1px;height:${isLabel ? 12 : 6}px;`;
+      topRuler.appendChild(tick);
+
+      if (isLabel) {
+        const label = document.createElement('div');
+        label.className = 'ruler-label';
+        label.style.cssText = `left:${x + 2}px;top:1px;`;
+        label.textContent = Math.round(inch);
+        topRuler.appendChild(label);
+      }
+    }
+
+    // Left ruler ticks
+    for (let py = 0; py < cH; py += step) {
+      const y = offsetY + py;
+      const inch = py / (DPI * zoomLevel);
+      const isLabel = Math.abs(inch - Math.round(inch)) < 0.01;
+
+      const tick = document.createElement('div');
+      tick.className = 'ruler-tick';
+      tick.style.cssText = `top:${y}px;left:${isLabel ? 8 : 14}px;height:1px;width:${isLabel ? 12 : 6}px;`;
+      leftRuler.appendChild(tick);
+
+      if (isLabel) {
+        const label = document.createElement('div');
+        label.className = 'ruler-label';
+        label.style.cssText = `top:${y + 2}px;left:1px;`;
+        label.textContent = Math.round(inch);
+        leftRuler.appendChild(label);
+      }
+    }
+
+    // Add cursor lines
+    const cursorH = document.createElement('div');
+    cursorH.className = 'ruler-cursor';
+    cursorH.id = 'ruler-cursor-h';
+    cursorH.style.cssText = 'width:1px;height:100%;top:0;display:none;';
+    topRuler.appendChild(cursorH);
+
+    const cursorV = document.createElement('div');
+    cursorV.className = 'ruler-cursor';
+    cursorV.id = 'ruler-cursor-v';
+    cursorV.style.cssText = 'height:1px;width:100%;left:0;display:none;';
+    leftRuler.appendChild(cursorV);
+  }
+
+  function updateRulerCursor(e) {
+    const viewport = document.getElementById('canvas-viewport');
+    if (!viewport) return;
+    const rect = viewport.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const cursorH = document.getElementById('ruler-cursor-h');
+    const cursorV = document.getElementById('ruler-cursor-v');
+    if (cursorH) { cursorH.style.left = x + 'px'; cursorH.style.display = 'block'; }
+    if (cursorV) { cursorV.style.top = y + 'px'; cursorV.style.display = 'block'; }
+  }
+
+  // ----------------------------------------------------------------
+  // ZOOM TO SELECTION
+  // ----------------------------------------------------------------
+  function zoomToObject(obj) {
+    if (!obj) return;
+    const bound = obj.getBoundingRect(true);
+    const area = document.getElementById('canvas-viewport');
+    if (!area) return;
+
+    const areaW = area.clientWidth;
+    const areaH = area.clientHeight;
+    const padding = 1.2; // 20% padding
+
+    const scaleX = areaW / (bound.width * padding);
+    const scaleY = areaH / (bound.height * padding);
+    const targetZoom = Math.min(scaleX, scaleY, 3);
+
+    zoomLevel = targetZoom;
+    applyZoom();
+    if (showRulers) renderRulers();
+  }
+
+  // ----------------------------------------------------------------
+  // PDF EXPORT
+  // ----------------------------------------------------------------
+  function exportPDF() {
+    if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
+      alert('jsPDF not loaded');
+      return;
+    }
+    const { jsPDF } = window.jspdf;
+
+    // Save overlays state
+    const hadGrid = showGrid;
+    const hadGuides = showGuides;
+    removeOverlays();
+    showGrid = false;
+    showGuides = false;
+    hideSmartGuides();
+    canvas.discardActiveObject();
+    canvas.renderAll();
+
+    const size = CANVAS_SIZES[currentSize];
+    const bleed = 0.125; // inches
+    const totalW = size.w + bleed * 2;
+    const totalH = size.h + bleed * 2;
+    const orientation = totalW > totalH ? 'landscape' : 'portrait';
+
+    const pdf = new jsPDF({
+      orientation,
+      unit: 'in',
+      format: [totalW, totalH]
+    });
+
+    // Render canvas at 300 DPI
+    const multiplier = 300 / DPI;
+    const dataURL = canvas.toDataURL({ format: 'png', multiplier, quality: 1 });
+
+    // Place image with bleed offset
+    pdf.addImage(dataURL, 'PNG', bleed, bleed, size.w, size.h);
+
+    // Draw crop marks
+    drawCropMarks(pdf, totalW, totalH, bleed);
+
+    // Restore overlays
+    showGrid = hadGrid;
+    showGuides = hadGuides;
+    updateOverlays();
+
+    pdf.save('stationery-' + currentSize + '.pdf');
+  }
+
+  function drawCropMarks(pdf, totalW, totalH, bleed) {
+    const markLen = 0.25;
+    pdf.setDrawColor(0);
+    pdf.setLineWidth(0.005);
+
+    // Top-left
+    pdf.line(0, bleed, markLen, bleed);
+    pdf.line(bleed, 0, bleed, markLen);
+    // Top-right
+    pdf.line(totalW - markLen, bleed, totalW, bleed);
+    pdf.line(totalW - bleed, 0, totalW - bleed, markLen);
+    // Bottom-left
+    pdf.line(0, totalH - bleed, markLen, totalH - bleed);
+    pdf.line(bleed, totalH - markLen, bleed, totalH);
+    // Bottom-right
+    pdf.line(totalW - markLen, totalH - bleed, totalW, totalH - bleed);
+    pdf.line(totalW - bleed, totalH - markLen, totalW - bleed, totalH);
+  }
+
+  // ----------------------------------------------------------------
+  // SVG EXPORT
+  // ----------------------------------------------------------------
+  function exportSVG() {
+    const hadGrid = showGrid;
+    const hadGuides = showGuides;
+    removeOverlays();
+    showGrid = false;
+    showGuides = false;
+    hideSmartGuides();
+    canvas.discardActiveObject();
+    canvas.renderAll();
+
+    const svgString = canvas.toSVG();
+
+    showGrid = hadGrid;
+    showGuides = hadGuides;
+    updateOverlays();
+
+    const blob = new Blob([svgString], { type: 'image/svg+xml' });
+    const link = document.createElement('a');
+    link.download = 'stationery-' + currentSize + '.svg';
+    link.href = URL.createObjectURL(blob);
+    link.click();
   }
 
   // ----------------------------------------------------------------

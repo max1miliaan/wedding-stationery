@@ -401,9 +401,17 @@
     .canvas-area {
       flex: 1;
       display: flex;
+      flex-direction: column;
+      background: #131315;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .canvas-viewport {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #131315;
       overflow: hidden;
       position: relative;
     }
@@ -879,10 +887,563 @@
       fill: none;
       stroke-width: 2;
     }
+
+    /* Flip buttons */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .flip-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 5px 6px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--ed-text-dim);
+      font-size: 10px;
+      transition: all 0.15s;
+    }
+
+    .flip-btn:hover {
+      color: var(--ed-text);
+      border-color: var(--ed-accent);
+      background: var(--ed-accent-dim);
+    }
+
+    .flip-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ================================================================ */
+    /* PAGE TABS                                                         */
+    /* ================================================================ */
+    .page-tabs-bar {
+      height: 36px;
+      background: var(--ed-surface);
+      border-top: 1px solid var(--ed-border);
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      gap: 2px;
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .page-tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      color: var(--ed-text-dim);
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .page-tab:hover { color: var(--ed-text); border-color: var(--ed-border-hover); }
+
+    .page-tab.active {
+      background: var(--ed-accent-dim);
+      color: var(--ed-accent);
+      border-color: rgba(232,112,74,0.25);
+    }
+
+    .page-tab-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      font-size: 12px;
+      line-height: 1;
+      color: var(--ed-text-muted);
+      cursor: pointer;
+    }
+
+    .page-tab-close:hover { color: #e85454; background: rgba(232,84,84,0.15); }
+
+    .page-tab-add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--ed-surface-2);
+      border: 1px dashed var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--ed-text-muted);
+      font-size: 16px;
+      transition: all 0.15s;
+    }
+
+    .page-tab-add:hover { color: var(--ed-accent); border-color: var(--ed-accent); }
+
+    /* ================================================================ */
+    /* RULERS                                                            */
+    /* ================================================================ */
+    .ruler-top {
+      height: 20px;
+      background: var(--ed-surface);
+      border-bottom: 1px solid var(--ed-border);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: none;
+    }
+
+    .ruler-left {
+      width: 20px;
+      background: var(--ed-surface);
+      border-right: 1px solid var(--ed-border);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      display: none;
+      z-index: 10;
+    }
+
+    .ruler-top.visible, .ruler-left.visible { display: block; }
+
+    .ruler-corner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: var(--ed-surface);
+      border-right: 1px solid var(--ed-border);
+      border-bottom: 1px solid var(--ed-border);
+      z-index: 11;
+      display: none;
+    }
+
+    .ruler-corner.visible { display: block; }
+
+    .ruler-tick {
+      position: absolute;
+      background: var(--ed-text-muted);
+    }
+
+    .ruler-label {
+      position: absolute;
+      font-size: 8px;
+      color: var(--ed-text-muted);
+    }
+
+    .ruler-cursor {
+      position: absolute;
+      background: var(--ed-accent);
+      z-index: 5;
+    }
+
+    /* ================================================================ */
+    /* CONTEXT MENU                                                      */
+    /* ================================================================ */
+    .context-menu {
+      position: fixed;
+      background: var(--ed-surface);
+      border: 1px solid var(--ed-border-hover);
+      border-radius: var(--ed-radius);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      min-width: 180px;
+      padding: 4px 0;
+      z-index: 1000;
+      display: none;
+    }
+
+    .context-menu.visible { display: block; }
+
+    .ctx-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: var(--ed-text-dim);
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .ctx-item:hover {
+      background: var(--ed-accent-dim);
+      color: var(--ed-text);
+    }
+
+    .ctx-item .ctx-shortcut {
+      margin-left: auto;
+      font-size: 10px;
+      color: var(--ed-text-muted);
+    }
+
+    .ctx-separator {
+      height: 1px;
+      background: var(--ed-border);
+      margin: 4px 0;
+    }
+
+    /* ================================================================ */
+    /* DROP ZONE                                                         */
+    /* ================================================================ */
+    .drop-zone-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(232,112,74,0.08);
+      border: 3px dashed var(--ed-accent);
+      border-radius: 8px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .drop-zone-overlay.visible {
+      display: flex;
+    }
+
+    .drop-zone-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ed-accent);
+      background: var(--ed-surface);
+      padding: 12px 24px;
+      border-radius: var(--ed-radius);
+    }
+
+    /* ================================================================ */
+    /* SVG PASTE MODAL                                                   */
+    /* ================================================================ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 900;
+      display: none;
+    }
+
+    .modal-backdrop.visible { display: block; }
+
+    .modal-dialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--ed-surface);
+      border: 1px solid var(--ed-border-hover);
+      border-radius: 8px;
+      width: 480px;
+      max-height: 80vh;
+      z-index: 901;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+
+    .modal-dialog.visible { display: flex; }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--ed-border);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--ed-text-dim);
+      cursor: pointer;
+      font-size: 18px;
+      padding: 4px;
+    }
+
+    .modal-close:hover { color: var(--ed-text); }
+
+    .modal-body {
+      padding: 16px;
+    }
+
+    .modal-body textarea {
+      width: 100%;
+      height: 220px;
+      background: var(--ed-bg);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      color: var(--ed-text);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      padding: 10px;
+      resize: vertical;
+      outline: none;
+    }
+
+    .modal-body textarea:focus { border-color: var(--ed-accent); }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--ed-border);
+    }
+
+    .modal-btn {
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid var(--ed-border);
+      background: var(--ed-surface-2);
+      color: var(--ed-text-dim);
+      transition: all 0.15s;
+    }
+
+    .modal-btn:hover { color: var(--ed-text); }
+
+    .modal-btn.primary {
+      background: var(--ed-accent);
+      border-color: var(--ed-accent);
+      color: #fff;
+    }
+
+    .modal-btn.primary:hover { background: var(--ed-accent-hover); }
+
+    /* ================================================================ */
+    /* BG REMOVAL OVERLAY                                                */
+    /* ================================================================ */
+    .bg-removal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 950;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bg-removal-overlay.visible { display: flex; }
+
+    .bg-removal-box {
+      background: var(--ed-surface);
+      border: 1px solid var(--ed-border-hover);
+      border-radius: 8px;
+      padding: 32px 40px;
+      text-align: center;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+
+    .bg-removal-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--ed-surface-3);
+      border-top-color: var(--ed-accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .bg-removal-text {
+      font-size: 14px;
+      color: var(--ed-text);
+    }
+
+    /* ================================================================ */
+    /* LAYERS PANEL                                                      */
+    /* ================================================================ */
+    .layers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-size: 11px;
+    }
+
+    .layer-item:hover { border-color: var(--ed-border-hover); }
+
+    .layer-item.active {
+      background: var(--ed-accent-dim);
+      border-color: rgba(232,112,74,0.25);
+      color: var(--ed-accent);
+    }
+
+    .layer-item-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .layer-item-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--ed-text-dim);
+    }
+
+    .layer-item.active .layer-item-name { color: var(--ed-accent); }
+
+    .layer-item-action {
+      background: none;
+      border: none;
+      color: var(--ed-text-muted);
+      cursor: pointer;
+      padding: 2px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      transition: color 0.15s;
+    }
+
+    .layer-item-action:hover { color: var(--ed-text); }
+    .layer-item-action.locked { color: var(--ed-accent); }
+    .layer-item-action.hidden { color: #e85454; }
+
+    .layer-item-action svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ================================================================ */
+    /* HISTORY PANEL                                                     */
+    /* ================================================================ */
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .history-item {
+      display: flex;
+      gap: 8px;
+      padding: 6px;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .history-item:hover { border-color: var(--ed-accent); }
+    .history-item.active { border-color: var(--ed-accent); background: var(--ed-accent-dim); }
+
+    .history-thumb {
+      width: 48px;
+      height: 60px;
+      background: #fff;
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .history-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .history-time {
+      font-size: 10px;
+      color: var(--ed-text-muted);
+      align-self: center;
+    }
+
+    /* URL import inline form */
+    .url-import-form {
+      display: none;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .url-import-form.visible { display: flex; }
+
+    .url-import-form input {
+      flex: 1;
+      background: var(--ed-surface-2);
+      border: 1px solid var(--ed-border);
+      border-radius: 4px;
+      color: var(--ed-text);
+      font-size: 11px;
+      padding: 5px 8px;
+      outline: none;
+    }
+
+    .url-import-form input:focus { border-color: var(--ed-accent); }
+
+    .url-import-form button {
+      padding: 5px 10px;
+      background: var(--ed-accent);
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    /* Canvas background swatches */
+    .canvas-bg-grid {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .gradient-swatch {
+      width: 40px;
+      height: 24px;
+      border-radius: 4px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .gradient-swatch:hover, .gradient-swatch.active { border-color: var(--ed-accent); }
   </style>
 
   <!-- Fabric.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <!-- jsPDF for PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 </head>
 <body>
 
@@ -930,6 +1491,14 @@
         <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="1" stroke-dasharray="4 2"/><rect x="5" y="5" width="14" height="14" rx="1"/></svg>
         Guides
       </button>
+      <button class="toolbar-btn" id="btn-smart-guides" title="Toggle smart alignment guides">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22" stroke-dasharray="3 2"/><line x1="2" y1="12" x2="22" y2="12" stroke-dasharray="3 2"/><rect x="7" y="7" width="4" height="4"/><rect x="15" y="15" width="4" height="4"/></svg>
+        Snap
+      </button>
+      <button class="toolbar-btn" id="btn-rulers" title="Toggle ruler bars">
+        <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z"/><line x1="7" y1="5" x2="7" y2="9"/><line x1="11" y1="5" x2="11" y2="7"/><line x1="15" y1="5" x2="15" y2="9"/><line x1="19" y1="5" x2="19" y2="7"/></svg>
+        Rulers
+      </button>
     </div>
 
     <div class="toolbar-spacer"></div>
@@ -951,6 +1520,14 @@
       <button class="toolbar-btn" id="btn-export-png" title="Export as PNG">
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         PNG
+      </button>
+      <button class="toolbar-btn" id="btn-export-pdf" title="Export as PDF with bleed marks">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        PDF
+      </button>
+      <button class="toolbar-btn" id="btn-export-svg" title="Export as SVG">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        SVG
       </button>
       <button class="toolbar-btn" id="btn-export-json" title="Save design as JSON">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -976,6 +1553,8 @@
         <div class="sidebar-tab" data-tab="shapes">Shapes</div>
         <div class="sidebar-tab" data-tab="presets">Presets</div>
         <div class="sidebar-tab" data-tab="resources">Links</div>
+        <div class="sidebar-tab" data-tab="layers">Layers</div>
+        <div class="sidebar-tab" data-tab="history">History</div>
       </div>
       <div class="sidebar-content">
 
@@ -1040,6 +1619,21 @@
               Upload Image
             </button>
             <input type="file" id="img-upload" accept="image/*" style="display: none;">
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Import from Web</div>
+            <button class="shape-btn" id="btn-import-url">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Import from URL
+            </button>
+            <div class="url-import-form" id="url-import-form">
+              <input type="text" id="url-import-input" placeholder="Paste image or SVG URL...">
+              <button id="url-import-load">Load</button>
+            </div>
+            <button class="shape-btn" id="btn-paste-svg">
+              <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+              Paste SVG Code
+            </button>
           </div>
         </div>
 
@@ -1181,13 +1775,38 @@
           </div>
         </div>
 
+        <!-- Layers panel -->
+        <div class="sidebar-panel" id="panel-layers">
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Layers</div>
+            <div class="layers-list" id="layers-list"></div>
+          </div>
+        </div>
+
+        <!-- History panel -->
+        <div class="sidebar-panel" id="panel-history">
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Design History</div>
+            <div class="history-list" id="history-list"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!-- CANVAS AREA -->
     <div class="canvas-area" id="canvas-area">
-      <div class="canvas-wrapper" id="canvas-wrapper">
-        <canvas id="editor-canvas"></canvas>
+      <div class="ruler-top" id="ruler-top"></div>
+      <div class="canvas-viewport" id="canvas-viewport">
+        <div class="ruler-left" id="ruler-left"></div>
+        <div class="ruler-corner" id="ruler-corner"></div>
+        <div class="canvas-wrapper" id="canvas-wrapper">
+          <canvas id="editor-canvas"></canvas>
+        </div>
+      </div>
+      <div class="page-tabs-bar" id="page-tabs-bar"></div>
+      <div class="drop-zone-overlay" id="drop-zone-overlay">
+        <div class="drop-zone-label">Drop image or SVG here</div>
       </div>
     </div>
 
@@ -1195,17 +1814,41 @@
     <div class="props-panel">
       <div class="props-header">Properties</div>
       <div class="props-content" id="props-content">
-        <div class="props-empty" id="props-empty">
-          Select an element on the canvas to edit its properties.<br><br>
-          Or add elements from the left sidebar.
-        </div>
+        <div id="props-empty" style="display: block;"></div>
         <div id="props-dynamic" style="display: none;"></div>
       </div>
     </div>
 
   </div>
 
-  <!-- Hidden file input for JSON load -->
+  <!-- CONTEXT MENU -->
+  <div class="context-menu" id="context-menu"></div>
+
+  <!-- SVG PASTE MODAL -->
+  <div class="modal-backdrop" id="svg-modal-backdrop"></div>
+  <div class="modal-dialog" id="svg-modal">
+    <div class="modal-header">
+      <span>Paste SVG Code</span>
+      <button class="modal-close" id="svg-modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <textarea id="svg-paste-textarea" placeholder="Paste your SVG code here..."></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-btn" id="svg-modal-cancel">Cancel</button>
+      <button class="modal-btn primary" id="svg-modal-import">Import SVG</button>
+    </div>
+  </div>
+
+  <!-- BG REMOVAL OVERLAY -->
+  <div class="bg-removal-overlay" id="bg-removal-overlay">
+    <div class="bg-removal-box">
+      <div class="bg-removal-spinner"></div>
+      <div class="bg-removal-text" id="bg-removal-text">Processing...</div>
+    </div>
+  </div>
+
+  <!-- Hidden file inputs -->
   <input type="file" id="json-upload" accept=".json" style="display: none;">
 
   <script src="../js/editor.js"></script>

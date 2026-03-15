@@ -62,12 +62,19 @@ HTML/CSS/SVG wedding stationery suite designed for print export.
 - Moose (English bulldog): wide curved head (width > height), forehead wrinkles, rose ears, underbite jaw, drooping jowls, stocky body, splayed paws with toe lines
 
 ## Visual Editor (preview/editor.html)
-- Built with Fabric.js 5.3.1 (CDN)
-- Three-panel layout: left sidebar (illustration/text/shapes/presets), center canvas, right properties
+- Built with Fabric.js 5.3.1 (CDN), jsPDF 2.5.2 (CDN)
+- Three-panel layout: left sidebar (7 tabs), center canvas, right properties
 - Supports all 250 SVG illustrations organized by category
-- Per-element text control: font family (40 Google + 12 Fontshare), size, weight, color, alignment, spacing
+- Per-element text control: font family (91 fonts), size, weight, color, alignment, spacing
 - 7 preset templates: invitation, save-the-date, rsvp, details, menu, program, name-tag
-- Export: PNG (2x resolution), JSON (localStorage + download)
+- Smart guides (magenta snap lines), grid overlay, safe zone guides, ruler bars
+- Lock, group/ungroup, flip H/V, copy/paste style
+- Drag-and-drop image/SVG import, URL import, SVG code paste
+- Background removal via @imgly/background-removal (dynamic import, WebAssembly)
+- Multi-page support with page tabs, add/delete/rename/duplicate
+- Export: PNG (2x), PDF (300 DPI with crop marks), SVG, JSON (localStorage + download)
+- Right-click context menu, layers panel, design history panel
+- Zoom to selection (double-click), arrow key nudge (1px / 10px with Shift)
 - Undo/redo via state snapshots (max 40 states)
 - No stationery piece HTML depends on editor.js -- editor is a standalone design tool
 

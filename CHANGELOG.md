@@ -1,5 +1,52 @@
 # Changelog
 
+## [2026-03-15] (Session 8)
+
+### What changed
+- Implemented 21 new features in the visual editor (`js/editor.js` expanded from 1782 to 2987 lines)
+- **Batch 1 -- Core Interaction:**
+  - Smart guides: magenta snap lines when objects align with other objects' edges/centers
+  - Lock elements: prevent accidental moves, toggle via properties panel or Cmd+L
+  - Group/Ungroup: combine multiple objects, keyboard shortcuts Cmd+G / Cmd+Shift+G
+  - Arrow key nudge: 1px normal, 10px with Shift, debounced history save
+  - Aspect ratio lock toggle: button between W/H inputs in size section
+- **Batch 2 -- Design Tools:**
+  - Canvas background picker: solid color swatches + gradient presets when nothing selected
+  - Flip H/V: horizontal and vertical flip buttons for all object types
+  - Copy/Paste style: extract and apply font/color/opacity properties (Cmd+Alt+C/V)
+- **Batch 3 -- Image Import + BG Removal:**
+  - Drag-and-drop from desktop: drop images or SVGs onto canvas area
+  - URL import: inline form in Shapes panel to load images/SVGs from URL
+  - SVG code paste: modal with textarea for pasting raw SVG markup
+  - Background removal: @imgly/background-removal 1.7.0 via dynamic import (WebAssembly, 84MB model)
+- **Batch 4 -- Multi-Page + Export:**
+  - Multiple pages: page tabs bar at bottom, add/delete/rename/duplicate pages, state serialization
+  - PDF export with bleed marks: jsPDF 2.5.2, 300 DPI, crop marks at 0.125in
+  - SVG export: Fabric.js native toSVG() with overlay cleanup
+- **Batch 5 -- UI Polish:**
+  - Design history panel: canvas thumbnails every 5th save, click to restore
+  - Right-click context menu: actions based on selection (duplicate, lock, layer order, group, style)
+  - Layers panel: list all objects with type icon, name, visibility and lock toggles
+  - Zoom to selection: double-click object to zoom-fit, double-click empty to reset
+  - Ruler bars: top and left rulers with 0.25in ticks, 1in labels, cursor tracking
+- Updated editor.html with all new UI elements (sidebar tabs, page tabs, rulers, modals, overlays)
+- Added jsPDF 2.5.2 CDN script tag
+
+### Why
+- Bringing the editor to Canva/Figma level with professional interaction, multi-page workflow, and export options
+- Background removal enables quick photo cleanup without leaving the editor
+- Multi-page support allows designing full stationery suites in one session
+
+### Decisions
+- @imgly/background-removal loaded via dynamic import (not bundled) to avoid 84MB upfront download
+- PDF crop marks drawn at 0.125in bleed offset matching the print spec
+- Smart guides use magenta (#FF00FF) to distinguish from existing blue safe zone guides
+- Pages use JSON serialization for state -- undo/redo is per-page-view (resets on page switch)
+- Aspect ratio locked by default for images/SVGs, uses simple ratio preservation
+- Layers panel renders in reverse z-order (top layer first, matching Figma convention)
+- Context menu is canvas-aware: shows object actions when selection exists, canvas actions when empty
+- History thumbnails captured at 15% resolution for minimal memory footprint
+
 ## [2026-03-15] (Session 7)
 
 ### What changed
