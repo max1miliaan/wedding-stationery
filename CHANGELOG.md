@@ -1,5 +1,39 @@
 # Changelog
 
+## [2026-03-15] (Session 7)
+
+### What changed
+- Built visual stationery editor (`preview/editor.html` + `js/editor.js`) using Fabric.js 5.3.1
+  - Three-panel layout: illustration browser, canvas workspace, properties panel
+  - Per-element text control: 52 font families (40 Google + 12 Fontshare), size, weight, color, alignment, letter-spacing, line-height
+  - Drag-and-drop SVG illustrations from all 250 in the library, organized by category
+  - Shape tools: rectangle, circle, line, horizontal rule
+  - Image upload support
+  - 7 preset templates: invitation, save-the-date, RSVP, details, menu, program, name-tag
+  - Grid overlay (0.25in step) and guides (trim line, safe zone, center lines)
+  - Undo/redo (40-state snapshot history), keyboard shortcuts (Cmd+Z, Delete, Cmd+D, Cmd+A)
+  - Export: PNG at 2x resolution, JSON save/load with localStorage persistence
+  - Snap-to-center for precise element placement
+- Rewrote 30 SVG illustrations with organic bezier curve paths (replacing basic-shape-only versions)
+  - 10 moose: sitting, bowtie, flower-crown, sunglasses, walking, peeking, howling, wreath, banner, belly-up, crown, hero-cape
+  - 8 couple: dancing, holding-hands-back, with-dog, champagne-pop, hands-monogram, slow-dance, sunset-walk, frame-pose
+  - 12 decor: champagne-glasses, cocktail-glass, wedding-cake, heart-large, ribbon-bow, dove, feather, mason-jar, laurel-wreath, flower-simple, envelope, monogram-frame
+- Relaxed SVG constraint: `<path>` with cubic bezier (C commands) now allowed and encouraged for organic shapes
+- Updated CLAUDE.md with editor architecture section, SVG illustration rules, visual editor docs
+- Fixed "French bulldog" to "English bulldog" in docs/design-system.md
+
+### Why
+- Basic-shape-only SVGs (rect, circle, polygon) looked too geometric and stick-figure-like for wedding stationery
+- A visual editor enables Canva/Figma-style layout design with drag-and-drop and per-element font control
+- The 30 priority illustrations (moose, couple, decor) had the most visual impact from the bezier upgrade
+
+### Decisions
+- Fabric.js 5.3.1 chosen over Polotno SDK (commercial) and raw Canvas API (no SVG import)
+- Editor is a standalone tool (`preview/editor.html`) -- no stationery piece HTML depends on it
+- SVG rewrites use cubic bezier C commands with slightly irregular control points for organic/sketchy feel
+- Moose SVGs reference proven inline bulldogs from `pieces/save-the-date.html` and `pieces/invitation.html`
+- Kept existing `preview/studio.html` as simpler preset-based preview alongside the full editor
+
 ## [2026-03-14] (Session 6)
 
 ### What changed

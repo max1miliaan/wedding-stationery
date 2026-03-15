@@ -1,36 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Head -->
-  <rect x="15" y="8" width="70" height="45" rx="18" ry="14" />
+  <!-- Head: wide curved bulldog -->
+  <path d="M 20 36 C 18 22, 28 10, 40 8 C 45 7, 55 7, 60 8 C 72 10, 82 22, 80 36 C 80 44, 75 50, 68 53 C 60 56, 40 56, 32 53 C 25 50, 20 44, 20 36" />
+  <!-- Forehead wrinkles -->
+  <path d="M 32 18 C 38 15, 44 15, 48 18" />
+  <path d="M 52 18 C 58 15, 64 15, 68 18" />
   <!-- Rose ears -->
-  <polyline points="22,14 14,2 30,10" />
-  <polyline points="78,14 86,2 70,10" />
+  <path d="M 24 20 C 20 12, 14 10, 12 16 C 11 20, 14 24, 20 24" />
+  <path d="M 76 20 C 80 12, 86 10, 88 16 C 89 20, 86 24, 80 24" />
   <!-- Eyes (determined, heroic) -->
-  <circle cx="35" cy="30" r="3.5" fill="currentColor" />
-  <circle cx="65" cy="30" r="3.5" fill="currentColor" />
-  <!-- Wide flat nose -->
-  <rect x="38" y="38" width="24" height="10" rx="5" ry="4" />
-  <!-- Underbite jaw (proud) -->
-  <polyline points="32,52 40,56 50,58 60,56 68,52" />
-  <!-- Jowl lines -->
-  <line x1="18" y1="38" x2="16" y2="50" />
-  <line x1="82" y1="38" x2="84" y2="50" />
+  <circle cx="36" cy="30" r="3.5" fill="currentColor" />
+  <circle cx="64" cy="30" r="3.5" fill="currentColor" />
+  <circle cx="35" cy="29" r="1.2" fill="white" stroke="none" />
+  <circle cx="63" cy="29" r="1.2" fill="white" stroke="none" />
+  <!-- Nose -->
+  <path d="M 40 40 C 40 36, 44 34, 50 34 C 56 34, 60 36, 60 40 C 60 44, 56 46, 50 46 C 44 46, 40 44, 40 40" />
+  <ellipse cx="46" cy="40" rx="2.5" ry="2" />
+  <ellipse cx="54" cy="40" rx="2.5" ry="2" />
+  <!-- Underbite (proud set jaw) -->
+  <path d="M 36 48 C 40 46, 46 45, 50 46 C 54 45, 60 46, 64 48" />
+  <path d="M 44 48 L 44 46" />
+  <path d="M 56 48 L 56 46" />
+  <!-- Jowls -->
+  <path d="M 28 42 C 24 46, 24 52, 30 54" />
+  <path d="M 72 42 C 76 46, 76 52, 70 54" />
   <!-- Cape collar at neck -->
-  <polyline points="18,56 30,60 50,62 70,60 82,56" />
-  <!-- Cape flowing behind (right side drape) -->
-  <polyline points="82,56 88,70 92,90 86,110 78,120" />
-  <!-- Cape flowing behind (left side drape) -->
-  <polyline points="18,56 12,70 8,90 14,110 22,120" />
-  <!-- Cape bottom edge -->
-  <polyline points="22,120 36,116 50,118 64,116 78,120" />
+  <path d="M 16 54 C 24 56, 36 58, 50 58 C 64 58, 76 56, 84 54" />
+  <!-- Cape flowing behind (dramatic curves) -->
+  <path d="M 84 54 C 90 66, 94 82, 90 100 C 88 108, 82 116, 76 122" />
+  <path d="M 16 54 C 10 66, 6 82, 10 100 C 12 108, 18 116, 24 122" />
+  <!-- Cape bottom edge (wavy) -->
+  <path d="M 24 122 C 32 118, 40 120, 50 118 C 60 120, 68 118, 76 122" />
+  <!-- Cape inner fold lines -->
+  <path d="M 80 64 C 82 78, 82 92, 78 106" stroke-width="1.5" />
+  <path d="M 20 64 C 18 78, 18 92, 22 106" stroke-width="1.5" />
   <!-- Body (standing proud, chest out) -->
-  <rect x="22" y="58" width="56" height="36" rx="10" ry="8" />
+  <path d="M 28 60 C 22 66, 20 76, 20 84 C 20 90, 22 94, 26 96" />
+  <path d="M 72 60 C 78 66, 80 76, 80 84 C 80 90, 78 94, 74 96" />
   <!-- Front legs (standing tall) -->
-  <rect x="26" y="86" width="14" height="26" rx="5" />
-  <rect x="60" y="86" width="14" height="26" rx="5" />
-  <!-- Paw lines -->
-  <line x1="31" y1="108" x2="31" y2="104" />
-  <line x1="36" y1="108" x2="36" y2="104" />
-  <line x1="65" y1="108" x2="65" y2="104" />
-  <line x1="70" y1="108" x2="70" y2="104" />
+  <path d="M 30 82 C 29 88, 28 96, 28 106" />
+  <path d="M 40 84 C 39 90, 38 98, 37 106" />
+  <path d="M 60 84 C 61 90, 62 98, 63 106" />
+  <path d="M 70 82 C 71 88, 72 96, 72 106" />
+  <!-- Paws -->
+  <path d="M 24 106 C 26 110, 30 111, 33 110 C 36 111, 40 110, 42 106" />
+  <path d="M 58 106 C 60 110, 64 111, 67 110 C 70 111, 74 110, 76 106" />
+  <path d="M 30 109 L 30 107" />
+  <path d="M 34 110 L 34 108" />
+  <path d="M 64 109 L 64 107" />
+  <path d="M 68 110 L 68 108" />
+  <!-- Belly -->
+  <path d="M 26 96 C 40 104, 60 104, 74 96" />
 </svg>

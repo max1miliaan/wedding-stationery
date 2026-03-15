@@ -218,4 +218,4 @@ These are the tested and approved pairings. Do not introduce new combinations wi
 2. **Consistency across pieces.** Every piece in the suite should be immediately recognizable as part of the same set through shared colors, typography, and illustration style.
 3. **Print-first design.** All sizing, spacing, and color decisions are made for physical print. Screen preview is a development convenience, not the final medium.
 4. **Breathing room.** Generous whitespace (creamspace) is a feature. Do not crowd text or illustrations to fill space.
-5. **The Moose thread.** The French bulldog "Moose" appears on every major piece in a different pose, creating a playful thread that ties the suite together.
+5. **The Moose thread.** The English bulldog "Moose" appears on every major piece in a different pose, creating a playful thread that ties the suite together.

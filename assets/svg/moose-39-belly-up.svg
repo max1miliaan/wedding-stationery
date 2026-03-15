@@ -1,27 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Body (on back, belly up, horizontal) -->
-  <ellipse cx="65" cy="42" rx="42" ry="22" />
+  <!-- Body (on back, belly up) -->
+  <path d="M 24 42 C 24 26, 40 18, 70 18 C 100 18, 116 26, 116 42 C 116 58, 100 66, 70 66 C 40 66, 24 58, 24 42" />
   <!-- Belly line -->
-  <line x1="40" y1="42" x2="90" y2="42" />
-  <!-- Head (upside down, to the right) -->
-  <rect x="88" y="24" width="38" height="28" rx="12" ry="10" />
-  <!-- Ears flopped -->
-  <polyline points="94,50 90,58 98,52" />
-  <polyline points="120,50 124,58 116,52" />
-  <!-- Eyes (happy, upside down) -->
-  <circle cx="100" cy="36" r="2.5" fill="currentColor" />
-  <circle cx="118" cy="36" r="2.5" fill="currentColor" />
+  <path d="M 38 42 C 52 40, 82 40, 96 42" />
+  <!-- Head (tilted back, to the right) -->
+  <path d="M 100 32 C 108 28, 120 26, 128 30 C 134 34, 134 42, 130 48 C 126 52, 116 54, 110 52 C 104 50, 100 44, 100 38" />
+  <!-- Rose ears flopped -->
+  <path d="M 108 52 C 104 56, 100 60, 102 62 C 104 63, 108 58, 110 54" />
+  <path d="M 126 50 C 130 54, 134 58, 132 60 C 130 61, 126 56, 124 52" />
+  <!-- Eyes (happy, upside-down perspective) -->
+  <circle cx="112" cy="36" r="2.5" fill="currentColor" />
+  <circle cx="124" cy="36" r="2.5" fill="currentColor" />
+  <circle cx="111" cy="35" r="0.8" fill="white" stroke="none" />
+  <circle cx="123" cy="35" r="0.8" fill="white" stroke="none" />
   <!-- Nose -->
-  <rect x="103" y="40" width="14" height="7" rx="4" ry="3" />
+  <path d="M 114 42 C 114 40, 118 38, 122 40 C 124 41, 124 44, 120 44 C 116 44, 114 43, 114 42" />
   <!-- Tongue lolling -->
-  <ellipse cx="110" cy="50" rx="4" ry="3" />
+  <path d="M 118 46 C 120 48, 122 50, 120 52 C 118 53, 116 50, 118 46" />
   <!-- Front paws in air -->
-  <rect x="82" y="10" width="10" height="16" rx="4" />
-  <rect x="96" y="8" width="10" height="16" rx="4" />
+  <path d="M 90 14 C 90 8, 94 4, 98 6 C 100 8, 100 14, 96 18" />
+  <path d="M 80 12 C 80 6, 84 2, 88 4 C 90 6, 90 12, 86 16" />
+  <!-- Paw pads -->
+  <path d="M 94 6 C 96 4, 98 6, 96 8" />
+  <path d="M 84 4 C 86 2, 88 4, 86 6" />
   <!-- Back paws in air -->
-  <rect x="30" y="12" width="10" height="16" rx="4" />
-  <rect x="44" y="10" width="10" height="16" rx="4" />
-  <!-- Tail on ground -->
-  <polyline points="24,38 16,34 22,40" />
+  <path d="M 42 14 C 42 8, 46 4, 50 6 C 52 8, 52 14, 48 18" />
+  <path d="M 32 16 C 32 10, 36 6, 40 8 C 42 10, 42 16, 38 20" />
+  <!-- Curly tail on ground -->
+  <path d="M 24 40 C 18 36, 14 30, 16 26 C 17 24, 20 24, 20 26" />
 </svg>

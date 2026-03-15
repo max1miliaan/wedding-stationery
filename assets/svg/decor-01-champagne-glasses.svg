@@ -1,19 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Left glass bowl -->
-  <polygon points="20,20 50,20 35,55" />
-  <!-- Left glass stem -->
-  <line x1="35" y1="55" x2="35" y2="100" />
-  <!-- Left glass base -->
-  <ellipse cx="35" cy="102" rx="15" ry="5" />
-  <!-- Right glass bowl -->
-  <polygon points="70,20 100,20 85,55" />
-  <!-- Right glass stem -->
-  <line x1="85" y1="55" x2="85" y2="100" />
-  <!-- Right glass base -->
-  <ellipse cx="85" cy="102" rx="15" ry="5" />
-  <!-- Clink marks -->
-  <line x1="55" y1="12" x2="60" y2="8" />
-  <line x1="60" y1="16" x2="66" y2="12" />
-  <line x1="57" y1="22" x2="63" y2="20" />
+  <!-- Left coupe glass bowl -->
+  <path d="M 18 22 C 16 18, 18 12, 24 10 C 30 8, 40 8, 46 10 C 52 12, 54 18, 52 22 C 50 32, 44 42, 35 52" />
+  <path d="M 18 22 C 20 32, 26 42, 35 52" />
+  <!-- Left stem -->
+  <path d="M 35 52 C 35 62, 35 78, 35 96" />
+  <!-- Left base -->
+  <path d="M 20 98 C 24 94, 30 92, 35 92 C 40 92, 46 94, 50 98 C 52 100, 48 102, 35 102 C 22 102, 18 100, 20 98" />
+  <!-- Right coupe glass bowl -->
+  <path d="M 68 22 C 66 18, 68 12, 74 10 C 80 8, 90 8, 96 10 C 102 12, 104 18, 102 22 C 100 32, 94 42, 85 52" />
+  <path d="M 68 22 C 70 32, 76 42, 85 52" />
+  <!-- Right stem -->
+  <path d="M 85 52 C 85 62, 85 78, 85 96" />
+  <!-- Right base -->
+  <path d="M 70 98 C 74 94, 80 92, 85 92 C 90 92, 96 94, 100 98 C 102 100, 98 102, 85 102 C 72 102, 68 100, 70 98" />
+  <!-- Bubbles / clink sparkle -->
+  <circle cx="58" cy="10" r="1.5" />
+  <circle cx="62" cy="16" r="1" />
+  <circle cx="56" cy="20" r="1.2" />
+  <path d="M 54 6 L 58 2" />
+  <path d="M 62 8 L 66 4" />
 </svg>

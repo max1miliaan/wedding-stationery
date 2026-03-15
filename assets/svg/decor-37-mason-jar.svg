@@ -1,35 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
   <!-- Jar rim -->
-  <rect x="35" y="35" width="50" height="8" />
-  <!-- Jar neck left -->
-  <line x1="35" y1="43" x2="30" y2="55" />
-  <!-- Jar neck right -->
-  <line x1="85" y1="43" x2="90" y2="55" />
-  <!-- Jar body left -->
-  <line x1="30" y1="55" x2="30" y2="120" />
-  <!-- Jar body right -->
-  <line x1="90" y1="55" x2="90" y2="120" />
-  <!-- Jar bottom -->
-  <line x1="30" y1="120" x2="90" y2="120" />
-  <!-- Flower 1 stem -->
-  <line x1="50" y1="40" x2="45" y2="15" />
-  <!-- Flower 1 bloom -->
-  <circle cx="45" cy="12" r="6" />
-  <!-- Flower 1 center -->
-  <circle cx="45" cy="12" r="2" />
-  <!-- Flower 2 stem -->
-  <line x1="60" y1="38" x2="60" y2="8" />
-  <!-- Flower 2 bloom -->
-  <circle cx="60" cy="6" r="5" />
-  <!-- Flower 3 stem -->
-  <line x1="70" y1="40" x2="78" y2="18" />
-  <!-- Flower 3 bloom -->
-  <circle cx="78" cy="15" r="5" />
-  <!-- Flower 3 center -->
-  <circle cx="78" cy="15" r="2" />
-  <!-- Leaf left -->
-  <ellipse cx="42" cy="28" rx="6" ry="3" />
-  <!-- Leaf right -->
-  <ellipse cx="75" cy="30" rx="6" ry="3" />
+  <path d="M 34 36 C 34 32, 38 30, 42 30 L 78 30 C 82 30, 86 32, 86 36 C 86 40, 82 42, 78 42 L 42 42 C 38 42, 34 40, 34 36" />
+  <!-- Jar neck -->
+  <path d="M 38 42 C 34 46, 30 52, 30 56" />
+  <path d="M 82 42 C 86 46, 90 52, 90 56" />
+  <!-- Jar body -->
+  <path d="M 30 56 C 28 60, 28 80, 28 100 C 28 112, 32 120, 40 122 L 80 122 C 88 120, 92 112, 92 100 C 92 80, 92 60, 90 56" />
+  <!-- Flower 1 (left, peony-like) -->
+  <path d="M 45 30 C 44 26, 42 18, 40 12" />
+  <path d="M 40 12 C 34 8, 30 10, 32 16 C 34 20, 40 18, 40 12" />
+  <path d="M 40 12 C 36 4, 40 0, 44 4 C 46 8, 42 14, 40 12" />
+  <path d="M 40 12 C 44 6, 50 8, 48 14 C 46 18, 42 16, 40 12" />
+  <!-- Flower 2 (center, taller) -->
+  <path d="M 60 30 C 60 24, 60 16, 60 8" />
+  <path d="M 60 8 C 54 4, 52 8, 56 12 C 58 14, 62 12, 60 8" />
+  <path d="M 60 8 C 58 2, 62 0, 64 4 C 66 8, 62 10, 60 8" />
+  <path d="M 60 8 C 66 4, 68 8, 64 12 C 62 14, 58 12, 60 8" />
+  <!-- Flower 3 (right) -->
+  <path d="M 75 30 C 76 26, 78 18, 80 14" />
+  <path d="M 80 14 C 86 10, 90 14, 86 18 C 84 20, 80 18, 80 14" />
+  <path d="M 80 14 C 84 8, 80 4, 76 8 C 74 12, 78 16, 80 14" />
+  <path d="M 80 14 C 74 10, 72 14, 76 18 C 78 20, 82 16, 80 14" />
+  <!-- Leaves -->
+  <path d="M 42 22 C 34 18, 28 22, 32 26 C 36 30, 44 26, 42 22" />
+  <path d="M 78 24 C 86 20, 92 24, 88 28 C 84 32, 76 28, 78 24" />
+  <!-- Small leaf stems -->
+  <path d="M 52 28 C 50 24, 48 22, 46 20" />
+  <path d="M 68 28 C 70 24, 72 22, 74 20" />
 </svg>

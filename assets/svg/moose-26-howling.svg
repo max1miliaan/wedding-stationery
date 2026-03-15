@@ -1,31 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Head tilted up: wide rect angled upward -->
-  <rect x="15" y="5" width="70" height="42" rx="18" ry="14" />
-  <!-- Rose ears flopped back -->
-  <polyline points="22,10 14,0 30,8" />
-  <polyline points="78,10 86,0 70,8" />
-  <!-- Eyes squished closed (howling) -->
-  <line x1="30" y1="22" x2="40" y2="22" />
-  <line x1="60" y1="22" x2="70" y2="22" />
-  <!-- Nose pointed up -->
-  <rect x="38" y="30" width="24" height="10" rx="5" ry="4" />
-  <!-- Mouth open wide (howling) -->
-  <polyline points="36,46 42,50 50,54 58,50 64,46" />
-  <polyline points="38,46 50,42 62,46" />
-  <!-- Jowl lines -->
-  <line x1="18" y1="34" x2="16" y2="46" />
-  <line x1="82" y1="34" x2="84" y2="46" />
-  <!-- Body -->
-  <rect x="22" y="52" width="56" height="38" rx="10" ry="8" />
-  <!-- Front legs -->
-  <rect x="26" y="82" width="14" height="24" rx="5" />
-  <rect x="60" y="82" width="14" height="24" rx="5" />
-  <!-- Paw lines -->
-  <line x1="31" y1="102" x2="31" y2="98" />
-  <line x1="65" y1="102" x2="65" y2="98" />
   <!-- Sound lines -->
-  <line x1="44" y1="0" x2="46" y2="4" />
-  <line x1="50" y1="0" x2="50" y2="4" />
-  <line x1="56" y1="0" x2="54" y2="4" />
+  <path d="M 44 4 C 44 2, 45 0, 46 2" />
+  <path d="M 50 2 C 50 0, 51 0, 51 2" />
+  <path d="M 56 4 C 56 2, 55 0, 54 2" />
+  <!-- Head tilted up -->
+  <path d="M 20 34 C 18 20, 28 8, 40 6 C 45 5, 55 5, 60 6 C 72 8, 82 20, 80 34 C 80 42, 75 48, 68 50 C 60 52, 40 52, 32 50 C 25 48, 20 42, 20 34" />
+  <!-- Forehead wrinkles scrunched -->
+  <path d="M 34 16 C 40 13, 46 14, 50 16" />
+  <path d="M 50 16 C 56 14, 62 13, 66 16" />
+  <!-- Rose ears flopped back -->
+  <path d="M 24 16 C 20 8, 14 6, 12 12 C 11 16, 14 20, 20 20" />
+  <path d="M 76 16 C 80 8, 86 6, 88 12 C 89 16, 86 20, 80 20" />
+  <!-- Eyes squished closed -->
+  <path d="M 30 28 C 34 26, 38 26, 42 28" />
+  <path d="M 58 28 C 62 26, 66 26, 70 28" />
+  <!-- Nose tilted up -->
+  <path d="M 40 36 C 40 32, 44 30, 50 30 C 56 30, 60 32, 60 36 C 60 40, 56 42, 50 42 C 44 42, 40 40, 40 36" />
+  <ellipse cx="46" cy="36" rx="2.5" ry="2" />
+  <ellipse cx="54" cy="36" rx="2.5" ry="2" />
+  <!-- Mouth wide open (howling) -->
+  <path d="M 36 48 C 40 44, 46 42, 50 42" />
+  <path d="M 64 48 C 60 44, 54 42, 50 42" />
+  <path d="M 36 48 C 42 54, 50 56, 58 54 C 62 52, 64 48, 64 48" />
+  <!-- Jowls -->
+  <path d="M 28 40 C 24 44, 24 50, 30 52" />
+  <path d="M 72 40 C 76 44, 76 50, 70 52" />
+  <!-- Body -->
+  <path d="M 28 56 C 22 62, 20 72, 20 82 C 20 88, 22 92, 26 94" />
+  <path d="M 72 56 C 78 62, 80 72, 80 82 C 80 88, 78 92, 74 94" />
+  <!-- Legs -->
+  <path d="M 30 80 C 29 88, 28 96, 28 104" />
+  <path d="M 40 82 C 39 90, 38 98, 37 104" />
+  <path d="M 60 82 C 61 90, 62 98, 63 104" />
+  <path d="M 70 80 C 71 88, 72 96, 72 104" />
+  <!-- Paws -->
+  <path d="M 24 104 C 26 108, 30 109, 33 108 C 36 109, 40 108, 42 104" />
+  <path d="M 58 104 C 60 108, 64 109, 67 108 C 70 109, 74 108, 76 104" />
+  <path d="M 30 107 L 30 105" />
+  <path d="M 34 108 L 34 106" />
+  <path d="M 64 107 L 64 105" />
+  <path d="M 68 108 L 68 106" />
+  <!-- Belly -->
+  <path d="M 26 94 C 40 102, 60 102, 74 94" />
 </svg>

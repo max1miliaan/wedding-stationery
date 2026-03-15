@@ -15,6 +15,9 @@ HTML/CSS/SVG wedding stationery suite designed for print export.
 - `assets/svg/` -- all illustration SVGs (hand-drawn line art, navy stroke)
 - `pieces/` -- one HTML file per stationery piece
 - `preview/index.html` -- gallery of all pieces at scale
+- `preview/editor.html` -- Fabric.js visual stationery editor (drag-and-drop, per-element font control, export)
+- `preview/studio.html` -- preset-based preview tool (simpler than editor)
+- `js/editor.js` -- editor logic (canvas, illustration browser, text tool, properties panel, presets, undo/redo, export)
 - `assets/fonts/` -- downloaded Fontshare fonts (offline fallback)
 - `docs/` -- design specs, briefs, illustration prompts, print requirements
 
@@ -49,8 +52,27 @@ HTML/CSS/SVG wedding stationery suite designed for print export.
 5. Background graphics: ON
 6. Scale: 100%
 
+## SVG Illustration Rules
+- All SVGs use `stroke="currentColor"` and `fill="none"` (with selective fills for eyes, nostrils, etc.)
+- All SVGs include `<style>:root { color: #1B2438; }</style>` for standalone rendering
+- `stroke-linecap="round"` and `stroke-linejoin="round"` on root element
+- `<path>` elements with cubic bezier (C commands) are allowed and encouraged for organic shapes
+- Keep under 30 shapes per SVG for clarity at small print sizes
+- Stroke-width conventions: moose 2.5, couple/decor/toronto 2, borders 1.5
+- Moose (English bulldog): wide curved head (width > height), forehead wrinkles, rose ears, underbite jaw, drooping jowls, stocky body, splayed paws with toe lines
+
+## Visual Editor (preview/editor.html)
+- Built with Fabric.js 5.3.1 (CDN)
+- Three-panel layout: left sidebar (illustration/text/shapes/presets), center canvas, right properties
+- Supports all 250 SVG illustrations organized by category
+- Per-element text control: font family (40 Google + 12 Fontshare), size, weight, color, alignment, spacing
+- 7 preset templates: invitation, save-the-date, rsvp, details, menu, program, name-tag
+- Export: PNG (2x resolution), JSON (localStorage + download)
+- Undo/redo via state snapshots (max 40 states)
+- No stationery piece HTML depends on editor.js -- editor is a standalone design tool
+
 ## Constraints
-- No JavaScript in stationery HTML files
+- No JavaScript in stationery HTML files (pieces/ directory)
 - No emojis anywhere (code, docs, UI, comments, commit messages)
 - All illustrations must be SVG (resolution-independent for print)
 - Never put text outside the safe zone (0.25in inset from trim)

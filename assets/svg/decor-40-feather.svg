@@ -1,23 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Feather quill shaft -->
-  <polyline points="90,130 75,100 60,70 50,45 45,25 42,10" />
-  <!-- Left barbs upper -->
-  <polyline points="45,25 30,20 48,30" />
-  <polyline points="48,32 28,30 50,38" />
-  <polyline points="50,40 25,42 52,48" />
-  <!-- Left barbs lower -->
-  <polyline points="55,52 32,55 58,58" />
-  <polyline points="60,62 38,68 63,68" />
-  <polyline points="65,72 45,80 68,78" />
-  <!-- Right barbs upper -->
-  <polyline points="45,25 55,18 47,28" />
-  <polyline points="48,32 62,25 50,36" />
-  <polyline points="52,42 68,35 55,46" />
-  <!-- Right barbs lower -->
-  <polyline points="58,55 75,50 62,60" />
-  <polyline points="63,65 80,62 67,70" />
-  <polyline points="68,75 85,75 72,80" />
+  <!-- Feather quill shaft (gentle curve) -->
+  <path d="M 42 8 C 44 20, 48 40, 54 60 C 60 80, 70 100, 88 130" />
+  <!-- Left barbs (flowing curves) -->
+  <path d="M 44 18 C 34 14, 26 16, 28 22 C 30 26, 40 26, 46 24" />
+  <path d="M 46 28 C 34 26, 24 30, 26 36 C 28 40, 40 38, 48 34" />
+  <path d="M 50 40 C 36 40, 24 46, 28 52 C 30 56, 42 52, 52 46" />
+  <path d="M 54 52 C 40 54, 30 60, 34 66 C 36 70, 48 66, 56 58" />
+  <path d="M 58 64 C 46 68, 38 76, 42 80 C 44 84, 54 78, 62 70" />
+  <path d="M 64 76 C 54 82, 48 90, 52 94 C 54 96, 62 90, 68 82" />
+  <!-- Right barbs (flowing curves) -->
+  <path d="M 44 18 C 50 12, 58 12, 56 18 C 54 22, 48 24, 46 22" />
+  <path d="M 48 30 C 56 24, 64 26, 62 32 C 60 36, 52 36, 50 32" />
+  <path d="M 52 42 C 62 38, 70 42, 68 48 C 66 52, 58 50, 54 44" />
+  <path d="M 56 54 C 66 52, 76 56, 72 62 C 70 66, 62 62, 58 56" />
+  <path d="M 62 68 C 72 66, 80 72, 78 76 C 76 80, 68 76, 64 70" />
   <!-- Quill tip -->
-  <polyline points="90,130 95,135 88,132" />
+  <path d="M 88 130 C 90 132, 94 134, 92 136 C 90 138, 86 134, 88 130" />
 </svg>

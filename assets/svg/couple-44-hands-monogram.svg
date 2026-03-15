@@ -1,29 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Left hand (Kash) - arm coming from left -->
-  <line x1="10" y1="90" x2="35" y2="70"/>
-  <!-- Left hand fingers forming heart -->
-  <line x1="35" y1="70" x2="45" y2="55"/>
-  <line x1="45" y1="55" x2="52" y2="45"/>
-  <line x1="52" y1="45" x2="58" y2="40"/>
-  <!-- Heart top left curve (as lines) -->
-  <line x1="58" y1="40" x2="55" y2="34"/>
-  <line x1="55" y1="34" x2="50" y2="32"/>
-  <line x1="50" y1="32" x2="46" y2="34"/>
-  <line x1="46" y1="34" x2="44" y2="40"/>
+  <!-- Left arm (Kash) flowing from bottom-left -->
+  <path d="M 8 120 C 14 108, 22 92, 30 78 C 36 68, 40 60, 44 52" />
+  <!-- Left hand fingers forming heart curve -->
+  <path d="M 44 52 C 46 46, 50 40, 54 36 C 56 34, 58 34, 58 36" />
+  <!-- Heart left lobe -->
+  <path d="M 58 36 C 56 30, 52 26, 48 28 C 44 30, 42 36, 46 42" />
   <!-- Heart bottom point -->
-  <line x1="44" y1="40" x2="60" y2="65"/>
-  <!-- Right hand (Max) - arm coming from right -->
-  <line x1="110" y1="90" x2="85" y2="70"/>
-  <!-- Right hand fingers forming heart -->
-  <line x1="85" y1="70" x2="75" y2="55"/>
-  <line x1="75" y1="55" x2="68" y2="45"/>
-  <line x1="68" y1="45" x2="62" y2="40"/>
-  <!-- Heart top right curve -->
-  <line x1="62" y1="40" x2="65" y2="34"/>
-  <line x1="65" y1="34" x2="70" y2="32"/>
-  <line x1="70" y1="32" x2="74" y2="34"/>
-  <line x1="74" y1="34" x2="76" y2="40"/>
-  <!-- Heart bottom meet -->
-  <line x1="76" y1="40" x2="60" y2="65"/>
+  <path d="M 46 42 C 50 50, 56 58, 60 64" />
+
+  <!-- Right arm (Max) flowing from bottom-right -->
+  <path d="M 112 120 C 106 108, 98 92, 90 78 C 84 68, 80 60, 76 52" />
+  <!-- Right hand fingers forming heart curve -->
+  <path d="M 76 52 C 74 46, 70 40, 66 36 C 64 34, 62 34, 62 36" />
+  <!-- Heart right lobe -->
+  <path d="M 62 36 C 64 30, 68 26, 72 28 C 76 30, 78 36, 74 42" />
+  <!-- Heart bottom point (meeting) -->
+  <path d="M 74 42 C 70 50, 64 58, 60 64" />
+
+  <!-- K & M monogram inside heart -->
+  <path d="M 54 42 L 54 54" stroke-width="1.5" />
+  <path d="M 54 47 L 60 42" stroke-width="1.5" />
+  <path d="M 54 47 L 60 54" stroke-width="1.5" />
+  <path d="M 63 54 L 63 42 L 66 50 L 69 42 L 69 54" stroke-width="1.5" />
 </svg>

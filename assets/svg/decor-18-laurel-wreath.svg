@@ -1,20 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
-  <!-- Left arc of leaves -->
-  <polygon points="18,60 10,55 16,52" />
-  <polygon points="12,48 5,42 12,40" />
-  <polygon points="10,34 5,27 12,27" />
-  <polygon points="14,22 12,14 19,16" />
-  <polygon points="22,13 22,5 28,9" />
-  <polygon points="32,8 35,2 38,8" />
-  <!-- Right arc of leaves -->
-  <polygon points="62,60 70,55 64,52" />
-  <polygon points="68,48 75,42 68,40" />
-  <polygon points="70,34 75,27 68,27" />
-  <polygon points="66,22 68,14 61,16" />
-  <polygon points="58,13 58,5 52,9" />
-  <polygon points="48,8 45,2 42,8" />
+  <!-- Left branch stem -->
+  <path d="M 36 70 C 28 60, 16 44, 12 30 C 10 22, 14 14, 22 10 C 28 8, 34 8, 38 10" />
+  <!-- Left branch leaves -->
+  <path d="M 14 56 C 8 52, 6 48, 10 46 C 14 44, 18 50, 14 56" />
+  <path d="M 10 44 C 4 40, 2 34, 6 32 C 10 30, 14 36, 10 44" />
+  <path d="M 10 32 C 6 26, 6 20, 10 18 C 14 16, 16 22, 12 28" />
+  <path d="M 14 22 C 12 16, 14 10, 18 10 C 22 10, 22 16, 18 20" />
+  <path d="M 22 14 C 22 8, 26 4, 30 6 C 34 8, 32 14, 28 14" />
+  <path d="M 32 10 C 34 4, 38 4, 40 8" />
+
+  <!-- Right branch stem -->
+  <path d="M 44 70 C 52 60, 64 44, 68 30 C 70 22, 66 14, 58 10 C 52 8, 46 8, 42 10" />
+  <!-- Right branch leaves -->
+  <path d="M 66 56 C 72 52, 74 48, 70 46 C 66 44, 62 50, 66 56" />
+  <path d="M 70 44 C 76 40, 78 34, 74 32 C 70 30, 66 36, 70 44" />
+  <path d="M 70 32 C 74 26, 74 20, 70 18 C 66 16, 64 22, 68 28" />
+  <path d="M 66 22 C 68 16, 66 10, 62 10 C 58 10, 58 16, 62 20" />
+  <path d="M 58 14 C 58 8, 54 4, 50 6 C 46 8, 48 14, 52 14" />
+  <path d="M 48 10 C 46 4, 42 4, 40 8" />
+
   <!-- Bottom crossing stems -->
-  <line x1="32" y1="68" x2="40" y2="75" />
-  <line x1="48" y1="68" x2="40" y2="75" />
+  <path d="M 36 70 C 38 74, 40 76, 42 76" />
+  <path d="M 44 70 C 42 74, 40 76, 38 76" />
 </svg>

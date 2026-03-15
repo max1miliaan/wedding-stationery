@@ -1,16 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <style>:root { color: #1B2438; }</style>
   <!-- Envelope body -->
-  <rect x="10" y="35" width="100" height="70" />
+  <path d="M 14 38 C 12 36, 12 34, 14 32 L 106 32 C 108 34, 108 36, 106 38 L 106 106 C 108 108, 108 110, 106 112 L 14 112 C 12 110, 12 108, 14 106 Z" />
   <!-- Envelope flap -->
-  <polygon points="10,35 60,75 110,35" />
+  <path d="M 14 38 C 24 50, 40 64, 60 76 C 80 64, 96 50, 106 38" />
   <!-- Bottom fold lines -->
-  <line x1="10" y1="105" x2="45" y2="72" />
-  <line x1="110" y1="105" x2="75" y2="72" />
+  <path d="M 14 106 C 24 96, 36 86, 46 78" />
+  <path d="M 106 106 C 96 96, 84 86, 74 78" />
   <!-- Heart seal on flap -->
-  <polygon points="60,50 55,45 52,48 60,58 68,48 65,45" />
-  <!-- Small decorative line left -->
-  <line x1="25" y1="30" x2="35" y2="30" />
-  <!-- Small decorative line right -->
-  <line x1="85" y1="30" x2="95" y2="30" />
+  <path d="M 60 52 C 58 48, 52 44, 52 40 C 52 36, 56 34, 60 38 C 64 34, 68 36, 68 40 C 68 44, 62 48, 60 52" />
+  <!-- Small flourishes -->
+  <path d="M 24 30 C 28 26, 32 28, 36 30" stroke-width="1.5" />
+  <path d="M 84 30 C 88 26, 92 28, 96 30" stroke-width="1.5" />
 </svg>
